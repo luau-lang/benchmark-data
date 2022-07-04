@@ -1,6 +1,6 @@
 {
-  "lastUpdate": 1656661933372,
-  "repoUrl": "https://github.com/AllanJeremy/luau",
+  "lastUpdate": 1656958647984,
+  "repoUrl": "https://github.com/Roblox/luau",
   "entries": {
     "Luau Benchmarks": [
       {
@@ -5522,6 +5522,133 @@
           {
             "name": "Performance#LL_DataWriteCacheMisses",
             "value": 0.0034832325,
+            "range": "±0%",
+            "unit": "misses/op",
+            "extra": "1 samples\nroblox-cli version: unknown",
+            "type": "roblox"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "arseny.kapoulkine@gmail.com",
+            "name": "Arseny Kapoulkine",
+            "username": "zeux"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "48aa7a51622d7eb8125a78cad549cdd384bcdb1e",
+          "message": "bench: Implement first class support for callgrind (#570)\n\nSince callgrind allows to control stats collection from the guest, this\r\nallows us to reset the collection right before the benchmark starts.\r\n\r\nThis change exposes this to the benchmark runner and integrates\r\ncallgrind data parsing into bench.py, so that we can run bench.py with\r\n--callgrind argument and, as long as the runner was built with callgrind\r\nsupport, we get instruction counts from the run.\r\n\r\nWe convert instruction counts to seconds using 10G instructions/second\r\nrate; there's no correct way to do this without simulating the full CPU\r\npipeline but it results in time units on a similar scale to real runs.",
+          "timestamp": "2022-07-04T11:13:07-07:00",
+          "tree_id": "4efdea7f1c8f848ca274724f58b505a5cb0305aa",
+          "url": "https://github.com/Roblox/luau/commit/48aa7a51622d7eb8125a78cad549cdd384bcdb1e"
+        },
+        "date": 1656958647784,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "duration",
+            "value": 3.83,
+            "unit": "3ms",
+            "range": "±0.05%",
+            "extra": "luau"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "arseny.kapoulkine@gmail.com",
+            "name": "Arseny Kapoulkine",
+            "username": "zeux"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "48aa7a51622d7eb8125a78cad549cdd384bcdb1e",
+          "message": "bench: Implement first class support for callgrind (#570)\n\nSince callgrind allows to control stats collection from the guest, this\r\nallows us to reset the collection right before the benchmark starts.\r\n\r\nThis change exposes this to the benchmark runner and integrates\r\ncallgrind data parsing into bench.py, so that we can run bench.py with\r\n--callgrind argument and, as long as the runner was built with callgrind\r\nsupport, we get instruction counts from the run.\r\n\r\nWe convert instruction counts to seconds using 10G instructions/second\r\nrate; there's no correct way to do this without simulating the full CPU\r\npipeline but it results in time units on a similar scale to real runs.",
+          "timestamp": "2022-07-04T11:13:07-07:00",
+          "tree_id": "4efdea7f1c8f848ca274724f58b505a5cb0305aa",
+          "url": "https://github.com/Roblox/luau/commit/48aa7a51622d7eb8125a78cad549cdd384bcdb1e"
+        },
+        "date": 1656958647979,
+        "tool": "roblox",
+        "benches": [
+          {
+            "name": "Performance#TotalInstructionsExecuted",
+            "value": 1265075743,
+            "range": "±0%",
+            "unit": "executions",
+            "extra": "1 samples\nroblox-cli version: unknown",
+            "type": "roblox"
+          },
+          {
+            "name": "Performance#L1_InstrReadCacheMisses",
+            "value": 0.0084305909,
+            "range": "±0%",
+            "unit": "misses/op",
+            "extra": "1 samples\nroblox-cli version: unknown",
+            "type": "roblox"
+          },
+          {
+            "name": "Performance#LL_InstrReadCacheMisses",
+            "value": 0.000031738,
+            "range": "±0%",
+            "unit": "misses/op",
+            "extra": "1 samples\nroblox-cli version: unknown",
+            "type": "roblox"
+          },
+          {
+            "name": "Performance#TotalMemoryReads",
+            "value": 342542751,
+            "range": "±0%",
+            "unit": "reads",
+            "extra": "1 samples\nroblox-cli version: unknown",
+            "type": "roblox"
+          },
+          {
+            "name": "Performance#L1_DataReadCacheMisses",
+            "value": 0.0433837761,
+            "range": "±0%",
+            "unit": "misses/op",
+            "extra": "1 samples\nroblox-cli version: unknown",
+            "type": "roblox"
+          },
+          {
+            "name": "Performance#LL_DataReadCacheMisses",
+            "value": 0.0006215779,
+            "range": "±0%",
+            "unit": "misses/op",
+            "extra": "1 samples\nroblox-cli version: unknown",
+            "type": "roblox"
+          },
+          {
+            "name": "Performance#TotalMemoryWrites",
+            "value": 143175564,
+            "range": "±0%",
+            "unit": "writes",
+            "extra": "1 samples\nroblox-cli version: unknown",
+            "type": "roblox"
+          },
+          {
+            "name": "Performance#L1_DataWriteCacheMisses",
+            "value": 0.014744157,
+            "range": "±0%",
+            "unit": "misses/op",
+            "extra": "1 samples\nroblox-cli version: unknown",
+            "type": "roblox"
+          },
+          {
+            "name": "Performance#LL_DataWriteCacheMisses",
+            "value": 0.0034834645,
             "range": "±0%",
             "unit": "misses/op",
             "extra": "1 samples\nroblox-cli version: unknown",
