@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1657038293640,
+  "lastUpdate": 1657046429122,
   "repoUrl": "https://github.com/Roblox/luau",
   "entries": {
     "luau-analyze": [
@@ -1687,6 +1687,58 @@
           "url": "https://github.com/Roblox/luau/commit/baa35117bd164a6a034c82835ffbe72edbdd2f24"
         },
         "date": 1657038293638,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 6.32901,
+            "unit": "6ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 8.11226,
+            "unit": "8ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 9.3894,
+            "unit": "9ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 12.2931,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "arseny.kapoulkine@gmail.com",
+            "name": "Arseny Kapoulkine",
+            "username": "zeux"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "42510bb5c885dff16159ded78c95ab3f7ea83d4f",
+          "message": "Fix test after merging a stale PR (#577)",
+          "timestamp": "2022-07-05T11:36:33-07:00",
+          "tree_id": "4d706f3000b1ecde6af1a82c7ffb7b5e58af4ad3",
+          "url": "https://github.com/Roblox/luau/commit/42510bb5c885dff16159ded78c95ab3f7ea83d4f"
+        },
+        "date": 1657046429120,
         "tool": "benchmarkluau",
         "benches": [
           {
