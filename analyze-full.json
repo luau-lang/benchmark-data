@@ -1,0 +1,1837 @@
+{
+  "lastUpdate": 1656986953174,
+  "repoUrl": "https://github.com/Roblox/luau",
+  "entries": {
+    "luau-analyze full": [
+
+{
+"commit": {
+"author": { "email": "10260415+ThePotato97@users.noreply.github.com", "name": "ThePotato", "username": "zeux" },
+"committer": { "email": "10260415+ThePotato97@users.noreply.github.com", "name": "ThePotato", "username": "zeux" },
+"distinct": true,
+"id": "d11e8277c2c1094444a6da7f6749f9013636a3be",
+"message": "Fixes IFTODT error while compiling from an android device (#199)",
+"timestamp": "2021-11-12T14:58:34+00:00",
+"tree_id": "9f0c685ac68e98c561f6cf8ffbed48b6856d5aa7",
+"url": "https://github.com/Roblox/luau/commit/d11e8277c2c1094444a6da7f6749f9013636a3be"
+},
+"date": 1636729114,
+"tool": "benchmarkluau",
+"benches": [
+{
+"name": "map-nocheck",
+"value": 0.533168,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+,
+{
+"name": "map-nonstrict",
+"value": 2.92367,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+,
+{
+"name": "map-strict",
+"value": 3.61439,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+,
+{
+"name": "regex-nocheck",
+"value": 1.64273,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+,
+{
+"name": "regex-nonstrict",
+"value": 5.51155,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+,
+{
+"name": "regex-strict",
+"value": 6.51125,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+]
+},
+{
+"commit": {
+"author": { "email": "arseny.kapoulkine@gmail.com", "name": "Arseny Kapoulkine", "username": "zeux" },
+"committer": { "email": "arseny.kapoulkine@gmail.com", "name": "Arseny Kapoulkine", "username": "zeux" },
+"distinct": true,
+"id": "3f1508c83aafe0e20864e2873a6ec3f19eccea2a",
+"message": "Sync to upstream/release/505 (#216)",
+"timestamp": "2021-11-19T08:10:07-08:00",
+"tree_id": "23db0a9f800e412e4d98ee6b39a608c215dae730",
+"url": "https://github.com/Roblox/luau/commit/3f1508c83aafe0e20864e2873a6ec3f19eccea2a"
+},
+"date": 1637338207,
+"tool": "benchmarkluau",
+"benches": [
+{
+"name": "map-nocheck",
+"value": 0.53455,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+,
+{
+"name": "map-nonstrict",
+"value": 2.92729,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+,
+{
+"name": "map-strict",
+"value": 3.62049,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+,
+{
+"name": "regex-nocheck",
+"value": 1.63657,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+,
+{
+"name": "regex-nonstrict",
+"value": 5.54322,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+,
+{
+"name": "regex-strict",
+"value": 6.71877,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+]
+},
+{
+"commit": {
+"author": { "email": "arseny.kapoulkine@gmail.com", "name": "Arseny Kapoulkine", "username": "zeux" },
+"committer": { "email": "arseny.kapoulkine@gmail.com", "name": "Arseny Kapoulkine", "username": "zeux" },
+"distinct": true,
+"id": "32fb6d10a79464d7fd70813ab3daf8534540d81e",
+"message": "Sync to upstream/release/506 (#270)",
+"timestamp": "2021-12-02T22:41:04-08:00",
+"tree_id": "1b23e751495ba94cf23c2945dcb9df9f09d89cc9",
+"url": "https://github.com/Roblox/luau/commit/32fb6d10a79464d7fd70813ab3daf8534540d81e"
+},
+"date": 1638513664,
+"tool": "benchmarkluau",
+"benches": [
+{
+"name": "map-nocheck",
+"value": 0.534193,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+,
+{
+"name": "map-nonstrict",
+"value": 2.88082,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+,
+{
+"name": "map-strict",
+"value": 3.56148,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+,
+{
+"name": "regex-nocheck",
+"value": 1.63677,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+,
+{
+"name": "regex-nonstrict",
+"value": 5.46538,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+,
+{
+"name": "regex-strict",
+"value": 6.5763,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+]
+},
+{
+"commit": {
+"author": { "email": "arseny.kapoulkine@gmail.com", "name": "Arseny Kapoulkine", "username": "zeux" },
+"committer": { "email": "arseny.kapoulkine@gmail.com", "name": "Arseny Kapoulkine", "username": "zeux" },
+"distinct": true,
+"id": "f2e6a8f4a57d4b1e92c1828dbf7632404237438c",
+"message": "Sync to upstream/release/507-pre (#286)",
+"timestamp": "2021-12-10T14:05:05-08:00",
+"tree_id": "b812249044dd9cbeda4fd733c2026f4087bf7cc5",
+"url": "https://github.com/Roblox/luau/commit/f2e6a8f4a57d4b1e92c1828dbf7632404237438c"
+},
+"date": 1639173905,
+"tool": "benchmarkluau",
+"benches": [
+{
+"name": "map-nocheck",
+"value": 0.5299,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+,
+{
+"name": "map-nonstrict",
+"value": 2.93412,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+,
+{
+"name": "map-strict",
+"value": 3.70118,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+,
+{
+"name": "regex-nocheck",
+"value": 1.62877,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+,
+{
+"name": "regex-nonstrict",
+"value": 5.51848,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+,
+{
+"name": "regex-strict",
+"value": 6.67763,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+]
+},
+{
+"commit": {
+"author": { "email": "arseny.kapoulkine@gmail.com", "name": "Arseny Kapoulkine", "username": "zeux" },
+"committer": { "email": "arseny.kapoulkine@gmail.com", "name": "Arseny Kapoulkine", "username": "zeux" },
+"distinct": true,
+"id": "d50b0793257b39cd70f7bbf0057f37f718b1beb9",
+"message": "Sync to upstream/release/509 (#303)",
+"timestamp": "2022-01-06T17:46:53-08:00",
+"tree_id": "600812efc02254cc830847aa0c1c5e8cc9c59b2a",
+"url": "https://github.com/Roblox/luau/commit/d50b0793257b39cd70f7bbf0057f37f718b1beb9"
+},
+"date": 1641520013,
+"tool": "benchmarkluau",
+"benches": [
+{
+"name": "map-nocheck",
+"value": 0.53024,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+,
+{
+"name": "map-nonstrict",
+"value": 4.18713,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+,
+{
+"name": "map-strict",
+"value": 5.36611,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+,
+{
+"name": "regex-nocheck",
+"value": 1.63503,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+,
+{
+"name": "regex-nonstrict",
+"value": 8.40316,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+,
+{
+"name": "regex-strict",
+"value": 10.0828,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+]
+},
+{
+"commit": {
+"author": { "email": "arseny.kapoulkine@gmail.com", "name": "Arseny Kapoulkine", "username": "zeux" },
+"committer": { "email": "arseny.kapoulkine@gmail.com", "name": "Arseny Kapoulkine", "username": "zeux" },
+"distinct": true,
+"id": "8fe95c99630063ead551303d3ecb6888baeb911f",
+"message": " Sync to upstream/release/511 (#324)",
+"timestamp": "2022-01-21T09:00:19-08:00",
+"tree_id": "43be37ee4d7e7a5044d33f7b128688b929bf5a09",
+"url": "https://github.com/Roblox/luau/commit/8fe95c99630063ead551303d3ecb6888baeb911f"
+},
+"date": 1642784419,
+"tool": "benchmarkluau",
+"benches": [
+{
+"name": "map-nocheck",
+"value": 0.525459,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+,
+{
+"name": "map-nonstrict",
+"value": 4.18056,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+,
+{
+"name": "map-strict",
+"value": 5.36498,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+,
+{
+"name": "regex-nocheck",
+"value": 1.6365,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+,
+{
+"name": "regex-nonstrict",
+"value": 8.40207,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+,
+{
+"name": "regex-strict",
+"value": 10.1014,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+]
+},
+{
+"commit": {
+"author": { "email": "arseny.kapoulkine@gmail.com", "name": "Arseny Kapoulkine", "username": "zeux" },
+"committer": { "email": "arseny.kapoulkine@gmail.com", "name": "Arseny Kapoulkine", "username": "zeux" },
+"distinct": true,
+"id": "2f989fc049772f36de1a4281834c375858507bda",
+"message": "Sync to upstream/release/512 (#330)",
+"timestamp": "2022-01-27T15:46:05-08:00",
+"tree_id": "79954ba397b34615bc5f6313e3b125ec3fe07ab3",
+"url": "https://github.com/Roblox/luau/commit/2f989fc049772f36de1a4281834c375858507bda"
+},
+"date": 1643327165,
+"tool": "benchmarkluau",
+"benches": [
+{
+"name": "map-nocheck",
+"value": 0.52545,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+,
+{
+"name": "map-nonstrict",
+"value": 4.38094,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+,
+{
+"name": "map-strict",
+"value": 5.60595,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+,
+{
+"name": "regex-nocheck",
+"value": 1.61693,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+,
+{
+"name": "regex-nonstrict",
+"value": 9.04583,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+,
+{
+"name": "regex-strict",
+"value": 11.1285,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+]
+},
+{
+"commit": {
+"author": { "email": "arseny.kapoulkine@gmail.com", "name": "Arseny Kapoulkine", "username": "zeux" },
+"committer": { "email": "arseny.kapoulkine@gmail.com", "name": "Arseny Kapoulkine", "username": "zeux" },
+"distinct": true,
+"id": "e51ff38d194d31cbdf272b5d116b9a6a04b1b5d8",
+"message": "Sync to upstream/release/513 (#342)",
+"timestamp": "2022-02-04T12:46:08-08:00",
+"tree_id": "8ac442e2653cb379c33d5c1172527cffc7da93e6",
+"url": "https://github.com/Roblox/luau/commit/e51ff38d194d31cbdf272b5d116b9a6a04b1b5d8"
+},
+"date": 1644007568,
+"tool": "benchmarkluau",
+"benches": [
+{
+"name": "map-nocheck",
+"value": 0.525519,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+,
+{
+"name": "map-nonstrict",
+"value": 5.23485,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+,
+{
+"name": "map-strict",
+"value": 6.80711,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+,
+{
+"name": "regex-nocheck",
+"value": 1.62052,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+,
+{
+"name": "regex-nonstrict",
+"value": 9.26421,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+,
+{
+"name": "regex-strict",
+"value": 11.4422,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+]
+},
+{
+"commit": {
+"author": { "email": "arseny.kapoulkine@gmail.com", "name": "Arseny Kapoulkine", "username": "zeux" },
+"committer": { "email": "arseny.kapoulkine@gmail.com", "name": "Arseny Kapoulkine", "username": "zeux" },
+"distinct": true,
+"id": "63d5423bbb283e602dd396a693a90318f4902d23",
+"message": "Sync to upstream/release/514 (#357)",
+"timestamp": "2022-02-11T11:02:09-08:00",
+"tree_id": "49acb59df2f5fbe9bd0229eb84911e905f0f0d10",
+"url": "https://github.com/Roblox/luau/commit/63d5423bbb283e602dd396a693a90318f4902d23"
+},
+"date": 1644606129,
+"tool": "benchmarkluau",
+"benches": [
+{
+"name": "map-nocheck",
+"value": 0.536414,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+,
+{
+"name": "map-nonstrict",
+"value": 5.85557,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+,
+{
+"name": "map-strict",
+"value": 7.78012,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+,
+{
+"name": "regex-nocheck",
+"value": 1.65012,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+,
+{
+"name": "regex-nonstrict",
+"value": 9.68289,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+,
+{
+"name": "regex-strict",
+"value": 12.0949,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+]
+},
+{
+"commit": {
+"author": { "email": "arseny.kapoulkine@gmail.com", "name": "Arseny Kapoulkine", "username": "zeux" },
+"committer": { "email": "arseny.kapoulkine@gmail.com", "name": "Arseny Kapoulkine", "username": "zeux" },
+"distinct": true,
+"id": "5b784650594ffbef70c731fb6c9cef136226121c",
+"message": "Sync to upstream/release/514 (#372)",
+"timestamp": "2022-02-17T17:18:01-08:00",
+"tree_id": "0f0cfa0c2eaf44892cd3bb06d0fa930dca2eb423",
+"url": "https://github.com/Roblox/luau/commit/5b784650594ffbef70c731fb6c9cef136226121c"
+},
+"date": 1645147081,
+"tool": "benchmarkluau",
+"benches": [
+{
+"name": "map-nocheck",
+"value": 0.540242,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+,
+{
+"name": "map-nonstrict",
+"value": 6.23671,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+,
+{
+"name": "map-strict",
+"value": 8.30482,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+,
+{
+"name": "regex-nocheck",
+"value": 1.6669,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+,
+{
+"name": "regex-nonstrict",
+"value": 10.2034,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+,
+{
+"name": "regex-strict",
+"value": 12.6554,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+]
+},
+{
+"commit": {
+"author": { "email": "arseny.kapoulkine@gmail.com", "name": "Arseny Kapoulkine", "username": "zeux" },
+"committer": { "email": "arseny.kapoulkine@gmail.com", "name": "Arseny Kapoulkine", "username": "zeux" },
+"distinct": true,
+"id": "db3a8a2f0ff795f4c0a5398cb44ae07143e65af0",
+"message": "Update prototyping.yml (#398)",
+"timestamp": "2022-02-24T17:08:54-08:00",
+"tree_id": "c8633bebbfd78fd5187bfc2578dd0127b65eb00c",
+"url": "https://github.com/Roblox/luau/commit/db3a8a2f0ff795f4c0a5398cb44ae07143e65af0"
+},
+"date": 1645751334,
+"tool": "benchmarkluau",
+"benches": [
+{
+"name": "map-nocheck",
+"value": 0.540172,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+,
+{
+"name": "map-nonstrict",
+"value": 6.4022,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+,
+{
+"name": "map-strict",
+"value": 8.56212,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+,
+{
+"name": "regex-nocheck",
+"value": 1.66834,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+,
+{
+"name": "regex-nonstrict",
+"value": 10.3738,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+,
+{
+"name": "regex-strict",
+"value": 13.1246,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+]
+},
+{
+"commit": {
+"author": { "email": "arseny.kapoulkine@gmail.com", "name": "Arseny Kapoulkine", "username": "zeux" },
+"committer": { "email": "arseny.kapoulkine@gmail.com", "name": "Arseny Kapoulkine", "username": "zeux" },
+"distinct": true,
+"id": "dbdf91f3cad8ea9e881b8cf99931f654faf65c2e",
+"message": "Sync to upstream/release/517 (#408)",
+"timestamp": "2022-03-04T08:36:33-08:00",
+"tree_id": "652307adeafa84dfdad7a5e3a1a45cd9f458394f",
+"url": "https://github.com/Roblox/luau/commit/dbdf91f3cad8ea9e881b8cf99931f654faf65c2e"
+},
+"date": 1646411793,
+"tool": "benchmarkluau",
+"benches": [
+{
+"name": "map-nocheck",
+"value": 0.541418,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+,
+{
+"name": "map-nonstrict",
+"value": 6.42685,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+,
+{
+"name": "map-strict",
+"value": 8.60324,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+,
+{
+"name": "regex-nocheck",
+"value": 1.66312,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+,
+{
+"name": "regex-nonstrict",
+"value": 10.3511,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+,
+{
+"name": "regex-strict",
+"value": 13.1146,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+]
+},
+{
+"commit": {
+"author": { "email": "arseny.kapoulkine@gmail.com", "name": "Arseny Kapoulkine", "username": "zeux" },
+"committer": { "email": "arseny.kapoulkine@gmail.com", "name": "Arseny Kapoulkine", "username": "zeux" },
+"distinct": true,
+"id": "a44b7906b62273739d77ff8fe4179c08cec4acc5",
+"message": "Sync to upstream/release/518 (#419)",
+"timestamp": "2022-03-11T08:55:02-08:00",
+"tree_id": "05e9b7053c88b0ad986a74693afb01edf252ac20",
+"url": "https://github.com/Roblox/luau/commit/a44b7906b62273739d77ff8fe4179c08cec4acc5"
+},
+"date": 1647017702,
+"tool": "benchmarkluau",
+"benches": [
+{
+"name": "map-nocheck",
+"value": 0.541421,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+,
+{
+"name": "map-nonstrict",
+"value": 6.27792,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+,
+{
+"name": "map-strict",
+"value": 8.4112,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+,
+{
+"name": "regex-nocheck",
+"value": 1.66242,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+,
+{
+"name": "regex-nonstrict",
+"value": 10.0167,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+,
+{
+"name": "regex-strict",
+"value": 12.6606,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+]
+},
+{
+"commit": {
+"author": { "email": "arseny.kapoulkine@gmail.com", "name": "Arseny Kapoulkine", "username": "zeux" },
+"committer": { "email": "arseny.kapoulkine@gmail.com", "name": "Arseny Kapoulkine", "username": "zeux" },
+"distinct": true,
+"id": "362428f8b4b6f5c9d43f4daf55bcf7873f536c3f",
+"message": "Sync to upstream/release/519 (#422)",
+"timestamp": "2022-03-17T17:46:04-07:00",
+"tree_id": "de218f25741ba86975212e487faca71fa990db1c",
+"url": "https://github.com/Roblox/luau/commit/362428f8b4b6f5c9d43f4daf55bcf7873f536c3f"
+},
+"date": 1647564364,
+"tool": "benchmarkluau",
+"benches": [
+{
+"name": "map-nocheck",
+"value": 0.538528,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+,
+{
+"name": "map-nonstrict",
+"value": 6.35039,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+,
+{
+"name": "map-strict",
+"value": 8.52174,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+,
+{
+"name": "regex-nocheck",
+"value": 1.66248,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+,
+{
+"name": "regex-nonstrict",
+"value": 10.3144,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+,
+{
+"name": "regex-strict",
+"value": 13.0286,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+]
+},
+{
+"commit": {
+"author": { "email": "arseny.kapoulkine@gmail.com", "name": "Arseny Kapoulkine", "username": "zeux" },
+"committer": { "email": "arseny.kapoulkine@gmail.com", "name": "Arseny Kapoulkine", "username": "zeux" },
+"distinct": true,
+"id": "2c339d52c08e5e12b18333dce4fed13b14b6060a",
+"message": "Sync to upstream/release/520 (#427)",
+"timestamp": "2022-03-24T15:04:14-07:00",
+"tree_id": "aabdc176a9b834553bda2a587b154c636c579e05",
+"url": "https://github.com/Roblox/luau/commit/2c339d52c08e5e12b18333dce4fed13b14b6060a"
+},
+"date": 1648159454,
+"tool": "benchmarkluau",
+"benches": [
+{
+"name": "map-nocheck",
+"value": 0.538294,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+,
+{
+"name": "map-nonstrict",
+"value": 6.62686,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+,
+{
+"name": "map-strict",
+"value": 8.78659,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+,
+{
+"name": "regex-nocheck",
+"value": 1.6628,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+,
+{
+"name": "regex-nonstrict",
+"value": 10.3099,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+,
+{
+"name": "regex-strict",
+"value": 13.0606,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+]
+},
+{
+"commit": {
+"author": { "email": "arseny.kapoulkine@gmail.com", "name": "Arseny Kapoulkine", "username": "zeux" },
+"committer": { "email": "arseny.kapoulkine@gmail.com", "name": "Arseny Kapoulkine", "username": "zeux" },
+"distinct": true,
+"id": "20308bed2083392b3cb2b70b5a2b67129cd1019a",
+"message": "Merge branch 'merge'",
+"timestamp": "2022-03-31T14:04:40-07:00",
+"tree_id": "5ef1e49150b64fd5748b793ec3b39f491f55248a",
+"url": "https://github.com/Roblox/luau/commit/20308bed2083392b3cb2b70b5a2b67129cd1019a"
+},
+"date": 1648760680,
+"tool": "benchmarkluau",
+"benches": [
+{
+"name": "map-nocheck",
+"value": 0.542771,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+,
+{
+"name": "map-nonstrict",
+"value": 6.63435,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+,
+{
+"name": "map-strict",
+"value": 8.79421,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+,
+{
+"name": "regex-nocheck",
+"value": 1.6764,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+,
+{
+"name": "regex-nonstrict",
+"value": 10.3242,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+,
+{
+"name": "regex-strict",
+"value": 13.0757,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+]
+},
+{
+"commit": {
+"author": { "email": "arseny.kapoulkine@gmail.com", "name": "Arseny Kapoulkine", "username": "zeux" },
+"committer": { "email": "arseny.kapoulkine@gmail.com", "name": "Arseny Kapoulkine", "username": "zeux" },
+"distinct": true,
+"id": "de1381e3f131f2c307f68033ea494d1c35f2c3ca",
+"message": "Sync to upstream/release/522 (#450)",
+"timestamp": "2022-04-07T14:29:01-07:00",
+"tree_id": "6b511cf9814804f0045f695c0e245ed7c0666317",
+"url": "https://github.com/Roblox/luau/commit/de1381e3f131f2c307f68033ea494d1c35f2c3ca"
+},
+"date": 1649366941,
+"tool": "benchmarkluau",
+"benches": [
+{
+"name": "map-nocheck",
+"value": 0.544443,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+,
+{
+"name": "map-nonstrict",
+"value": 6.64503,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+,
+{
+"name": "map-strict",
+"value": 8.81666,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+,
+{
+"name": "regex-nocheck",
+"value": 1.67676,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+,
+{
+"name": "regex-nonstrict",
+"value": 10.3559,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+,
+{
+"name": "regex-strict",
+"value": 13.1177,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+]
+},
+{
+"commit": {
+"author": { "email": "arseny.kapoulkine@gmail.com", "name": "Arseny Kapoulkine", "username": "zeux" },
+"committer": { "email": "arseny.kapoulkine@gmail.com", "name": "Arseny Kapoulkine", "username": "zeux" },
+"distinct": true,
+"id": "8e7845076b240cd10ea73680d48cad9525b31c20",
+"message": "Sync to upstream/release/523 (#459)",
+"timestamp": "2022-04-14T16:57:43-07:00",
+"tree_id": "4e0a6a3ef6b67ad0e7083be87311dcf036c17eef",
+"url": "https://github.com/Roblox/luau/commit/8e7845076b240cd10ea73680d48cad9525b31c20"
+},
+"date": 1649980663,
+"tool": "benchmarkluau",
+"benches": [
+{
+"name": "map-nocheck",
+"value": 0.541894,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+,
+{
+"name": "map-nonstrict",
+"value": 5.46316,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+,
+{
+"name": "map-strict",
+"value": 6.93881,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+,
+{
+"name": "regex-nocheck",
+"value": 1.66307,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+,
+{
+"name": "regex-nonstrict",
+"value": 8.16288,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+,
+{
+"name": "regex-strict",
+"value": 10.9959,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+]
+},
+{
+"commit": {
+"author": { "email": "arseny.kapoulkine@gmail.com", "name": "Arseny Kapoulkine", "username": "zeux" },
+"committer": { "email": "arseny.kapoulkine@gmail.com", "name": "Arseny Kapoulkine", "username": "zeux" },
+"distinct": true,
+"id": "e0a6461173216b76bdf731410f50485b89c83aa4",
+"message": "Sync to upstream/release/524 (#462)",
+"timestamp": "2022-04-21T14:44:27-07:00",
+"tree_id": "4621941f8b4c7fc61a09d6de4c6cfb344c29db58",
+"url": "https://github.com/Roblox/luau/commit/e0a6461173216b76bdf731410f50485b89c83aa4"
+},
+"date": 1650577467,
+"tool": "benchmarkluau",
+"benches": [
+{
+"name": "map-nocheck",
+"value": 0.541396,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+,
+{
+"name": "map-nonstrict",
+"value": 5.57376,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+,
+{
+"name": "map-strict",
+"value": 7.08877,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+,
+{
+"name": "regex-nocheck",
+"value": 1.66268,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+,
+{
+"name": "regex-nonstrict",
+"value": 8.28795,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+,
+{
+"name": "regex-strict",
+"value": 11.0942,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+]
+},
+{
+"commit": {
+"author": { "email": "arseny.kapoulkine@gmail.com", "name": "Arseny Kapoulkine", "username": "zeux" },
+"committer": { "email": "arseny.kapoulkine@gmail.com", "name": "Arseny Kapoulkine", "username": "zeux" },
+"distinct": true,
+"id": "bd6d44f5e33511e1a9241b7a57c0e3a00e3aa6eb",
+"message": "Sync to upstream/release/525 (#467)",
+"timestamp": "2022-04-28T18:24:24-07:00",
+"tree_id": "ebe8dcc965664c913f0474c01d48e64039b2d6a4",
+"url": "https://github.com/Roblox/luau/commit/bd6d44f5e33511e1a9241b7a57c0e3a00e3aa6eb"
+},
+"date": 1651195464,
+"tool": "benchmarkluau",
+"benches": [
+{
+"name": "map-nocheck",
+"value": 0.537771,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+,
+{
+"name": "map-nonstrict",
+"value": 5.56705,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+,
+{
+"name": "map-strict",
+"value": 7.07587,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+,
+{
+"name": "regex-nocheck",
+"value": 1.65204,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+,
+{
+"name": "regex-nonstrict",
+"value": 8.27255,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+,
+{
+"name": "regex-strict",
+"value": 11.0773,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+]
+},
+{
+"commit": {
+"author": { "email": "arseny.kapoulkine@gmail.com", "name": "Arseny Kapoulkine", "username": "zeux" },
+"committer": { "email": "arseny.kapoulkine@gmail.com", "name": "Arseny Kapoulkine", "username": "zeux" },
+"distinct": true,
+"id": "72d8d443431875607fd457a13fe36ea62804d327",
+"message": "Add documentation for generalized iteration (#475)",
+"timestamp": "2022-05-05T17:05:57-07:00",
+"tree_id": "1fc85eab3d0d57aec39e3784acc0974a840c6da9",
+"url": "https://github.com/Roblox/luau/commit/72d8d443431875607fd457a13fe36ea62804d327"
+},
+"date": 1651795557,
+"tool": "benchmarkluau",
+"benches": [
+{
+"name": "map-nocheck",
+"value": 0.537643,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+,
+{
+"name": "map-nonstrict",
+"value": 5.61487,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+,
+{
+"name": "map-strict",
+"value": 7.14789,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+,
+{
+"name": "regex-nocheck",
+"value": 1.66062,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+,
+{
+"name": "regex-nonstrict",
+"value": 8.28168,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+,
+{
+"name": "regex-strict",
+"value": 11.1069,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+]
+},
+{
+"commit": {
+"author": { "email": "arseny.kapoulkine@gmail.com", "name": "Arseny Kapoulkine", "username": "zeux" },
+"committer": { "email": "arseny.kapoulkine@gmail.com", "name": "Arseny Kapoulkine", "username": "zeux" },
+"distinct": true,
+"id": "a36b1eb29ba5c6c414305b4bbd2b6e2c58ed7d06",
+"message": "Sync to upstream/release/527 (#481)",
+"timestamp": "2022-05-13T12:36:37-07:00",
+"tree_id": "8ee657762296014a2328544d134b91bcc7864882",
+"url": "https://github.com/Roblox/luau/commit/a36b1eb29ba5c6c414305b4bbd2b6e2c58ed7d06"
+},
+"date": 1652470597,
+"tool": "benchmarkluau",
+"benches": [
+{
+"name": "map-nocheck",
+"value": 0.537656,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+,
+{
+"name": "map-nonstrict",
+"value": 5.61051,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+,
+{
+"name": "map-strict",
+"value": 7.14307,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+,
+{
+"name": "regex-nocheck",
+"value": 1.66069,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+,
+{
+"name": "regex-nonstrict",
+"value": 8.28212,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+,
+{
+"name": "regex-strict",
+"value": 11.1061,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+]
+},
+{
+"commit": {
+"author": { "email": "arseny.kapoulkine@gmail.com", "name": "Arseny Kapoulkine", "username": "zeux" },
+"committer": { "email": "arseny.kapoulkine@gmail.com", "name": "Arseny Kapoulkine", "username": "zeux" },
+"distinct": true,
+"id": "f5923aefeb66f8ea3e5193d328d8eb74400e0b3b",
+"message": "Sync to upstream/release/527 (#491)",
+"timestamp": "2022-05-19T17:02:24-07:00",
+"tree_id": "9ae1f538f319526da6a1d9c528d6eb9b388ab889",
+"url": "https://github.com/Roblox/luau/commit/f5923aefeb66f8ea3e5193d328d8eb74400e0b3b"
+},
+"date": 1653004944,
+"tool": "benchmarkluau",
+"benches": [
+{
+"name": "map-nocheck",
+"value": 0.537827,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+,
+{
+"name": "map-nonstrict",
+"value": 5.67982,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+,
+{
+"name": "map-strict",
+"value": 7.3723,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+,
+{
+"name": "regex-nocheck",
+"value": 1.66078,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+,
+{
+"name": "regex-nonstrict",
+"value": 8.31062,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+,
+{
+"name": "regex-strict",
+"value": 11.1363,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+]
+},
+{
+"commit": {
+"author": { "email": "63755228+rblanckaert@users.noreply.github.com", "name": "rblanckaert", "username": "zeux" },
+"committer": { "email": "63755228+rblanckaert@users.noreply.github.com", "name": "rblanckaert", "username": "zeux" },
+"distinct": true,
+"id": "61766a692c53cae3ea47408fb0c38f9b1af786d8",
+"message": "Sync to upstream/release/529 (#505)",
+"timestamp": "2022-05-26T15:08:16-07:00",
+"tree_id": "c716628affdef1c273d589d4b1c65dac710832b1",
+"url": "https://github.com/Roblox/luau/commit/61766a692c53cae3ea47408fb0c38f9b1af786d8"
+},
+"date": 1653602896,
+"tool": "benchmarkluau",
+"benches": [
+{
+"name": "map-nocheck",
+"value": 0.537955,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+,
+{
+"name": "map-nonstrict",
+"value": 5.68461,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+,
+{
+"name": "map-strict",
+"value": 7.37705,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+,
+{
+"name": "regex-nocheck",
+"value": 1.6573,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+,
+{
+"name": "regex-nonstrict",
+"value": 8.37369,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+,
+{
+"name": "regex-strict",
+"value": 11.1224,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+]
+},
+{
+"commit": {
+"author": { "email": "63755228+rblanckaert@users.noreply.github.com", "name": "rblanckaert", "username": "zeux" },
+"committer": { "email": "63755228+rblanckaert@users.noreply.github.com", "name": "rblanckaert", "username": "zeux" },
+"distinct": true,
+"id": "55a026811ae6c9edc1695a192a577810dbb0e628",
+"message": "Sync to upstream/release/530 (#517)",
+"timestamp": "2022-06-03T15:15:45-07:00",
+"tree_id": "64a5143f58b445a9cbd84fc3a2c089f08454bc7d",
+"url": "https://github.com/Roblox/luau/commit/55a026811ae6c9edc1695a192a577810dbb0e628"
+},
+"date": 1654294545,
+"tool": "benchmarkluau",
+"benches": [
+{
+"name": "map-nocheck",
+"value": 0.537436,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+,
+{
+"name": "map-nonstrict",
+"value": 5.58648,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+,
+{
+"name": "map-strict",
+"value": 7.27609,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+,
+{
+"name": "regex-nocheck",
+"value": 1.65921,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+,
+{
+"name": "regex-nonstrict",
+"value": 8.36633,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+,
+{
+"name": "regex-strict",
+"value": 11.1131,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+]
+},
+{
+"commit": {
+"author": { "email": "63755228+rblanckaert@users.noreply.github.com", "name": "rblanckaert", "username": "zeux" },
+"committer": { "email": "63755228+rblanckaert@users.noreply.github.com", "name": "rblanckaert", "username": "zeux" },
+"distinct": true,
+"id": "b066e4c8f8851d9727d079935cfa2e0f9b108531",
+"message": "0.531 (#532)",
+"timestamp": "2022-06-10T09:58:21-07:00",
+"tree_id": "e6f5dda262127526718936d872b28ac86fe79fac",
+"url": "https://github.com/Roblox/luau/commit/b066e4c8f8851d9727d079935cfa2e0f9b108531"
+},
+"date": 1654880301,
+"tool": "benchmarkluau",
+"benches": [
+{
+"name": "map-nocheck",
+"value": 0.538956,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+,
+{
+"name": "map-nonstrict",
+"value": 5.75643,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+,
+{
+"name": "map-strict",
+"value": 7.4458,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+,
+{
+"name": "regex-nocheck",
+"value": 1.64986,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+,
+{
+"name": "regex-nonstrict",
+"value": 8.46568,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+,
+{
+"name": "regex-strict",
+"value": 11.23,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+]
+},
+{
+"commit": {
+"author": { "email": "arseny.kapoulkine@gmail.com", "name": "Arseny Kapoulkine", "username": "zeux" },
+"committer": { "email": "arseny.kapoulkine@gmail.com", "name": "Arseny Kapoulkine", "username": "zeux" },
+"distinct": true,
+"id": "f1b46f4b967f11fabe666da1de0e71b225368260",
+"message": "Sync to upstream/release/532 (#545)",
+"timestamp": "2022-06-16T18:05:14-07:00",
+"tree_id": "adbe5ccf80a43b09afc46f1eeef887bee057e2f2",
+"url": "https://github.com/Roblox/luau/commit/f1b46f4b967f11fabe666da1de0e71b225368260"
+},
+"date": 1655427914,
+"tool": "benchmarkluau",
+"benches": [
+{
+"name": "map-nocheck",
+"value": 0.539623,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+,
+{
+"name": "map-nonstrict",
+"value": 6.23525,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+,
+{
+"name": "map-strict",
+"value": 7.96752,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+,
+{
+"name": "regex-nocheck",
+"value": 1.65584,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+,
+{
+"name": "regex-nonstrict",
+"value": 9.34674,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+,
+{
+"name": "regex-strict",
+"value": 12.1625,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+]
+},
+{
+"commit": {
+"author": { "email": "arseny.kapoulkine@gmail.com", "name": "Arseny Kapoulkine", "username": "zeux" },
+"committer": { "email": "arseny.kapoulkine@gmail.com", "name": "Arseny Kapoulkine", "username": "zeux" },
+"distinct": true,
+"id": "e91d80ee25f17af665b5df244e7e8bd77ff9d4f1",
+"message": "Update compatibility.md (#559)",
+"timestamp": "2022-06-23T18:56:19-07:00",
+"tree_id": "e91d23ebfd0063f6944e150ba4571dde4eb804c3",
+"url": "https://github.com/Roblox/luau/commit/e91d80ee25f17af665b5df244e7e8bd77ff9d4f1"
+},
+"date": 1656035779,
+"tool": "benchmarkluau",
+"benches": [
+{
+"name": "map-nocheck",
+"value": 0.540564,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+,
+{
+"name": "map-nonstrict",
+"value": 6.2,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+,
+{
+"name": "map-strict",
+"value": 7.91031,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+,
+{
+"name": "regex-nocheck",
+"value": 1.65254,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+,
+{
+"name": "regex-nonstrict",
+"value": 9.31458,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+,
+{
+"name": "regex-strict",
+"value": 12.1205,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+]
+},
+{
+"commit": {
+"author": { "email": "arseny.kapoulkine@gmail.com", "name": "Arseny Kapoulkine", "username": "zeux" },
+"committer": { "email": "arseny.kapoulkine@gmail.com", "name": "Arseny Kapoulkine", "username": "zeux" },
+"distinct": true,
+"id": "6467c855e8fd4dff99ae868230d9be61991ccbd9",
+"message": "Update compatibility.md (#566)",
+"timestamp": "2022-06-30T17:07:56-07:00",
+"tree_id": "b6e7646cd6f3511545812dfb470eb99f57bf9b9a",
+"url": "https://github.com/Roblox/luau/commit/6467c855e8fd4dff99ae868230d9be61991ccbd9"
+},
+"date": 1656634076,
+"tool": "benchmarkluau",
+"benches": [
+{
+"name": "map-nocheck",
+"value": 0.537516,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+,
+{
+"name": "map-nonstrict",
+"value": 6.33134,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+,
+{
+"name": "map-strict",
+"value": 8.05163,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+,
+{
+"name": "regex-nocheck",
+"value": 1.65624,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+,
+{
+"name": "regex-nonstrict",
+"value": 9.33743,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+,
+{
+"name": "regex-strict",
+"value": 12.1424,
+"unit": "ms",
+"range": "±0.000%",
+"extra": "luau"
+}
+]
+}
+      
+      ]
+  }
+}
