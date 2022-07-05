@@ -168,7 +168,10 @@
     }
   }
 
-  fetch("./data.json")
+  const search = window.location.search;
+  const name = search.startsWith("?") ? search.substring(1) : "bench";
+
+  fetch("./" + name + ".json")
     .then((response) => response.json())
     .then((data) => {
       renderAllChars(init(data));
