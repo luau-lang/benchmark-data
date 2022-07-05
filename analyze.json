@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1657036967654,
+  "lastUpdate": 1657037518934,
   "repoUrl": "https://github.com/Roblox/luau",
   "entries": {
     "luau-analyze": [
@@ -1609,6 +1609,58 @@
           {
             "name": "regex-strict",
             "value": 12.2322,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "johnnymorganz@outlook.com",
+            "name": "JohnnyMorganz",
+            "username": "JohnnyMorganz"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "4d98a16ea8f4985ca757d2ceebc278a6db3f9761",
+          "message": "Store resolved types in `astResolvedTypes` (#574)",
+          "timestamp": "2022-07-05T09:08:05-07:00",
+          "tree_id": "625b21690b531719de7466b61be7d9234d293c1b",
+          "url": "https://github.com/Roblox/luau/commit/4d98a16ea8f4985ca757d2ceebc278a6db3f9761"
+        },
+        "date": 1657037518932,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 6.32901,
+            "unit": "6ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 8.11226,
+            "unit": "8ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 9.3894,
+            "unit": "9ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 12.2931,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"
