@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1656958728829,
+  "lastUpdate": 1657034818128,
   "repoUrl": "https://github.com/Roblox/luau",
   "entries": {
     "Luau Benchmarks": [
@@ -6037,6 +6037,133 @@
           {
             "name": "Performance#LL_DataWriteCacheMisses",
             "value": 0.0034834645,
+            "range": "±0%",
+            "unit": "misses/op",
+            "extra": "1 samples\nroblox-cli version: unknown",
+            "type": "roblox"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "arseny.kapoulkine@gmail.com",
+            "name": "Arseny Kapoulkine",
+            "username": "zeux"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "2460e389989558f1db89eceb15c9267a4df58704",
+          "message": "bench: Implement luau-analyze and luau --compile benchmarks (#575)\n\nThis change adds another file for benchmarking luau-analyze and sets up\r\nbenchmarks for both non-strict/strict modes for analysis and all three\r\noptimization levels for compilation performance.\r\n\r\nTo avoid issues with race conditions on repository update we do all this\r\nin the same job in benchmark.yml.\r\n\r\nTo be able to benchmark both modes from a single file, luau-analyze\r\ngains --mode argument which allows to override the default typechecking\r\nmode. Not sure if we'll want this to be a hard override on top of the\r\nmodule-specified mode in the future, but this works for now.",
+          "timestamp": "2022-07-05T08:23:09-07:00",
+          "tree_id": "cacafe1c930fcd3d0b9b403bd5a61e12f3455510",
+          "url": "https://github.com/Roblox/luau/commit/2460e389989558f1db89eceb15c9267a4df58704"
+        },
+        "date": 1657034817951,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "duration",
+            "value": 3.51,
+            "unit": "3ms",
+            "range": "±0.02%",
+            "extra": "luau"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "arseny.kapoulkine@gmail.com",
+            "name": "Arseny Kapoulkine",
+            "username": "zeux"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "2460e389989558f1db89eceb15c9267a4df58704",
+          "message": "bench: Implement luau-analyze and luau --compile benchmarks (#575)\n\nThis change adds another file for benchmarking luau-analyze and sets up\r\nbenchmarks for both non-strict/strict modes for analysis and all three\r\noptimization levels for compilation performance.\r\n\r\nTo avoid issues with race conditions on repository update we do all this\r\nin the same job in benchmark.yml.\r\n\r\nTo be able to benchmark both modes from a single file, luau-analyze\r\ngains --mode argument which allows to override the default typechecking\r\nmode. Not sure if we'll want this to be a hard override on top of the\r\nmodule-specified mode in the future, but this works for now.",
+          "timestamp": "2022-07-05T08:23:09-07:00",
+          "tree_id": "cacafe1c930fcd3d0b9b403bd5a61e12f3455510",
+          "url": "https://github.com/Roblox/luau/commit/2460e389989558f1db89eceb15c9267a4df58704"
+        },
+        "date": 1657034818124,
+        "tool": "roblox",
+        "benches": [
+          {
+            "name": "Performance#TotalInstructionsExecuted",
+            "value": 1269146040,
+            "range": "±0%",
+            "unit": "executions",
+            "extra": "1 samples\nroblox-cli version: unknown",
+            "type": "roblox"
+          },
+          {
+            "name": "Performance#L1_InstrReadCacheMisses",
+            "value": 0.0084152128,
+            "range": "±0%",
+            "unit": "misses/op",
+            "extra": "1 samples\nroblox-cli version: unknown",
+            "type": "roblox"
+          },
+          {
+            "name": "Performance#LL_InstrReadCacheMisses",
+            "value": 0.0000322051,
+            "range": "±0%",
+            "unit": "misses/op",
+            "extra": "1 samples\nroblox-cli version: unknown",
+            "type": "roblox"
+          },
+          {
+            "name": "Performance#TotalMemoryReads",
+            "value": 343260391,
+            "range": "±0%",
+            "unit": "reads",
+            "extra": "1 samples\nroblox-cli version: unknown",
+            "type": "roblox"
+          },
+          {
+            "name": "Performance#L1_DataReadCacheMisses",
+            "value": 0.0435156499,
+            "range": "±0%",
+            "unit": "misses/op",
+            "extra": "1 samples\nroblox-cli version: unknown",
+            "type": "roblox"
+          },
+          {
+            "name": "Performance#LL_DataReadCacheMisses",
+            "value": 0.0008284003,
+            "range": "±0%",
+            "unit": "misses/op",
+            "extra": "1 samples\nroblox-cli version: unknown",
+            "type": "roblox"
+          },
+          {
+            "name": "Performance#TotalMemoryWrites",
+            "value": 143245916,
+            "range": "±0%",
+            "unit": "writes",
+            "extra": "1 samples\nroblox-cli version: unknown",
+            "type": "roblox"
+          },
+          {
+            "name": "Performance#L1_DataWriteCacheMisses",
+            "value": 0.0147929662,
+            "range": "±0%",
+            "unit": "misses/op",
+            "extra": "1 samples\nroblox-cli version: unknown",
+            "type": "roblox"
+          },
+          {
+            "name": "Performance#LL_DataWriteCacheMisses",
+            "value": 0.0034827311,
             "range": "±0%",
             "unit": "misses/op",
             "extra": "1 samples\nroblox-cli version: unknown",
