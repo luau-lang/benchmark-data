@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1656986953330,
+  "lastUpdate": 1657034809389,
   "repoUrl": "https://github.com/Roblox/luau",
   "entries": {
     "luau --compile": [
@@ -1937,6 +1937,72 @@
           "url": "https://github.com/Roblox/luau/commit/7959babb7a3e077f38a390e76bfc672f254be18e"
         },
         "date": 1656986953329,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.683014,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.736198,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.81127,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.64939,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.78528,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O2",
+            "value": 1.9987,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "arseny.kapoulkine@gmail.com",
+            "name": "Arseny Kapoulkine",
+            "username": "zeux"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "2460e389989558f1db89eceb15c9267a4df58704",
+          "message": "bench: Implement luau-analyze and luau --compile benchmarks (#575)\n\nThis change adds another file for benchmarking luau-analyze and sets up\r\nbenchmarks for both non-strict/strict modes for analysis and all three\r\noptimization levels for compilation performance.\r\n\r\nTo avoid issues with race conditions on repository update we do all this\r\nin the same job in benchmark.yml.\r\n\r\nTo be able to benchmark both modes from a single file, luau-analyze\r\ngains --mode argument which allows to override the default typechecking\r\nmode. Not sure if we'll want this to be a hard override on top of the\r\nmodule-specified mode in the future, but this works for now.",
+          "timestamp": "2022-07-05T08:23:09-07:00",
+          "tree_id": "cacafe1c930fcd3d0b9b403bd5a61e12f3455510",
+          "url": "https://github.com/Roblox/luau/commit/2460e389989558f1db89eceb15c9267a4df58704"
+        },
+        "date": 1657034809388,
         "tool": "benchmarkluau",
         "benches": [
           {
