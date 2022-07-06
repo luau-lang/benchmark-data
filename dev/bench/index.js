@@ -168,9 +168,35 @@
     }
   }
 
-  fetch("./data.json")
-    .then((response) => response.json())
-    .then((data) => {
-      renderAllChars(init(data));
-    });
+  function clearChars() {
+    const main = document.getElementById("main");
+    main.innerText = "";
+  }
+
+  // fetch("../data-macos-latest.json")
+  //   .then((response) => response.json())
+  //   .then((data) => {
+  //     renderAllChars(init(data));
+  //   });
+
+  reloadData("macos-latest");
+
+  document
+    .getElementById("macos")
+    .addEventListener("click", reloadData.bind(undefined, "macos-latest"));
+  document
+    .getElementById("windows")
+    .addEventListener("click", reloadData.bind(undefined, "windows-latest"));
+  document
+    .getElementById("ubuntu")
+    .addEventListener("click", reloadData.bind(undefined, "ubuntu-latest"));
+
+  function reloadData(name) {
+    fetch(`./data-${name}.json`)
+      .then((response) => response.json())
+      .then((data) => {
+        clearChars();
+        renderAllChars(init(data));
+      });
+  }
 })();
