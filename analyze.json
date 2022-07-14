@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1657207608071,
+  "lastUpdate": 1657825462913,
   "repoUrl": "https://github.com/Roblox/luau",
   "entries": {
     "luau-analyze": [
@@ -1817,6 +1817,58 @@
           {
             "name": "regex-strict",
             "value": 12.2931,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "zxteam@protonmail.com",
+            "name": "Alex Orlenko",
+            "username": "khvzak"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "e87009f5b278dec0213b6f1ed33a422f55e4ef48",
+          "message": "Add lua_setuserdatatag to update userdata tags (#588)",
+          "timestamp": "2022-07-14T12:00:37-07:00",
+          "tree_id": "aab247d45ff503b1c83425ca371db418e80a6647",
+          "url": "https://github.com/Roblox/luau/commit/e87009f5b278dec0213b6f1ed33a422f55e4ef48"
+        },
+        "date": 1657825462912,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 6.38324,
+            "unit": "6ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 8.16272,
+            "unit": "8ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 9.42786,
+            "unit": "9ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 12.2925,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"
