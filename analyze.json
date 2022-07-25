@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1658438448695,
+  "lastUpdate": 1658769811423,
   "repoUrl": "https://github.com/Roblox/luau",
   "entries": {
     "luau-analyze": [
@@ -2025,6 +2025,58 @@
           {
             "name": "regex-strict",
             "value": 12.2386,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "johnnymorganz@outlook.com",
+            "name": "JohnnyMorganz",
+            "username": "JohnnyMorganz"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "2a6d1c03ace747824510b741094852a8c4b02d98",
+          "message": "Store AstExprFunction in astTypes for stats (#612)",
+          "timestamp": "2022-07-25T10:19:21-07:00",
+          "tree_id": "4ffb294ee0cee427877cd1e2a53dd67b9fa9ea41",
+          "url": "https://github.com/Roblox/luau/commit/2a6d1c03ace747824510b741094852a8c4b02d98"
+        },
+        "date": 1658769811421,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 6.10958,
+            "unit": "6ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 7.77386,
+            "unit": "7ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 9.16801,
+            "unit": "9ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 12.2391,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"
