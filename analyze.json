@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1658769811423,
+  "lastUpdate": 1659068907769,
   "repoUrl": "https://github.com/Roblox/luau",
   "entries": {
     "luau-analyze": [
@@ -2077,6 +2077,58 @@
           {
             "name": "regex-strict",
             "value": 12.2391,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "arseny.kapoulkine@gmail.com",
+            "name": "Arseny Kapoulkine",
+            "username": "zeux"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "d3b566c258bee3bdccb655c034a11bfc48a586e3",
+          "message": "Sync to upstream/release/538 (#616)",
+          "timestamp": "2022-07-28T21:24:07-07:00",
+          "tree_id": "02b4701560266238f613d1282efb20ead2fcdbac",
+          "url": "https://github.com/Roblox/luau/commit/d3b566c258bee3bdccb655c034a11bfc48a586e3"
+        },
+        "date": 1659068907767,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 6.11261,
+            "unit": "6ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 7.77734,
+            "unit": "7ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 9.17091,
+            "unit": "9ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 12.2542,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"
