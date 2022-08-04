@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1659458217485,
+  "lastUpdate": 1659623197913,
   "repoUrl": "https://github.com/Roblox/luau",
   "entries": {
     "luau-analyze": [
@@ -2174,6 +2174,58 @@
           {
             "name": "regex-nonstrict",
             "value": 9.17097,
+            "unit": "9ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 12.2542,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "boynedmaster@gmail.com",
+            "name": "boyned//Kampfkarren",
+            "username": "Kampfkarren"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "4658219df2729af7eff3067470050b46f1f5e9d0",
+          "message": "Add %* format specifier (#619)\n\nRFC: https://github.com/Roblox/luau/pull/165",
+          "timestamp": "2022-08-04T07:22:16-07:00",
+          "tree_id": "f897fbbc3e4dc248abdcf648750f6a3360436ad2",
+          "url": "https://github.com/Roblox/luau/commit/4658219df2729af7eff3067470050b46f1f5e9d0"
+        },
+        "date": 1659623197911,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 6.11254,
+            "unit": "6ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 7.77726,
+            "unit": "7ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 9.17098,
             "unit": "9ms",
             "range": "±0%",
             "extra": "luau-analyze"
