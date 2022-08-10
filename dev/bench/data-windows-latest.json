@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1660162313587,
+  "lastUpdate": 1660162397468,
   "repoUrl": "https://github.com/Roblox/luau",
   "entries": {
     "Luau Benchmarks (Windows Win32)": [
@@ -13229,6 +13229,226 @@
             "value": 29.232,
             "unit": "ms",
             "range": "±0.112%",
+            "extra": "luau.exe"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "johnnymorganz@outlook.com",
+            "name": "JohnnyMorganz",
+            "username": "JohnnyMorganz"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "e15b0728be64b380c0d6f04e305c2678493be268",
+          "message": "Add autocomplete context to result (#611)\n\nCloses #599 \r\n\r\nNot sure if these context definitions are distinct enough, but they work for my use cases.\r\n\r\nI repurposed (a majority of) the existing unit tests for this, but if it should live in separate test cases let me know\r\n\r\n---\r\n* Add autocomplete context to result\r\n\r\n* Update tests\r\n\r\n* Remove comments\r\n\r\n* Fix expression context issues",
+          "timestamp": "2022-08-10T13:04:08-07:00",
+          "tree_id": "2faad8432650fc627abd171245214eb3127eac75",
+          "url": "https://github.com/Roblox/luau/commit/e15b0728be64b380c0d6f04e305c2678493be268"
+        },
+        "date": 1660162397462,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "base64",
+            "value": 32.454,
+            "unit": "ms",
+            "range": "±0.026%",
+            "extra": "luau.exe"
+          },
+          {
+            "name": "chess",
+            "value": 125.428,
+            "unit": "ms",
+            "range": "±0.073%",
+            "extra": "luau.exe"
+          },
+          {
+            "name": "life",
+            "value": 112.511,
+            "unit": "ms",
+            "range": "±0.022%",
+            "extra": "luau.exe"
+          },
+          {
+            "name": "qsort",
+            "value": 103.457,
+            "unit": "ms",
+            "range": "±0.080%",
+            "extra": "luau.exe"
+          },
+          {
+            "name": "sha256",
+            "value": 30.328,
+            "unit": "ms",
+            "range": "±0.033%",
+            "extra": "luau.exe"
+          },
+          {
+            "name": "ack",
+            "value": 69.614,
+            "unit": "ms",
+            "range": "±0.015%",
+            "extra": "luau.exe"
+          },
+          {
+            "name": "binary-trees",
+            "value": 39.131,
+            "unit": "ms",
+            "range": "±0.165%",
+            "extra": "luau.exe"
+          },
+          {
+            "name": "fannkuchen-redux",
+            "value": 16.193,
+            "unit": "ms",
+            "range": "±0.119%",
+            "extra": "luau.exe"
+          },
+          {
+            "name": "fixpoint-fact",
+            "value": 67.495,
+            "unit": "ms",
+            "range": "±0.344%",
+            "extra": "luau.exe"
+          },
+          {
+            "name": "heapsort",
+            "value": 29.907,
+            "unit": "ms",
+            "range": "±0.095%",
+            "extra": "luau.exe"
+          },
+          {
+            "name": "mandel",
+            "value": 96.226,
+            "unit": "ms",
+            "range": "±0.128%",
+            "extra": "luau.exe"
+          },
+          {
+            "name": "n-body",
+            "value": 40.729,
+            "unit": "ms",
+            "range": "±0.105%",
+            "extra": "luau.exe"
+          },
+          {
+            "name": "qt",
+            "value": 92.29,
+            "unit": "ms",
+            "range": "±0.182%",
+            "extra": "luau.exe"
+          },
+          {
+            "name": "queen",
+            "value": 2.437,
+            "unit": "2ms",
+            "range": "±0.237%",
+            "extra": "luau.exe"
+          },
+          {
+            "name": "scimark",
+            "value": 100.063,
+            "unit": "ms",
+            "range": "±0.078%",
+            "extra": "luau.exe"
+          },
+          {
+            "name": "spectral-norm",
+            "value": 20.932,
+            "unit": "ms",
+            "range": "±0.041%",
+            "extra": "luau.exe"
+          },
+          {
+            "name": "sieve",
+            "value": 204.11,
+            "unit": "ms",
+            "range": "±0.118%",
+            "extra": "luau.exe"
+          },
+          {
+            "name": "3d-cube",
+            "value": 10.043,
+            "unit": "ms",
+            "range": "±0.106%",
+            "extra": "luau.exe"
+          },
+          {
+            "name": "3d-morph",
+            "value": 11.847,
+            "unit": "ms",
+            "range": "±0.260%",
+            "extra": "luau.exe"
+          },
+          {
+            "name": "3d-raytrace",
+            "value": 13.361,
+            "unit": "ms",
+            "range": "±0.055%",
+            "extra": "luau.exe"
+          },
+          {
+            "name": "controlflow-recursive",
+            "value": 6.541,
+            "unit": "6ms",
+            "range": "±0.070%",
+            "extra": "luau.exe"
+          },
+          {
+            "name": "crypto-aes",
+            "value": 19.154,
+            "unit": "ms",
+            "range": "±0.058%",
+            "extra": "luau.exe"
+          },
+          {
+            "name": "fannkuch",
+            "value": 32.683,
+            "unit": "ms",
+            "range": "±0.218%",
+            "extra": "luau.exe"
+          },
+          {
+            "name": "math-cordic",
+            "value": 20.805,
+            "unit": "ms",
+            "range": "±0.067%",
+            "extra": "luau.exe"
+          },
+          {
+            "name": "math-partial-sums",
+            "value": 8.66,
+            "unit": "8ms",
+            "range": "±0.054%",
+            "extra": "luau.exe"
+          },
+          {
+            "name": "n-body-oop",
+            "value": 70.337,
+            "unit": "ms",
+            "range": "±0.069%",
+            "extra": "luau.exe"
+          },
+          {
+            "name": "tictactoe",
+            "value": 165.838,
+            "unit": "ms",
+            "range": "±0.080%",
+            "extra": "luau.exe"
+          },
+          {
+            "name": "trig",
+            "value": 30.324,
+            "unit": "ms",
+            "range": "±0.503%",
             "extra": "luau.exe"
           }
         ]
