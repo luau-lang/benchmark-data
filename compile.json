@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1659652832560,
+  "lastUpdate": 1660162133125,
   "repoUrl": "https://github.com/Roblox/luau",
   "entries": {
     "luau --compile": [
@@ -2946,6 +2946,72 @@
           {
             "name": "map-O2",
             "value": 0.823957,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.64886,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.82138,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.04626,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "johnnymorganz@outlook.com",
+            "name": "JohnnyMorganz",
+            "username": "JohnnyMorganz"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "e15b0728be64b380c0d6f04e305c2678493be268",
+          "message": "Add autocomplete context to result (#611)\n\nCloses #599 \r\n\r\nNot sure if these context definitions are distinct enough, but they work for my use cases.\r\n\r\nI repurposed (a majority of) the existing unit tests for this, but if it should live in separate test cases let me know\r\n\r\n---\r\n* Add autocomplete context to result\r\n\r\n* Update tests\r\n\r\n* Remove comments\r\n\r\n* Fix expression context issues",
+          "timestamp": "2022-08-10T13:04:08-07:00",
+          "tree_id": "2faad8432650fc627abd171245214eb3127eac75",
+          "url": "https://github.com/Roblox/luau/commit/e15b0728be64b380c0d6f04e305c2678493be268"
+        },
+        "date": 1660162133123,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.680971,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.745238,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.823956,
             "unit": "0ms",
             "range": "±0%",
             "extra": "luau"
