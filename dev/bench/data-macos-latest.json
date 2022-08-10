@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1659652980504,
+  "lastUpdate": 1660162147261,
   "repoUrl": "https://github.com/Roblox/luau",
   "entries": {
     "Luau Benchmarks": [
@@ -6021,6 +6021,226 @@
             "value": 36.331,
             "unit": "ms",
             "range": "±0.728%",
+            "extra": "luau"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "johnnymorganz@outlook.com",
+            "name": "JohnnyMorganz",
+            "username": "JohnnyMorganz"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "e15b0728be64b380c0d6f04e305c2678493be268",
+          "message": "Add autocomplete context to result (#611)\n\nCloses #599 \r\n\r\nNot sure if these context definitions are distinct enough, but they work for my use cases.\r\n\r\nI repurposed (a majority of) the existing unit tests for this, but if it should live in separate test cases let me know\r\n\r\n---\r\n* Add autocomplete context to result\r\n\r\n* Update tests\r\n\r\n* Remove comments\r\n\r\n* Fix expression context issues",
+          "timestamp": "2022-08-10T13:04:08-07:00",
+          "tree_id": "2faad8432650fc627abd171245214eb3127eac75",
+          "url": "https://github.com/Roblox/luau/commit/e15b0728be64b380c0d6f04e305c2678493be268"
+        },
+        "date": 1660162147257,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "base64",
+            "value": 30.323,
+            "unit": "ms",
+            "range": "±0.927%",
+            "extra": "luau"
+          },
+          {
+            "name": "chess",
+            "value": 156.824,
+            "unit": "ms",
+            "range": "±2.563%",
+            "extra": "luau"
+          },
+          {
+            "name": "life",
+            "value": 106.759,
+            "unit": "ms",
+            "range": "±0.303%",
+            "extra": "luau"
+          },
+          {
+            "name": "qsort",
+            "value": 94.401,
+            "unit": "ms",
+            "range": "±0.449%",
+            "extra": "luau"
+          },
+          {
+            "name": "sha256",
+            "value": 32.109,
+            "unit": "ms",
+            "range": "±0.535%",
+            "extra": "luau"
+          },
+          {
+            "name": "ack",
+            "value": 64.057,
+            "unit": "ms",
+            "range": "±0.391%",
+            "extra": "luau"
+          },
+          {
+            "name": "binary-trees",
+            "value": 36.149,
+            "unit": "ms",
+            "range": "±2.452%",
+            "extra": "luau"
+          },
+          {
+            "name": "fannkuchen-redux",
+            "value": 17.284,
+            "unit": "ms",
+            "range": "±1.419%",
+            "extra": "luau"
+          },
+          {
+            "name": "fixpoint-fact",
+            "value": 86.408,
+            "unit": "ms",
+            "range": "±0.744%",
+            "extra": "luau"
+          },
+          {
+            "name": "heapsort",
+            "value": 26.469,
+            "unit": "ms",
+            "range": "±0.746%",
+            "extra": "luau"
+          },
+          {
+            "name": "mandel",
+            "value": 94.852,
+            "unit": "ms",
+            "range": "±0.460%",
+            "extra": "luau"
+          },
+          {
+            "name": "n-body",
+            "value": 45.347,
+            "unit": "ms",
+            "range": "±0.438%",
+            "extra": "luau"
+          },
+          {
+            "name": "qt",
+            "value": 93.103,
+            "unit": "ms",
+            "range": "±0.644%",
+            "extra": "luau"
+          },
+          {
+            "name": "queen",
+            "value": 2.729,
+            "unit": "2ms",
+            "range": "±0.462%",
+            "extra": "luau"
+          },
+          {
+            "name": "scimark",
+            "value": 91.435,
+            "unit": "ms",
+            "range": "±0.542%",
+            "extra": "luau"
+          },
+          {
+            "name": "spectral-norm",
+            "value": 21.077,
+            "unit": "ms",
+            "range": "±0.403%",
+            "extra": "luau"
+          },
+          {
+            "name": "sieve",
+            "value": 175.639,
+            "unit": "ms",
+            "range": "±1.473%",
+            "extra": "luau"
+          },
+          {
+            "name": "3d-cube",
+            "value": 10.569,
+            "unit": "ms",
+            "range": "±0.885%",
+            "extra": "luau"
+          },
+          {
+            "name": "3d-morph",
+            "value": 12.215,
+            "unit": "ms",
+            "range": "±0.869%",
+            "extra": "luau"
+          },
+          {
+            "name": "3d-raytrace",
+            "value": 13.809,
+            "unit": "ms",
+            "range": "±0.828%",
+            "extra": "luau"
+          },
+          {
+            "name": "controlflow-recursive",
+            "value": 6.313,
+            "unit": "6ms",
+            "range": "±1.391%",
+            "extra": "luau"
+          },
+          {
+            "name": "crypto-aes",
+            "value": 19.623,
+            "unit": "ms",
+            "range": "±0.897%",
+            "extra": "luau"
+          },
+          {
+            "name": "fannkuch",
+            "value": 28.383,
+            "unit": "ms",
+            "range": "±0.867%",
+            "extra": "luau"
+          },
+          {
+            "name": "math-cordic",
+            "value": 21.356,
+            "unit": "ms",
+            "range": "±0.712%",
+            "extra": "luau"
+          },
+          {
+            "name": "math-partial-sums",
+            "value": 6.743,
+            "unit": "6ms",
+            "range": "±0.401%",
+            "extra": "luau"
+          },
+          {
+            "name": "n-body-oop",
+            "value": 69.84,
+            "unit": "ms",
+            "range": "±0.392%",
+            "extra": "luau"
+          },
+          {
+            "name": "tictactoe",
+            "value": 178.235,
+            "unit": "ms",
+            "range": "±2.256%",
+            "extra": "luau"
+          },
+          {
+            "name": "trig",
+            "value": 38.939,
+            "unit": "ms",
+            "range": "±3.240%",
             "extra": "luau"
           }
         ]
