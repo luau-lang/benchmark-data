@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1659652954952,
+  "lastUpdate": 1660162085149,
   "repoUrl": "https://github.com/Roblox/luau",
   "entries": {
     "Luau Analyze": [
@@ -3901,6 +3901,133 @@
           {
             "name": "Performance#LL_DataWriteCacheMisses",
             "value": 0.0034186359,
+            "range": "±0%",
+            "unit": "misses/op",
+            "extra": "1 samples\nroblox-cli version: unknown",
+            "type": "roblox"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "johnnymorganz@outlook.com",
+            "name": "JohnnyMorganz",
+            "username": "JohnnyMorganz"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "e15b0728be64b380c0d6f04e305c2678493be268",
+          "message": "Add autocomplete context to result (#611)\n\nCloses #599 \r\n\r\nNot sure if these context definitions are distinct enough, but they work for my use cases.\r\n\r\nI repurposed (a majority of) the existing unit tests for this, but if it should live in separate test cases let me know\r\n\r\n---\r\n* Add autocomplete context to result\r\n\r\n* Update tests\r\n\r\n* Remove comments\r\n\r\n* Fix expression context issues",
+          "timestamp": "2022-08-10T13:04:08-07:00",
+          "tree_id": "2faad8432650fc627abd171245214eb3127eac75",
+          "url": "https://github.com/Roblox/luau/commit/e15b0728be64b380c0d6f04e305c2678493be268"
+        },
+        "date": 1660162084983,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "duration",
+            "value": 3.29,
+            "unit": "3ms",
+            "range": "±0.02%",
+            "extra": "luau"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "johnnymorganz@outlook.com",
+            "name": "JohnnyMorganz",
+            "username": "JohnnyMorganz"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "e15b0728be64b380c0d6f04e305c2678493be268",
+          "message": "Add autocomplete context to result (#611)\n\nCloses #599 \r\n\r\nNot sure if these context definitions are distinct enough, but they work for my use cases.\r\n\r\nI repurposed (a majority of) the existing unit tests for this, but if it should live in separate test cases let me know\r\n\r\n---\r\n* Add autocomplete context to result\r\n\r\n* Update tests\r\n\r\n* Remove comments\r\n\r\n* Fix expression context issues",
+          "timestamp": "2022-08-10T13:04:08-07:00",
+          "tree_id": "2faad8432650fc627abd171245214eb3127eac75",
+          "url": "https://github.com/Roblox/luau/commit/e15b0728be64b380c0d6f04e305c2678493be268"
+        },
+        "date": 1660162085144,
+        "tool": "roblox",
+        "benches": [
+          {
+            "name": "Performance#TotalInstructionsExecuted",
+            "value": 1311326165,
+            "range": "±0%",
+            "unit": "executions",
+            "extra": "1 samples\nroblox-cli version: unknown",
+            "type": "roblox"
+          },
+          {
+            "name": "Performance#L1_InstrReadCacheMisses",
+            "value": 0.0084999181,
+            "range": "±0%",
+            "unit": "misses/op",
+            "extra": "1 samples\nroblox-cli version: unknown",
+            "type": "roblox"
+          },
+          {
+            "name": "Performance#LL_InstrReadCacheMisses",
+            "value": 0.0000324748,
+            "range": "±0%",
+            "unit": "misses/op",
+            "extra": "1 samples\nroblox-cli version: unknown",
+            "type": "roblox"
+          },
+          {
+            "name": "Performance#TotalMemoryReads",
+            "value": 355710748,
+            "range": "±0%",
+            "unit": "reads",
+            "extra": "1 samples\nroblox-cli version: unknown",
+            "type": "roblox"
+          },
+          {
+            "name": "Performance#L1_DataReadCacheMisses",
+            "value": 0.0349363973,
+            "range": "±0%",
+            "unit": "misses/op",
+            "extra": "1 samples\nroblox-cli version: unknown",
+            "type": "roblox"
+          },
+          {
+            "name": "Performance#LL_DataReadCacheMisses",
+            "value": 0.0006716131,
+            "range": "±0%",
+            "unit": "misses/op",
+            "extra": "1 samples\nroblox-cli version: unknown",
+            "type": "roblox"
+          },
+          {
+            "name": "Performance#TotalMemoryWrites",
+            "value": 149157094,
+            "range": "±0%",
+            "unit": "writes",
+            "extra": "1 samples\nroblox-cli version: unknown",
+            "type": "roblox"
+          },
+          {
+            "name": "Performance#L1_DataWriteCacheMisses",
+            "value": 0.0121056193,
+            "range": "±0%",
+            "unit": "misses/op",
+            "extra": "1 samples\nroblox-cli version: unknown",
+            "type": "roblox"
+          },
+          {
+            "name": "Performance#LL_DataWriteCacheMisses",
+            "value": 0.0034253014,
             "range": "±0%",
             "unit": "misses/op",
             "extra": "1 samples\nroblox-cli version: unknown",
