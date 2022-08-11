@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1660162192270,
+  "lastUpdate": 1660251934842,
   "repoUrl": "https://github.com/Roblox/luau",
   "entries": {
     "Luau Analyze": [
@@ -4028,6 +4028,133 @@
           {
             "name": "Performance#LL_DataWriteCacheMisses",
             "value": 0.0034253014,
+            "range": "±0%",
+            "unit": "misses/op",
+            "extra": "1 samples\nroblox-cli version: unknown",
+            "type": "roblox"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "arseny.kapoulkine@gmail.com",
+            "name": "Arseny Kapoulkine",
+            "username": "zeux"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "f7d8ad077407e610b9d0cb2a6ede5249d365db08",
+          "message": "Sync to upstream/release/540 (#635)\n\nAlso adjust benchmark runs to use config=profile and run clang for all benchmarks + gcc for runtime",
+          "timestamp": "2022-08-11T14:01:33-07:00",
+          "tree_id": "6b1bd7412b7543cc1ec34ab47c8b8d93320bef0e",
+          "url": "https://github.com/Roblox/luau/commit/f7d8ad077407e610b9d0cb2a6ede5249d365db08"
+        },
+        "date": 1660251934673,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "duration",
+            "value": 3.7,
+            "unit": "3ms",
+            "range": "±0.02%",
+            "extra": "luau"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "arseny.kapoulkine@gmail.com",
+            "name": "Arseny Kapoulkine",
+            "username": "zeux"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "f7d8ad077407e610b9d0cb2a6ede5249d365db08",
+          "message": "Sync to upstream/release/540 (#635)\n\nAlso adjust benchmark runs to use config=profile and run clang for all benchmarks + gcc for runtime",
+          "timestamp": "2022-08-11T14:01:33-07:00",
+          "tree_id": "6b1bd7412b7543cc1ec34ab47c8b8d93320bef0e",
+          "url": "https://github.com/Roblox/luau/commit/f7d8ad077407e610b9d0cb2a6ede5249d365db08"
+        },
+        "date": 1660251934836,
+        "tool": "roblox",
+        "benches": [
+          {
+            "name": "Performance#TotalInstructionsExecuted",
+            "value": 1308689118,
+            "range": "±0%",
+            "unit": "executions",
+            "extra": "1 samples\nroblox-cli version: unknown",
+            "type": "roblox"
+          },
+          {
+            "name": "Performance#L1_InstrReadCacheMisses",
+            "value": 0.0084882497,
+            "range": "±0%",
+            "unit": "misses/op",
+            "extra": "1 samples\nroblox-cli version: unknown",
+            "type": "roblox"
+          },
+          {
+            "name": "Performance#LL_InstrReadCacheMisses",
+            "value": 0.0000325517,
+            "range": "±0%",
+            "unit": "misses/op",
+            "extra": "1 samples\nroblox-cli version: unknown",
+            "type": "roblox"
+          },
+          {
+            "name": "Performance#TotalMemoryReads",
+            "value": 355224670,
+            "range": "±0%",
+            "unit": "reads",
+            "extra": "1 samples\nroblox-cli version: unknown",
+            "type": "roblox"
+          },
+          {
+            "name": "Performance#L1_DataReadCacheMisses",
+            "value": 0.0347899345,
+            "range": "±0%",
+            "unit": "misses/op",
+            "extra": "1 samples\nroblox-cli version: unknown",
+            "type": "roblox"
+          },
+          {
+            "name": "Performance#LL_DataReadCacheMisses",
+            "value": 0.0006724251,
+            "range": "±0%",
+            "unit": "misses/op",
+            "extra": "1 samples\nroblox-cli version: unknown",
+            "type": "roblox"
+          },
+          {
+            "name": "Performance#TotalMemoryWrites",
+            "value": 149064895,
+            "range": "±0%",
+            "unit": "writes",
+            "extra": "1 samples\nroblox-cli version: unknown",
+            "type": "roblox"
+          },
+          {
+            "name": "Performance#L1_DataWriteCacheMisses",
+            "value": 0.0120928405,
+            "range": "±0%",
+            "unit": "misses/op",
+            "extra": "1 samples\nroblox-cli version: unknown",
+            "type": "roblox"
+          },
+          {
+            "name": "Performance#LL_DataWriteCacheMisses",
+            "value": 0.0034273059,
             "range": "±0%",
             "unit": "misses/op",
             "extra": "1 samples\nroblox-cli version: unknown",
