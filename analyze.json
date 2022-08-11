@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1660252039002,
+  "lastUpdate": 1660252784596,
   "repoUrl": "https://github.com/Roblox/luau",
   "entries": {
     "luau-analyze": [
@@ -2363,6 +2363,58 @@
           "url": "https://github.com/Roblox/luau/commit/f7d8ad077407e610b9d0cb2a6ede5249d365db08"
         },
         "date": 1660252039000,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 5.62801,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 7.1263,
+            "unit": "7ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 8.37941,
+            "unit": "8ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 11.1927,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "arseny.kapoulkine@gmail.com",
+            "name": "Arseny Kapoulkine",
+            "username": "zeux"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "8b390a33aaf99eb1d570816502227cfbc14f00d6",
+          "message": "Update benchmark.yml\n\nSwitch to bench.json file so that bench-gcc is the only outlier, as everything else is built with clang.",
+          "timestamp": "2022-08-11T14:14:32-07:00",
+          "tree_id": "c2308bc6ea196b0d552b3f2b64136406c268de5a",
+          "url": "https://github.com/Roblox/luau/commit/8b390a33aaf99eb1d570816502227cfbc14f00d6"
+        },
+        "date": 1660252784595,
         "tool": "benchmarkluau",
         "benches": [
           {
