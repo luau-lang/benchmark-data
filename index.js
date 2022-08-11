@@ -169,7 +169,7 @@
   }
 
   const search = window.location.search;
-  const name = search.startsWith("?") ? search.substring(1) : "bench-clang";
+  const name = search.startsWith("?") ? search.substring(1) : "bench";
 
   fetch("./" + name + ".json")
     .then((response) => response.json())
