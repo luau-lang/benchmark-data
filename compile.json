@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1660252784745,
+  "lastUpdate": 1660689483468,
   "repoUrl": "https://github.com/Roblox/luau",
   "entries": {
     "luau --compile": [
@@ -3125,6 +3125,72 @@
           "url": "https://github.com/Roblox/luau/commit/8b390a33aaf99eb1d570816502227cfbc14f00d6"
         },
         "date": 1660252784744,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.662451,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.730984,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.810361,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.60926,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.79328,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.02479,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "45106915+XmiliaH@users.noreply.github.com",
+            "name": "XmiliaH",
+            "username": "XmiliaH"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "4ded555cc5f6fa9ab7cddb12c0b9e295058da68c",
+          "message": "Prevent overflow in lua_newuserdatadtor (#639)\n\nIn case a large userdata size is passed to lua_newuserdatadtor it might overflow the size resulting in luaU_newudata actually allocating the object without a memory error. This will then result in overwriting part of the metatable pointer of the userdata.\r\nThis PR fixes this issue by checking for the overflow and in such cases pass a size value which will cause a memory error in luaU_newudata.",
+          "timestamp": "2022-08-16T15:32:48-07:00",
+          "tree_id": "7335176b4fe148d4493890bcc2e9285fb19d36e3",
+          "url": "https://github.com/Roblox/luau/commit/4ded555cc5f6fa9ab7cddb12c0b9e295058da68c"
+        },
+        "date": 1660689483467,
         "tool": "benchmarkluau",
         "benches": [
           {

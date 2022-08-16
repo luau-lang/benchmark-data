@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1660252784596,
+  "lastUpdate": 1660689483317,
   "repoUrl": "https://github.com/Roblox/luau",
   "entries": {
     "luau-analyze": [
@@ -2415,6 +2415,58 @@
           "url": "https://github.com/Roblox/luau/commit/8b390a33aaf99eb1d570816502227cfbc14f00d6"
         },
         "date": 1660252784595,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 5.62801,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 7.1263,
+            "unit": "7ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 8.37941,
+            "unit": "8ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 11.1927,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "45106915+XmiliaH@users.noreply.github.com",
+            "name": "XmiliaH",
+            "username": "XmiliaH"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "4ded555cc5f6fa9ab7cddb12c0b9e295058da68c",
+          "message": "Prevent overflow in lua_newuserdatadtor (#639)\n\nIn case a large userdata size is passed to lua_newuserdatadtor it might overflow the size resulting in luaU_newudata actually allocating the object without a memory error. This will then result in overwriting part of the metatable pointer of the userdata.\r\nThis PR fixes this issue by checking for the overflow and in such cases pass a size value which will cause a memory error in luaU_newudata.",
+          "timestamp": "2022-08-16T15:32:48-07:00",
+          "tree_id": "7335176b4fe148d4493890bcc2e9285fb19d36e3",
+          "url": "https://github.com/Roblox/luau/commit/4ded555cc5f6fa9ab7cddb12c0b9e295058da68c"
+        },
+        "date": 1660689483315,
         "tool": "benchmarkluau",
         "benches": [
           {
