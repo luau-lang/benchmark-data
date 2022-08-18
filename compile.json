@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1660689483468,
+  "lastUpdate": 1660858662275,
   "repoUrl": "https://github.com/Roblox/luau",
   "entries": {
     "luau --compile": [
@@ -3231,6 +3231,72 @@
           {
             "name": "regex-O2",
             "value": 2.02479,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "arseny.kapoulkine@gmail.com",
+            "name": "Arseny Kapoulkine",
+            "username": "zeux"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "be2769ad146a0b1c2d3588802196f49e4c444c8d",
+          "message": "Sync to upstream/release/541 (#644)\n\n- Fix autocomplete not suggesting globals defined after the cursor (fixes #622)\r\n- Improve type checker stability\r\n- Reduce parser C stack consumption which fixes some stack overflow crashes on deeply nested sources\r\n- Improve performance of bit32.extract/replace when width is implied (~3% faster chess)\r\n- Improve performance of bit32.extract when field/width are constants (~10% faster base64)\r\n- Heap dump now annotates thread stacks with local variable/function names",
+          "timestamp": "2022-08-18T14:32:08-07:00",
+          "tree_id": "61e202240a5d4192c00dd46cc3da0ad13ee5fb3c",
+          "url": "https://github.com/Roblox/luau/commit/be2769ad146a0b1c2d3588802196f49e4c444c8d"
+        },
+        "date": 1660858662273,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.661687,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.730503,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.80977,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.60768,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.79218,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.02359,
             "unit": "2ms",
             "range": "±0%",
             "extra": "luau"
