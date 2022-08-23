@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1660858662275,
+  "lastUpdate": 1661281186419,
   "repoUrl": "https://github.com/Roblox/luau",
   "entries": {
     "luau --compile": [
@@ -3297,6 +3297,72 @@
           {
             "name": "regex-O2",
             "value": 2.02359,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "johnnymorganz@outlook.com",
+            "name": "JohnnyMorganz",
+            "username": "JohnnyMorganz"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "a95dff3223cc10e8b7826aab99de02ca32ef7ab7",
+          "message": "Pass environment scope to autocomplete typechecker (#610)\n\nFixes a bug where the environment scope is not passed to the autocomplete typechecker, so environment-related types are not provided.\r\n\r\nThis caused an issue where `getModuleEnvironment` returns `typeChecker.globalScope` when there is no environment. We pass this through to `typeCheckerForAutocomplete.check()` then environmentscope is no longer nullopt and it will use `typeChecker.globalScope` instead of falling back to `typeCheckerForAutocomplete.globalScope`.\r\n\r\nThis is solved by passing `forAutocomplete` to `getModuleEnvironment` so it falls back to the autocomplete global scope if none found.",
+          "timestamp": "2022-08-23T11:53:02-07:00",
+          "tree_id": "fb65d9e30f4d0a018ce84fae2f28110a0a78dd46",
+          "url": "https://github.com/Roblox/luau/commit/a95dff3223cc10e8b7826aab99de02ca32ef7ab7"
+        },
+        "date": 1661281186417,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.661716,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.730533,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.809799,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.60773,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.79223,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.02364,
             "unit": "2ms",
             "range": "±0%",
             "extra": "luau"
