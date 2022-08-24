@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1661281186205,
+  "lastUpdate": 1661368078013,
   "repoUrl": "https://github.com/Roblox/luau",
   "entries": {
     "luau-analyze": [
@@ -2597,6 +2597,58 @@
           {
             "name": "regex-strict",
             "value": 11.1802,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "boynedmaster@gmail.com",
+            "name": "boyned//Kampfkarren",
+            "username": "Kampfkarren"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "da9d8e8c601eb30ddf37e9ac5d31601831cca4bf",
+          "message": "String interpolation (#614)\n\nImplements the string interpolation RFC (#165).\r\n\r\nAdds the string interpolation as per the RFC.\r\n\r\n```lua\r\nlocal name = \"world\"\r\nprint(`Hello {name}!`) -- Hello world!\r\n```\r\n\r\nCo-authored-by: Arseny Kapoulkine <arseny.kapoulkine@gmail.com>\r\nCo-authored-by: Alexander McCord <11488393+alexmccord@users.noreply.github.com>",
+          "timestamp": "2022-08-24T12:01:00-07:00",
+          "tree_id": "c7b033becf97279bf4da7990e7221fcabec4dff9",
+          "url": "https://github.com/Roblox/luau/commit/da9d8e8c601eb30ddf37e9ac5d31601831cca4bf"
+        },
+        "date": 1661368078011,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 5.62517,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 7.12816,
+            "unit": "7ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 8.38123,
+            "unit": "8ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 11.1949,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"
