@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1661368078013,
+  "lastUpdate": 1661464771600,
   "repoUrl": "https://github.com/Roblox/luau",
   "entries": {
     "luau-analyze": [
@@ -2649,6 +2649,58 @@
           {
             "name": "regex-strict",
             "value": 11.1949,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "arseny.kapoulkine@gmail.com",
+            "name": "Arseny Kapoulkine",
+            "username": "zeux"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "b2f9f53ae329a566bca84c4ba1b166cdaed1365f",
+          "message": "Sync to upstream/release/542 (#649)\n\n- Fix DeprecatedGlobal warning text in cases when the global is deprecated without a suggested alternative\r\n- Fix an off-by-one error in type error text for incorrect use of string.format\r\n- Reduce stack consumption further during parsing, hopefully eliminating stack overflows during parsing/compilation for good\r\n- Mark interpolated string support as experimental (requires --fflags=LuauInterpolatedStringBaseSupport to enable)\r\n- Simplify garbage collection treatment of upvalues, reducing cache misses during sweeping stage and reducing the cost of upvalue assignment (SETUPVAL); supersedes #643\r\n- Simplify garbage collection treatment of sleeping threads\r\n- Simplify sweeping of alive threads, reducing cache misses during sweeping stage\r\n- Simplify management of string buffers, removing redundant linked list operations",
+          "timestamp": "2022-08-25T14:53:50-07:00",
+          "tree_id": "054f07bba226599e20bdeb4077d21b4a843ab182",
+          "url": "https://github.com/Roblox/luau/commit/b2f9f53ae329a566bca84c4ba1b166cdaed1365f"
+        },
+        "date": 1661464771598,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 5.62386,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 7.12981,
+            "unit": "7ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 8.38828,
+            "unit": "8ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 11.2227,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"
