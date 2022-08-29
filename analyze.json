@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1661464771600,
+  "lastUpdate": 1661787237266,
   "repoUrl": "https://github.com/Roblox/luau",
   "entries": {
     "luau-analyze": [
@@ -2675,6 +2675,58 @@
           "url": "https://github.com/Roblox/luau/commit/b2f9f53ae329a566bca84c4ba1b166cdaed1365f"
         },
         "date": 1661464771598,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 5.62386,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 7.12981,
+            "unit": "7ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 8.38828,
+            "unit": "8ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 11.2227,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "johnnymorganz@outlook.com",
+            "name": "JohnnyMorganz",
+            "username": "JohnnyMorganz"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "e9e2cba77a649d082534427754bd416e9b9e0ce3",
+          "message": "Fix overloaded metamethod in class definitions (#653)\n\nFixes #652",
+          "timestamp": "2022-08-29T08:28:04-07:00",
+          "tree_id": "57da440b20b46ea8d256e24c53d7921b7aa2a402",
+          "url": "https://github.com/Roblox/luau/commit/e9e2cba77a649d082534427754bd416e9b9e0ce3"
+        },
+        "date": 1661787237264,
         "tool": "benchmarkluau",
         "benches": [
           {
