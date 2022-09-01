@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1661787237266,
+  "lastUpdate": 1662074383762,
   "repoUrl": "https://github.com/Roblox/luau",
   "entries": {
     "luau-analyze": [
@@ -2753,6 +2753,58 @@
           {
             "name": "regex-strict",
             "value": 11.2227,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "arseny.kapoulkine@gmail.com",
+            "name": "Arseny Kapoulkine",
+            "username": "zeux"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "ae35ada579f27df392b711e274cf031f4de496b5",
+          "message": "Sync to upstream/release/543 (#657)\n\n- Improve ComparisonPrecedence lint suggestions for three-way comparisons (X < Y < Z)\r\n- Improve type checking stability\r\n- Improve location information for errors when parsing invalid type annotations\r\n- Compiler now generates bytecode version 3 in all configurations\r\n- Improve performance of comparisons against numeric constants on AArch64",
+          "timestamp": "2022-09-01T16:14:03-07:00",
+          "tree_id": "9c8b1c464222502d7efddff1e4fdd23147064ddc",
+          "url": "https://github.com/Roblox/luau/commit/ae35ada579f27df392b711e274cf031f4de496b5"
+        },
+        "date": 1662074383760,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 5.64165,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 7.14105,
+            "unit": "7ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 8.3826,
+            "unit": "8ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 11.2287,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"

@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1661787237421,
+  "lastUpdate": 1662074383917,
   "repoUrl": "https://github.com/Roblox/luau",
   "entries": {
     "luau --compile": [
@@ -3561,6 +3561,72 @@
           {
             "name": "regex-O2",
             "value": 2.03325,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "arseny.kapoulkine@gmail.com",
+            "name": "Arseny Kapoulkine",
+            "username": "zeux"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "ae35ada579f27df392b711e274cf031f4de496b5",
+          "message": "Sync to upstream/release/543 (#657)\n\n- Improve ComparisonPrecedence lint suggestions for three-way comparisons (X < Y < Z)\r\n- Improve type checking stability\r\n- Improve location information for errors when parsing invalid type annotations\r\n- Compiler now generates bytecode version 3 in all configurations\r\n- Improve performance of comparisons against numeric constants on AArch64",
+          "timestamp": "2022-09-01T16:14:03-07:00",
+          "tree_id": "9c8b1c464222502d7efddff1e4fdd23147064ddc",
+          "url": "https://github.com/Roblox/luau/commit/ae35ada579f27df392b711e274cf031f4de496b5"
+        },
+        "date": 1662074383915,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.664081,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.732573,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.809891,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.61769,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.80219,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.03322,
             "unit": "2ms",
             "range": "±0%",
             "extra": "luau"
