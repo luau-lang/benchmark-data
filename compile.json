@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1662074383917,
+  "lastUpdate": 1662675641991,
   "repoUrl": "https://github.com/Roblox/luau",
   "entries": {
     "luau --compile": [
@@ -3627,6 +3627,72 @@
           {
             "name": "regex-O2",
             "value": 2.03322,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "arseny.kapoulkine@gmail.com",
+            "name": "Arseny Kapoulkine",
+            "username": "zeux"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "ce2c3b3a4e59e8bfc9ed94ee380a5b1627092d8c",
+          "message": "Sync to upstream/release/544 (#669)\n\n- Remove type definitions of\r\n`utf8.nfcnormalize`/`nfdnormalize`/`graphemes` that aren't supported by\r\nstandalone Luau library\r\n- Add `lua_costatus` to retrieve extended thread status (similar to\r\n`coroutine.status`)\r\n- Improve GC sweeping performance (2-10% improvement on allocation-heavy\r\nbenchmarks)",
+          "timestamp": "2022-09-08T15:14:25-07:00",
+          "tree_id": "c6f3dda23f792e99e96c06564121e760d9cdad78",
+          "url": "https://github.com/Roblox/luau/commit/ce2c3b3a4e59e8bfc9ed94ee380a5b1627092d8c"
+        },
+        "date": 1662675641989,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.664004,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.732208,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.809527,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.61745,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.80187,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.03291,
             "unit": "2ms",
             "range": "±0%",
             "extra": "luau"
