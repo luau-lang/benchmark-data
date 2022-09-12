@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1662675641818,
+  "lastUpdate": 1662997889696,
   "repoUrl": "https://github.com/Roblox/luau",
   "entries": {
     "luau-analyze": [
@@ -2831,6 +2831,58 @@
           "url": "https://github.com/Roblox/luau/commit/ce2c3b3a4e59e8bfc9ed94ee380a5b1627092d8c"
         },
         "date": 1662675641815,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 5.64145,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 7.14809,
+            "unit": "7ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 8.36983,
+            "unit": "8ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 11.2125,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "AllanJeremy@users.noreply.github.com",
+            "name": "Allan N Jeremy",
+            "username": "AllanJeremy"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "366df9639384e8d7ab92b29744303adec6770d77",
+          "message": "Feat: Added retry functionality to benchmarks (#667)\n\nResolves #668 \r\n\r\n## The problem\r\nBenchmarks jobs run concurrently for the different operating systems.\r\nThis means that when it comes time to push the benchmark results to [the\r\nassigned benchmark results\r\nrepo](https://github.com/luau-lang/benchmark-data), there can be two\r\ndifferent jobs trying to push changes at the same time. In such a case,\r\none of the pushes will fail and we end up missing some benchmark results\r\ndata from the workflow run.\r\n\r\n## The solution\r\nWhenever a push fails, we need to retry the steps leading up to the push\r\n(checking out the benchmark results repo, storing benchmark results,\r\npushing the results to [a specific\r\nrepo](https://github.com/luau-lang/benchmark-data)).\r\n\r\n### Note\r\nThere are 3 push attempts before submitting to failure.\r\n\r\n## TL;DR\r\nThis PR retries pushing benchmark results when they fail to get pushed\r\n(often due to pushing from multiple jobs concurrently)\r\n\r\nCo-authored-by: Jamie Kuppens <reshurum@gmail.com>\r\nCo-authored-by: Ignacio Falk <flakolefluk@gmail.com>",
+          "timestamp": "2022-09-12T08:45:55-07:00",
+          "tree_id": "44d20447aceb18f4edde0b854700f000f4605518",
+          "url": "https://github.com/Roblox/luau/commit/366df9639384e8d7ab92b29744303adec6770d77"
+        },
+        "date": 1662997889694,
         "tool": "benchmarkluau",
         "benches": [
           {
