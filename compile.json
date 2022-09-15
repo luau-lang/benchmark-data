@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1663255954839,
+  "lastUpdate": 1663281905982,
   "repoUrl": "https://github.com/Roblox/luau",
   "entries": {
     "luau --compile": [
@@ -3825,6 +3825,72 @@
           {
             "name": "regex-O2",
             "value": 2.03298,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "arseny.kapoulkine@gmail.com",
+            "name": "Arseny Kapoulkine",
+            "username": "zeux"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "3d74a8f4d4fa9de03f1952c5a6e014a6dedbb4fc",
+          "message": "Sync to upstream/release/545 (#674)\n\n- Improve type error messages for argument count mismatch in certain\r\ncases\r\n- Fix type checking variadic returns when the type is incompatible which\r\ntype checked in certain cases\r\n- Reduce size of upvalue objects by 8 bytes on 64-bit platforms\r\n- Reduce I$ footprint of interpreter by 1.5KB\r\n- Reduce GC pause during atomic stage for programs with a lot of threads\r\n- Remove support for bytecode v2",
+          "timestamp": "2022-09-15T15:38:17-07:00",
+          "tree_id": "5a5334811567f72255faa2f57a1af133ad57d9e0",
+          "url": "https://github.com/Roblox/luau/commit/3d74a8f4d4fa9de03f1952c5a6e014a6dedbb4fc"
+        },
+        "date": 1663281905980,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.664411,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.732614,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.809933,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.61758,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.802,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.03303,
             "unit": "2ms",
             "range": "±0%",
             "extra": "luau"
