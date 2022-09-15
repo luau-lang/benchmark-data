@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1662997889696,
+  "lastUpdate": 1663255954682,
   "repoUrl": "https://github.com/Roblox/luau",
   "entries": {
     "luau-analyze": [
@@ -2895,6 +2895,58 @@
           {
             "name": "map-strict",
             "value": 7.14809,
+            "unit": "7ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 8.36983,
+            "unit": "8ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 11.2125,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "petrihakkinen@users.noreply.github.com",
+            "name": "Petri Häkkinen",
+            "username": "petrihakkinen"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "6fbea7cc848a18cfaf0022dc661040521c590789",
+          "message": "Add lua_rawsetfield (#671)\n\nLuau currently has the following functions in the C API for dealing with\r\ntables without invoking metamethods:\r\n\r\nlua_rawgetfield\r\nlua_rawget\r\nlua_rawgeti\r\nlua_rawset\r\nlua_rawseti\r\n\r\nThis change adds the missing function lua_rawsetfield for consistency\r\nand because it's more efficient to use it in place of plain lua_rawset\r\nwhich requires pushing the key and value separately.\r\n\r\nCo-authored-by: Petri Häkkinen <petrih@rmd.remedy.fi>",
+          "timestamp": "2022-09-15T08:26:54-07:00",
+          "tree_id": "2f9977353da1297316d4846f642720e701bb8881",
+          "url": "https://github.com/Roblox/luau/commit/6fbea7cc848a18cfaf0022dc661040521c590789"
+        },
+        "date": 1663255954680,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 5.64147,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 7.1481,
             "unit": "7ms",
             "range": "±0%",
             "extra": "luau-analyze"
