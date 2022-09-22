@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1663353907797,
+  "lastUpdate": 1663866081714,
   "repoUrl": "https://github.com/Roblox/luau",
   "entries": {
     "luau-analyze": [
@@ -3051,6 +3051,58 @@
           {
             "name": "map-strict",
             "value": 7.14875,
+            "unit": "7ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 8.37533,
+            "unit": "8ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 11.218,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "petrihakkinen@users.noreply.github.com",
+            "name": "Petri Häkkinen",
+            "username": "petrihakkinen"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "fc4871989a147be7bc817573f09e49361853f999",
+          "message": "Add lua_cleartable (#678)\n\nTo my understanding lua_cleartable does not need GC barriers because\r\nit's only removing elements and not modifying the stack. But I'm not a\r\nGC expert so please correct if I'm wrong.\r\n\r\nresolves #672\r\n\r\nCo-authored-by: Petri Häkkinen <petrih@rmd.remedy.fi>",
+          "timestamp": "2022-09-22T09:54:03-07:00",
+          "tree_id": "fbe37fcea824a8968387fc730d4fe65f3531420a",
+          "url": "https://github.com/Roblox/luau/commit/fc4871989a147be7bc817573f09e49361853f999"
+        },
+        "date": 1663866081711,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 5.64226,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 7.14876,
             "unit": "7ms",
             "range": "±0%",
             "extra": "luau-analyze"

@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1663353907984,
+  "lastUpdate": 1663866081914,
   "repoUrl": "https://github.com/Roblox/luau",
   "entries": {
     "luau --compile": [
@@ -3957,6 +3957,72 @@
           {
             "name": "regex-O2",
             "value": 2.03303,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "petrihakkinen@users.noreply.github.com",
+            "name": "Petri Häkkinen",
+            "username": "petrihakkinen"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "fc4871989a147be7bc817573f09e49361853f999",
+          "message": "Add lua_cleartable (#678)\n\nTo my understanding lua_cleartable does not need GC barriers because\r\nit's only removing elements and not modifying the stack. But I'm not a\r\nGC expert so please correct if I'm wrong.\r\n\r\nresolves #672\r\n\r\nCo-authored-by: Petri Häkkinen <petrih@rmd.remedy.fi>",
+          "timestamp": "2022-09-22T09:54:03-07:00",
+          "tree_id": "fbe37fcea824a8968387fc730d4fe65f3531420a",
+          "url": "https://github.com/Roblox/luau/commit/fc4871989a147be7bc817573f09e49361853f999"
+        },
+        "date": 1663866081912,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.663284,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.731487,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.808806,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.61645,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.80087,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.0319,
             "unit": "2ms",
             "range": "±0%",
             "extra": "luau"
