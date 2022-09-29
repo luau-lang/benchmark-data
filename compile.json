@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1664491742255,
+  "lastUpdate": 1664493895191,
   "repoUrl": "https://github.com/Roblox/luau",
   "entries": {
     "luau --compile": [
@@ -4247,6 +4247,72 @@
           "url": "https://github.com/Roblox/luau/commit/937ef2efd4d319932cfd108e636ba5379a2301c9"
         },
         "date": 1664491742249,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.65729,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.722703,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.798276,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.60034,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.77819,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.00451,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "arseny.kapoulkine@gmail.com",
+            "name": "Arseny Kapoulkine",
+            "username": "zeux"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "cc26ef16df80efc0e466e32685e3b22356733be6",
+          "message": "Update release.yml\n\nUse -j2 for release builds since CMake doesn't do it for us",
+          "timestamp": "2022-09-29T16:19:37-07:00",
+          "tree_id": "c5e3a89558c03417211f97c80ea7beca5a2515eb",
+          "url": "https://github.com/Roblox/luau/commit/cc26ef16df80efc0e466e32685e3b22356733be6"
+        },
+        "date": 1664493895189,
         "tool": "benchmarkluau",
         "benches": [
           {
