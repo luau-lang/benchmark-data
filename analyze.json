@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1663961044910,
+  "lastUpdate": 1664479164285,
   "repoUrl": "https://github.com/Roblox/luau",
   "entries": {
     "luau-analyze": [
@@ -3148,6 +3148,58 @@
           {
             "name": "map-nonstrict",
             "value": 5.46121,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 6.90749,
+            "unit": "6ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 8.26622,
+            "unit": "8ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 11.055,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "arseny.kapoulkine@gmail.com",
+            "name": "Arseny Kapoulkine",
+            "username": "zeux"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "1acd66c97dfbdc1fc9f01396ff49f81cce34c78e",
+          "message": "Remove prototyping/ and prototyping.yml (#688)\n\nSuperseded by https://github.com/luau-lang/agda-typeck",
+          "timestamp": "2022-09-29T12:13:00-07:00",
+          "tree_id": "b62fa0821b2650ff3501c7c4c793580c013d44de",
+          "url": "https://github.com/Roblox/luau/commit/1acd66c97dfbdc1fc9f01396ff49f81cce34c78e"
+        },
+        "date": 1664479164283,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 5.4612,
             "unit": "5ms",
             "range": "±0%",
             "extra": "luau-analyze"
