@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1664479164477,
+  "lastUpdate": 1664490518769,
   "repoUrl": "https://github.com/Roblox/luau",
   "entries": {
     "luau --compile": [
@@ -4155,6 +4155,72 @@
           {
             "name": "regex-O2",
             "value": 2.00306,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "arseny.kapoulkine@gmail.com",
+            "name": "Arseny Kapoulkine",
+            "username": "zeux"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "944e8375aa79181c108e99d767d4a11c9b5cc046",
+          "message": "Sync to upstream/release/547 (#690)\n\n- Type aliases can no longer override primitive types; attempts to do\r\nthat will result in a type error\r\n- Fix misleading type error messages for mismatches in expression list\r\nlength during assignment\r\n- Fix incorrect type name display in certain cases\r\n- setmetatable/getmetatable are now ~2x faster\r\n- tools/perfstat.py can be used to display statistics about profiles\r\ncaptured via --profile switch",
+          "timestamp": "2022-09-29T15:23:10-07:00",
+          "tree_id": "8181b1b43f6084488d48dfc7c7237281dddb30cc",
+          "url": "https://github.com/Roblox/luau/commit/944e8375aa79181c108e99d767d4a11c9b5cc046"
+        },
+        "date": 1664490518767,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.65729,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.722703,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.798276,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.60034,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.77819,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.00451,
             "unit": "2ms",
             "range": "±0%",
             "extra": "luau"
