@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1664490518612,
+  "lastUpdate": 1664491742054,
   "repoUrl": "https://github.com/Roblox/luau",
   "entries": {
     "luau-analyze": [
@@ -3247,6 +3247,58 @@
           "url": "https://github.com/Roblox/luau/commit/944e8375aa79181c108e99d767d4a11c9b5cc046"
         },
         "date": 1664490518610,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 5.46108,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 6.90667,
+            "unit": "6ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 8.29052,
+            "unit": "8ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 11.0888,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "arseny.kapoulkine@gmail.com",
+            "name": "Arseny Kapoulkine",
+            "username": "zeux"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "937ef2efd4d319932cfd108e636ba5379a2301c9",
+          "message": "Cleanup benchmark builds a little bit (#691)\n\nWe don't need to run any cachegrind benchmarks in benchmark-dev, since\r\nbenchmark uses our new callgrind setup instead.\r\n\r\nAlso removes prototyping filters that we no longer need from all builds.",
+          "timestamp": "2022-09-29T15:42:23-07:00",
+          "tree_id": "a1fcf8e5c9c41877f21a196018b8abe40378829c",
+          "url": "https://github.com/Roblox/luau/commit/937ef2efd4d319932cfd108e636ba5379a2301c9"
+        },
+        "date": 1664491742052,
         "tool": "benchmarkluau",
         "benches": [
           {
