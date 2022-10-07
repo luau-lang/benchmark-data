@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1665102547707,
+  "lastUpdate": 1665107425717,
   "repoUrl": "https://github.com/Roblox/luau",
   "entries": {
     "luau-analyze": [
@@ -3403,6 +3403,58 @@
           "url": "https://github.com/Roblox/luau/commit/d5a2a1585e55ed7b69e29e6ebcb73be3d776ce55"
         },
         "date": 1665102547706,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 5.46342,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 6.91596,
+            "unit": "6ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 8.29336,
+            "unit": "8ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 11.1342,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "arseny.kapoulkine@gmail.com",
+            "name": "Arseny Kapoulkine",
+            "username": "zeux"
+          },
+          "committer": {
+            "email": "arseny.kapoulkine@gmail.com",
+            "name": "Arseny Kapoulkine",
+            "username": "zeux"
+          },
+          "distinct": true,
+          "id": "d6aa35583e4be14304d2a17c7d11c8819756beb6",
+          "message": "Add new-release action to automatically build & publish release artifacts",
+          "timestamp": "2022-10-06T18:44:51-07:00",
+          "tree_id": "bdcc688179c2e908a26059d766a7c0670db3f6fd",
+          "url": "https://github.com/Roblox/luau/commit/d6aa35583e4be14304d2a17c7d11c8819756beb6"
+        },
+        "date": 1665107425713,
         "tool": "benchmarkluau",
         "benches": [
           {
