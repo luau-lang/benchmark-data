@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1664493895031,
+  "lastUpdate": 1665102547707,
   "repoUrl": "https://github.com/Roblox/luau",
   "entries": {
     "luau-analyze": [
@@ -3377,6 +3377,58 @@
           {
             "name": "regex-strict",
             "value": 11.0888,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "arseny.kapoulkine@gmail.com",
+            "name": "Arseny Kapoulkine",
+            "username": "zeux"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "d5a2a1585e55ed7b69e29e6ebcb73be3d776ce55",
+          "message": "Sync to upstream/release/548 (#699)\n\n- Fix rare type checking bugs with invalid generic types escaping the\r\nmodule scope\r\n- Fix type checking of variadic type packs in certain cases\r\n- Implement type normalization, which resolves a large set of various\r\nissues with unions/intersections in type checker\r\n- Improve parse errors for trailing commas in function calls and type\r\nlists\r\n- Reduce profiling skew when using --profile with very high frequencies\r\n- Improve performance of `lua_getinfo` (`debug.info`, `debug.traceback`\r\nand profiling overhead are now 20% faster/smaller)\r\n- Improve performance of polymorphic comparisons (1-2% lift on some\r\nbenchmarks)\r\n- Improve performance of closure creation (1-2% lift on some benchmarks)\r\n- Improve string comparison performance (4% lift on string sorting)",
+          "timestamp": "2022-10-06T17:23:29-07:00",
+          "tree_id": "67b6c0d8a876dd8093bed5d626b3d1af442e563e",
+          "url": "https://github.com/Roblox/luau/commit/d5a2a1585e55ed7b69e29e6ebcb73be3d776ce55"
+        },
+        "date": 1665102547706,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 5.46342,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 6.91596,
+            "unit": "6ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 8.29336,
+            "unit": "8ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 11.1342,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"
