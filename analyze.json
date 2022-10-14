@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1665107425717,
+  "lastUpdate": 1665758078593,
   "repoUrl": "https://github.com/Roblox/luau",
   "entries": {
     "luau-analyze": [
@@ -3467,6 +3467,58 @@
           {
             "name": "map-strict",
             "value": 6.91596,
+            "unit": "6ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 8.29336,
+            "unit": "8ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 11.1342,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "johnnymorganz@outlook.com",
+            "name": "JohnnyMorganz",
+            "username": "JohnnyMorganz"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "ff736fd3e41c7c0deea5d54f7f0b1eda321820ee",
+          "message": "Fix segfault in `loadDefinition` for unit tests (#705)\n\n`module` can be empty if the definition file has syntax errors",
+          "timestamp": "2022-10-14T07:28:54-07:00",
+          "tree_id": "48dcd3b509beccba5908e2be99c6b10babefb2fd",
+          "url": "https://github.com/Roblox/luau/commit/ff736fd3e41c7c0deea5d54f7f0b1eda321820ee"
+        },
+        "date": 1665758078591,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 5.46345,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 6.91602,
             "unit": "6ms",
             "range": "±0%",
             "extra": "luau-analyze"
