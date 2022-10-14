@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1665758078593,
+  "lastUpdate": 1665777376235,
   "repoUrl": "https://github.com/Roblox/luau",
   "entries": {
     "luau-analyze": [
@@ -3533,6 +3533,58 @@
           {
             "name": "regex-strict",
             "value": 11.1342,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "75688451+vegorov-rbx@users.noreply.github.com",
+            "name": "vegorov-rbx",
+            "username": "vegorov-rbx"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "76070f8da2de3a4677b804a673bfd9efd5f60241",
+          "message": "Sync to upstream/release/549 (#707)\n\n* Reoptimized math.min/max/bit32 builtins assuming at least 2 arguments are used (1-2% lift on some benchmarks)\r\n* Type errors that mention function types no longer have redundant parenthesis around return type\r\n* Luau REPL now supports --compile=remarks which displays the source code with optimization remarks embedded as comments\r\n* Builtin calls are slightly faster when called with 1-2 arguments (~1% improvement in some benchmarks)",
+          "timestamp": "2022-10-14T12:48:41-07:00",
+          "tree_id": "56727161a805969498adadf41af1992a269a26d4",
+          "url": "https://github.com/Roblox/luau/commit/76070f8da2de3a4677b804a673bfd9efd5f60241"
+        },
+        "date": 1665777376233,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 5.4565,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 6.90858,
+            "unit": "6ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 8.28728,
+            "unit": "8ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 11.1272,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"

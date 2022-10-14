@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1665758078757,
+  "lastUpdate": 1665777376450,
   "repoUrl": "https://github.com/Roblox/luau",
   "entries": {
     "luau --compile": [
@@ -4551,6 +4551,72 @@
           {
             "name": "regex-O2",
             "value": 2.00425,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "75688451+vegorov-rbx@users.noreply.github.com",
+            "name": "vegorov-rbx",
+            "username": "vegorov-rbx"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "76070f8da2de3a4677b804a673bfd9efd5f60241",
+          "message": "Sync to upstream/release/549 (#707)\n\n* Reoptimized math.min/max/bit32 builtins assuming at least 2 arguments are used (1-2% lift on some benchmarks)\r\n* Type errors that mention function types no longer have redundant parenthesis around return type\r\n* Luau REPL now supports --compile=remarks which displays the source code with optimization remarks embedded as comments\r\n* Builtin calls are slightly faster when called with 1-2 arguments (~1% improvement in some benchmarks)",
+          "timestamp": "2022-10-14T12:48:41-07:00",
+          "tree_id": "56727161a805969498adadf41af1992a269a26d4",
+          "url": "https://github.com/Roblox/luau/commit/76070f8da2de3a4677b804a673bfd9efd5f60241"
+        },
+        "date": 1665777376447,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.657729,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.722903,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.79841,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.60113,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.77852,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.00482,
             "unit": "2ms",
             "range": "±0%",
             "extra": "luau"
