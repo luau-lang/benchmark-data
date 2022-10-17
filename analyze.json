@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1665777376235,
+  "lastUpdate": 1666026452061,
   "repoUrl": "https://github.com/Roblox/luau",
   "entries": {
     "luau-analyze": [
@@ -3564,6 +3564,58 @@
           {
             "name": "map-nonstrict",
             "value": 5.4565,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 6.90858,
+            "unit": "6ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 8.28728,
+            "unit": "8ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 11.1272,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "arseny.kapoulkine@gmail.com",
+            "name": "Arseny Kapoulkine",
+            "username": "zeux"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "c6a2d7519382e89261cdc29dcb18dffab417502b",
+          "message": "Improve testing coverage with codegen/O2 in mind (#709)\n\nThis change adds codegen runs to coverage config and adds O2/codegen\r\ntesting to CI.\r\n\r\nNote that we don't run O2 combinations in coverage - it's better that we\r\nsee gaps in O2 coverage in compiler tests, as these are valuable for\r\nvalidating codegen intricacies that are difficult to see from\r\nconformance tests passing/failing.",
+          "timestamp": "2022-10-17T10:02:21-07:00",
+          "tree_id": "c86b53491284d0fd049f3b581364592207d8dcfe",
+          "url": "https://github.com/Roblox/luau/commit/c6a2d7519382e89261cdc29dcb18dffab417502b"
+        },
+        "date": 1666026452059,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 5.45642,
             "unit": "5ms",
             "range": "±0%",
             "extra": "luau-analyze"

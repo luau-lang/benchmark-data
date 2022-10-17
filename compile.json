@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1665777376450,
+  "lastUpdate": 1666026452216,
   "repoUrl": "https://github.com/Roblox/luau",
   "entries": {
     "luau --compile": [
@@ -4617,6 +4617,72 @@
           {
             "name": "regex-O2",
             "value": 2.00482,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "arseny.kapoulkine@gmail.com",
+            "name": "Arseny Kapoulkine",
+            "username": "zeux"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "c6a2d7519382e89261cdc29dcb18dffab417502b",
+          "message": "Improve testing coverage with codegen/O2 in mind (#709)\n\nThis change adds codegen runs to coverage config and adds O2/codegen\r\ntesting to CI.\r\n\r\nNote that we don't run O2 combinations in coverage - it's better that we\r\nsee gaps in O2 coverage in compiler tests, as these are valuable for\r\nvalidating codegen intricacies that are difficult to see from\r\nconformance tests passing/failing.",
+          "timestamp": "2022-10-17T10:02:21-07:00",
+          "tree_id": "c86b53491284d0fd049f3b581364592207d8dcfe",
+          "url": "https://github.com/Roblox/luau/commit/c6a2d7519382e89261cdc29dcb18dffab417502b"
+        },
+        "date": 1666026452214,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.657737,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.722912,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.798419,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.60114,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.77853,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.00483,
             "unit": "2ms",
             "range": "±0%",
             "extra": "luau"
