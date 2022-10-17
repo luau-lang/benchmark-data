@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1666026452061,
+  "lastUpdate": 1666034694324,
   "repoUrl": "https://github.com/Roblox/luau",
   "entries": {
     "luau-analyze": [
@@ -3611,6 +3611,58 @@
           "url": "https://github.com/Roblox/luau/commit/c6a2d7519382e89261cdc29dcb18dffab417502b"
         },
         "date": 1666026452059,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 5.45642,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 6.90858,
+            "unit": "6ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 8.28728,
+            "unit": "8ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 11.1272,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "arseny.kapoulkine@gmail.com",
+            "name": "Arseny Kapoulkine",
+            "username": "zeux"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "49d6bc30adf35ea43d49b476b82bce9d0ad2db0b",
+          "message": "Add bench-codegen benchmark (#713)\n\nWe will now run luau with --codegen during benchmark runs and collect\r\nthe data into separate JSON. Note that we don't yet have the historical\r\ndata for these, which will be backfilled later.",
+          "timestamp": "2022-10-17T12:18:34-07:00",
+          "tree_id": "210494c20e47af40afa021fb0357493381f8bd60",
+          "url": "https://github.com/Roblox/luau/commit/49d6bc30adf35ea43d49b476b82bce9d0ad2db0b"
+        },
+        "date": 1666034694322,
         "tool": "benchmarkluau",
         "benches": [
           {
