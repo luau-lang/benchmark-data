@@ -96,6 +96,9 @@
             },
           ],
         },
+        animation: {
+          duration: 0
+        },
         tooltips: {
           callbacks: {
             afterTitle: (items) => {
