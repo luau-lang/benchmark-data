@@ -70,6 +70,7 @@
             data: dataset.map((d) => d.bench.value),
             borderColor: color,
             backgroundColor: color + "60", // Add alpha for #rrggbbaa
+            cubicInterpolationMode: 'monotone'
           },
         ],
       };
