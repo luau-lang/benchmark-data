@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1666282409820,
+  "lastUpdate": 1666365168641,
   "repoUrl": "https://github.com/Roblox/luau",
   "entries": {
     "luau --compile": [
@@ -4841,6 +4841,72 @@
           "url": "https://github.com/Roblox/luau/commit/c4c120513ff965b117bc006be6f98e227b74e1ae"
         },
         "date": 1666282409818,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.657799,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.722971,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.798479,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.60118,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.7786,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.00489,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "johnnymorganz@outlook.com",
+            "name": "JohnnyMorganz",
+            "username": "JohnnyMorganz"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "12ee1407a1b385bbc65550e37930d941c124ebf3",
+          "message": "Add named parameters to `math` lib (#722)\n\nName the parameters used in `math` lib\r\n\r\nThis is mainly done to highlight the particular confusion for\r\n`math.atan2`, where `y` comes before `x`, but this might not be\r\nimmediately obvious.\r\n\r\nAnd then I added the rest of the names for consistency.\r\n\r\nNote: I didn't add names to `math.random` as it's currently typed as\r\n`(number?, number?) -> number`. Naming it `min` and `max` is technically\r\nincorrect for the 1 argument version.\r\nMaybe it should be typed as an intersection instead?",
+          "timestamp": "2022-10-21T08:05:56-07:00",
+          "tree_id": "90490c92ffd8d968b2e106888d8cbc163f047169",
+          "url": "https://github.com/Roblox/luau/commit/12ee1407a1b385bbc65550e37930d941c124ebf3"
+        },
+        "date": 1666365168638,
         "tool": "benchmarkluau",
         "benches": [
           {

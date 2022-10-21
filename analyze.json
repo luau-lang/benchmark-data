@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1666282409663,
+  "lastUpdate": 1666365168478,
   "repoUrl": "https://github.com/Roblox/luau",
   "entries": {
     "luau-analyze": [
@@ -3793,6 +3793,58 @@
           {
             "name": "regex-strict",
             "value": 11.1272,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "johnnymorganz@outlook.com",
+            "name": "JohnnyMorganz",
+            "username": "JohnnyMorganz"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "12ee1407a1b385bbc65550e37930d941c124ebf3",
+          "message": "Add named parameters to `math` lib (#722)\n\nName the parameters used in `math` lib\r\n\r\nThis is mainly done to highlight the particular confusion for\r\n`math.atan2`, where `y` comes before `x`, but this might not be\r\nimmediately obvious.\r\n\r\nAnd then I added the rest of the names for consistency.\r\n\r\nNote: I didn't add names to `math.random` as it's currently typed as\r\n`(number?, number?) -> number`. Naming it `min` and `max` is technically\r\nincorrect for the 1 argument version.\r\nMaybe it should be typed as an intersection instead?",
+          "timestamp": "2022-10-21T08:05:56-07:00",
+          "tree_id": "90490c92ffd8d968b2e106888d8cbc163f047169",
+          "url": "https://github.com/Roblox/luau/commit/12ee1407a1b385bbc65550e37930d941c124ebf3"
+        },
+        "date": 1666365168476,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 5.4592,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 6.9039,
+            "unit": "6ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 8.29509,
+            "unit": "8ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 11.1365,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"
