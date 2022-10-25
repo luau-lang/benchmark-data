@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1666657868833,
+  "lastUpdate": 1666740614830,
   "repoUrl": "https://github.com/Roblox/luau",
   "entries": {
     "luau --compile": [
@@ -5093,6 +5093,86 @@
           {
             "name": "regex-O2-codegen",
             "value": 3.57506,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "johnnymorganz@outlook.com",
+            "name": "JohnnyMorganz",
+            "username": "JohnnyMorganz"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "ad7d006fb29a6827165951fb9fb33980dd66eabf",
+          "message": "Use overloaded documentation symbol for class methods/table props (#724)\n\nRight now `getDocumentationSymbol` on an overloaded class method or\r\ntable prop just gives the prop name, not prepended with `/overload/ +\r\ntoString(overload)`.\r\n\r\nThis causes the incorrect symbol to be used for `table.insert`,\r\n`BrickColor.new`, `Color3.new` etc. (present in\r\nhttps://raw.githubusercontent.com/MaximumADHD/Roblox-Client-Tracker/roblox/api-docs/en-us.json)\r\n\r\nCo-authored-by: vegorov-rbx <75688451+vegorov-rbx@users.noreply.github.com>",
+          "timestamp": "2022-10-25T16:22:19-07:00",
+          "tree_id": "09ad06fdd6d11e759823972b579ae2b17d600e97",
+          "url": "https://github.com/Roblox/luau/commit/ad7d006fb29a6827165951fb9fb33980dd66eabf"
+        },
+        "date": 1666740614828,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.669897,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.734392,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.810552,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 1.43061,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.62914,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.80757,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.03454,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 3.57505,
             "unit": "3ms",
             "range": "±0%",
             "extra": "luau"

@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1666657868676,
+  "lastUpdate": 1666740614661,
   "repoUrl": "https://github.com/Roblox/luau",
   "entries": {
     "luau-analyze": [
@@ -3942,6 +3942,58 @@
           {
             "name": "regex-nonstrict",
             "value": 8.51766,
+            "unit": "8ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 11.469,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "johnnymorganz@outlook.com",
+            "name": "JohnnyMorganz",
+            "username": "JohnnyMorganz"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "ad7d006fb29a6827165951fb9fb33980dd66eabf",
+          "message": "Use overloaded documentation symbol for class methods/table props (#724)\n\nRight now `getDocumentationSymbol` on an overloaded class method or\r\ntable prop just gives the prop name, not prepended with `/overload/ +\r\ntoString(overload)`.\r\n\r\nThis causes the incorrect symbol to be used for `table.insert`,\r\n`BrickColor.new`, `Color3.new` etc. (present in\r\nhttps://raw.githubusercontent.com/MaximumADHD/Roblox-Client-Tracker/roblox/api-docs/en-us.json)\r\n\r\nCo-authored-by: vegorov-rbx <75688451+vegorov-rbx@users.noreply.github.com>",
+          "timestamp": "2022-10-25T16:22:19-07:00",
+          "tree_id": "09ad06fdd6d11e759823972b579ae2b17d600e97",
+          "url": "https://github.com/Roblox/luau/commit/ad7d006fb29a6827165951fb9fb33980dd66eabf"
+        },
+        "date": 1666740614658,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 5.673,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 7.20302,
+            "unit": "7ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 8.51767,
             "unit": "8ms",
             "range": "±0%",
             "extra": "luau-analyze"
