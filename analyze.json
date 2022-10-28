@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1666740614661,
+  "lastUpdate": 1666953905836,
   "repoUrl": "https://github.com/Roblox/luau",
   "entries": {
     "luau-analyze": [
@@ -4001,6 +4001,58 @@
           {
             "name": "regex-strict",
             "value": 11.469,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "75688451+vegorov-rbx@users.noreply.github.com",
+            "name": "vegorov-rbx",
+            "username": "vegorov-rbx"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "a6b5051edc86069b58073aa46cb7d8e3f91a4b62",
+          "message": "Sync to upstream/release/551 (#727)\n\n* https://github.com/Roblox/luau/pull/719\r\n* Improved `Failed to unify type packs` error message to be reported as\r\n`Type pack 'X' could not be converted into 'Y'`\r\n* https://github.com/Roblox/luau/pull/722\r\n* 1% reduction in executed instruction count by removing a check in fast\r\ncall dispatch\r\n* Additional fixes to reported error location of OOM errors in VM\r\n* Improve `math.sqrt`, `math.floor` and `math.ceil` performance on\r\nadditional compilers and platforms (1-2% geomean improvement including\r\n8-9% on math-cordic)\r\n* All thrown exceptions by Luau analysis are derived from\r\n`Luau::InternalCompilerError`\r\n* When a call site has fewer arguments than required, error now reports\r\nthe location of the function name instead of the argument to the\r\nfunction\r\n* https://github.com/Roblox/luau/pull/724\r\n* Fixed https://github.com/Roblox/luau/issues/725\r\n\r\nCo-authored-by: Arseny Kapoulkine <arseny.kapoulkine@gmail.com>\r\nCo-authored-by: Andy Friesen <afriesen@roblox.com>",
+          "timestamp": "2022-10-28T03:37:29-07:00",
+          "tree_id": "a2fa3ead597d7eec9bcbadc3c197d97841f31a0f",
+          "url": "https://github.com/Roblox/luau/commit/a6b5051edc86069b58073aa46cb7d8e3f91a4b62"
+        },
+        "date": 1666953905834,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 5.67843,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 7.21725,
+            "unit": "7ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 8.4954,
+            "unit": "8ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 11.4556,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"
