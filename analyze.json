@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1666953905836,
+  "lastUpdate": 1666985415267,
   "repoUrl": "https://github.com/Roblox/luau",
   "entries": {
     "luau-analyze": [
@@ -4039,6 +4039,58 @@
           {
             "name": "map-strict",
             "value": 7.21725,
+            "unit": "7ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 8.4954,
+            "unit": "8ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 11.4556,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "boynedmaster@gmail.com",
+            "name": "boyned//Kampfkarren",
+            "username": "Kampfkarren"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "e37eb3c7789e37ed450fb9a2beaf722012cbe33b",
+          "message": "Fix { range to be within the interpolated string (#728)\n\nCorrects `{` range to be inside the interpolated string, needed for syntax highlighting.",
+          "timestamp": "2022-10-28T12:22:26-07:00",
+          "tree_id": "33f3f5ae7638ad70042d18320f501c1b69fca568",
+          "url": "https://github.com/Roblox/luau/commit/e37eb3c7789e37ed450fb9a2beaf722012cbe33b"
+        },
+        "date": 1666985415264,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 5.67843,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 7.21728,
             "unit": "7ms",
             "range": "±0%",
             "extra": "luau-analyze"

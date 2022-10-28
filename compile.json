@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1666953905997,
+  "lastUpdate": 1666985415430,
   "repoUrl": "https://github.com/Roblox/luau",
   "entries": {
     "luau --compile": [
@@ -5246,6 +5246,86 @@
           {
             "name": "regex-O2",
             "value": 2.00369,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 3.73257,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "boynedmaster@gmail.com",
+            "name": "boyned//Kampfkarren",
+            "username": "Kampfkarren"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "e37eb3c7789e37ed450fb9a2beaf722012cbe33b",
+          "message": "Fix { range to be within the interpolated string (#728)\n\nCorrects `{` range to be inside the interpolated string, needed for syntax highlighting.",
+          "timestamp": "2022-10-28T12:22:26-07:00",
+          "tree_id": "33f3f5ae7638ad70042d18320f501c1b69fca568",
+          "url": "https://github.com/Roblox/luau/commit/e37eb3c7789e37ed450fb9a2beaf722012cbe33b"
+        },
+        "date": 1666985415428,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.659338,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.724032,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.800192,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 1.47042,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.59789,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.77671,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.00368,
             "unit": "2ms",
             "range": "±0%",
             "extra": "luau"
