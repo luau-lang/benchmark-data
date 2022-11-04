@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1666985415430,
+  "lastUpdate": 1667583655412,
   "repoUrl": "https://github.com/Roblox/luau",
   "entries": {
     "luau --compile": [
@@ -5333,6 +5333,86 @@
           {
             "name": "regex-O2-codegen",
             "value": 3.73257,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "afriesen@roblox.com",
+            "name": "Andy Friesen",
+            "username": "andyfriesen"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "c33700e47390787e186a6bc1ffb0e366d0dba763",
+          "message": "Sync to upstream/release/552 (#735)\n\n* Reduce the stack utilization of type checking.\r\n* Improve the error message that's reported when a delimiting comma is\r\nmissing from a table literal. eg\r\n```lua\r\nlocal t = {\r\n    first = 1\r\n    second = 2\r\n}```",
+          "timestamp": "2022-11-04T10:33:22-07:00",
+          "tree_id": "702238bcd137f0d660cc8232461a11e489ca2672",
+          "url": "https://github.com/Roblox/luau/commit/c33700e47390787e186a6bc1ffb0e366d0dba763"
+        },
+        "date": 1667583655409,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.659123,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.723812,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.799973,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 1.72148,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.59762,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.77578,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.00274,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 3.97142,
             "unit": "3ms",
             "range": "±0%",
             "extra": "luau"
