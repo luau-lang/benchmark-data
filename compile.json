@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1667583655412,
+  "lastUpdate": 1668121221255,
   "repoUrl": "https://github.com/Roblox/luau",
   "entries": {
     "luau --compile": [
@@ -5413,6 +5413,86 @@
           {
             "name": "regex-O2-codegen",
             "value": 3.97142,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "75688451+vegorov-rbx@users.noreply.github.com",
+            "name": "vegorov-rbx",
+            "username": "vegorov-rbx"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "816e41a8f2eae7ca2d9d9fb4d2f847e33c087650",
+          "message": "Sync to upstream/release/553 (#742)\n\n* Type inference of `a and b` and `a or b` has been improved (Fixes\r\nhttps://github.com/Roblox/luau/issues/730)\r\n* Improved error message when `for ... in x` loop iterates over a value\r\nthat could be 'nil'\r\n* Return type of `next` not includes 'nil' (Fixes\r\nhttps://github.com/Roblox/luau/issues/706)\r\n* Improved type inference of `string` type\r\n* Luau library table type names are now reported as `typeof(string)`/etc\r\ninstead of just `string` which was misleading\r\n* Added parsing error when optional type alias type parameter wasn't\r\nprovided after `=` token\r\n* Improved tagged union type refinement in conditional expressions, type\r\nin `else` branch should no longer include previously handled union\r\noptions",
+          "timestamp": "2022-11-10T14:53:13-08:00",
+          "tree_id": "b7a25689f20e07f78e13c2a1ee5e68a6706230f8",
+          "url": "https://github.com/Roblox/luau/commit/816e41a8f2eae7ca2d9d9fb4d2f847e33c087650"
+        },
+        "date": 1668121221252,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.659047,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.723458,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.799618,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 1.72348,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.5977,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.77594,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.0029,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 3.97603,
             "unit": "3ms",
             "range": "±0%",
             "extra": "luau"
