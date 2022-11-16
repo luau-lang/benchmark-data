@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1668121221255,
+  "lastUpdate": 1668622964963,
   "repoUrl": "https://github.com/Roblox/luau",
   "entries": {
     "luau --compile": [
@@ -5493,6 +5493,86 @@
           {
             "name": "regex-O2-codegen",
             "value": 3.97603,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "boynedmaster@gmail.com",
+            "name": "boyned//Kampfkarren",
+            "username": "Kampfkarren"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "aa7c64517ca550eff7087a197e667f8676db7c17",
+          "message": "Fix string interpolation autocomplete and location (#748)\n\nString interpolation autocomplete was not working and was just using\r\ndefault autocomplete. This fixes it so that inside a string it is\r\ntreated as normal, and inside an expression it suggests expression level\r\nautocomplete.\r\n\r\nAlso fixes the range, which was previously just the first lexeme.",
+          "timestamp": "2022-11-16T10:15:01-08:00",
+          "tree_id": "ca2f1f9d2820a8a855448ccc261c905bdc381dc3",
+          "url": "https://github.com/Roblox/luau/commit/aa7c64517ca550eff7087a197e667f8676db7c17"
+        },
+        "date": 1668622964960,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.659063,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.723493,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.799653,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 1.72352,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.59773,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.77602,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.00298,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 3.9761,
             "unit": "3ms",
             "range": "±0%",
             "extra": "luau"

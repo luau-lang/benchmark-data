@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1668121221091,
+  "lastUpdate": 1668622964802,
   "repoUrl": "https://github.com/Roblox/luau",
   "entries": {
     "luau-analyze": [
@@ -4209,6 +4209,58 @@
           {
             "name": "regex-strict",
             "value": 10.7444,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "boynedmaster@gmail.com",
+            "name": "boyned//Kampfkarren",
+            "username": "Kampfkarren"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "aa7c64517ca550eff7087a197e667f8676db7c17",
+          "message": "Fix string interpolation autocomplete and location (#748)\n\nString interpolation autocomplete was not working and was just using\r\ndefault autocomplete. This fixes it so that inside a string it is\r\ntreated as normal, and inside an expression it suggests expression level\r\nautocomplete.\r\n\r\nAlso fixes the range, which was previously just the first lexeme.",
+          "timestamp": "2022-11-16T10:15:01-08:00",
+          "tree_id": "ca2f1f9d2820a8a855448ccc261c905bdc381dc3",
+          "url": "https://github.com/Roblox/luau/commit/aa7c64517ca550eff7087a197e667f8676db7c17"
+        },
+        "date": 1668622964800,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 5.35363,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 6.80571,
+            "unit": "6ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 8.25739,
+            "unit": "8ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 10.7443,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"
