@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1668622964802,
+  "lastUpdate": 1668801344364,
   "repoUrl": "https://github.com/Roblox/luau",
   "entries": {
     "luau-analyze": [
@@ -4261,6 +4261,58 @@
           {
             "name": "regex-strict",
             "value": 10.7443,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "afriesen@roblox.com",
+            "name": "Andy Friesen",
+            "username": "andyfriesen"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "95d9c6d194f3b5ddfbb464d012e62da7e8b1ba59",
+          "message": " Sync to upstream/release/553 (#751)\n\n* Autocomplete support for interpolated strings.\r\n* Improved parse errors in various situations involving interpolated\r\nstrings.",
+          "timestamp": "2022-11-18T11:47:21-08:00",
+          "tree_id": "46d285884c6e38081d82b9fd04d754fd91a40200",
+          "url": "https://github.com/Roblox/luau/commit/95d9c6d194f3b5ddfbb464d012e62da7e8b1ba59"
+        },
+        "date": 1668801344362,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 5.37001,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 6.81681,
+            "unit": "6ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 8.27515,
+            "unit": "8ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 10.7606,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"
