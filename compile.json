@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1668801344546,
+  "lastUpdate": 1669642474301,
   "repoUrl": "https://github.com/Roblox/luau",
   "entries": {
     "luau --compile": [
@@ -5653,6 +5653,86 @@
           {
             "name": "regex-O2-codegen",
             "value": 3.97595,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "johnnymorganz@outlook.com",
+            "name": "JohnnyMorganz",
+            "username": "JohnnyMorganz"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "7dbe47f4ddd80a513a5bca8856a04fea17ff14b1",
+          "message": "Handle cyclically referenced declared classes (#729)\n\nCloses #631 \r\n\r\nPerforms a \"two pass\" approach, where we first call `prototype` on the\r\nclass definition.\r\nThe prototype phase checks for errors and creates a base CTV for the\r\nclass, which other types can then reference.\r\n\r\nThe second `check` phase fills it out with all the defined\r\nproperties/methods\r\n\r\nCo-authored-by: vegorov-rbx <75688451+vegorov-rbx@users.noreply.github.com>",
+          "timestamp": "2022-11-28T05:25:44-08:00",
+          "tree_id": "b61d6838ba7428727748c27abf747004decfb0d3",
+          "url": "https://github.com/Roblox/luau/commit/7dbe47f4ddd80a513a5bca8856a04fea17ff14b1"
+        },
+        "date": 1669642474298,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.660964,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.725405,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.801641,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 1.7253,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.59995,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.77819,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.00537,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 3.97786,
             "unit": "3ms",
             "range": "±0%",
             "extra": "luau"
