@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1669658990728,
+  "lastUpdate": 1670004990528,
   "repoUrl": "https://github.com/Roblox/luau",
   "entries": {
     "luau --compile": [
@@ -5813,6 +5813,86 @@
           {
             "name": "regex-O2-codegen",
             "value": 3.97785,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "75688451+vegorov-rbx@users.noreply.github.com",
+            "name": "vegorov-rbx",
+            "username": "vegorov-rbx"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "91302d1d4cf01b052b103d9d281567250e532813",
+          "message": "Fix coverage github action by using clang++ without a specific version (#769)\n\nGithub fails to find clang++-10.\r\nSince we install llvm without a specific version number, we shouldn't\r\nuse clang++-10 with a version number.\r\n\r\nI tried installing llvm-10, but that package is not available on github\r\n(any more?).",
+          "timestamp": "2022-12-02T10:08:55-08:00",
+          "tree_id": "d46e553b632399616cbe3e1b5d6565a65332fb73",
+          "url": "https://github.com/Roblox/luau/commit/91302d1d4cf01b052b103d9d281567250e532813"
+        },
+        "date": 1670004990525,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.660989,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.725429,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.801666,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 1.72527,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.59999,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.77823,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.00541,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 3.97787,
             "unit": "3ms",
             "range": "±0%",
             "extra": "luau"

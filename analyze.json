@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1669658990562,
+  "lastUpdate": 1670004990368,
   "repoUrl": "https://github.com/Roblox/luau",
   "entries": {
     "luau-analyze": [
@@ -4403,6 +4403,58 @@
           {
             "name": "map-strict",
             "value": 6.79783,
+            "unit": "6ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 8.13967,
+            "unit": "8ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 10.6497,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "75688451+vegorov-rbx@users.noreply.github.com",
+            "name": "vegorov-rbx",
+            "username": "vegorov-rbx"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "91302d1d4cf01b052b103d9d281567250e532813",
+          "message": "Fix coverage github action by using clang++ without a specific version (#769)\n\nGithub fails to find clang++-10.\r\nSince we install llvm without a specific version number, we shouldn't\r\nuse clang++-10 with a version number.\r\n\r\nI tried installing llvm-10, but that package is not available on github\r\n(any more?).",
+          "timestamp": "2022-12-02T10:08:55-08:00",
+          "tree_id": "d46e553b632399616cbe3e1b5d6565a65332fb73",
+          "url": "https://github.com/Roblox/luau/commit/91302d1d4cf01b052b103d9d281567250e532813"
+        },
+        "date": 1670004990365,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 5.34921,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 6.79784,
             "unit": "6ms",
             "range": "±0%",
             "extra": "luau-analyze"
