@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1670005152511,
+  "lastUpdate": 1670354901974,
   "repoUrl": "https://github.com/Roblox/luau",
   "entries": {
     "luau-analyze": [
@@ -4495,6 +4495,58 @@
           "url": "https://github.com/Roblox/luau/commit/59ae47db43967fe65c7dc188e7a4d60212b6105d"
         },
         "date": 1670005152508,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 5.39665,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 7.00263,
+            "unit": "7ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 8.21074,
+            "unit": "8ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 11.3032,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "aorlenko@yelp.com",
+            "name": "Alex Orlenko",
+            "username": "khvzak"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "e9d4ee7a33c1d586a2d037244166a0e9fedc1dbe",
+          "message": "Make pseudo-indices relative to LUAI_MAXCSTACK (#766)\n\nThis is useful in particular if redefine `LUAI_MAXCSTACK` to a higher\r\nvalue than the current one (8000).\r\nIe. passing `-D LUAI_MAXCSTACK=1000000` would not work as overlaps with\r\n`LUA_REGISTRYINDEX` and below.",
+          "timestamp": "2022-12-06T11:20:24-08:00",
+          "tree_id": "49d17e0771ad15cf5d62093478eedab69ec973cf",
+          "url": "https://github.com/Roblox/luau/commit/e9d4ee7a33c1d586a2d037244166a0e9fedc1dbe"
+        },
+        "date": 1670354901972,
         "tool": "benchmarkluau",
         "benches": [
           {
