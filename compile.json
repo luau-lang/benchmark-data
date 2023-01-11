@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1673040166033,
+  "lastUpdate": 1673454921159,
   "repoUrl": "https://github.com/Roblox/luau",
   "entries": {
     "luau --compile": [
@@ -6373,6 +6373,86 @@
           {
             "name": "regex-O2-codegen",
             "value": 4.02012,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "johnnymorganz@outlook.com",
+            "name": "JohnnyMorganz",
+            "username": "JohnnyMorganz"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "86494918f51a1cd6290c2616c508bd36cc34b5a3",
+          "message": "Pass string content to autocomplete callback (#800)\n\nCloses #718 \r\n\r\nWe pass an extra `contents` parameter to the string callback function to\r\nprovide contextual information for autocomplete.\r\n\r\nBecause we support both string literals and simple interpolated strings,\r\nwe pass it through as a `std::string` value.\r\n\r\nThis is a breaking change",
+          "timestamp": "2023-01-11T08:28:11-08:00",
+          "tree_id": "3846d792718b8086383b97ed32f2ebef1d8b28f0",
+          "url": "https://github.com/Roblox/luau/commit/86494918f51a1cd6290c2616c508bd36cc34b5a3"
+        },
+        "date": 1673454921156,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.671425,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.735837,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.812085,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 1.73859,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.63339,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.81177,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.03899,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 4.02041,
             "unit": "4ms",
             "range": "±0%",
             "extra": "luau"
