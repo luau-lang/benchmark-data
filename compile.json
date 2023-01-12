@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1673454921159,
+  "lastUpdate": 1673533737605,
   "repoUrl": "https://github.com/Roblox/luau",
   "entries": {
     "luau --compile": [
@@ -6453,6 +6453,86 @@
           {
             "name": "regex-O2-codegen",
             "value": 4.02041,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "johnnymorganz@outlook.com",
+            "name": "JohnnyMorganz",
+            "username": "JohnnyMorganz"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "0af10417cd5e4b09fe1a55eb8dbddfb6988737d6",
+          "message": "Attach definition location to `TableType` (#801)\n\nHaving the location where the table type is defined is useful for\r\ntracking other info such as documentation comments, or pointing back\r\nthrough \"Go To Definition\" functionality etc.\r\n\r\nThis adds in the required info",
+          "timestamp": "2023-01-12T06:21:25-08:00",
+          "tree_id": "2c4b233dabb37adeca33724bbfc48b5e243a90a5",
+          "url": "https://github.com/Roblox/luau/commit/0af10417cd5e4b09fe1a55eb8dbddfb6988737d6"
+        },
+        "date": 1673533737602,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.671482,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.735893,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.812142,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 1.73868,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.63342,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.8118,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.03902,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 4.02044,
             "unit": "4ms",
             "range": "±0%",
             "extra": "luau"

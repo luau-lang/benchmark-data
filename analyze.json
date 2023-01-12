@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1673454921006,
+  "lastUpdate": 1673533737446,
   "repoUrl": "https://github.com/Roblox/luau",
   "entries": {
     "luau-analyze": [
@@ -4833,6 +4833,58 @@
           {
             "name": "regex-strict",
             "value": 11.3453,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "johnnymorganz@outlook.com",
+            "name": "JohnnyMorganz",
+            "username": "JohnnyMorganz"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "0af10417cd5e4b09fe1a55eb8dbddfb6988737d6",
+          "message": "Attach definition location to `TableType` (#801)\n\nHaving the location where the table type is defined is useful for\r\ntracking other info such as documentation comments, or pointing back\r\nthrough \"Go To Definition\" functionality etc.\r\n\r\nThis adds in the required info",
+          "timestamp": "2023-01-12T06:21:25-08:00",
+          "tree_id": "2c4b233dabb37adeca33724bbfc48b5e243a90a5",
+          "url": "https://github.com/Roblox/luau/commit/0af10417cd5e4b09fe1a55eb8dbddfb6988737d6"
+        },
+        "date": 1673533737444,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 5.40881,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 7.02942,
+            "unit": "7ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 8.23202,
+            "unit": "8ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 11.3498,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"
