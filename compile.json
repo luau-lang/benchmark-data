@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1673533737605,
+  "lastUpdate": 1674247054349,
   "repoUrl": "https://github.com/Roblox/luau",
   "entries": {
     "luau --compile": [
@@ -6533,6 +6533,86 @@
           {
             "name": "regex-O2-codegen",
             "value": 4.02044,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "75688451+vegorov-rbx@users.noreply.github.com",
+            "name": "vegorov-rbx",
+            "username": "vegorov-rbx"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "4a2e8013c765e363dae51c5dc01aeddcd5f82f3e",
+          "message": "Sync to upstream/release/560 (#810)\n\n* For autocomplete, additional information is included in Scope for type\r\nalias name locations and names of imported modules\r\n* Improved autocomplete suggestions in 'for' and 'while' loop headers\r\n* String match functions return types are now optional strings and\r\nnumbers because match is not guaranteed at runtime\r\n* Fixed build issue on gcc 11 and up (Fixes\r\nhttps://github.com/Roblox/luau/issues/806)",
+          "timestamp": "2023-01-20T12:27:03-08:00",
+          "tree_id": "982a037dcfefe6e837de34bc0b138d6ab1bef4cf",
+          "url": "https://github.com/Roblox/luau/commit/4a2e8013c765e363dae51c5dc01aeddcd5f82f3e"
+        },
+        "date": 1674247054346,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.672911,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.737981,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.812934,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 1.83065,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.63383,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.8122,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.03941,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 4.04076,
             "unit": "4ms",
             "range": "±0%",
             "extra": "luau"
