@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1674859056764,
+  "lastUpdate": 1675452850146,
   "repoUrl": "https://github.com/Roblox/luau",
   "entries": {
     "callgrind codegen": [
@@ -5881,6 +5881,233 @@
           {
             "name": "voxelgen",
             "value": 41.321,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-codegen"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "75688451+vegorov-rbx@users.noreply.github.com",
+            "name": "vegorov-rbx",
+            "username": "vegorov-rbx"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "62483d40f0f2b818886fafe4b68e85cb762e793e",
+          "message": "Sync to upstream/release/562 (#828)\n\n* Fixed rare use-after-free in analysis during table unification\r\n\r\nA lot of work these past months went into two new Luau components:\r\n* A near full rewrite of the typechecker using a new deferred constraint\r\nresolution system\r\n* Native code generation for AoT/JiT compilation of VM bytecode into x64\r\n(avx)/arm64 instructions\r\n\r\nBoth of these components are far from finished and we don't provide\r\ndocumentation on building and using them at this point.\r\nHowever, curious community members expressed interest in learning about\r\nchanges that go into these components each week, so we are now listing\r\nthem here in the 'sync' pull request descriptions.\r\n\r\n---\r\nNew typechecker can be enabled by setting\r\nDebugLuauDeferredConstraintResolution flag to 'true'.\r\nIt is considered unstable right now, so try it at your own risk.\r\nEven though it already provides better type inference than the current\r\none in some cases, our main goal right now is to reach feature parity\r\nwith current typechecker.\r\nFeatures which improve over the capabilities of the current typechecker\r\nare marked as '(NEW)'.\r\n\r\nChanges to new typechecker:\r\n* Regular for loop index and parameters are now typechecked\r\n* Invalid type annotations on local variables are ignored to improve\r\nautocomplete\r\n* Fixed missing autocomplete type suggestions for function arguments\r\n* Type reduction is now performed to produce simpler types to be\r\npresented to the user (error messages, custom LSPs)\r\n* Internally, complex types like '((number | string) & ~(false?)) |\r\nstring' can be produced, which is just 'string | number' when simplified\r\n* Fixed spots where support for unknown and never types was missing\r\n* (NEW) Length operator '#' is now valid to use on top table type, this\r\ntype comes up when doing typeof(x) == \"table\" guards and isn't available\r\nin current typechecker\r\n\r\n---\r\nChanges to native code generation:\r\n* Additional math library fast calls are now lowered to x64: math.ldexp,\r\nmath.round, math.frexp, math.modf, math.sign and math.clamp",
+          "timestamp": "2023-02-03T11:26:13-08:00",
+          "tree_id": "8af19d281d0fdafd139799d4ebc85d4397b10493",
+          "url": "https://github.com/Roblox/luau/commit/62483d40f0f2b818886fafe4b68e85cb762e793e"
+        },
+        "date": 1675452850143,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "base64",
+            "value": 16.95,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-codegen"
+          },
+          {
+            "name": "chess",
+            "value": 58.561,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-codegen"
+          },
+          {
+            "name": "life",
+            "value": 43.106,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-codegen"
+          },
+          {
+            "name": "qsort",
+            "value": 49.378,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-codegen"
+          },
+          {
+            "name": "sha256",
+            "value": 14.242,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-codegen"
+          },
+          {
+            "name": "ack",
+            "value": 41.969,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-codegen"
+          },
+          {
+            "name": "binary-trees",
+            "value": 21.794,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-codegen"
+          },
+          {
+            "name": "fannkuchen-redux",
+            "value": 6.018,
+            "unit": "6ms",
+            "range": "±0.000%",
+            "extra": "luau-codegen"
+          },
+          {
+            "name": "fixpoint-fact",
+            "value": 54.246,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-codegen"
+          },
+          {
+            "name": "heapsort",
+            "value": 10.674,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-codegen"
+          },
+          {
+            "name": "mandel",
+            "value": 50.933,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-codegen"
+          },
+          {
+            "name": "n-body",
+            "value": 16.791,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-codegen"
+          },
+          {
+            "name": "qt",
+            "value": 29.367,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-codegen"
+          },
+          {
+            "name": "queen",
+            "value": 0.944,
+            "unit": "0ms",
+            "range": "±0.000%",
+            "extra": "luau-codegen"
+          },
+          {
+            "name": "scimark",
+            "value": 45.503,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-codegen"
+          },
+          {
+            "name": "spectral-norm",
+            "value": 5.152,
+            "unit": "5ms",
+            "range": "±0.000%",
+            "extra": "luau-codegen"
+          },
+          {
+            "name": "sieve",
+            "value": 86.578,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-codegen"
+          },
+          {
+            "name": "3d-cube",
+            "value": 4.734,
+            "unit": "4ms",
+            "range": "±0.000%",
+            "extra": "luau-codegen"
+          },
+          {
+            "name": "3d-morph",
+            "value": 5.101,
+            "unit": "5ms",
+            "range": "±0.000%",
+            "extra": "luau-codegen"
+          },
+          {
+            "name": "3d-raytrace",
+            "value": 5.078,
+            "unit": "5ms",
+            "range": "±0.000%",
+            "extra": "luau-codegen"
+          },
+          {
+            "name": "controlflow-recursive",
+            "value": 3.666,
+            "unit": "3ms",
+            "range": "±0.000%",
+            "extra": "luau-codegen"
+          },
+          {
+            "name": "crypto-aes",
+            "value": 9.39,
+            "unit": "9ms",
+            "range": "±0.000%",
+            "extra": "luau-codegen"
+          },
+          {
+            "name": "fannkuch",
+            "value": 11.664,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-codegen"
+          },
+          {
+            "name": "math-cordic",
+            "value": 6.223,
+            "unit": "6ms",
+            "range": "±0.000%",
+            "extra": "luau-codegen"
+          },
+          {
+            "name": "math-partial-sums",
+            "value": 2.628,
+            "unit": "2ms",
+            "range": "±0.000%",
+            "extra": "luau-codegen"
+          },
+          {
+            "name": "n-body-oop",
+            "value": 25.536,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-codegen"
+          },
+          {
+            "name": "tictactoe",
+            "value": 68.739,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-codegen"
+          },
+          {
+            "name": "trig",
+            "value": 12.067,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-codegen"
+          },
+          {
+            "name": "voxelgen",
+            "value": 41.325,
             "unit": "ms",
             "range": "±0.000%",
             "extra": "luau-codegen"
