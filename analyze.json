@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1675452850496,
+  "lastUpdate": 1675952431785,
   "repoUrl": "https://github.com/Roblox/luau",
   "entries": {
     "luau-analyze": [
@@ -5015,6 +5015,58 @@
           "url": "https://github.com/Roblox/luau/commit/62483d40f0f2b818886fafe4b68e85cb762e793e"
         },
         "date": 1675452850493,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 5.51932,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 7.1611,
+            "unit": "7ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 8.43882,
+            "unit": "8ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 11.598,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "68203000+EpixScripts@users.noreply.github.com",
+            "name": "Epix",
+            "username": "EpixScripts"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "18a1dc344045ae17f6fe15ea86418d2f18a03c23",
+          "message": "Fix comments on jump instructions with AUX (#808)\n\nIt seems like for jump instructions that include an AUX 32-bit word,\r\nthat index is included as part of the jump offset.",
+          "timestamp": "2023-02-09T06:12:58-08:00",
+          "tree_id": "64a449788f25b1ce1f81bbbb348dfaab42ba2535",
+          "url": "https://github.com/Roblox/luau/commit/18a1dc344045ae17f6fe15ea86418d2f18a03c23"
+        },
+        "date": 1675952431782,
         "tool": "benchmarkluau",
         "benches": [
           {

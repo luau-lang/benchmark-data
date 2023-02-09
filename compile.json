@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1675452850661,
+  "lastUpdate": 1675952431948,
   "repoUrl": "https://github.com/Roblox/luau",
   "entries": {
     "luau --compile": [
@@ -6773,6 +6773,86 @@
           {
             "name": "regex-O2-codegen",
             "value": 5.36972,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "68203000+EpixScripts@users.noreply.github.com",
+            "name": "Epix",
+            "username": "EpixScripts"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "18a1dc344045ae17f6fe15ea86418d2f18a03c23",
+          "message": "Fix comments on jump instructions with AUX (#808)\n\nIt seems like for jump instructions that include an AUX 32-bit word,\r\nthat index is included as part of the jump offset.",
+          "timestamp": "2023-02-09T06:12:58-08:00",
+          "tree_id": "64a449788f25b1ce1f81bbbb348dfaab42ba2535",
+          "url": "https://github.com/Roblox/luau/commit/18a1dc344045ae17f6fe15ea86418d2f18a03c23"
+        },
+        "date": 1675952431945,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.674098,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.735994,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.811318,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 2.18941,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.63962,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.80601,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.02673,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 5.36971,
             "unit": "5ms",
             "range": "±0%",
             "extra": "luau"
