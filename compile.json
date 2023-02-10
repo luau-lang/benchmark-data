@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1675952431948,
+  "lastUpdate": 1676058528646,
   "repoUrl": "https://github.com/Roblox/luau",
   "entries": {
     "luau --compile": [
@@ -6853,6 +6853,86 @@
           {
             "name": "regex-O2-codegen",
             "value": 5.36971,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "afriesen@roblox.com",
+            "name": "Andy Friesen",
+            "username": "andyfriesen"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "c5089def6e0322883a4b9cc56bf2688f781533eb",
+          "message": "Sync to upstream/release/563 (#833)\n\n* Fix a bug where reading a property from an unsealed table caused\r\ninference to improperly infer the existence of that property.\r\n* Fix #827\r\n\r\nWe have also made a lot of progress on the new solver and the JIT. Both\r\nprojects are still in the process of being built out. Neither are ready\r\nfor general use yet.\r\n\r\nWe are mostly working to tighten up how the new solver handles\r\nrefinements and updates to unsealed tables to bring it up to the same\r\nlevel as the old solver.\r\n\r\n---------\r\n\r\nCo-authored-by: Arseny Kapoulkine <arseny.kapoulkine@gmail.com>\r\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com>",
+          "timestamp": "2023-02-10T11:40:38-08:00",
+          "tree_id": "33c1c6c542c126b750ab1dfebbd65f32025a1c59",
+          "url": "https://github.com/Roblox/luau/commit/c5089def6e0322883a4b9cc56bf2688f781533eb"
+        },
+        "date": 1676058528642,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.674083,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.735971,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.811295,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 2.26762,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.63995,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.80641,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.02714,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 5.60142,
             "unit": "5ms",
             "range": "±0%",
             "extra": "luau"

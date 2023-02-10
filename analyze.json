@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1675952431785,
+  "lastUpdate": 1676058528484,
   "repoUrl": "https://github.com/Roblox/luau",
   "entries": {
     "luau-analyze": [
@@ -5093,6 +5093,58 @@
           {
             "name": "regex-strict",
             "value": 11.598,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "afriesen@roblox.com",
+            "name": "Andy Friesen",
+            "username": "andyfriesen"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "c5089def6e0322883a4b9cc56bf2688f781533eb",
+          "message": "Sync to upstream/release/563 (#833)\n\n* Fix a bug where reading a property from an unsealed table caused\r\ninference to improperly infer the existence of that property.\r\n* Fix #827\r\n\r\nWe have also made a lot of progress on the new solver and the JIT. Both\r\nprojects are still in the process of being built out. Neither are ready\r\nfor general use yet.\r\n\r\nWe are mostly working to tighten up how the new solver handles\r\nrefinements and updates to unsealed tables to bring it up to the same\r\nlevel as the old solver.\r\n\r\n---------\r\n\r\nCo-authored-by: Arseny Kapoulkine <arseny.kapoulkine@gmail.com>\r\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com>",
+          "timestamp": "2023-02-10T11:40:38-08:00",
+          "tree_id": "33c1c6c542c126b750ab1dfebbd65f32025a1c59",
+          "url": "https://github.com/Roblox/luau/commit/c5089def6e0322883a4b9cc56bf2688f781533eb"
+        },
+        "date": 1676058528481,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 5.52248,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 7.15675,
+            "unit": "7ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 8.44005,
+            "unit": "8ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 11.5238,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"
