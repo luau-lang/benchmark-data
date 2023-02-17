@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1676058528646,
+  "lastUpdate": 1676677933923,
   "repoUrl": "https://github.com/Roblox/luau",
   "entries": {
     "luau --compile": [
@@ -6933,6 +6933,86 @@
           {
             "name": "regex-O2-codegen",
             "value": 5.60142,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "75688451+vegorov-rbx@users.noreply.github.com",
+            "name": "vegorov-rbx",
+            "username": "vegorov-rbx"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "b570ff0a376f2e86b5a1eb2795209c80d2dbca60",
+          "message": "Sync to upstream/release/564 (#841)\n\nThis week we only have updates to new type solver and JIT. Both projects\r\nare still in the process of being built out. Neither are ready for\r\ngeneral use yet.\r\n\r\nIn the new solver, we fixed issues with recursive type aliases.\r\nDuplicated type parameters are once again reported, exported types are\r\nbeing recorder and function argument names are placed inside function\r\ntypes.\r\nWe also made improvements to restore parts of bidirectional type\r\ntracking.\r\n\r\nOn native code generation side, namecall instruction lowering was fixed,\r\nwe fixed inconsistencies in IR command definitions and added utility\r\nfunction to help with constant folding.",
+          "timestamp": "2023-02-17T15:41:51-08:00",
+          "tree_id": "cddabc3843df9ceae234b82d17842d091b59a938",
+          "url": "https://github.com/Roblox/luau/commit/b570ff0a376f2e86b5a1eb2795209c80d2dbca60"
+        },
+        "date": 1676677933920,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.674145,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.736036,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.81136,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 2.27153,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.64003,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.80635,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.02708,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 5.61562,
             "unit": "5ms",
             "range": "±0%",
             "extra": "luau"
