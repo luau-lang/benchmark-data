@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1676677933703,
+  "lastUpdate": 1677275855246,
   "repoUrl": "https://github.com/Roblox/luau",
   "entries": {
     "luau-analyze": [
@@ -5197,6 +5197,58 @@
           {
             "name": "regex-strict",
             "value": 11.5205,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "afriesen@roblox.com",
+            "name": "Andy Friesen",
+            "username": "andyfriesen"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "d2ab5df62b9e6efc20aaece3254bedd80bb437fa",
+          "message": "Sync to upstream/release/565 (#845)\n\nWe've made a few small changes to reduce the amount of stack we use when\r\ntypechecking nested method calls (eg `foo:bar():baz():quux()`).\r\n\r\nWe've also fixed a small bytecode compiler issue that caused us to emit\r\nredundant jump instructions in code that conditionally uses `break` or\r\n`continue`.\r\n\r\nOn the new solver, we've switched to a new, better way to handle\r\naugmentations to unsealed tables. We've also made some substantial\r\nimprovements to type inference and error reporting on function calls.\r\nThese things should both be on par with the old solver now.\r\n\r\nThe main improvements to the native code generator have been elimination\r\nof some redundant type tag checks. Also, we are starting to inline\r\nparticular fastcalls directly to IR.\r\n\r\n---------\r\n\r\nCo-authored-by: Arseny Kapoulkine <arseny.kapoulkine@gmail.com>\r\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com>",
+          "timestamp": "2023-02-24T13:49:38-08:00",
+          "tree_id": "84e3823d46c73a9797aac41540a1e4726697566c",
+          "url": "https://github.com/Roblox/luau/commit/d2ab5df62b9e6efc20aaece3254bedd80bb437fa"
+        },
+        "date": 1677275855244,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 5.53138,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 7.16829,
+            "unit": "7ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 8.44958,
+            "unit": "8ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 11.5429,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"

@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1676677933923,
+  "lastUpdate": 1677275855409,
   "repoUrl": "https://github.com/Roblox/luau",
   "entries": {
     "luau --compile": [
@@ -7014,6 +7014,86 @@
             "name": "regex-O2-codegen",
             "value": 5.61562,
             "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "afriesen@roblox.com",
+            "name": "Andy Friesen",
+            "username": "andyfriesen"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "d2ab5df62b9e6efc20aaece3254bedd80bb437fa",
+          "message": "Sync to upstream/release/565 (#845)\n\nWe've made a few small changes to reduce the amount of stack we use when\r\ntypechecking nested method calls (eg `foo:bar():baz():quux()`).\r\n\r\nWe've also fixed a small bytecode compiler issue that caused us to emit\r\nredundant jump instructions in code that conditionally uses `break` or\r\n`continue`.\r\n\r\nOn the new solver, we've switched to a new, better way to handle\r\naugmentations to unsealed tables. We've also made some substantial\r\nimprovements to type inference and error reporting on function calls.\r\nThese things should both be on par with the old solver now.\r\n\r\nThe main improvements to the native code generator have been elimination\r\nof some redundant type tag checks. Also, we are starting to inline\r\nparticular fastcalls directly to IR.\r\n\r\n---------\r\n\r\nCo-authored-by: Arseny Kapoulkine <arseny.kapoulkine@gmail.com>\r\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com>",
+          "timestamp": "2023-02-24T13:49:38-08:00",
+          "tree_id": "84e3823d46c73a9797aac41540a1e4726697566c",
+          "url": "https://github.com/Roblox/luau/commit/d2ab5df62b9e6efc20aaece3254bedd80bb437fa"
+        },
+        "date": 1677275855407,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.67493,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.736882,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.812252,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 2.53795,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.63997,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.80675,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.02762,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 6.51842,
+            "unit": "6ms",
             "range": "±0%",
             "extra": "luau"
           }
