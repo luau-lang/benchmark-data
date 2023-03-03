@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1677275855409,
+  "lastUpdate": 1677875312474,
   "repoUrl": "https://github.com/Roblox/luau",
   "entries": {
     "luau --compile": [
@@ -7094,6 +7094,86 @@
             "name": "regex-O2-codegen",
             "value": 6.51842,
             "unit": "6ms",
+            "range": "±0%",
+            "extra": "luau"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "75688451+vegorov-rbx@users.noreply.github.com",
+            "name": "vegorov-rbx",
+            "username": "vegorov-rbx"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "140e5a1495194d33a1f8ec031a953ac4a5fcfe18",
+          "message": "Sync to upstream/release/566 (#853)\n\n* Fixed incorrect lexeme generated for string parts in the middle of an\r\ninterpolated string (Fixes https://github.com/Roblox/luau/issues/744)\r\n* DeprecatedApi lint can report some issues without type inference\r\ninformation\r\n* Fixed performance of autocomplete requests when suggestions have large\r\nintersection types (Solves\r\nhttps://github.com/Roblox/luau/discussions/847)\r\n* Marked `table.getn`/`foreach`/`foreachi` as deprecated ([RFC:\r\nDeprecate\r\ntable.getn/foreach/foreachi](https://github.com/Roblox/luau/blob/master/rfcs/deprecate-table-getn-foreach.md))\r\n* With -O2 optimization level, we now optimize builtin calls based on\r\nknown argument/return count.\r\nNote that this change can be observable if `getfenv/setfenv` is used to\r\nsubstitute a builtin, especially if arity is different.\r\nFastcall heavy tests show a 1-2% improvement.\r\n* Luau can now be built with clang-cl (Fixes\r\nhttps://github.com/Roblox/luau/issues/736)\r\n\r\nWe also made many improvements to our experimental components.\r\n\r\nFor our new type solver:\r\n* Overhauled data flow analysis system, fixed issues with 'repeat'\r\nloops, global variables and type annotations\r\n* Type refinements now work on generic table indexing with a string\r\nliteral\r\n* Type refinements will properly track potentially 'nil' values (like\r\nt[x] for a missing key) and their further refinements\r\n* Internal top table type is now isomorphic to `{}` which fixes issues\r\nwhen `typeof(v) == 'table'` type refinement is handled\r\n* References to non-existent types in type annotations no longer resolve\r\nto 'error' type like in old solver\r\n* Improved handling of class unions in property access expressions\r\n* Fixed default type packs\r\n* Unsealed tables can now have metatables\r\n* Restored expected types for function arguments\r\n\r\nAnd for native code generation:\r\n* Added min and max IR instructions mapping to vminsd/vmaxsd on x64\r\n* We now speculatively extract direct execution fast-paths based on\r\nexpected types of expressions which provides better optimization\r\nopportunities inside a single basic block\r\n* Translated existing math fastcalls to IR form to improve tag guard\r\nremoval and constant propagation",
+          "timestamp": "2023-03-03T12:21:14-08:00",
+          "tree_id": "94352c29edb8915aa46e687c7efab2bc6350a518",
+          "url": "https://github.com/Roblox/luau/commit/140e5a1495194d33a1f8ec031a953ac4a5fcfe18"
+        },
+        "date": 1677875312471,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.674737,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.736575,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.812288,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 2.65545,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.64061,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.8067,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.05191,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 7.48573,
+            "unit": "7ms",
             "range": "±0%",
             "extra": "luau"
           }
