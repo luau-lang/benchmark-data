@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1677875312310,
+  "lastUpdate": 1678107022716,
   "repoUrl": "https://github.com/Roblox/luau",
   "entries": {
     "luau-analyze": [
@@ -5294,6 +5294,58 @@
           {
             "name": "regex-nonstrict",
             "value": 8.47066,
+            "unit": "8ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 11.5946,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "anton-sa@web.de",
+            "name": "niansa/tuxifan",
+            "username": "niansa"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "78798d46418f175767c4517fa5932111f0ca07f6",
+          "message": "Fixed lerp() duplicate when compiling for C++20 (#851)",
+          "timestamp": "2023-03-06T04:42:59-08:00",
+          "tree_id": "ee3b1e60b25d177fd2f8b21ed76371886b788b3a",
+          "url": "https://github.com/Roblox/luau/commit/78798d46418f175767c4517fa5932111f0ca07f6"
+        },
+        "date": 1678107022713,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 5.54434,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 7.19063,
+            "unit": "7ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 8.47069,
             "unit": "8ms",
             "range": "±0%",
             "extra": "luau-analyze"
