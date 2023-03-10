@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1678107022875,
+  "lastUpdate": 1678480138773,
   "repoUrl": "https://github.com/Roblox/luau",
   "entries": {
     "luau --compile": [
@@ -7254,6 +7254,86 @@
             "name": "regex-O2-codegen",
             "value": 7.48573,
             "unit": "7ms",
+            "range": "±0%",
+            "extra": "luau"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "afriesen@roblox.com",
+            "name": "Andy Friesen",
+            "username": "andyfriesen"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "1fa8311a188a932233d2ce2bc6412e5bab37c035",
+          "message": "Sync to upstream/release/567 (#860)\n\n* Fix #817 \r\n* Fix #850 \r\n* Optimize math.floor/ceil/round with SSE4.1\r\n    * Results in a ~7-9% speedup on the math-cordic benchmark.\r\n* Optimized table.sort.\r\n* table.sort is now ~4.1x faster (when not using a predicate) and ~2.1x\r\nfaster when using a simple predicate. Performance may improve further in\r\nthe future.\r\n* Reorganize the memory ownership of builtin type definitions.\r\n* This is a small initial step toward affording parallel typechecking.\r\n\r\nThe new type solver is coming along nicely. We are working on fixing\r\ncrashes and bugs.\r\n\r\nA few major changes to native codegen landed this week:\r\n* Fixed lowering of Luau IR mod instruction when first argument is a\r\nconstant\r\n* Added VM register data-flow/capture analysis\r\n* Fixed issues with optimizations in unreachable blocks\r\n\r\n---------\r\n\r\nCo-authored-by: Arseny Kapoulkine <arseny.kapoulkine@gmail.com>\r\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com>",
+          "timestamp": "2023-03-10T12:21:07-08:00",
+          "tree_id": "8adb6ea3f96d2ddfb521be70fe91f8761dc99bea",
+          "url": "https://github.com/Roblox/luau/commit/1fa8311a188a932233d2ce2bc6412e5bab37c035"
+        },
+        "date": 1678480138770,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.674488,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.736328,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.812042,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 2.85761,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.64039,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.80655,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.05175,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 8.35821,
+            "unit": "8ms",
             "range": "±0%",
             "extra": "luau"
           }
