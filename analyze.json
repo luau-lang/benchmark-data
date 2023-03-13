@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1678480138606,
+  "lastUpdate": 1678741575212,
   "repoUrl": "https://github.com/Roblox/luau",
   "entries": {
     "luau-analyze": [
@@ -5405,6 +5405,72 @@
           {
             "name": "regex-strict",
             "value": 11.8498,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "arseny.kapoulkine@gmail.com",
+            "name": "Arseny Kapoulkine",
+            "username": "zeux"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "29d0ea10cf576c3b3baf9402d782bb9700d73939",
+          "message": "Add DCR solver to analysis benchmarks (#862)\n\nFor now just do this in strict mode. This will help us track performance\r\nover time, although for now the behavior is going to keep changing so\r\nit's not going to be a fully solid metric for a few weeks.",
+          "timestamp": "2023-03-13T13:58:29-07:00",
+          "tree_id": "76f34e62f0be598dc16c82e6041247f8a7a5bc9d",
+          "url": "https://github.com/Roblox/luau/commit/29d0ea10cf576c3b3baf9402d782bb9700d73939"
+        },
+        "date": 1678741575210,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 5.54734,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 7.19501,
+            "unit": "7ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 29.9157,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 8.8572,
+            "unit": "8ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 11.8497,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 70.6212,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"

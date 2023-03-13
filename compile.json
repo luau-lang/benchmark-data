@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1678480138773,
+  "lastUpdate": 1678741575377,
   "repoUrl": "https://github.com/Roblox/luau",
   "entries": {
     "luau --compile": [
@@ -7333,6 +7333,86 @@
           {
             "name": "regex-O2-codegen",
             "value": 8.35821,
+            "unit": "8ms",
+            "range": "±0%",
+            "extra": "luau"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "arseny.kapoulkine@gmail.com",
+            "name": "Arseny Kapoulkine",
+            "username": "zeux"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "29d0ea10cf576c3b3baf9402d782bb9700d73939",
+          "message": "Add DCR solver to analysis benchmarks (#862)\n\nFor now just do this in strict mode. This will help us track performance\r\nover time, although for now the behavior is going to keep changing so\r\nit's not going to be a fully solid metric for a few weeks.",
+          "timestamp": "2023-03-13T13:58:29-07:00",
+          "tree_id": "76f34e62f0be598dc16c82e6041247f8a7a5bc9d",
+          "url": "https://github.com/Roblox/luau/commit/29d0ea10cf576c3b3baf9402d782bb9700d73939"
+        },
+        "date": 1678741575374,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.674488,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.736328,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.812041,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 2.8576,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.64041,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.80656,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.05177,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 8.35824,
             "unit": "8ms",
             "range": "±0%",
             "extra": "luau"
