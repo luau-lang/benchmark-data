@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1678741574707,
+  "lastUpdate": 1679081487269,
   "repoUrl": "https://github.com/Roblox/luau",
   "entries": {
     "callgrind clang": [
@@ -23293,6 +23293,233 @@
           {
             "name": "voxelgen",
             "value": 62.498,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "75688451+vegorov-rbx@users.noreply.github.com",
+            "name": "vegorov-rbx",
+            "username": "vegorov-rbx"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "42a2805f85d2fff8360a8da9b7af33f30c322430",
+          "message": "Sync to upstream/release/568 (#865)\n\n* A small subset of control-flow refinements have been added to\r\nrecognize type options that are unreachable after a\r\nconditional/unconditional code block. (Fixes\r\nhttps://github.com/Roblox/luau/issues/356).\r\n\r\nSome examples:\r\n```lua\r\nlocal function f(x: string?)\r\n    if not x then return end\r\n\r\n    -- x is 'string' here\r\nend\r\n```\r\nThrowing calls like `error` or `assert(false)` instead of 'return' are\r\nalso recognized.\r\nExisting complex refinements like type/typeof and tagged union checks\r\nare expected to work, among others.\r\n\r\nTo enable this feature, `LuauTinyControlFlowAnalysis` exclusion has to\r\nbe removed from `ExperimentalFlags.h`.\r\nIf will become enabled unconditionally in the near future.\r\n\r\n* Linter has been integrated into the typechecker analysis so that\r\ntype-aware lint warnings can work in any mode\r\n`Frontend::lint` methods were deprecated, `Frontend::check` has to be\r\nused instead with `runLintChecks` option set.\r\nResulting lint warning are located inside `CheckResult`.\r\n\r\n* Fixed large performance drop and increased memory consumption when\r\narray is filled at an offset (Fixes\r\nhttps://github.com/Roblox/luau/issues/590)\r\n* Part of [Type error suppression\r\nRFC](https://github.com/Roblox/luau/blob/master/rfcs/type-error-suppression.md)\r\nwas implemented making subtyping checks with `any` type transitive.\r\n\r\n---\r\nIn our work on the new type-solver:\r\n* `--!nocheck` mode no longer reports type errors\r\n* New solver will not be used for `--!nonstrict` modules until all\r\nissues with strict mode typechecking are fixed\r\n* Added control-flow aware type refinements mentioned earlier\r\n\r\nIn native code generation:\r\n* `LOP_NAMECALL` has been translated to IR\r\n* `type` and `typeof` builtin fastcalls have been translated to\r\nIR/assembly\r\n* Additional steps were taken towards arm64 support",
+          "timestamp": "2023-03-17T12:20:37-07:00",
+          "tree_id": "58f7636767b280300296b15f8c85fa38cedbccaa",
+          "url": "https://github.com/Roblox/luau/commit/42a2805f85d2fff8360a8da9b7af33f30c322430"
+        },
+        "date": 1679081487260,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "base64",
+            "value": 24.254,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "chess",
+            "value": 81.251,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "life",
+            "value": 86.495,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "qsort",
+            "value": 74.766,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "sha256",
+            "value": 24.474,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "ack",
+            "value": 64.252,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "binary-trees",
+            "value": 29.121,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "fannkuchen-redux",
+            "value": 11.932,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "fixpoint-fact",
+            "value": 60.482,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "heapsort",
+            "value": 21.409,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "mandel",
+            "value": 62.928,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "n-body",
+            "value": 39.719,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "qt",
+            "value": 56.973,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "queen",
+            "value": 1.956,
+            "unit": "1ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "scimark",
+            "value": 88.575,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "spectral-norm",
+            "value": 13.345,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "sieve",
+            "value": 99.531,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "3d-cube",
+            "value": 8.565,
+            "unit": "8ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "3d-morph",
+            "value": 10.224,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "3d-raytrace",
+            "value": 10.241,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "controlflow-recursive",
+            "value": 5.542,
+            "unit": "5ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "crypto-aes",
+            "value": 13.581,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "fannkuch",
+            "value": 24.672,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "math-cordic",
+            "value": 15.888,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "math-partial-sums",
+            "value": 5.332,
+            "unit": "5ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "n-body-oop",
+            "value": 59.2,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "tictactoe",
+            "value": 122.49,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "trig",
+            "value": 25.478,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "voxelgen",
+            "value": 62.502,
             "unit": "ms",
             "range": "±0.000%",
             "extra": "luau"

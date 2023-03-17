@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1678741575212,
+  "lastUpdate": 1679081487999,
   "repoUrl": "https://github.com/Roblox/luau",
   "entries": {
     "luau-analyze": [
@@ -5471,6 +5471,72 @@
           {
             "name": "regex-dcr",
             "value": 70.6212,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "75688451+vegorov-rbx@users.noreply.github.com",
+            "name": "vegorov-rbx",
+            "username": "vegorov-rbx"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "42a2805f85d2fff8360a8da9b7af33f30c322430",
+          "message": "Sync to upstream/release/568 (#865)\n\n* A small subset of control-flow refinements have been added to\r\nrecognize type options that are unreachable after a\r\nconditional/unconditional code block. (Fixes\r\nhttps://github.com/Roblox/luau/issues/356).\r\n\r\nSome examples:\r\n```lua\r\nlocal function f(x: string?)\r\n    if not x then return end\r\n\r\n    -- x is 'string' here\r\nend\r\n```\r\nThrowing calls like `error` or `assert(false)` instead of 'return' are\r\nalso recognized.\r\nExisting complex refinements like type/typeof and tagged union checks\r\nare expected to work, among others.\r\n\r\nTo enable this feature, `LuauTinyControlFlowAnalysis` exclusion has to\r\nbe removed from `ExperimentalFlags.h`.\r\nIf will become enabled unconditionally in the near future.\r\n\r\n* Linter has been integrated into the typechecker analysis so that\r\ntype-aware lint warnings can work in any mode\r\n`Frontend::lint` methods were deprecated, `Frontend::check` has to be\r\nused instead with `runLintChecks` option set.\r\nResulting lint warning are located inside `CheckResult`.\r\n\r\n* Fixed large performance drop and increased memory consumption when\r\narray is filled at an offset (Fixes\r\nhttps://github.com/Roblox/luau/issues/590)\r\n* Part of [Type error suppression\r\nRFC](https://github.com/Roblox/luau/blob/master/rfcs/type-error-suppression.md)\r\nwas implemented making subtyping checks with `any` type transitive.\r\n\r\n---\r\nIn our work on the new type-solver:\r\n* `--!nocheck` mode no longer reports type errors\r\n* New solver will not be used for `--!nonstrict` modules until all\r\nissues with strict mode typechecking are fixed\r\n* Added control-flow aware type refinements mentioned earlier\r\n\r\nIn native code generation:\r\n* `LOP_NAMECALL` has been translated to IR\r\n* `type` and `typeof` builtin fastcalls have been translated to\r\nIR/assembly\r\n* Additional steps were taken towards arm64 support",
+          "timestamp": "2023-03-17T12:20:37-07:00",
+          "tree_id": "58f7636767b280300296b15f8c85fa38cedbccaa",
+          "url": "https://github.com/Roblox/luau/commit/42a2805f85d2fff8360a8da9b7af33f30c322430"
+        },
+        "date": 1679081487996,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 5.69734,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 7.27255,
+            "unit": "7ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 29.8521,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 8.56042,
+            "unit": "8ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 11.5863,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 71.0975,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"
