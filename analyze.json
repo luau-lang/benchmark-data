@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1679081487999,
+  "lastUpdate": 1679681713666,
   "repoUrl": "https://github.com/Roblox/luau",
   "entries": {
     "luau-analyze": [
@@ -5537,6 +5537,72 @@
           {
             "name": "regex-dcr",
             "value": 71.0975,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "afriesen@roblox.com",
+            "name": "Andy Friesen",
+            "username": "andyfriesen"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "b4ebad4862fcdf2bd05acc047512f88dfe219e7e",
+          "message": "Sync to upstream/release/569 (#878)\n\nAll of our changes this week have been focused on the new type solver\r\nand the JIT.\r\n\r\nAs we march toward feature parity with the old solver, we've tightened\r\nup a bunch of lingering issues with overload resolution, unsealed\r\ntables, and type normalization. We've also fixed a bunch of crashes and\r\nassertion failures in the new solver.\r\n\r\nOn the JIT front, we've started work on an A64 backend, improved the IR\r\nanalysis in a bunch of cases, and implemented assembly generation for\r\nthe builtin functions `type()` and `typeof()`.\r\n\r\n---------\r\n\r\nCo-authored-by: Arseny Kapoulkine <arseny.kapoulkine@gmail.com>\r\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com>",
+          "timestamp": "2023-03-24T11:03:04-07:00",
+          "tree_id": "015ada5e6d7a5c1151193b3a719684b9c8cc9f04",
+          "url": "https://github.com/Roblox/luau/commit/b4ebad4862fcdf2bd05acc047512f88dfe219e7e"
+        },
+        "date": 1679681713662,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 5.74301,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 7.3414,
+            "unit": "7ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 29.6852,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 8.59205,
+            "unit": "8ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 11.7136,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 70.2827,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"
