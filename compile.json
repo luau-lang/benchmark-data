@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1679681713922,
+  "lastUpdate": 1680288880468,
   "repoUrl": "https://github.com/Roblox/luau",
   "entries": {
     "luau --compile": [
@@ -7574,6 +7574,86 @@
             "name": "regex-O2-codegen",
             "value": 8.6376,
             "unit": "8ms",
+            "range": "±0%",
+            "extra": "luau"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "75688451+vegorov-rbx@users.noreply.github.com",
+            "name": "vegorov-rbx",
+            "username": "vegorov-rbx"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "1212fdacbfaa576b5a1a238bc9e793f2e9156d61",
+          "message": "Sync to upstream/release/570 (#885)\n\nOnce again, all of our changes this week are for new type solver and the\r\nJIT.\r\n\r\nIn the new type solver, we fixed cyclic type alias handling and multiple\r\nstability issues.\r\n\r\nIn the JIT, our main progress was for arm64, where, after lowering 36%\r\nof instructions, we start seeing first Luau functions executing\r\nnatively.\r\nFor x64, we performed code cleanup and refactoring to allow for future\r\noptimizations.",
+          "timestamp": "2023-03-31T11:42:49-07:00",
+          "tree_id": "4cfd87cf5afaf68fe276f6c7f55491ad80b42af9",
+          "url": "https://github.com/Roblox/luau/commit/1212fdacbfaa576b5a1a238bc9e793f2e9156d61"
+        },
+        "date": 1680288880465,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.673876,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.735714,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.811408,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 3.2796,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.64064,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.80678,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.05197,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 9.02494,
+            "unit": "9ms",
             "range": "±0%",
             "extra": "luau"
           }
