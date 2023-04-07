@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1680288880304,
+  "lastUpdate": 1680901907409,
   "repoUrl": "https://github.com/Roblox/luau",
   "entries": {
     "luau-analyze": [
@@ -5669,6 +5669,72 @@
           {
             "name": "regex-dcr",
             "value": 70.2054,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "afriesen@roblox.com",
+            "name": "Andy Friesen",
+            "username": "andyfriesen"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "ba67fb275eb14b976ba428e4af7ee9d196324b15",
+          "message": "Sync to upstream/release/571 (#895)\n\n* `table.sort` was improved further. It now guarentees N*log(N) time\r\ncomplexity in the worst case.\r\n* Fix https://github.com/Roblox/luau/issues/880\r\n\r\nWe are also working on fixing final bugs and crashes in the new type\r\nsolver.\r\n\r\nOn the CodeGen front we have a few things going on:\r\n* We have a smarter register allocator for the x86 JIT\r\n* We lower more instructions on arm64\r\n* The vector constructor builtin is now translated to IR\r\n\r\n---------\r\n\r\nCo-authored-by: Arseny Kapoulkine <arseny.kapoulkine@gmail.com>\r\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com>",
+          "timestamp": "2023-04-07T14:01:29-07:00",
+          "tree_id": "56d13cefaabc30800046f88d1e45d9b51f873771",
+          "url": "https://github.com/Roblox/luau/commit/ba67fb275eb14b976ba428e4af7ee9d196324b15"
+        },
+        "date": 1680901907406,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 5.74429,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 7.34215,
+            "unit": "7ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 29.3311,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 8.5923,
+            "unit": "8ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 11.7111,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 70.4326,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"
