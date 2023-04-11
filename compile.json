@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1680901907618,
+  "lastUpdate": 1681243013571,
   "repoUrl": "https://github.com/Roblox/luau",
   "entries": {
     "luau --compile": [
@@ -7733,6 +7733,86 @@
           {
             "name": "regex-O2-codegen",
             "value": 9.20815,
+            "unit": "9ms",
+            "range": "±0%",
+            "extra": "luau"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "petrihakkinen@users.noreply.github.com",
+            "name": "Petri Häkkinen",
+            "username": "petrihakkinen"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "7345891f6bfd1049054b101bbdd957bf8adad164",
+          "message": "Add lua_getuserdatadtor (#870)\n\nSome userdata objects may need to support manual destruction in addition\r\nto automatic GC. For example, files, threads, GPU resources and objects\r\nwith large external allocations.\r\n\r\nWith Lua, a finalizer can be _generically_ called by invoking the __gc\r\nmetamethod manually, but this is currently not possible with tagged\r\nuserdata in Luau because it's not possible to query the destructor\r\nassociated with an userdata. While it is possible to workaround this by\r\nduplicating the destructor table locally on client side (*), it's more\r\nconvenient to deduplicate the data and get the destructor using the API\r\ninstead.\r\n\r\n(*) Note: a separate destructor table for each VM may be required if the\r\nVMs use different set of tags.\r\n\r\nImplementation notes:\r\n\r\n1. I first considered adding a typedef for lua_Destructor but\r\nunfortunately there are two kinds of destructors, one with and one\r\nwithout the lua_State* argument, so I decided against it at this point.\r\nMaybe it should be added later if the destructor API is unified (by\r\ndropping the Lua state pointer argument?).\r\n\r\n2. For some reason the conformance test produced warning \"qualifier\r\napplied to function type has no meaning; ignored\" on VS2017 (possibly\r\nbecause the test framework does not like function pointers for some\r\nreason?). I silenced this by pulling out the test expressions from those\r\nCHECKs.",
+          "timestamp": "2023-04-11T12:46:55-07:00",
+          "tree_id": "e168b83813f05e8cd41a965ea3e6112fb2fc9f59",
+          "url": "https://github.com/Roblox/luau/commit/7345891f6bfd1049054b101bbdd957bf8adad164"
+        },
+        "date": 1681243013568,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.673897,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.735734,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.811428,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 3.33012,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.64055,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.80669,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.05188,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 9.20807,
             "unit": "9ms",
             "range": "±0%",
             "extra": "luau"
