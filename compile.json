@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1681741706434,
+  "lastUpdate": 1682115730733,
   "repoUrl": "https://github.com/Roblox/luau",
   "entries": {
     "luau --compile": [
@@ -7974,6 +7974,86 @@
             "name": "regex-O2-codegen",
             "value": 9.7918,
             "unit": "9ms",
+            "range": "±0%",
+            "extra": "luau"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "afriesen@roblox.com",
+            "name": "Andy Friesen",
+            "username": "andyfriesen"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "fe7621ee8cd84b8e2774717cf9de79a9c47cd0f7",
+          "message": "Sync to upstream/release/573 (#903)\n\n* Work toward affording parallel type checking\r\n* The interface to `LazyType` has changed:\r\n* `LazyType` now takes a second callback that is passed the `LazyType&`\r\nitself. This new callback is responsible for populating the field\r\n`TypeId LazyType::unwrapped`. Multithreaded implementations should\r\nacquire a lock in this callback.\r\n* Modules now retain their `humanReadableNames`. This reduces the number\r\nof cases where type checking has to call back to a `ModuleResolver`.\r\n* https://github.com/Roblox/luau/pull/902\r\n* Add timing info to the Luau REPL compilation output\r\n\r\nWe've also fixed some bugs and crashes in the new solver as we march\r\ntoward readiness.\r\n* Thread ICEs (Internal Compiler Errors) back to the Frontend properly\r\n* Refinements are no longer applied to lvalues\r\n* More miscellaneous stability improvements\r\n\r\nLots of activity in the new JIT engine:\r\n\r\n* Implement register spilling/restore for A64\r\n* Correct Luau IR value restore location tracking\r\n* Fixed use-after-free in x86 register allocator spill restore\r\n* Use btz for bit tests\r\n* Finish branch assembly support for A64\r\n* Codesize and performance improvements for A64\r\n* The bit32 library has been implemented for arm and x64\r\n\r\n---------\r\n\r\nCo-authored-by: Arseny Kapoulkine <arseny.kapoulkine@gmail.com>\r\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com>",
+          "timestamp": "2023-04-21T15:14:26-07:00",
+          "tree_id": "f84eb702d59af7439c961d049620fa95bb914b58",
+          "url": "https://github.com/Roblox/luau/commit/fe7621ee8cd84b8e2774717cf9de79a9c47cd0f7"
+        },
+        "date": 1682115730730,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.675647,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.737035,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.813123,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 3.78682,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.64093,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.80719,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.05237,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 10.0974,
+            "unit": "ms",
             "range": "±0%",
             "extra": "luau"
           }
