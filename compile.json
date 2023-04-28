@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1682115730733,
+  "lastUpdate": 1682712211997,
   "repoUrl": "https://github.com/Roblox/luau",
   "entries": {
     "luau --compile": [
@@ -8053,6 +8053,86 @@
           {
             "name": "regex-O2-codegen",
             "value": 10.0974,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "75688451+vegorov-rbx@users.noreply.github.com",
+            "name": "vegorov-rbx",
+            "username": "vegorov-rbx"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "4b267aa5c561b3254f43b3f3ead05fa4be499629",
+          "message": "Sync to upstream/release/574 (#910)\n\n* Added a limit on how many instructions the Compiler can safely produce\r\n(reported by @TheGreatSageEqualToHeaven)\r\n\r\nC++ API Changes:\r\n* With work started on read-only and write-only properties,\r\n`Property::type` member variable has been replaced with `TypeId type()`\r\nand `setType(TypeId)` functions.\r\n* New `LazyType` unwrap callback now has a `void` return type, all\r\nthat's required from the callback is to write into `unwrapped` field.\r\n\r\nIn our work on the new type solver, the following issues were fixed:\r\n\r\n* Work has started to support https://github.com/Roblox/luau/pull/77 and\r\nhttps://github.com/Roblox/luau/pull/79\r\n* Refinements are no longer applied on l-values, removing some\r\nfalse-positive errors\r\n* Improved overload resolution against expected result type\r\n* `Frontend::prepareModuleScope` now works in the new solver\r\n* Cofinite strings are now comparable\r\n\r\nAnd these are the changes in native code generation (JIT):\r\n\r\n* Fixed MIN_NUM and MAX_NUM constant fold when one of the arguments is\r\nNaN\r\n* Added constant folding for number conversions and bit operations\r\n* Value spilling and rematerialization is now supported on arm64\r\n* Improved FASTCALL2K IR generation to support second argument constant\r\n* Added value numbering and load/store propagation optimizations\r\n* Added STORE_VECTOR on arm64, completing the IR lowering on this target",
+          "timestamp": "2023-04-28T12:55:13-07:00",
+          "tree_id": "9737a0c017d0fb77b418624e88bf371edadc9c40",
+          "url": "https://github.com/Roblox/luau/commit/4b267aa5c561b3254f43b3f3ead05fa4be499629"
+        },
+        "date": 1682712211994,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.67588,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.737255,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.813338,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 3.85281,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.64102,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.80749,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.05267,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 10.3658,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau"
