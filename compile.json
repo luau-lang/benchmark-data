@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1682712211997,
+  "lastUpdate": 1682954389522,
   "repoUrl": "https://github.com/Roblox/luau",
   "entries": {
     "luau --compile": [
@@ -8133,6 +8133,86 @@
           {
             "name": "regex-O2-codegen",
             "value": 10.3658,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "johnnymorganz@outlook.com",
+            "name": "JohnnyMorganz",
+            "username": "JohnnyMorganz"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "e8c05505867847fbebd8c856e82fe71039c48ccb",
+          "message": "Improve the type for `os.date` using overloads (#874)\n\nImproves the type of `os.date` based on its documentation\r\nhttps://create.roblox.com/docs/reference/engine/libraries/os#date\r\n\r\nWe know that the DateTypeResult table is only returned when the format\r\nstring is either \"*t\" or \"!*t\", and otherwise its just a formatted\r\nstring. This changes the type to showcase this appropriately.\r\n\r\nI put the more strict type first in the overload because the ordering\r\nmakes a difference\r\n\r\nNote: the API docs used in studio\r\n(https://github.com/MaximumADHD/Roblox-Client-Tracker/blob/roblox/api-docs/en-us.json)\r\nmay need to be updated to reflect the overloaded type instead.\r\n\r\n\r\n![image](https://user-images.githubusercontent.com/19635171/226919224-e9e8703b-2729-44b0-93f6-434c01bda204.png)\r\n\r\nIt may be possible to add a lint of this too to provide analysis similar\r\nto how `string.format` works with a FormatString error. Will leave that\r\nfor a different PR though",
+          "timestamp": "2023-05-01T08:09:05-07:00",
+          "tree_id": "aa4128be8acbda1fdd53a86ae6e2df0502e0ccdd",
+          "url": "https://github.com/Roblox/luau/commit/e8c05505867847fbebd8c856e82fe71039c48ccb"
+        },
+        "date": 1682954389518,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.675992,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.73738,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.813452,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 3.8529,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.64114,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.80761,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.05279,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 10.3659,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau"
