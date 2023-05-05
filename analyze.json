@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1682954389291,
+  "lastUpdate": 1683324071374,
   "repoUrl": "https://github.com/Roblox/luau",
   "entries": {
     "luau-analyze": [
@@ -6131,6 +6131,72 @@
           {
             "name": "regex-dcr",
             "value": 71.6425,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "afriesen@roblox.com",
+            "name": "Andy Friesen",
+            "username": "andyfriesen"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "845357065860a7e36f50351b55be7b4f47c32773",
+          "message": "Sync to upstream/release/575 (#919)\n\n* `Luau.Analyze.CLI` now has experimental support for concurrent type\r\nchecking. Use the option `-jN` where `N` is the number of threads to\r\nspawn.\r\n* Improve typechecking performance by ~17% by making the function\r\n`Luau::follow` much more efficient.\r\n* Tighten up the type of `os.date`\r\n* Removed `ParseOptions::allowTypeAnnotations` and\r\n`ParseOptions::supportContinueStatement`\r\n\r\nNew solver\r\n\r\n* Improve the reliability of function overload resolution\r\n* More work toward supporting parallel type checking\r\n* Fix a bug in inference of `==` and `~=` which would erroneously infer\r\nthat the operands were `boolean`\r\n* Better error reporting when `for...in` loops are used incorrectly.\r\n\r\nCodeGen\r\n\r\n* Fix unwind registration when libunwind is used on Linux\r\n* Fixed replaced IR instruction use count\r\n* Convert X64 unwind info generation to standard prologue\r\n* Implement A64 unwind info support for Dwarf2\r\n* Live in/out data for linear blocks is now created\r\n* Add side-exit VM register requirements to the IR dump\r\n* Reuse ConstPropState between block chains \r\n* Remove redundant base update\r\n\r\n---------\r\n\r\nCo-authored-by: Arseny Kapoulkine <arseny.kapoulkine@gmail.com>\r\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com>",
+          "timestamp": "2023-05-05T14:52:49-07:00",
+          "tree_id": "17f8ce80f9e86122b7122b64548dcd1f87cc67b8",
+          "url": "https://github.com/Roblox/luau/commit/845357065860a7e36f50351b55be7b4f47c32773"
+        },
+        "date": 1683324071371,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 5.10929,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 6.43466,
+            "unit": "6ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 20.5346,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 8.08015,
+            "unit": "8ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 10.8134,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 66.4791,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"
