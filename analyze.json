@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1683327041546,
+  "lastUpdate": 1683658284939,
   "repoUrl": "https://github.com/Roblox/luau",
   "entries": {
     "luau-analyze": [
@@ -6256,6 +6256,72 @@
           {
             "name": "regex-strict",
             "value": 10.8133,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 66.4791,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "sentrycraft123@gmail.com",
+            "name": "Jan",
+            "username": "Jan200101"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "45c6476d4148678124696b07225b844a1762dbe8",
+          "message": "Add missing include for integer types (#925)\n\nCloses #924\r\n\r\n`uintptr_t` and `uint32` (and possibly more) were undefined because\r\n`cstdint` was not included.",
+          "timestamp": "2023-05-09T11:42:13-07:00",
+          "tree_id": "9b887441f41d1e376d2bb6c0837f7c9f210c9e6c",
+          "url": "https://github.com/Roblox/luau/commit/45c6476d4148678124696b07225b844a1762dbe8"
+        },
+        "date": 1683658284936,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 5.10929,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 6.43466,
+            "unit": "6ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 20.5346,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 8.08015,
+            "unit": "8ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 10.8134,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"

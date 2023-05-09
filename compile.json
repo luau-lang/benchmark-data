@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1683327041725,
+  "lastUpdate": 1683658285138,
   "repoUrl": "https://github.com/Roblox/luau",
   "entries": {
     "luau --compile": [
@@ -8373,6 +8373,86 @@
           {
             "name": "regex-O2-codegen",
             "value": 9.84625,
+            "unit": "9ms",
+            "range": "±0%",
+            "extra": "luau"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "sentrycraft123@gmail.com",
+            "name": "Jan",
+            "username": "Jan200101"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "45c6476d4148678124696b07225b844a1762dbe8",
+          "message": "Add missing include for integer types (#925)\n\nCloses #924\r\n\r\n`uintptr_t` and `uint32` (and possibly more) were undefined because\r\n`cstdint` was not included.",
+          "timestamp": "2023-05-09T11:42:13-07:00",
+          "tree_id": "9b887441f41d1e376d2bb6c0837f7c9f210c9e6c",
+          "url": "https://github.com/Roblox/luau/commit/45c6476d4148678124696b07225b844a1762dbe8"
+        },
+        "date": 1683658285128,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.675528,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.736919,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.813005,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 3.6745,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.63978,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.80626,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.05144,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 9.84612,
             "unit": "9ms",
             "range": "±0%",
             "extra": "luau"
