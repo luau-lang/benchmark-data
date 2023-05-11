@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1683658284939,
+  "lastUpdate": 1683805467539,
   "repoUrl": "https://github.com/Roblox/luau",
   "entries": {
     "luau-analyze": [
@@ -6329,6 +6329,72 @@
           {
             "name": "regex-dcr",
             "value": 66.4791,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "johnnymorganz@outlook.com",
+            "name": "JohnnyMorganz",
+            "username": "JohnnyMorganz"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "8d8c7974f591d30c4859092eb2e034b80d7affd8",
+          "message": "Use correct globalScope in on demand type checker (#923)\n\nFixes #922 \r\n\r\nUnsure if this needs to be put behind another FFlag, since the on demand\r\ntype checker fflag currently exists",
+          "timestamp": "2023-05-11T04:35:56-07:00",
+          "tree_id": "93c1731769632f0e978e6d9d9101e180a92ef696",
+          "url": "https://github.com/Roblox/luau/commit/8d8c7974f591d30c4859092eb2e034b80d7affd8"
+        },
+        "date": 1683805467536,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 5.10944,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 6.43481,
+            "unit": "6ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 20.5345,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 8.08005,
+            "unit": "8ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 10.8131,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 66.4788,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"
