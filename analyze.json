@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1683914335402,
+  "lastUpdate": 1684239289439,
   "repoUrl": "https://github.com/Roblox/luau",
   "entries": {
     "luau-analyze": [
@@ -6447,6 +6447,72 @@
           {
             "name": "regex-nonstrict",
             "value": 8.13254,
+            "unit": "8ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 10.8744,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 73.1156,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "mundusnine@gmail.com",
+            "name": "mundusnine",
+            "username": "mundusnine"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "cf0ba3259726004f1a5b27963bab28504844527e",
+          "message": "Enable compile-time user configuration for LUA_VECTOR_SIZE (#929)\n\nAdd #ifndef guard to enable users to define at compile-time without\r\nhaving to modify the luau source.",
+          "timestamp": "2023-05-16T05:04:49-07:00",
+          "tree_id": "14b492db5007e1036278e6cd471c923521ed316d",
+          "url": "https://github.com/Roblox/luau/commit/cf0ba3259726004f1a5b27963bab28504844527e"
+        },
+        "date": 1684239289436,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 5.11401,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 6.45511,
+            "unit": "6ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 24.0565,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 8.13306,
             "unit": "8ms",
             "range": "±0%",
             "extra": "luau-analyze"
