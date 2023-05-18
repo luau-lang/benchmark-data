@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1684239289613,
+  "lastUpdate": 1684408319494,
   "repoUrl": "https://github.com/Roblox/luau",
   "entries": {
     "luau --compile": [
@@ -8693,6 +8693,86 @@
           {
             "name": "regex-O2-codegen",
             "value": 9.88285,
+            "unit": "9ms",
+            "range": "±0%",
+            "extra": "luau"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "zxteam@protonmail.com",
+            "name": "Alex Orlenko",
+            "username": "khvzak"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "da0458bf6ec909e202a4e8b87196aba31134e20a",
+          "message": "Add CodeGen C API (#931)\n\nI'd like to experiment with the codegen feature (currently experimental)\r\nand need a public C API for this.\r\n\r\nThis PR addresses this.",
+          "timestamp": "2023-05-18T04:03:29-07:00",
+          "tree_id": "6e3d0ae9fd1829c9a385b75d7de7650d2187b3e4",
+          "url": "https://github.com/Roblox/luau/commit/da0458bf6ec909e202a4e8b87196aba31134e20a"
+        },
+        "date": 1684408319490,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.675371,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.736809,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.812896,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 3.67493,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.63943,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.80592,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.0511,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 9.8827,
             "unit": "9ms",
             "range": "±0%",
             "extra": "luau"
