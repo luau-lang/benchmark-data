@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1684408319494,
+  "lastUpdate": 1684525680104,
   "repoUrl": "https://github.com/Roblox/luau",
   "entries": {
     "luau --compile": [
@@ -8773,6 +8773,86 @@
           {
             "name": "regex-O2-codegen",
             "value": 9.8827,
+            "unit": "9ms",
+            "range": "±0%",
+            "extra": "luau"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "afriesen@roblox.com",
+            "name": "Andy Friesen",
+            "username": "andyfriesen"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "721f6e10fbdb25909e020351dc7130393201da8d",
+          "message": "Sync to upstream/release/577 (#934)\n\nLots of things going on this week:\r\n\r\n* Fix a crash that could occur in the presence of a cyclic union. We\r\nshouldn't be creating cyclic unions, but we shouldn't be crashing when\r\nthey arise either.\r\n* Minor cleanup of `luau_precall`\r\n* Internal change to make L->top handling slightly more uniform\r\n* Optimize SETGLOBAL & GETGLOBAL fallback C functions.\r\n* https://github.com/Roblox/luau/pull/929\r\n* The syntax to the `luau-reduce` commandline tool has changed. It now\r\naccepts a script, a command to execute, and an error to search for. It\r\nno longer automatically passes the script to the command which makes it\r\na lot more flexible. Also be warned that it edits the script it is\r\npassed **in place**. Do not point it at something that is not in source\r\ncontrol!\r\n\r\nNew solver\r\n\r\n* Switch to a greedier but more fallible algorithm for simplifying union\r\nand intersection types that are created as part of refinement\r\ncalculation. This has much better and more predictable performance.\r\n* Fix a constraint cycle in recursive function calls.\r\n* Much improved inference of binary addition. Functions like `function\r\nadd(x, y) return x + y end` can now be inferred without annotations. We\r\nalso accurately typecheck calls to functions like this.\r\n* Many small bugfixes surrounding things like table indexers\r\n* Add support for indexers on class types. This was previously added to\r\nthe old solver; we now add it to the new one for feature parity.\r\n\r\nJIT\r\n\r\n* https://github.com/Roblox/luau/pull/931\r\n* Fuse key.value and key.tt loads for CEHCK_SLOT_MATCH in A64\r\n* Implement remaining aliases of BFM for A64\r\n* Implement new callinfo flag for A64\r\n* Add instruction simplification for int->num->int conversion chains\r\n* Don't even load execdata for X64 calls\r\n* Treat opcode fallbacks the same as manually written fallbacks\r\n\r\n---------\r\n\r\nCo-authored-by: Arseny Kapoulkine <arseny.kapoulkine@gmail.com>\r\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com>",
+          "timestamp": "2023-05-19T12:37:30-07:00",
+          "tree_id": "cda4a4da8bdab7adc6eb034dd0d2d998dfc4907c",
+          "url": "https://github.com/Roblox/luau/commit/721f6e10fbdb25909e020351dc7130393201da8d"
+        },
+        "date": 1684525680099,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.675548,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.737018,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.813104,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 3.67796,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.63959,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.80609,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.05127,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 9.88462,
             "unit": "9ms",
             "range": "±0%",
             "extra": "luau"
