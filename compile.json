@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1685051197294,
+  "lastUpdate": 1685736062394,
   "repoUrl": "https://github.com/Roblox/luau",
   "entries": {
     "luau --compile": [
@@ -8933,6 +8933,86 @@
           {
             "name": "regex-O2-codegen",
             "value": 9.89871,
+            "unit": "9ms",
+            "range": "±0%",
+            "extra": "luau"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "afriesen@roblox.com",
+            "name": "Andy Friesen",
+            "username": "andyfriesen"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "63679f7288ca3994d3e3a9c6d432418d6dd7ba9c",
+          "message": "Sync to upstream/release/579 (#943)\n\nA pretty small changelist this week:\r\n\r\n* When type inference fails to find any matching overload for a\r\nfunction, we were declining to commit any changes to the type graph at\r\nall. This was resulting in confusing type errors in certain cases. Now,\r\nwhen a matching overload cannot be found, we always commit to the first\r\noverload we tried.\r\n\r\nJIT\r\n\r\n* Fix missing variadic register invalidation in FALLBACK_GETVARARGS\r\n* Add a missing null pointer check for the result of luaT_gettm\r\n\r\n---------\r\n\r\nCo-authored-by: Arseny Kapoulkine <arseny.kapoulkine@gmail.com>\r\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com>",
+          "timestamp": "2023-06-02T12:52:15-07:00",
+          "tree_id": "688599c0b7d93f001ef16404f37c5430d29eee7f",
+          "url": "https://github.com/Roblox/luau/commit/63679f7288ca3994d3e3a9c6d432418d6dd7ba9c"
+        },
+        "date": 1685736062390,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.675415,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.736881,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.813828,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 3.68365,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.63938,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.80591,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.05221,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 9.89898,
             "unit": "9ms",
             "range": "±0%",
             "extra": "luau"
