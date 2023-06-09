@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1685736062227,
+  "lastUpdate": 1686330974867,
   "repoUrl": "https://github.com/Roblox/luau",
   "entries": {
     "luau-analyze": [
@@ -6791,6 +6791,72 @@
           {
             "name": "regex-dcr",
             "value": 33.849,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "75688451+vegorov-rbx@users.noreply.github.com",
+            "name": "vegorov-rbx",
+            "username": "vegorov-rbx"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "3ecd3a82abe6682988112cd6eb7326a67ebbc47f",
+          "message": "Sync to upstream/release/580 (#951)\n\n* Added luau-compile executable target to build/test compilation without\r\nhaving full REPL included.\r\n\r\nIn our new typechecker:\r\n* Fixed the order in which constraints are checked to get more\r\ndeterministic errors in different environments\r\n* Fixed `isNumber`/`isString` checks to fix false positive errors in\r\nbinary comparisons\r\n* CannotCallNonFunction error is reported when calling an intersection\r\ntype of non-functions\r\n \r\nIn our native code generation (jit):\r\n* Outlined X64 return instruction code to improve code size\r\n* Improved performance of return instruction on A64\r\n* Added construction of a dominator tree for future optimizations",
+          "timestamp": "2023-06-09T10:08:00-07:00",
+          "tree_id": "b1916504fe4cbb9bae94c96c311b1a548f5a1679",
+          "url": "https://github.com/Roblox/luau/commit/3ecd3a82abe6682988112cd6eb7326a67ebbc47f"
+        },
+        "date": 1686330974862,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 5.09445,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 6.42023,
+            "unit": "6ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 15.5292,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 8.08524,
+            "unit": "8ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 10.7377,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 33.8622,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"

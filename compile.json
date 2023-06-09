@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1685736062394,
+  "lastUpdate": 1686330975028,
   "repoUrl": "https://github.com/Roblox/luau",
   "entries": {
     "luau --compile": [
@@ -9014,6 +9014,86 @@
             "name": "regex-O2-codegen",
             "value": 9.89898,
             "unit": "9ms",
+            "range": "±0%",
+            "extra": "luau"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "75688451+vegorov-rbx@users.noreply.github.com",
+            "name": "vegorov-rbx",
+            "username": "vegorov-rbx"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "3ecd3a82abe6682988112cd6eb7326a67ebbc47f",
+          "message": "Sync to upstream/release/580 (#951)\n\n* Added luau-compile executable target to build/test compilation without\r\nhaving full REPL included.\r\n\r\nIn our new typechecker:\r\n* Fixed the order in which constraints are checked to get more\r\ndeterministic errors in different environments\r\n* Fixed `isNumber`/`isString` checks to fix false positive errors in\r\nbinary comparisons\r\n* CannotCallNonFunction error is reported when calling an intersection\r\ntype of non-functions\r\n \r\nIn our native code generation (jit):\r\n* Outlined X64 return instruction code to improve code size\r\n* Improved performance of return instruction on A64\r\n* Added construction of a dominator tree for future optimizations",
+          "timestamp": "2023-06-09T10:08:00-07:00",
+          "tree_id": "b1916504fe4cbb9bae94c96c311b1a548f5a1679",
+          "url": "https://github.com/Roblox/luau/commit/3ecd3a82abe6682988112cd6eb7326a67ebbc47f"
+        },
+        "date": 1686330975025,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.675532,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.736993,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.813944,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 3.77734,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.63949,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.80601,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.0523,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 10.1776,
+            "unit": "ms",
             "range": "±0%",
             "extra": "luau"
           }
