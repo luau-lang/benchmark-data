@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1686330975028,
+  "lastUpdate": 1686585323818,
   "repoUrl": "https://github.com/Roblox/luau",
   "entries": {
     "luau-compile": [
@@ -9096,6 +9096,86 @@
             "unit": "ms",
             "range": "±0%",
             "extra": "luau"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "arseny.kapoulkine@gmail.com",
+            "name": "Arseny Kapoulkine",
+            "username": "zeux"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "ba65b0e9cd123a4ecd977ddfcebbde7ef13df6bd",
+          "message": "Build and use luau-compile in CI (#952)",
+          "timestamp": "2023-06-12T08:46:44-07:00",
+          "tree_id": "f454231f2aebb47910ae89476a6b7d2414e8c348",
+          "url": "https://github.com/Roblox/luau/commit/ba65b0e9cd123a4ecd977ddfcebbde7ef13df6bd"
+        },
+        "date": 1686585323815,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.67568,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.737125,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.814072,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 3.77762,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.63953,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.80591,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.0522,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 10.1776,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
           }
         ]
       }
