@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1686600788118,
+  "lastUpdate": 1686937483715,
   "repoUrl": "https://github.com/Roblox/luau",
   "entries": {
     "luau-compile": [
@@ -9254,6 +9254,86 @@
             "name": "regex-O2-codegen",
             "value": 10.1778,
             "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "afriesen@roblox.com",
+            "name": "Andy Friesen",
+            "username": "andyfriesen"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "d458d240cdc07765cfe6bd81417faa3f642d0d75",
+          "message": "Sync to upstream/release/581 (#958)\n\n* Definition files can now ascribe indexers to class types.\r\n(https://github.com/Roblox/luau/pull/949)\r\n* Remove --compile support from the REPL. You can just use luau-compile\r\ninstead.\r\n* When an exception is thrown during parallel typechecking (usually an\r\nICE), we now gracefully stop typechecking and drain active workers\r\nbefore rethrowing the exception.\r\n\r\nNew solver\r\n\r\n* Include more source location information when we hit an internal\r\ncompiler error\r\n* Improve the logic that simplifies intersections of tables\r\n\r\nJIT\r\n\r\n* Save testable type annotations to bytecode\r\n* Improve block placement for linearized blocks\r\n* Add support for lea reg, [rip+offset] for labels\r\n* Unify X64 and A64 codegen for RETURN\r\n* Outline interrupt handlers for X64\r\n* Remove global rArgN in favor of build.abi\r\n* Change A64 INTERRUPT lowering to match X64\r\n\r\n---------\r\n\r\nCo-authored-by: Arseny Kapoulkine <arseny.kapoulkine@gmail.com>\r\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com>",
+          "timestamp": "2023-06-16T10:35:18-07:00",
+          "tree_id": "a9ee45692182281ceb01812d5738c487f396923f",
+          "url": "https://github.com/Roblox/luau/commit/d458d240cdc07765cfe6bd81417faa3f642d0d75"
+        },
+        "date": 1686937483711,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.676664,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.738463,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.814826,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 3.62001,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.63922,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.80497,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.05044,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 9.9439,
+            "unit": "9ms",
             "range": "±0%",
             "extra": "luau-compile"
           }
