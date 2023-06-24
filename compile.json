@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1686937483715,
+  "lastUpdate": 1687588064938,
   "repoUrl": "https://github.com/Roblox/luau",
   "entries": {
     "luau-compile": [
@@ -9333,6 +9333,86 @@
           {
             "name": "regex-O2-codegen",
             "value": 9.9439,
+            "unit": "9ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "75688451+vegorov-rbx@users.noreply.github.com",
+            "name": "vegorov-rbx",
+            "username": "vegorov-rbx"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "76bea81a7b798b3324f97a72a2a8faac29089eec",
+          "message": "Sync to upstream/release/582 (#960)\n\n* Optimized operations like instantiation and module export for very\r\nlarge types\r\n\r\nIn our new typechecker:\r\n* Typechecking of function calls was rewritten to handle more cases\r\ncorrectly\r\n* Fixed a crash that can happen after self-referential type is exported\r\nfrom a module\r\n* Fixed a false positive error in string comparison\r\n* Added handling of `for...in` variable type annotations and fixed\r\nissues with the iterator call inside\r\n* Self-referential 'hasProp' and 'setProp' constraints are now handled\r\ncorrectly\r\n \r\nIn our native code generation (jit):\r\n* Added '--target' argument to luau-compile to test multiple\r\narchitectures different from host architecture\r\n* GC barrier tag check is skipped if type is already known to be\r\nGC-collectable\r\n* Added GET_TYPE/GET_TYPEOF instructions for type/typeof fast-calls\r\n* Improved code size of interrupt handlers on X64",
+          "timestamp": "2023-06-23T23:19:39-07:00",
+          "tree_id": "983674bf2f692b61a5959b0b526212249bfbbdb7",
+          "url": "https://github.com/Roblox/luau/commit/76bea81a7b798b3324f97a72a2a8faac29089eec"
+        },
+        "date": 1687588064935,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.676531,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.738432,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.814796,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 3.62144,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.63921,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.80492,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.0504,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 9.9585,
             "unit": "9ms",
             "range": "±0%",
             "extra": "luau-compile"
