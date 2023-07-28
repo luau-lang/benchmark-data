@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1689358625321,
+  "lastUpdate": 1690558238479,
   "repoUrl": "https://github.com/Roblox/luau",
   "entries": {
     "luau-compile": [
@@ -9733,6 +9733,86 @@
           {
             "name": "regex-O2-codegen",
             "value": 9.68487,
+            "unit": "9ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "75688451+vegorov-rbx@users.noreply.github.com",
+            "name": "vegorov-rbx",
+            "username": "vegorov-rbx"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "76f67e0733949bcdf0a83e81213e8cb8797ed632",
+          "message": "Sync to upstream/release/588 (#992)\n\nType checker/autocomplete:\r\n* `Luau::autocomplete` no longer performs typechecking internally, make\r\nsure to run `Frontend::check` before performing autocomplete requests\r\n* Autocomplete string suggestions without \"\" are now only suggested\r\ninside the \"\"\r\n* Autocomplete suggestions now include `function (anonymous autofilled)`\r\nkey with a full suggestion for the function expression (with arguments\r\nincluded) stored in `AutocompleteEntry::insertText`\r\n* `AutocompleteEntry::indexedWithSelf` is provided for function call\r\nsuggestions made with `:`\r\n* Cyclic modules now see each other type exports as `any` to prevent\r\nmemory use-after-free (similar to module return type)\r\n\r\nRuntime:\r\n* Updated inline/loop unroll cost model to better handle assignments\r\n(Fixes https://github.com/Roblox/luau/issues/978)\r\n* `math.noise` speed was improved by ~30%\r\n* `table.concat` speed was improved by ~5-7%\r\n* `tonumber` and `tostring` now have fastcall paths that execute ~1.5x\r\nand ~2.5x faster respectively (fixes #777)\r\n* Fixed crash in `luaL_typename` when index refers to a non-existing\r\nvalue\r\n* Fixed potential out of memory scenario when using `string.sub` or\r\n`string.char` in a loop\r\n* Fixed behavior of some fastcall builtins when called without arguments\r\nunder -O2 to match original functions\r\n* Support for native code execution in VM is now enabled by default\r\n(note: native code still has to be generated explicitly)\r\n* `Codegen::compile` now accepts `CodeGen_OnlyNativeModules` flag. When\r\nset, only modules that have a `--!native` hot-comment at the top will be\r\ncompiled to native code\r\n\r\nIn our new typechecker:\r\n* Generic type packs are no longer considered to be variadic during\r\nunification\r\n* Timeout and cancellation now works in new solver\r\n* Fixed false positive errors around 'table' and 'function' type\r\nrefinements\r\n* Table literals now use covariant unification rules. This is sound\r\nsince literal has no type specified and has no aliases\r\n* Fixed issues with blocked types escaping the constraint solver\r\n* Fixed more places where error messages that should've been suppressed\r\nwere still reported\r\n* Fixed errors when iterating over a top table type\r\n\r\nIn our native code generation (jit):\r\n* 'DebugLuauAbortingChecks' flag is now supported on A64\r\n* LOP_NEWCLOSURE has been translated to IR",
+          "timestamp": "2023-07-28T08:13:53-07:00",
+          "tree_id": "5bb862f11fc0ce87b18c58a7106e9af7502dcdff",
+          "url": "https://github.com/Roblox/luau/commit/76f67e0733949bcdf0a83e81213e8cb8797ed632"
+        },
+        "date": 1690558238475,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.689248,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.751427,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.827203,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 3.57798,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.6724,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.83964,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.08232,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 9.76581,
             "unit": "9ms",
             "range": "±0%",
             "extra": "luau-compile"
