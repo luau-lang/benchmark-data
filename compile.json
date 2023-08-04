@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1690558238479,
+  "lastUpdate": 1691177220461,
   "repoUrl": "https://github.com/Roblox/luau",
   "entries": {
     "luau-compile": [
@@ -9813,6 +9813,86 @@
           {
             "name": "regex-O2-codegen",
             "value": 9.76581,
+            "unit": "9ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "afriesen@roblox.com",
+            "name": "Andy Friesen",
+            "username": "andyfriesen"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "0b2755f964d9fa6b322ad77660e6e3d50fe7101f",
+          "message": "Sync to upstream/release/589 (#1000)\n\n* Progress toward a diffing algorithm for types. We hope that this will\r\nbe useful for writing clearer error messages.\r\n* Add a missing recursion limiter in `Unifier::tryUnifyTables`. This was\r\ncausing a crash in certain situations.\r\n* Luau heap graph enumeration improvements:\r\n    * Weak references are not reported\r\n    * Added tag as a fallback name of non-string table links\r\n* Included top Luau function information in thread name to understand\r\nwhere thread might be suspended\r\n* Constant folding for `math.pi` and `math.huge` at -O2\r\n* Optimize `string.format` and `%*`\r\n* This change makes string interpolation 1.5x-2x faster depending on the\r\nnumber and type of formatted components, assuming a few are using\r\nprimitive types, and reduces associated GC pressure.\r\n\r\nNew type checker:\r\n\r\n* Initial work toward tracking the upper and lower bounds of types\r\naccurately.\r\n\r\nNative code generation (JIT):\r\n\r\n* Add IrCmd::CHECK_TRUTHY for improved assert fast-calls\r\n* Do not compute type map for modules without types\r\n* Capture metatable+readonly state for NEW_TABLE IR instructions\r\n* Replace JUMP_CMP_ANY with CMP_ANY and existing JUMP_EQ_INT\r\n* Add support for exits to VM with reentry lock in VmExit\r\n\r\n---------\r\n\r\nCo-authored-by: Arseny Kapoulkine <arseny.kapoulkine@gmail.com>\r\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com>",
+          "timestamp": "2023-08-04T12:18:54-07:00",
+          "tree_id": "0928cd3ee26bc7271f23bb0e28076eb5c221a3ad",
+          "url": "https://github.com/Roblox/luau/commit/0b2755f964d9fa6b322ad77660e6e3d50fe7101f"
+        },
+        "date": 1691177220457,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.689259,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.751444,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.827253,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 3.33131,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.63934,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.8066,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.05112,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 9.73946,
             "unit": "9ms",
             "range": "±0%",
             "extra": "luau-compile"
