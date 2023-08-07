@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1691177220461,
+  "lastUpdate": 1691441705409,
   "repoUrl": "https://github.com/Roblox/luau",
   "entries": {
     "luau-compile": [
@@ -9893,6 +9893,86 @@
           {
             "name": "regex-O2-codegen",
             "value": 9.73946,
+            "unit": "9ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "git@logandark.mozmail.com",
+            "name": "LoganDark",
+            "username": "LoganDark"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "2b03c8f72a2a39bb9159e52268f1f8777797dfa6",
+          "message": "Use `const char* const*` over `const char**` (#1005)\n\nThe FFI difference becomes significant in languages like Rust where you\r\ncan't necessarily just cast a const pointer.",
+          "timestamp": "2023-08-07T13:45:04-07:00",
+          "tree_id": "b601b326e4f22919d8d2cdbee09f36c3488531de",
+          "url": "https://github.com/Roblox/luau/commit/2b03c8f72a2a39bb9159e52268f1f8777797dfa6"
+        },
+        "date": 1691441705404,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.689295,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.751495,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.827304,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 3.33136,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.63939,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.80665,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.05118,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 9.7395,
             "unit": "9ms",
             "range": "±0%",
             "extra": "luau-compile"
