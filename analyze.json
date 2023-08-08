@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1691451259818,
+  "lastUpdate": 1691522785655,
   "repoUrl": "https://github.com/Roblox/luau",
   "entries": {
     "luau-analyze": [
@@ -7649,6 +7649,72 @@
           {
             "name": "regex-dcr",
             "value": 40.4523,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "arseny.kapoulkine@gmail.com",
+            "name": "Arseny Kapoulkine",
+            "username": "zeux"
+          },
+          "committer": {
+            "email": "arseny.kapoulkine@gmail.com",
+            "name": "Arseny Kapoulkine",
+            "username": "zeux"
+          },
+          "distinct": true,
+          "id": "bd229816c0a82a8590395416c81c333087f541fd",
+          "message": "Remove old benchmark-dev workflows\n\nNobody is maintaining this and we haven't really used it and are\nunlikely to start due to a high degree of noise and lack of dedicated\nmachines for this setup. Callgrind has worked for us well enough, with\nadditional profiling performed locally by engineers - this is not\nperfect but it doesn't look like we have a path to making this better.",
+          "timestamp": "2023-08-08T12:15:10-07:00",
+          "tree_id": "b52a1453ccbde512ad6c50666aa120f4ac5182a4",
+          "url": "https://github.com/Roblox/luau/commit/bd229816c0a82a8590395416c81c333087f541fd"
+        },
+        "date": 1691522785650,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 4.81772,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 5.95501,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 12.4734,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 7.79605,
+            "unit": "7ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 10.3336,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 40.4525,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"

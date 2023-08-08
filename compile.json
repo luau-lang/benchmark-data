@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1691451259984,
+  "lastUpdate": 1691522785835,
   "repoUrl": "https://github.com/Roblox/luau",
   "entries": {
     "luau-compile": [
@@ -10025,6 +10025,86 @@
           {
             "name": "map-O2-codegen",
             "value": 3.33135,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.63939,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.80665,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.05118,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 9.73951,
+            "unit": "9ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "arseny.kapoulkine@gmail.com",
+            "name": "Arseny Kapoulkine",
+            "username": "zeux"
+          },
+          "committer": {
+            "email": "arseny.kapoulkine@gmail.com",
+            "name": "Arseny Kapoulkine",
+            "username": "zeux"
+          },
+          "distinct": true,
+          "id": "bd229816c0a82a8590395416c81c333087f541fd",
+          "message": "Remove old benchmark-dev workflows\n\nNobody is maintaining this and we haven't really used it and are\nunlikely to start due to a high degree of noise and lack of dedicated\nmachines for this setup. Callgrind has worked for us well enough, with\nadditional profiling performed locally by engineers - this is not\nperfect but it doesn't look like we have a path to making this better.",
+          "timestamp": "2023-08-08T12:15:10-07:00",
+          "tree_id": "b52a1453ccbde512ad6c50666aa120f4ac5182a4",
+          "url": "https://github.com/Roblox/luau/commit/bd229816c0a82a8590395416c81c333087f541fd"
+        },
+        "date": 1691522785830,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.689299,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.751495,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.827302,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 3.33136,
             "unit": "3ms",
             "range": "±0%",
             "extra": "luau-compile"
