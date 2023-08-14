@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1691765457014,
+  "lastUpdate": 1692019355540,
   "repoUrl": "https://github.com/Roblox/luau",
   "entries": {
     "luau-analyze": [
@@ -7774,6 +7774,72 @@
           {
             "name": "regex-strict",
             "value": 24.263,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 76.1672,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "xgqt@riseup.net",
+            "name": "Maciej Barć",
+            "username": "xgqt"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "a2a47104c8d8c2fa58222568c0011ba035b29c82",
+          "message": "LinterConfig.h: add missing stdint.h include (#1010)",
+          "timestamp": "2023-08-14T06:10:56-07:00",
+          "tree_id": "9d24c281ffbacd77ab5d27bc439e8de2078576a4",
+          "url": "https://github.com/Roblox/luau/commit/a2a47104c8d8c2fa58222568c0011ba035b29c82"
+        },
+        "date": 1692019355535,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 4.74693,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 5.8449,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 12.3712,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 7.74184,
+            "unit": "7ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 24.2631,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"
