@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1692019355540,
+  "lastUpdate": 1692383172602,
   "repoUrl": "https://github.com/Roblox/luau",
   "entries": {
     "luau-analyze": [
@@ -7847,6 +7847,72 @@
           {
             "name": "regex-dcr",
             "value": 76.1672,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "afriesen@roblox.com",
+            "name": "Andy Friesen",
+            "username": "andyfriesen"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "e25b0a62754e9f223784dc3b41aae4dc0dca501f",
+          "message": "Sync to upstream/release/591 (#1012)\n\n* Fix a use-after-free bug in the new type cloning algorithm\r\n* Tighten up the type of `coroutine.wrap`. It is now `<A..., R...>(f:\r\n(A...) -> R...) -> ((A...) -> R...)`\r\n* Break `.luaurc` out into a separate library target `Luau.Config`. This\r\nmakes it easier for applications to reason about config files without\r\nalso depending on the type inference engine.\r\n* Move typechecking limits into `FrontendOptions`. This allows embedders\r\nmore finely-grained control over autocomplete's internal time limits.\r\n* Fix stability issue with debugger onprotectederror callback allowing\r\nbreak in non-yieldable contexts\r\n\r\nNew solver:\r\n\r\n* Initial work toward [Local Type\r\nInference](https://github.com/Roblox/luau/blob/0e1082108fd6fb3a32dfdf5f1766ea3fc1391328/rfcs/local-type-inference.md)\r\n* Introduce a new subtyping test. This will be much nicer than the old\r\ntest because it is completely separate both from actual type inference\r\nand from error reporting.\r\n\r\nNative code generation:\r\n\r\n* Added function to compute iterated dominance frontier\r\n* Optimize barriers in SET_UPVALUE when tag is known\r\n* Cache lua_State::global in a register on A64\r\n* Optimize constant stores in A64 lowering\r\n* Track table array size state to optimize array size checks\r\n* Add split tag/value store into a VM register\r\n* Check that spills can outlive the block only in specific conditions\r\n\r\n---------\r\n\r\nCo-authored-by: Arseny Kapoulkine <arseny.kapoulkine@gmail.com>\r\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com>",
+          "timestamp": "2023-08-18T11:15:41-07:00",
+          "tree_id": "dd0259e725a294490bd2fb42926962d5e5a177ec",
+          "url": "https://github.com/Roblox/luau/commit/e25b0a62754e9f223784dc3b41aae4dc0dca501f"
+        },
+        "date": 1692383172598,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 4.78481,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 5.89524,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 12.428,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 7.79264,
+            "unit": "7ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 10.2851,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 40.6171,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"
