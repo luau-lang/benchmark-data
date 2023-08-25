@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1692383172602,
+  "lastUpdate": 1692984863082,
   "repoUrl": "https://github.com/Roblox/luau",
   "entries": {
     "luau-analyze": [
@@ -7913,6 +7913,72 @@
           {
             "name": "regex-dcr",
             "value": 40.6171,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "75688451+vegorov-rbx@users.noreply.github.com",
+            "name": "vegorov-rbx",
+            "username": "vegorov-rbx"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "ce9414cb9819b947a4f0060574879a650963e1fd",
+          "message": "Sync to upstream/release/592 (#1018)\n\n* AST queries at position where function name is will now return\r\nAstExprLocal\r\n* Lexer performance has been slightly improved\r\n* Fixed incorrect string singleton autocomplete suggestions (fixes #858)\r\n* Improved parsing error messages\r\n* Fixed crash on null pointer access in unification (fixes #1017)\r\n* Native code support is enabled by default and `native=1`\r\n(make)/`LUAU_NATIVE` (CMake)/`-DLUA_CUSTOM_EXECUTION` configuration is\r\nno longer required\r\n\r\nNew typechecker:\r\n* New subtyping check can now handle generic functions and tables\r\n(including those that contain cycles)\r\n\r\nNative code generation:\r\n* Loops with non-numeric parameters are now handled by VM to streamline\r\nnative code\r\n* Array size check can be optimized away in SETLIST\r\n* On failure, CodeGen::compile returns a reason\r\n* Fixed clobbering of non-volatile xmm registers on Windows",
+          "timestamp": "2023-08-25T10:23:55-07:00",
+          "tree_id": "a8f458a191d41f83e546caa4fe7385c8404580f7",
+          "url": "https://github.com/Roblox/luau/commit/ce9414cb9819b947a4f0060574879a650963e1fd"
+        },
+        "date": 1692984863073,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 4.78696,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 5.89721,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 12.4315,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 7.78729,
+            "unit": "7ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 10.2804,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 40.6256,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"
