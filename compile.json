@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1692984863297,
+  "lastUpdate": 1693591602392,
   "repoUrl": "https://github.com/Roblox/luau",
   "entries": {
     "luau-compile": [
@@ -10453,6 +10453,86 @@
           {
             "name": "regex-O2-codegen",
             "value": 9.83209,
+            "unit": "9ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "lbrown@roblox.com",
+            "name": "Lily Brown",
+            "username": "AmaranthineCodices"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "551a43c4247e928ecfaa432b419495ac755c7d84",
+          "message": "Sync to upstream/release/593 (#1024)\n\n- Updated Roblox copyright to 2023\r\n- Floor division operator `//` (implements #832)\r\n- Autocomplete now shows `end` within `do` blocks\r\n- Restore BraceType when using `Lexer::lookahead` (fixes #1019)\r\n\r\n# New typechecker\r\n\r\n- Subtyping tests between metatables and tables\r\n- Subtyping tests between string singletons and tables\r\n- Subtyping tests for class types\r\n\r\n# Native codegen\r\n\r\n- Fixed macOS test failure (wrong spill restore offset)\r\n- Fixed clobbering of non-volatile xmm registers on Windows\r\n- Fixed wrong storage location of SSA reg spills\r\n- Implemented A64 support for add/sub extended\r\n- Eliminated zextReg from A64 lowering\r\n- Remove identical table slot lookups\r\n- Propagate values from predecessor into the linear block\r\n- Disabled reuse slot optimization\r\n- Keep `LuaNode::val` check for nil when optimizing `CHECK_SLOT_MATCH`\r\n- Implemented IR translation of `table.insert` builtin\r\n- Fixed mmap error handling on macOS/Linux\r\n\r\n# Tooling\r\n\r\n- Used `|` as a column separator instead of `+` in `bench.py`\r\n- Added a `table.sort` micro-benchmark\r\n- Switched `libprotobuf-mutator` to a less problematic version",
+          "timestamp": "2023-09-01T10:58:27-07:00",
+          "tree_id": "0c1b2d1bf7a9c58c5735a50dc3a3428525dcdffb",
+          "url": "https://github.com/Roblox/luau/commit/551a43c4247e928ecfaa432b419495ac755c7d84"
+        },
+        "date": 1693591602388,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.68041,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.74234,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.817963,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 3.35963,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.61626,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.78563,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.02875,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 9.74282,
             "unit": "9ms",
             "range": "±0%",
             "extra": "luau-compile"
