@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1693591602392,
+  "lastUpdate": 1693935054204,
   "repoUrl": "https://github.com/Roblox/luau",
   "entries": {
     "luau-compile": [
@@ -10533,6 +10533,86 @@
           {
             "name": "regex-O2-codegen",
             "value": 9.74282,
+            "unit": "9ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "arseny.kapoulkine@gmail.com",
+            "name": "Arseny Kapoulkine",
+            "username": "zeux"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "105f54b2330d0227059c08d2e03454efa934c5db",
+          "message": "fix build & test conformance issues on mingw32/gcc and mingw64/clang (#1034)\n\nCLI/Reduce.cpp:\r\nNever worked under MinGW as-is. Add check for MinGW as they're defined.\r\n\r\nVM/src/lmem.cpp:\r\nMinGW layout follows more closely MSVC. Checks before were only correct\r\nfor 32-bit gcc / clang in non-Windows.\r\n\r\nNOTES:\r\n__MINGW32__ is defined on both 32-bit and 64-bit, __MINGW64__ is 64-bit\r\nonly. 32-bit MinGW compilers (both Clang & GCC) have a floating point\r\ntest error on math.noise, specifically math.lua:258. All other test\r\ncases / unit tests pass modulo stack size issues (so requires optimized build).\r\n\r\n---------\r\n\r\nCo-authored-by: jdp_ <42700985+jdpatdiscord@users.noreply.github.com>",
+          "timestamp": "2023-09-05T10:22:35-07:00",
+          "tree_id": "d2f32e142dbf55f356cf0118f41f78c13449e0ef",
+          "url": "https://github.com/Roblox/luau/commit/105f54b2330d0227059c08d2e03454efa934c5db"
+        },
+        "date": 1693935054199,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.680402,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.742337,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.817961,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 3.35968,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.61626,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.78564,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.02875,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 9.74285,
             "unit": "9ms",
             "range": "±0%",
             "extra": "luau-compile"
