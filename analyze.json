@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1693935054032,
+  "lastUpdate": 1694132690211,
   "repoUrl": "https://github.com/Roblox/luau",
   "entries": {
     "luau-analyze": [
@@ -8111,6 +8111,72 @@
           {
             "name": "regex-dcr",
             "value": 40.6174,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "75688451+vegorov-rbx@users.noreply.github.com",
+            "name": "vegorov-rbx",
+            "username": "vegorov-rbx"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "c7c986b99644ae769ca8b3e1b0ee35736a7dc239",
+          "message": "Sync to upstream/release/594 (#1036)\n\n* Fixed `Frontend::markDirty` not working on modules that were not\r\ntypechecked yet\r\n* Fixed generic variadic function unification succeeding when it should\r\nhave reported an error\r\n\r\nNew Type Solver:\r\n* Implemented semantic subtyping check for function types\r\n\r\nNative Code Generation:\r\n* Improved performance of numerical loops with a constant step\r\n* Simplified IR for `bit32.extract` calls extracting first/last bits\r\n* Improved performance of NaN checks",
+          "timestamp": "2023-09-07T17:13:49-07:00",
+          "tree_id": "bb938f71c33a9f8360157d70c107e7c8ec82e0ec",
+          "url": "https://github.com/Roblox/luau/commit/c7c986b99644ae769ca8b3e1b0ee35736a7dc239"
+        },
+        "date": 1694132690207,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 4.78027,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 5.89142,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 12.4267,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 7.79953,
+            "unit": "7ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 10.2911,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 40.611,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"
