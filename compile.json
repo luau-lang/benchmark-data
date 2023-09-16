@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1694132690390,
+  "lastUpdate": 1694860374450,
   "repoUrl": "https://github.com/Roblox/luau",
   "entries": {
     "luau-compile": [
@@ -10693,6 +10693,86 @@
           {
             "name": "regex-O2-codegen",
             "value": 9.87809,
+            "unit": "9ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "arseny.kapoulkine@gmail.com",
+            "name": "Arseny Kapoulkine",
+            "username": "zeux"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "309001020a784a9f18acc3136146b0ac4fd57b52",
+          "message": "Update benchmark.yml\n\nUpdate apt-get cache before installing valgrind as it looks like the default cache got out of date.",
+          "timestamp": "2023-09-16T12:21:09+02:00",
+          "tree_id": "f2787ec09632fc34177ee2cb1e8f33bb7c0fac44",
+          "url": "https://github.com/Roblox/luau/commit/309001020a784a9f18acc3136146b0ac4fd57b52"
+        },
+        "date": 1694860374445,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.672304,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.734248,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.809885,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 3.39165,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.59201,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.76085,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.00393,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 9.89486,
             "unit": "9ms",
             "range": "±0%",
             "extra": "luau-compile"
