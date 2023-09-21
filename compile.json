@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1694860374450,
+  "lastUpdate": 1695335839190,
   "repoUrl": "https://github.com/Roblox/luau",
   "entries": {
     "luau-compile": [
@@ -10773,6 +10773,86 @@
           {
             "name": "regex-O2-codegen",
             "value": 9.89486,
+            "unit": "9ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "131925693+AmberGraceSoftware@users.noreply.github.com",
+            "name": "Amber Grace",
+            "username": "AmberGraceSoftware"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "d00e93c82c0ad156afa8cf0c100c2becfe83b808",
+          "message": "Support Control Flow type Refinements for \"break\" and \"continue\" statements (#1004)\n\nFixes: https://github.com/Roblox/luau/issues/913\r\n\r\nThis PR adds support for type refinements around guard clauses that use\r\n`break` and `continue` statements inside a loop, similar to how guard\r\nclauses with `return` is supported.\r\n\r\nI had some free time today, so I figure I'd give a shot at a naïve fix\r\nfor this at the very least.\r\n\r\n---\r\n\r\n## Resulting Change:\r\n\r\nLuau now supports type refinements within loops where a `continue` or\r\n`break` guard clause was used.\r\nFor example:\r\n```lua\r\nfor _, object in objects :: {{value: string?}} do\r\n    if not object.value then\r\n        continue\r\n    end\r\n    local x: string = object.value -- OK; Used to emit \"Type 'string?' could not be converted into 'string'\"\r\nend\r\n```\r\n\r\n---------\r\n\r\nCo-authored-by: Alexander McCord <amccord@roblox.com>",
+          "timestamp": "2023-09-21T15:28:42-07:00",
+          "tree_id": "5243ba776c3f5d6c212b370cb7cb9210a78ec34f",
+          "url": "https://github.com/Roblox/luau/commit/d00e93c82c0ad156afa8cf0c100c2becfe83b808"
+        },
+        "date": 1695335839185,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.672257,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.734201,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.809824,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 3.39165,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.59195,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.7608,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.00387,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 9.89479,
             "unit": "9ms",
             "range": "±0%",
             "extra": "luau-compile"
