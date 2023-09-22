@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1695335839014,
+  "lastUpdate": 1695410582132,
   "repoUrl": "https://github.com/Roblox/luau",
   "entries": {
     "luau-analyze": [
@@ -8309,6 +8309,72 @@
           {
             "name": "regex-dcr",
             "value": 41.1177,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "aweiss@hey.com",
+            "name": "aaron",
+            "username": "aatxe"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "16fbfe912c2583f47abc10fc8e183ac913d4817e",
+          "message": "Sync to upstream/release/596 (#1050)\n\n- Cleaned up `FFlag::FixFindBindingAtFunctionName`,\r\n`FFlag::LuauNormalizeBlockedTypes`, `FFlag::LuauPCallDebuggerFix`\r\n- Added support for break and continue into control flow analysis\r\n- The old type unification engine will now report a more fine-grained\r\nerror at times, indicating that type normalization in particular failed\r\n\r\n# New Type Solver\r\n\r\n- Refactor of Unifier2, the new unification implementation for Luau\r\n- Completed MVP of new unification implementation\r\n- Dramatically simplified overload selection logic\r\n- Type family reduction can now apply sooner to free types that have\r\nbeen solved\r\n- Subtyping now supports table indexers\r\n- Generalization now replaces bad generics with unknown\r\n\r\n# Native Code Generation\r\n\r\n- Reduce stack spills caused by FINDUPVAL and STORE_TAG\r\n- Improve Generate SHL/SHR/SAR/rotates with immediate operands in X64\r\n- Removed redundant case re-check in table lookup fallback\r\n\r\n---------\r\n\r\nCo-authored-by: Arseny Kapoulkine <arseny.kapoulkine@gmail.com>\r\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com>\r\nCo-authored-by: Andy Friesen <afriesen@roblox.com>\r\nCo-authored-by: Lily Brown <lbrown@roblox.com>",
+          "timestamp": "2023-09-22T12:12:15-07:00",
+          "tree_id": "06b08ee5460e927f7c3ce94b582d1f1c76d52aa3",
+          "url": "https://github.com/Roblox/luau/commit/16fbfe912c2583f47abc10fc8e183ac913d4817e"
+        },
+        "date": 1695410582127,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 4.7821,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 5.89371,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 40.0122,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 7.79954,
+            "unit": "7ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 10.2913,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 46.8236,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"
