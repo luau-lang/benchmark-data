@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1695410582340,
+  "lastUpdate": 1696037059028,
   "repoUrl": "https://github.com/Roblox/luau",
   "entries": {
     "luau-compile": [
@@ -10933,6 +10933,86 @@
           {
             "name": "regex-O2-codegen",
             "value": 9.89571,
+            "unit": "9ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "11488393+alexmccord@users.noreply.github.com",
+            "name": "Alexander McCord",
+            "username": "alexmccord"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "1d0b449181a41c00efc255a9a255616b843986b9",
+          "message": "Sync to upstream/release/597 (#1054)\n\n# New Type Solver\r\n\r\n- Implement bidirectional type inference for higher order functions so\r\nthat we can provide a more precise type improving the autocomplete's\r\nhuman factors.\r\n- We seal all tables, so we changed the stringification to make it a\r\nlittle lighter on users.\r\n- Fixed a case of array-out-of-bound access.\r\n- Type families no longer depends on `TxnLog` and `Unifier`.\r\n- Type refinements now waits until the free types are sufficiently\r\nsolved.\r\n\r\n# Native Code Generation\r\n\r\n- Remove cached slot lookup for `executeSETTABLEKS` function because it\r\nis a fallback in the event of a cache miss, making the cached slot\r\nlookup redundant.\r\n- Optimized repeated array lookups, e.g. `a[3]` in `a[3] = a[3] / 2` is\r\ndone once.\r\n\r\n# Misc\r\n\r\n- On some platforms, it is necessary to use `gmtime_s` with the\r\narguments reversed to get the current time. You can now define\r\n`DOCTEST_CONFIG_USE_GMTIME_S` to build and run unit tests on those\r\nplatforms.\r\n\r\n---------\r\n\r\nCo-authored-by: Arseny Kapoulkine <arseny.kapoulkine@gmail.com>\r\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com>\r\nCo-authored-by: Andy Friesen <afriesen@roblox.com>\r\nCo-authored-by: Lily Brown <lbrown@roblox.com>\r\nCo-authored-by: Aaron Weiss <aaronweiss@roblox.com>",
+          "timestamp": "2023-09-29T18:13:05-07:00",
+          "tree_id": "ede82290b71af8511c801c2992e65f36ad20c617",
+          "url": "https://github.com/Roblox/luau/commit/1d0b449181a41c00efc255a9a255616b843986b9"
+        },
+        "date": 1696037059023,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.672227,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.734187,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.809806,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 3.39387,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.59192,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.76077,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.00384,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 9.90041,
             "unit": "9ms",
             "range": "±0%",
             "extra": "luau-compile"
