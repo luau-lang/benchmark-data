@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1696342094764,
+  "lastUpdate": 1696619523608,
   "repoUrl": "https://github.com/Roblox/luau",
   "entries": {
     "luau-compile": [
@@ -11093,6 +11093,86 @@
           {
             "name": "regex-O2-codegen",
             "value": 9.90047,
+            "unit": "9ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "afriesen@roblox.com",
+            "name": "Andy Friesen",
+            "username": "andyfriesen"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "36e0e6471567eb0d41d80e54b73db791efbb808a",
+          "message": "Sync to upstream/release/598 (#1063)\n\n* Include `windows.h` rather than `Windows.h` to make things compile on\r\nMinGW.\r\n* Custom implementation of timegm/os.time for all platforms\r\n* Disable builtin constant folding when getfenv/setfenv are used\r\n* Fixes https://github.com/Roblox/luau/issues/1042\r\n* Fixes https://github.com/Roblox/luau/issues/1043\r\n\r\nNew Type Checker\r\n\r\n* Initial work toward type states.\r\n* Rework most overloadable operators to use type families.\r\n* Initial work toward our new nonstrict mode.\r\n\r\n\r\nNative Codegen\r\n\r\n* Fix native code generation for dead loops\r\n* Annotate top-level functions as cold\r\n* Slightly smaller/faster x64 Luau calls\r\n* emitInstCall used to not set savedpc itself, but now it does for\r\nconsistency with all other implementations\r\n* Implement cmov support for X64\r\n* Fix assertion in luau-compile when module is empty\r\n* Optimize A64 calls at some code size cost\r\n* Inline constant array index offset into the load/store instruction\r\n* Increase x64 spill slots from 5 to 13\r\n\r\n---------\r\n\r\nCo-authored-by: Arseny Kapoulkine <arseny.kapoulkine@gmail.com>\r\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com>\r\nCo-authored-by: Lily Brown <lbrown@roblox.com>\r\nCo-authored-by: Aaron Weiss <aaronweiss@roblox.com>\r\nCo-authored-by: Alexander McCord <amccord@roblox.com>",
+          "timestamp": "2023-10-06T12:02:32-07:00",
+          "tree_id": "6ade74fb4d08cffa71eff3caea9a852161fcf8a2",
+          "url": "https://github.com/Roblox/luau/commit/36e0e6471567eb0d41d80e54b73db791efbb808a"
+        },
+        "date": 1696619523603,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.675063,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.737578,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.812483,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 2.9824,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.59578,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.76524,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.0092,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 9.05543,
             "unit": "9ms",
             "range": "±0%",
             "extra": "luau-compile"
