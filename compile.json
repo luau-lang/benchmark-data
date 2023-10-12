@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1696619523608,
+  "lastUpdate": 1697115380104,
   "repoUrl": "https://github.com/Roblox/luau",
   "entries": {
     "luau-compile": [
@@ -11138,6 +11138,86 @@
           {
             "name": "map-O2",
             "value": 0.812483,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 2.9824,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.59578,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.76524,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.0092,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 9.05543,
+            "unit": "9ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "SamuraiCrow@users.noreply.github.com",
+            "name": "Samuel Crow",
+            "username": "SamuraiCrow"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "984336448cedccc31a926e69c00d9220196de3e2",
+          "message": "Improve POSIX compliance in CLI/FileUtils.cpp (#1064)\n\nSome POSIX platforms, such as Haiku and some BSDs, don't supply DT_*\r\nidentifiers and the corresponding d_type field in stat. This fixes that\r\nand has been tested to still work on 64-bit Linux as well as 64-bit\r\nHaiku.",
+          "timestamp": "2023-10-12T05:46:53-07:00",
+          "tree_id": "8265967fb19236fa0cea202dc6009c103f403d39",
+          "url": "https://github.com/Roblox/luau/commit/984336448cedccc31a926e69c00d9220196de3e2"
+        },
+        "date": 1697115380100,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.675064,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.737576,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.812489,
             "unit": "0ms",
             "range": "±0%",
             "extra": "luau-compile"
