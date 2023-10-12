@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1697115379927,
+  "lastUpdate": 1697127555447,
   "repoUrl": "https://github.com/Roblox/luau",
   "entries": {
     "luau-analyze": [
@@ -8639,6 +8639,72 @@
           {
             "name": "regex-dcr",
             "value": 89.878,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "johnnymorganz@outlook.com",
+            "name": "JohnnyMorganz",
+            "username": "JohnnyMorganz"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "1173e415ef705dfc66fcc6198e9ed155161fdc6c",
+          "message": "Modify the way line breaks are added when printing unions/intersections (#1047)\n\nAdds an option `compositeTypesSingleLineLimit` to control when\r\nunions/intersections are broken up onto multiple lines when printed.\r\nSimple unions/intersections will remain on one line. Default value is\r\nset to `5`.\r\n\r\nI took the liberty to always expand overloaded function intersections on\r\nmultiple lines, as I believe they are best viewed that way, even if\r\ntheres only 2 functions.\r\n\r\nCloses #963",
+          "timestamp": "2023-10-12T09:09:47-07:00",
+          "tree_id": "ac41ad6bd3042246591b130a0317c7f9b52fbabd",
+          "url": "https://github.com/Roblox/luau/commit/1173e415ef705dfc66fcc6198e9ed155161fdc6c"
+        },
+        "date": 1697127555443,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 4.78149,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 5.90969,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 44.9666,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 7.81235,
+            "unit": "7ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 10.3138,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 93.466,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"
