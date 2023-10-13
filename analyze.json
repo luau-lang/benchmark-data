@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1697212622769,
+  "lastUpdate": 1697228910835,
   "repoUrl": "https://github.com/Roblox/luau",
   "entries": {
     "luau-analyze": [
@@ -8772,6 +8772,72 @@
             "name": "regex-dcr",
             "value": 93.466,
             "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "lbrown@roblox.com",
+            "name": "Lily Brown",
+            "username": "AmaranthineCodices"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "24fdac4c05f5ae189ede5153a83af4c1bd25351d",
+          "message": "Sync to upstream/release/599 (#1069)\n\n## What's Changed\r\n\r\n- Improve POSIX compliance in `CLI/FileUtils.cpp` by @SamuraiCrow #1064\r\n- `AstStat*::hasEnd` is deprecated; use `AstStatBlock::hasEnd` instead\r\n- Added a lint for common misuses of the `#` operator\r\n- Luau now issues deprecated diagnostics for some uses of `getfenv` and\r\n`setfenv`\r\n- Fixed a case where we included a trailing space in some error\r\nstringifications\r\n\r\n### Compiler\r\n\r\n- Do not do further analysis in O2 on self functions\r\n- Improve detection of invalid repeat..until expressions vs continue\r\n\r\n### New Type Solver\r\n\r\n- We now cache subtype test results to improve performance\r\n- Improved operator inference mechanics (aka type families)\r\n- Further work towards type states\r\n- Work towards [new non-strict\r\nmode](https://github.com/Roblox/luau/blob/master/rfcs/new-nonstrict.md)\r\ncontinues\r\n\r\n### Native Codegen\r\n\r\n- Instruction last use locations should follow the order in which blocks\r\nare lowered\r\n- Add a bonus assertion to IrLoweringA64::tempAddr\r\n\r\n---\r\n\r\nCo-authored-by: Arseny Kapoulkine <arseny.kapoulkine@gmail.com>\r\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com>\r\nCo-authored-by: Andy Friesen <afriesen@roblox.com>\r\nCo-authored-by: Aaron Weiss <aaronweiss@roblox.com>\r\nCo-authored-by: Alexander McCord <amccord@roblox.com>\r\nCo-authored-by: Vighnesh Vijay <vvijay@roblox.com>",
+          "timestamp": "2023-10-13T13:20:12-07:00",
+          "tree_id": "e0d8f12e649c59d37d70a5b2e0a1908385ad6c5b",
+          "url": "https://github.com/Roblox/luau/commit/24fdac4c05f5ae189ede5153a83af4c1bd25351d"
+        },
+        "date": 1697228910831,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 4.76774,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 5.88839,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 13.4941,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 7.79094,
+            "unit": "7ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 10.2818,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 0.930385,
+            "unit": "0ms",
             "range": "±0%",
             "extra": "luau-analyze"
           }
