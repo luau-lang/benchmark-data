@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1697127555447,
+  "lastUpdate": 1697212622769,
   "repoUrl": "https://github.com/Roblox/luau",
   "entries": {
     "luau-analyze": [
@@ -8677,6 +8677,72 @@
           {
             "name": "map-strict",
             "value": 5.90969,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 44.9666,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 7.81235,
+            "unit": "7ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 10.3138,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 93.466,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "zxteam@protonmail.com",
+            "name": "Alex Orlenko",
+            "username": "khvzak"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "5c9498493563c32c42a055cbbf9630818757ad27",
+          "message": "Add `lua_getallocf` API function (#1068)\n\nThis function matches the corresponding Lua 5.1-5.4 function:\r\n\r\n[`lua_getallocf`](https://www.lua.org/manual/5.4/manual.html#lua_getallocf)\r\nand [source](https://www.lua.org/source/5.4/lapi.c.html#lua_getallocf)\r\n\r\nIt would be useful to get/manipulate auxiliary \"userdata\" pointer that was originally passed to `lua_newstate`.",
+          "timestamp": "2023-10-13T08:47:33-07:00",
+          "tree_id": "6f39eead3be2822cb7b75dd42244482d78019519",
+          "url": "https://github.com/Roblox/luau/commit/5c9498493563c32c42a055cbbf9630818757ad27"
+        },
+        "date": 1697212622764,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 4.78149,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 5.90968,
             "unit": "5ms",
             "range": "±0%",
             "extra": "luau-analyze"
