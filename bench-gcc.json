@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1697851163156,
+  "lastUpdate": 1698073819560,
   "repoUrl": "https://github.com/Roblox/luau",
   "entries": {
     "callgrind gcc": [
@@ -35629,6 +35629,247 @@
           {
             "name": "voxelgen",
             "value": 54.819,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "git@dekkonot.com",
+            "name": "Micah",
+            "username": "Dekkonot"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "011c1afbde3a82712a4bffee1acc3bbdde319e2d",
+          "message": "Implement bit32.byteswap (#1075)\n\nI've decided to take a stab at implementing `bit32.byteswap` from the\r\n[recently merged\r\nRFC](https://github.com/Roblox/luau/blob/master/rfcs/function-bit32-byteswap.md).\r\nI asked on Discord for some guidance, but for the sake of posterity:\r\nthis is my first time doing this and I am likely to have made some\r\nmistakes.\r\n\r\nThe biggest gaps in this implementation are the lack of tests and the\r\nlack of native codegen support. I'd appreciate help with those since I'm\r\nnot sure what's relevant for me to touch for tests, and I'm told that\r\nrelevant assembler instructions don't exist publicly yet. Intuition\r\ntells me that Luau-side tests would go into\r\n`tests/conformance/bitwise.luau` but this is not well documented and I'm\r\nnot sure how I'm meant to test built-in implementations.\r\n\r\nThe current implementation compiles down to `bswap` and `rev` on x86 and\r\nARM respectively when optimized.\r\n\r\n---------\r\n\r\nCo-authored-by: Arseny Kapoulkine <arseny.kapoulkine@gmail.com>",
+          "timestamp": "2023-10-23T08:00:48-07:00",
+          "tree_id": "e56ca798b912acb0e093b8b428145511075bf022",
+          "url": "https://github.com/Roblox/luau/commit/011c1afbde3a82712a4bffee1acc3bbdde319e2d"
+        },
+        "date": 1698073819549,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "base64",
+            "value": 25.32,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "chess",
+            "value": 82.091,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "life",
+            "value": 89.768,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "matrixmult",
+            "value": 24.644,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "mesh-normal-scalar",
+            "value": 32.39,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "qsort",
+            "value": 77.446,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "sha256",
+            "value": 26.041,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "ack",
+            "value": 65.653,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "binary-trees",
+            "value": 29.575,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "fannkuchen-redux",
+            "value": 12.877,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "fixpoint-fact",
+            "value": 59.796,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "heapsort",
+            "value": 22.192,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "mandel",
+            "value": 63.34,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "n-body",
+            "value": 37.757,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "qt",
+            "value": 60.643,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "queen",
+            "value": 1.969,
+            "unit": "1ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "scimark",
+            "value": 89.713,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "spectral-norm",
+            "value": 13.149,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "sieve",
+            "value": 105.729,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "3d-cube",
+            "value": 8.628,
+            "unit": "8ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "3d-morph",
+            "value": 10.288,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "3d-raytrace",
+            "value": 10.345,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "controlflow-recursive",
+            "value": 5.566,
+            "unit": "5ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "crypto-aes",
+            "value": 14.663,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "fannkuch",
+            "value": 26.444,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "math-cordic",
+            "value": 16.563,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "math-partial-sums",
+            "value": 5.313,
+            "unit": "5ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "n-body-oop",
+            "value": 56.24,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "tictactoe",
+            "value": 133.245,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "trig",
+            "value": 25.972,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "voxelgen",
+            "value": 54.813,
             "unit": "ms",
             "range": "±0.000%",
             "extra": "luau-gcc"

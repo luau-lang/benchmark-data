@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1697851163345,
+  "lastUpdate": 1698073819762,
   "repoUrl": "https://github.com/Roblox/luau",
   "entries": {
     "luau-analyze": [
@@ -8903,6 +8903,72 @@
           {
             "name": "regex-dcr",
             "value": 125.532,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "git@dekkonot.com",
+            "name": "Micah",
+            "username": "Dekkonot"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "011c1afbde3a82712a4bffee1acc3bbdde319e2d",
+          "message": "Implement bit32.byteswap (#1075)\n\nI've decided to take a stab at implementing `bit32.byteswap` from the\r\n[recently merged\r\nRFC](https://github.com/Roblox/luau/blob/master/rfcs/function-bit32-byteswap.md).\r\nI asked on Discord for some guidance, but for the sake of posterity:\r\nthis is my first time doing this and I am likely to have made some\r\nmistakes.\r\n\r\nThe biggest gaps in this implementation are the lack of tests and the\r\nlack of native codegen support. I'd appreciate help with those since I'm\r\nnot sure what's relevant for me to touch for tests, and I'm told that\r\nrelevant assembler instructions don't exist publicly yet. Intuition\r\ntells me that Luau-side tests would go into\r\n`tests/conformance/bitwise.luau` but this is not well documented and I'm\r\nnot sure how I'm meant to test built-in implementations.\r\n\r\nThe current implementation compiles down to `bswap` and `rev` on x86 and\r\nARM respectively when optimized.\r\n\r\n---------\r\n\r\nCo-authored-by: Arseny Kapoulkine <arseny.kapoulkine@gmail.com>",
+          "timestamp": "2023-10-23T08:00:48-07:00",
+          "tree_id": "e56ca798b912acb0e093b8b428145511075bf022",
+          "url": "https://github.com/Roblox/luau/commit/011c1afbde3a82712a4bffee1acc3bbdde319e2d"
+        },
+        "date": 1698073819758,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 4.78095,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 5.89907,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 16.5946,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 7.79694,
+            "unit": "7ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 10.2857,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 125.328,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"
