@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1698167599809,
+  "lastUpdate": 1698169315459,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-analyze": [
@@ -9035,6 +9035,72 @@
           {
             "name": "regex-dcr",
             "value": 125.328,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "arseny.kapoulkine@gmail.com",
+            "name": "Arseny Kapoulkine",
+            "username": "zeux"
+          },
+          "committer": {
+            "email": "arseny.kapoulkine@gmail.com",
+            "name": "Arseny Kapoulkine",
+            "username": "zeux"
+          },
+          "distinct": true,
+          "id": "87d955d5eb579048b16542bb73ed3efd5208928b",
+          "message": "Fix remaining references to Roblox org outside of source code",
+          "timestamp": "2023-10-24T10:32:59-07:00",
+          "tree_id": "b466d19202313a062efcaaac698c13dba03ddb8a",
+          "url": "https://github.com/luau-lang/luau/commit/87d955d5eb579048b16542bb73ed3efd5208928b"
+        },
+        "date": 1698169315455,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 4.78095,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 5.89907,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 16.5946,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 7.79643,
+            "unit": "7ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 10.2857,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 125.327,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"
