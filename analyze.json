@@ -1,6 +1,6 @@
 {
-  "lastUpdate": 1698073819762,
-  "repoUrl": "https://github.com/Roblox/luau",
+  "lastUpdate": 1698167599809,
+  "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-analyze": [
       {
@@ -8955,6 +8955,72 @@
           {
             "name": "regex-nonstrict",
             "value": 7.79694,
+            "unit": "7ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 10.2857,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 125.328,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "xgqt@gentoo.org",
+            "name": "Maciej Barć",
+            "username": "xgqt"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "26f79951f7e5af4a10f792c40c519535b7d53341",
+          "message": "TypePairHash.h: include cstdint (#1078)\n\nluau fails to compile w/o this on Gentoo\r\n\r\nSigned-off-by: Maciej Barć <xgqt@gentoo.org>",
+          "timestamp": "2023-10-24T10:02:46-07:00",
+          "tree_id": "4cbc564e883bffe1995e2edaa9755797e3a3820c",
+          "url": "https://github.com/luau-lang/luau/commit/26f79951f7e5af4a10f792c40c519535b7d53341"
+        },
+        "date": 1698167599805,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 4.78095,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 5.89977,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 16.5946,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 7.79642,
             "unit": "7ms",
             "range": "±0%",
             "extra": "luau-analyze"

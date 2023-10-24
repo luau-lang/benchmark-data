@@ -1,6 +1,6 @@
 {
-  "lastUpdate": 1698073819945,
-  "repoUrl": "https://github.com/Roblox/luau",
+  "lastUpdate": 1698167600011,
+  "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-compile": [
       {
@@ -11653,6 +11653,86 @@
           {
             "name": "regex-O2-codegen",
             "value": 9.05074,
+            "unit": "9ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "xgqt@gentoo.org",
+            "name": "Maciej Barć",
+            "username": "xgqt"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "26f79951f7e5af4a10f792c40c519535b7d53341",
+          "message": "TypePairHash.h: include cstdint (#1078)\n\nluau fails to compile w/o this on Gentoo\r\n\r\nSigned-off-by: Maciej Barć <xgqt@gentoo.org>",
+          "timestamp": "2023-10-24T10:02:46-07:00",
+          "tree_id": "4cbc564e883bffe1995e2edaa9755797e3a3820c",
+          "url": "https://github.com/luau-lang/luau/commit/26f79951f7e5af4a10f792c40c519535b7d53341"
+        },
+        "date": 1698167600007,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.675185,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.737611,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.809171,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 2.97719,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.59637,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.7657,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.00956,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 9.0507,
             "unit": "9ms",
             "range": "±0%",
             "extra": "luau-compile"
