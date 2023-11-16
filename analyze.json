@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1700059040788,
+  "lastUpdate": 1700164666161,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-analyze": [
@@ -9490,6 +9490,72 @@
           {
             "name": "regex-strict",
             "value": 10.0945,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 74.5804,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "kocelfc@tutanota.com",
+            "name": "Kostadin",
+            "username": "kostadinsh"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "0492ecffdfae8c838067494f5761627b5563cb5a",
+          "message": "Add #include <algorithm> to fix building with gcc 14 (#1104)\n\nWith gcc 14 some C++ Standard Library headers have been changed to no\r\nlonger include other headers that were used internally by the library.\r\nIn luau's case it is the `<algorithm>` header.",
+          "timestamp": "2023-11-16T11:51:16-08:00",
+          "tree_id": "077f89b057d5cb7fcc9610a60a02c68bd6398b92",
+          "url": "https://github.com/luau-lang/luau/commit/0492ecffdfae8c838067494f5761627b5563cb5a"
+        },
+        "date": 1700164666158,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 4.7324,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 5.83446,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 34.2692,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 7.68917,
+            "unit": "7ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 10.0902,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"

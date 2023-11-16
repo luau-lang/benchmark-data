@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1700059040930,
+  "lastUpdate": 1700164666300,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-compile": [
@@ -12293,6 +12293,86 @@
           {
             "name": "regex-O2-codegen",
             "value": 9.02772,
+            "unit": "9ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "kocelfc@tutanota.com",
+            "name": "Kostadin",
+            "username": "kostadinsh"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "0492ecffdfae8c838067494f5761627b5563cb5a",
+          "message": "Add #include <algorithm> to fix building with gcc 14 (#1104)\n\nWith gcc 14 some C++ Standard Library headers have been changed to no\r\nlonger include other headers that were used internally by the library.\r\nIn luau's case it is the `<algorithm>` header.",
+          "timestamp": "2023-11-16T11:51:16-08:00",
+          "tree_id": "077f89b057d5cb7fcc9610a60a02c68bd6398b92",
+          "url": "https://github.com/luau-lang/luau/commit/0492ecffdfae8c838067494f5761627b5563cb5a"
+        },
+        "date": 1700164666297,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.675609,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.738734,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.811745,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 2.99773,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.58269,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.75314,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2",
+            "value": 1.99666,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 9.02777,
             "unit": "9ms",
             "range": "±0%",
             "extra": "luau-compile"
