@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1700164666005,
+  "lastUpdate": 1700226083693,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "callgrind gcc": [
@@ -38088,6 +38088,254 @@
           {
             "name": "voxelgen",
             "value": 54.831,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "petrihakkinen@users.noreply.github.com",
+            "name": "Petri Häkkinen",
+            "username": "petrihakkinen"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "298cd70154dfa83dac8b4ee02acd77e48448fea2",
+          "message": "Optimize vector literals by storing them in the constant table (#1096)\n\nWith this optimization, built-in vector constructor calls with 3/4 arguments are detected by the compiler and turned into vector constants when the arguments are constant numbers.\r\nRequires optimization level 2 because built-ins are not folded otherwise by the compiler.\r\nBytecode version is bumped because of the new constant type, but old bytecode versions can still be loaded.\r\n\r\nThe following synthetic benchmark shows ~6.6x improvement.\r\n```\r\nlocal v\r\nfor i = 1, 10000000 do\r\n\tv = vector(1, 2, 3)\r\n\tv = vector(1, 2, 3)\r\n\tv = vector(1, 2, 3)\r\n\tv = vector(1, 2, 3)\r\n\tv = vector(1, 2, 3)\r\n\tv = vector(1, 2, 3)\r\n\tv = vector(1, 2, 3)\r\n\tv = vector(1, 2, 3)\r\n\tv = vector(1, 2, 3)\r\n\tv = vector(1, 2, 3)\r\nend\r\n```\r\n\r\nAlso tried a more real world scenario and could see a few percent improvement.\r\n\r\nAdded a new fast flag LuauVectorLiterals for enabling the feature.\r\n\r\n---------\r\n\r\nCo-authored-by: Petri Häkkinen <petrih@rmd.remedy.fi>\r\nCo-authored-by: vegorov-rbx <75688451+vegorov-rbx@users.noreply.github.com>\r\nCo-authored-by: Arseny Kapoulkine <arseny.kapoulkine@gmail.com>",
+          "timestamp": "2023-11-17T04:54:32-08:00",
+          "tree_id": "c6627e1a9e29eec6cab6a68d1eafd9e23925fb9e",
+          "url": "https://github.com/luau-lang/luau/commit/298cd70154dfa83dac8b4ee02acd77e48448fea2"
+        },
+        "date": 1700226083686,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "base64",
+            "value": 25.314,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "chess",
+            "value": 82.132,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "life",
+            "value": 89.767,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "matrixmult",
+            "value": 24.643,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "mesh-normal-scalar",
+            "value": 32.395,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "pcmmix",
+            "value": 10.52,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "qsort",
+            "value": 77.381,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "sha256",
+            "value": 26.043,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "ack",
+            "value": 65.648,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "binary-trees",
+            "value": 29.681,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "fannkuchen-redux",
+            "value": 12.877,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "fixpoint-fact",
+            "value": 59.697,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "heapsort",
+            "value": 22.193,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "mandel",
+            "value": 63.43,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "n-body",
+            "value": 37.757,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "qt",
+            "value": 60.642,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "queen",
+            "value": 1.969,
+            "unit": "1ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "scimark",
+            "value": 89.71,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "spectral-norm",
+            "value": 13.149,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "sieve",
+            "value": 105.758,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "3d-cube",
+            "value": 8.623,
+            "unit": "8ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "3d-morph",
+            "value": 10.288,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "3d-raytrace",
+            "value": 10.325,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "controlflow-recursive",
+            "value": 5.566,
+            "unit": "5ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "crypto-aes",
+            "value": 14.66,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "fannkuch",
+            "value": 26.444,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "math-cordic",
+            "value": 16.563,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "math-partial-sums",
+            "value": 5.313,
+            "unit": "5ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "n-body-oop",
+            "value": 56.241,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "tictactoe",
+            "value": 133.27,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "trig",
+            "value": 25.972,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "voxelgen",
+            "value": 54.829,
             "unit": "ms",
             "range": "±0.000%",
             "extra": "luau-gcc"
