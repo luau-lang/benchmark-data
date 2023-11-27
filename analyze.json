@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1700584539677,
+  "lastUpdate": 1701084701854,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-analyze": [
@@ -9688,6 +9688,72 @@
           {
             "name": "regex-strict",
             "value": 10.096,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 286.696,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "arseny.kapoulkine@gmail.com",
+            "name": "Arseny Kapoulkine",
+            "username": "zeux"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "7fb7f4382dd4fde31e0e044ef3a9b4f63646bd96",
+          "message": "Use ubuntu-latest on GHA when possible (#1112)\n\nWe need ubuntu-20.04 for coverage analysis (clang after 10 doesn't seem\r\nto properly interact with gcov version used for codecov) and for\r\nreleases (to produce binaries targeting earlier glibc).\r\n\r\nHowever, we still should be verifying that Luau builds on latest,\r\nbecause newer toolchains have stricter standard library headers and/or\r\nwarnings; without this we're at risk of constantly regressing the build\r\nfor packaging or external applications.\r\n\r\nNote that release.yml can probably just be deleted but for now we simply\r\nadjust it.",
+          "timestamp": "2023-11-27T03:24:57-08:00",
+          "tree_id": "526bd70f8d52baae1de7e0b604a2dc16fd6accac",
+          "url": "https://github.com/luau-lang/luau/commit/7fb7f4382dd4fde31e0e044ef3a9b4f63646bd96"
+        },
+        "date": 1701084701851,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 4.73261,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 5.83481,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 38.523,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 7.69057,
+            "unit": "7ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 10.0959,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"
