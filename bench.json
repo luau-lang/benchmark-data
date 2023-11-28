@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1701084701389,
+  "lastUpdate": 1701186123487,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "callgrind clang": [
@@ -38832,6 +38832,254 @@
           {
             "name": "voxelgen",
             "value": 50.382,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "arseny.kapoulkine@gmail.com",
+            "name": "Arseny Kapoulkine",
+            "username": "zeux"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "89b437bb4edd63f4ee6cca3f5dcfcd734b5c3209",
+          "message": "Add SUBRK and DIVRK bytecode instructions to bytecode v5 (#1115)\n\nRight now, we can compile R\\*K for all arithmetic instructions, but K\\*R\r\ngets compiled into two instructions (LOADN/LOADK + arithmetic opcode).\r\n\r\nThis is problematic since it leads to reduced performance for some code.\r\nHowever, we'd like to avoid adding reverse variants of ADDK et al for\r\nall opcodes to avoid the increase in I$ footprint for interpreter.\r\n\r\nLooking at the arithmetic instructions, % and // don't have interesting\r\nuse cases for K\\*V; ^ is sometimes used with constant on the left hand\r\nside but this would need to call pow() by necessity in all cases so it\r\nwould be slow regardless of the dispatch overhead. This leaves the four\r\nbasic arithmetic operations.\r\n\r\nFor + and \\*, we can implement a compiler-side optimization in the\r\nfuture that transforms K\\*R to R\\*K automatically. This could either be\r\ndone unconditionally at -O2, or conditionally based on the type of the\r\nvalue (driven by type annotations / inference) -- this technically\r\nchanges behavior in presence of metamethods, although it might be\r\nsensible to just always do this because non-commutative +/* are evil.\r\n\r\nHowever, for - and / it is impossible for the compiler to optimize this\r\nin the future, so we need dedicated opcodes. This only increases the\r\ninterpreter size by ~300 bytes (~1.5%) on X64.\r\n\r\nThis makes spectral-norm and math-partial-sums 6% faster; maybe more\r\nimportantly, voxelgen gets 1.5% faster (so this change does have\r\nreal-world impact).\r\n\r\nTo avoid the proliferation of bytecode versions this change piggybacks\r\non the bytecode version bump that was just made in 604 for vector\r\nconstants; we would still be able to enable these independently but\r\nwe'll consider v5 complete when both are enabled.\r\n\r\nRelated: #626\r\n\r\n---------\r\n\r\nCo-authored-by: vegorov-rbx <75688451+vegorov-rbx@users.noreply.github.com>",
+          "timestamp": "2023-11-28T07:35:01-08:00",
+          "tree_id": "6ea721132dcd3701d0f64f1c1eef6cfc75b73114",
+          "url": "https://github.com/luau-lang/luau/commit/89b437bb4edd63f4ee6cca3f5dcfcd734b5c3209"
+        },
+        "date": 1701186123480,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "base64",
+            "value": 23.5,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "chess",
+            "value": 80.505,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "life",
+            "value": 83.426,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "matrixmult",
+            "value": 23.433,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "mesh-normal-scalar",
+            "value": 30.601,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "pcmmix",
+            "value": 9.48,
+            "unit": "9ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "qsort",
+            "value": 75.277,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "sha256",
+            "value": 23.913,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "ack",
+            "value": 65.923,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "binary-trees",
+            "value": 29.089,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "fannkuchen-redux",
+            "value": 11.808,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "fixpoint-fact",
+            "value": 61.454,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "heapsort",
+            "value": 20.639,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "mandel",
+            "value": 61.729,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "n-body",
+            "value": 36.475,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "qt",
+            "value": 56.403,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "queen",
+            "value": 1.891,
+            "unit": "1ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "scimark",
+            "value": 84.627,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "spectral-norm",
+            "value": 11.345,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "sieve",
+            "value": 101.146,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "3d-cube",
+            "value": 8.019,
+            "unit": "8ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "3d-morph",
+            "value": 9.619,
+            "unit": "9ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "3d-raytrace",
+            "value": 9.747,
+            "unit": "9ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "controlflow-recursive",
+            "value": 5.622,
+            "unit": "5ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "crypto-aes",
+            "value": 13.515,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "fannkuch",
+            "value": 24.134,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "math-cordic",
+            "value": 15.203,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "math-partial-sums",
+            "value": 4.685,
+            "unit": "4ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "n-body-oop",
+            "value": 54.689,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "tictactoe",
+            "value": 122.681,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "trig",
+            "value": 23.916,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "voxelgen",
+            "value": 49.632,
             "unit": "ms",
             "range": "±0.000%",
             "extra": "luau"

@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1701084701854,
+  "lastUpdate": 1701186123955,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-analyze": [
@@ -9747,6 +9747,72 @@
           {
             "name": "regex-nonstrict",
             "value": 7.69057,
+            "unit": "7ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 10.0959,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 286.696,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "arseny.kapoulkine@gmail.com",
+            "name": "Arseny Kapoulkine",
+            "username": "zeux"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "89b437bb4edd63f4ee6cca3f5dcfcd734b5c3209",
+          "message": "Add SUBRK and DIVRK bytecode instructions to bytecode v5 (#1115)\n\nRight now, we can compile R\\*K for all arithmetic instructions, but K\\*R\r\ngets compiled into two instructions (LOADN/LOADK + arithmetic opcode).\r\n\r\nThis is problematic since it leads to reduced performance for some code.\r\nHowever, we'd like to avoid adding reverse variants of ADDK et al for\r\nall opcodes to avoid the increase in I$ footprint for interpreter.\r\n\r\nLooking at the arithmetic instructions, % and // don't have interesting\r\nuse cases for K\\*V; ^ is sometimes used with constant on the left hand\r\nside but this would need to call pow() by necessity in all cases so it\r\nwould be slow regardless of the dispatch overhead. This leaves the four\r\nbasic arithmetic operations.\r\n\r\nFor + and \\*, we can implement a compiler-side optimization in the\r\nfuture that transforms K\\*R to R\\*K automatically. This could either be\r\ndone unconditionally at -O2, or conditionally based on the type of the\r\nvalue (driven by type annotations / inference) -- this technically\r\nchanges behavior in presence of metamethods, although it might be\r\nsensible to just always do this because non-commutative +/* are evil.\r\n\r\nHowever, for - and / it is impossible for the compiler to optimize this\r\nin the future, so we need dedicated opcodes. This only increases the\r\ninterpreter size by ~300 bytes (~1.5%) on X64.\r\n\r\nThis makes spectral-norm and math-partial-sums 6% faster; maybe more\r\nimportantly, voxelgen gets 1.5% faster (so this change does have\r\nreal-world impact).\r\n\r\nTo avoid the proliferation of bytecode versions this change piggybacks\r\non the bytecode version bump that was just made in 604 for vector\r\nconstants; we would still be able to enable these independently but\r\nwe'll consider v5 complete when both are enabled.\r\n\r\nRelated: #626\r\n\r\n---------\r\n\r\nCo-authored-by: vegorov-rbx <75688451+vegorov-rbx@users.noreply.github.com>",
+          "timestamp": "2023-11-28T07:35:01-08:00",
+          "tree_id": "6ea721132dcd3701d0f64f1c1eef6cfc75b73114",
+          "url": "https://github.com/luau-lang/luau/commit/89b437bb4edd63f4ee6cca3f5dcfcd734b5c3209"
+        },
+        "date": 1701186123952,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 4.73288,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 5.83481,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 38.523,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 7.68997,
             "unit": "7ms",
             "range": "±0%",
             "extra": "luau-analyze"
