@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1701186124095,
+  "lastUpdate": 1701556104741,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-compile": [
@@ -12693,6 +12693,86 @@
           {
             "name": "regex-O2-codegen",
             "value": 9.04781,
+            "unit": "9ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "WheretIB@gmail.com",
+            "name": "Vyacheslav Egorov",
+            "username": "WheretIB"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "ce1800746bc2da0b8c2e0d4746b6dfcdf74bcbb4",
+          "message": "Fix 'require' in benchmarks to work with new relative system (#1120)\n\nOld style require is now called with `pcall` to support comparing\r\nagainst Lua.\r\nNew style require is now a third option.\r\n\r\nEdit: this will be a temporary solution until the 'paths' support in\r\n.luaurc is fixed.",
+          "timestamp": "2023-12-02T14:20:54-08:00",
+          "tree_id": "5f6affca3c6ec538096c114863598335e1951f8f",
+          "url": "https://github.com/luau-lang/luau/commit/ce1800746bc2da0b8c2e0d4746b6dfcdf74bcbb4"
+        },
+        "date": 1701556104738,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.678154,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.743486,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.817899,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 3.0539,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.59234,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.76936,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.0182,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 9.17177,
             "unit": "9ms",
             "range": "±0%",
             "extra": "luau-compile"

@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1701186123955,
+  "lastUpdate": 1701556104600,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-analyze": [
@@ -9827,6 +9827,72 @@
           {
             "name": "regex-dcr",
             "value": 286.696,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "WheretIB@gmail.com",
+            "name": "Vyacheslav Egorov",
+            "username": "WheretIB"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "ce1800746bc2da0b8c2e0d4746b6dfcdf74bcbb4",
+          "message": "Fix 'require' in benchmarks to work with new relative system (#1120)\n\nOld style require is now called with `pcall` to support comparing\r\nagainst Lua.\r\nNew style require is now a third option.\r\n\r\nEdit: this will be a temporary solution until the 'paths' support in\r\n.luaurc is fixed.",
+          "timestamp": "2023-12-02T14:20:54-08:00",
+          "tree_id": "5f6affca3c6ec538096c114863598335e1951f8f",
+          "url": "https://github.com/luau-lang/luau/commit/ce1800746bc2da0b8c2e0d4746b6dfcdf74bcbb4"
+        },
+        "date": 1701556104598,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 4.73336,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 5.83466,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 46.7732,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 7.68899,
+            "unit": "7ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 10.0947,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 289,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"
