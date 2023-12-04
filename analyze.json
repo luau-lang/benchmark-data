@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1701556104600,
+  "lastUpdate": 1701723325735,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-analyze": [
@@ -9886,6 +9886,72 @@
           {
             "name": "regex-strict",
             "value": 10.0947,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 289,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "WheretIB@gmail.com",
+            "name": "Vyacheslav Egorov",
+            "username": "WheretIB"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "aafea36235a7014047ad95cc82d56d54a562f82f",
+          "message": "Fixed the backwards compatible benchmark support library require (#1125)\n\nPrevious benchmark require fix wasn't actually working correctly for the\r\nold style require (or running in Lua).",
+          "timestamp": "2023-12-04T12:48:31-08:00",
+          "tree_id": "d85dd4f55a52b7cf52b16cd3b554a80ace2f0088",
+          "url": "https://github.com/luau-lang/luau/commit/aafea36235a7014047ad95cc82d56d54a562f82f"
+        },
+        "date": 1701723325732,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 4.73366,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 5.83582,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 46.7678,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 7.68902,
+            "unit": "7ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 10.0905,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"

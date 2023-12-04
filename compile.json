@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1701556104741,
+  "lastUpdate": 1701723325879,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-compile": [
@@ -12773,6 +12773,86 @@
           {
             "name": "regex-O2-codegen",
             "value": 9.17177,
+            "unit": "9ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "WheretIB@gmail.com",
+            "name": "Vyacheslav Egorov",
+            "username": "WheretIB"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "aafea36235a7014047ad95cc82d56d54a562f82f",
+          "message": "Fixed the backwards compatible benchmark support library require (#1125)\n\nPrevious benchmark require fix wasn't actually working correctly for the\r\nold style require (or running in Lua).",
+          "timestamp": "2023-12-04T12:48:31-08:00",
+          "tree_id": "d85dd4f55a52b7cf52b16cd3b554a80ace2f0088",
+          "url": "https://github.com/luau-lang/luau/commit/aafea36235a7014047ad95cc82d56d54a562f82f"
+        },
+        "date": 1701723325876,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.679153,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.744482,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.818896,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 3.0549,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.59255,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.76942,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.01817,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 9.17176,
             "unit": "9ms",
             "range": "±0%",
             "extra": "luau-compile"
