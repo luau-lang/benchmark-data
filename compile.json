@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1701723325879,
+  "lastUpdate": 1701815893779,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-compile": [
@@ -12853,6 +12853,86 @@
           {
             "name": "regex-O2-codegen",
             "value": 9.17176,
+            "unit": "9ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "vvijay@roblox.com",
+            "name": "Vighnesh-V",
+            "username": "Vighnesh-V"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "2ea7193777c3f5fa5011be83eb354d42351f753d",
+          "message": "Resolve RequireByString test suite failures on Ubuntu CI (#1124)\n\nThis PR resolves the RequireByString test suite failures in CI on\r\nUbuntu. The issue was that paths on linux are case sensitive and thus\r\nMacOS/Windows machines simply behaved as if the paths to the test files\r\nwere case-insensitive, but the linux machine was unable to find the test\r\nfiles. Those tests were `#ifdef'd` out, and have been un `#ifdef'd` to\r\ndemonstrate these changes work.",
+          "timestamp": "2023-12-05T14:31:02-08:00",
+          "tree_id": "c75cae5f0e328c285b591ce71021de0a9b4e9d60",
+          "url": "https://github.com/luau-lang/luau/commit/2ea7193777c3f5fa5011be83eb354d42351f753d"
+        },
+        "date": 1701815893776,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.679159,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.744487,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.818901,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 3.0549,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.59255,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.76942,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.01818,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 9.17175,
             "unit": "9ms",
             "range": "±0%",
             "extra": "luau-compile"
