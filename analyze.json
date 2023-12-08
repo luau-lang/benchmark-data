@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1701815893632,
+  "lastUpdate": 1702072643600,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-analyze": [
@@ -10025,6 +10025,72 @@
           {
             "name": "regex-dcr",
             "value": 289,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "75688451+vegorov-rbx@users.noreply.github.com",
+            "name": "vegorov-rbx",
+            "username": "vegorov-rbx"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "c26d820902ac66740bf2054e0822b7024a67c4cf",
+          "message": "Sync to upstream/release/606 (#1127)\n\nNew Solver\r\n* Improvements to data flow analysis\r\n\r\nNative Code Generation\r\n* Block limit is now per-function instead of per-module\r\n\r\nCo-authored-by: Alexander McCord <amccord@roblox.com>\r\nCo-authored-by: Andy Friesen <afriesen@roblox.com>\r\nCo-authored-by: Aviral Goel <agoel@roblox.com>\r\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com>",
+          "timestamp": "2023-12-08T13:50:16-08:00",
+          "tree_id": "933b2fca011d9b5e3ad478e606cfe65052e98098",
+          "url": "https://github.com/luau-lang/luau/commit/c26d820902ac66740bf2054e0822b7024a67c4cf"
+        },
+        "date": 1702072643597,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 4.73307,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 5.83513,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 46.7583,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 7.68886,
+            "unit": "7ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 10.0946,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 308.542,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"
