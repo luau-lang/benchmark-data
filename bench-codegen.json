@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1702072643282,
+  "lastUpdate": 1702595562882,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "callgrind codegen": [
@@ -24703,6 +24703,254 @@
           {
             "name": "voxelgen",
             "value": 27.768,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-codegen"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "petrihakkinen@users.noreply.github.com",
+            "name": "Petri Häkkinen",
+            "username": "petrihakkinen"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "2173938eb08ed35d4dc3eea86ddabcfc01fe5b9b",
+          "message": "Add tagged lightuserdata (#1087)\n\nThis change adds support for tagged lightuserdata and optional custom\r\ntypenames for lightuserdata.\r\n\r\nBackground: Lightuserdata is an efficient representation for many kinds\r\nof unmanaged handles and resources in a game engine. However, currently\r\nthe VM only supports one kind of lightuserdata, which makes it\r\nproblematic in practice. For example, it's not possible to distinguish\r\nbetween different kinds of lightuserdata in Lua bindings, which can lead\r\nto unsafe practices and even crashes when a wrong kind of lightuserdata\r\nis passed to a binding function. Tagged lightuserdata work similarly to\r\ntagged userdata, i.e. they allow checking the tag quickly using\r\nlua_tolightuserdatatagged (or lua_lightuserdatatag).\r\n\r\nThe tag is stored in the 'extra' field of TValue so it will add no cost\r\nto the (untagged) lightuserdata type.\r\n\r\nAlternatives would be to use full userdata values or use bitpacking to\r\nembed type information into lightuserdata on application level.\r\nUnfortunately these options are not that great in practice: full\r\nuserdata have major performance implications and bitpacking fails in\r\ncases where full 64 bits are already used (e.g. pointers or 64-bit\r\nhashes).\r\n\r\nLightuserdata names are not strictly necessary but they are rather\r\nconvenient when debugging Lua code. More precise error messages and\r\ntostring returning more specific typename are useful to have in practice\r\n(e.g. \"resource\" or \"entity\" instead of the more generic \"userdata\").\r\n\r\nImpl note: I did not add support for renaming tags in\r\nlua_setlightuserdataname as I'm not sure if it's possible to free fixed\r\nstrings. If it's simple enough, maybe we should allow renaming (although\r\nI can't think of a specific need for it)?\r\n\r\n---------\r\n\r\nCo-authored-by: Petri Häkkinen <petrih@rmd.remedy.fi>",
+          "timestamp": "2023-12-14T15:05:51-08:00",
+          "tree_id": "e23dea176f0aaed6bf688a1fbc03b98f2a9a4f34",
+          "url": "https://github.com/luau-lang/luau/commit/2173938eb08ed35d4dc3eea86ddabcfc01fe5b9b"
+        },
+        "date": 1702595562877,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "base64",
+            "value": 13.455,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-codegen"
+          },
+          {
+            "name": "chess",
+            "value": 52.308,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-codegen"
+          },
+          {
+            "name": "life",
+            "value": 23.358,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-codegen"
+          },
+          {
+            "name": "matrixmult",
+            "value": 9.335,
+            "unit": "9ms",
+            "range": "±0.000%",
+            "extra": "luau-codegen"
+          },
+          {
+            "name": "mesh-normal-scalar",
+            "value": 13.149,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-codegen"
+          },
+          {
+            "name": "pcmmix",
+            "value": 1.45,
+            "unit": "1ms",
+            "range": "±0.000%",
+            "extra": "luau-codegen"
+          },
+          {
+            "name": "qsort",
+            "value": 41.511,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-codegen"
+          },
+          {
+            "name": "sha256",
+            "value": 4.588,
+            "unit": "4ms",
+            "range": "±0.000%",
+            "extra": "luau-codegen"
+          },
+          {
+            "name": "ack",
+            "value": 40.016,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-codegen"
+          },
+          {
+            "name": "binary-trees",
+            "value": 21.1,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-codegen"
+          },
+          {
+            "name": "fannkuchen-redux",
+            "value": 3.878,
+            "unit": "3ms",
+            "range": "±0.000%",
+            "extra": "luau-codegen"
+          },
+          {
+            "name": "fixpoint-fact",
+            "value": 48.334,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-codegen"
+          },
+          {
+            "name": "heapsort",
+            "value": 7.72,
+            "unit": "7ms",
+            "range": "±0.000%",
+            "extra": "luau-codegen"
+          },
+          {
+            "name": "mandel",
+            "value": 40.788,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-codegen"
+          },
+          {
+            "name": "n-body",
+            "value": 9.747,
+            "unit": "9ms",
+            "range": "±0.000%",
+            "extra": "luau-codegen"
+          },
+          {
+            "name": "qt",
+            "value": 25.043,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-codegen"
+          },
+          {
+            "name": "queen",
+            "value": 0.805,
+            "unit": "0ms",
+            "range": "±0.000%",
+            "extra": "luau-codegen"
+          },
+          {
+            "name": "scimark",
+            "value": 24.691,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-codegen"
+          },
+          {
+            "name": "spectral-norm",
+            "value": 2.484,
+            "unit": "2ms",
+            "range": "±0.000%",
+            "extra": "luau-codegen"
+          },
+          {
+            "name": "sieve",
+            "value": 83.581,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-codegen"
+          },
+          {
+            "name": "3d-cube",
+            "value": 3.77,
+            "unit": "3ms",
+            "range": "±0.000%",
+            "extra": "luau-codegen"
+          },
+          {
+            "name": "3d-morph",
+            "value": 3.766,
+            "unit": "3ms",
+            "range": "±0.000%",
+            "extra": "luau-codegen"
+          },
+          {
+            "name": "3d-raytrace",
+            "value": 3.332,
+            "unit": "3ms",
+            "range": "±0.000%",
+            "extra": "luau-codegen"
+          },
+          {
+            "name": "controlflow-recursive",
+            "value": 3.464,
+            "unit": "3ms",
+            "range": "±0.000%",
+            "extra": "luau-codegen"
+          },
+          {
+            "name": "crypto-aes",
+            "value": 7.309,
+            "unit": "7ms",
+            "range": "±0.000%",
+            "extra": "luau-codegen"
+          },
+          {
+            "name": "fannkuch",
+            "value": 6.094,
+            "unit": "6ms",
+            "range": "±0.000%",
+            "extra": "luau-codegen"
+          },
+          {
+            "name": "math-cordic",
+            "value": 3.838,
+            "unit": "3ms",
+            "range": "±0.000%",
+            "extra": "luau-codegen"
+          },
+          {
+            "name": "math-partial-sums",
+            "value": 1.907,
+            "unit": "1ms",
+            "range": "±0.000%",
+            "extra": "luau-codegen"
+          },
+          {
+            "name": "n-body-oop",
+            "value": 13.895,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-codegen"
+          },
+          {
+            "name": "tictactoe",
+            "value": 63.159,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-codegen"
+          },
+          {
+            "name": "trig",
+            "value": 6.951,
+            "unit": "6ms",
+            "range": "±0.000%",
+            "extra": "luau-codegen"
+          },
+          {
+            "name": "voxelgen",
+            "value": 27.771,
             "unit": "ms",
             "range": "±0.000%",
             "extra": "luau-codegen"
