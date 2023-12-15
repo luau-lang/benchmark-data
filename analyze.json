@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1702676154293,
+  "lastUpdate": 1702677480974,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-analyze": [
@@ -10223,6 +10223,72 @@
           {
             "name": "regex-dcr",
             "value": 176.598,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "75688451+vegorov-rbx@users.noreply.github.com",
+            "name": "vegorov-rbx",
+            "username": "vegorov-rbx"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "e76802f2ce698ca090a793b24c07e336b21ade9f",
+          "message": "Add a prefix to TaggedLuData flag to have it auto-enabled in flags ON mode (#1130)",
+          "timestamp": "2023-12-15T13:51:14-08:00",
+          "tree_id": "0fe85203ba3d24f2cb2adf2e61349802c005cef0",
+          "url": "https://github.com/luau-lang/luau/commit/e76802f2ce698ca090a793b24c07e336b21ade9f"
+        },
+        "date": 1702677480971,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 4.7331,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 5.83509,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 47.1703,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 7.68758,
+            "unit": "7ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 10.0125,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 176.593,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"
