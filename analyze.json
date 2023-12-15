@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1702595563200,
+  "lastUpdate": 1702676154293,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-analyze": [
@@ -10157,6 +10157,72 @@
           {
             "name": "regex-dcr",
             "value": 308.537,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "aweiss@hey.com",
+            "name": "aaron",
+            "username": "aatxe"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "ff502f094353b44092178522969a72c3efce6dda",
+          "message": "Sync to upstream/release/607 (#1131)\n\n# What's changed?\r\n\r\n* Fix up the `std::iterator_traits` definitions for some Luau data\r\nstructures.\r\n* Replace some of the usages of `std::unordered_set` and\r\n`std::unordered_map` with Luau-provided data structures to increase\r\nperformance and reduce overall number of heap allocations.\r\n* Update some of the documentation links in comments throughout the\r\ncodebase to correctly point to the moved repository.\r\n* Expanded JSON encoder for AST to support singleton types.\r\n* Fixed a bug in `luau-analyze` where exceptions in the last module\r\nbeing checked during multithreaded analysis would not be rethrown.\r\n\r\n### New type solver\r\n\r\n* Introduce a `refine` type family to handle deferred refinements during\r\ntype inference, replacing the old `RefineConstraint`.\r\n* Continued work on the implementation of type states, fixing some known\r\nbugs/blockers.\r\n* Added support for variadic functions in new non-strict mode, enabling\r\nbroader support for builtins and the Roblox API.\r\n\r\n### Internal Contributors\r\n\r\nCo-authored-by: Aaron Weiss <aaronweiss@roblox.com>\r\nCo-authored-by: Alexander McCord <amccord@roblox.com>\r\nCo-authored-by: Andy Friesen <afriesen@roblox.com>\r\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com>\r\n\r\n---------\r\n\r\nCo-authored-by: Alexander McCord <amccord@roblox.com>\r\nCo-authored-by: Andy Friesen <afriesen@roblox.com>\r\nCo-authored-by: Vighnesh <vvijay@roblox.com>\r\nCo-authored-by: Aviral Goel <agoel@roblox.com>\r\nCo-authored-by: David Cope <dcope@roblox.com>\r\nCo-authored-by: Lily Brown <lbrown@roblox.com>\r\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com>",
+          "timestamp": "2023-12-15T13:29:06-08:00",
+          "tree_id": "bc7e472c02f4469b1e7fb1d180abb517d72fbd7e",
+          "url": "https://github.com/luau-lang/luau/commit/ff502f094353b44092178522969a72c3efce6dda"
+        },
+        "date": 1702676154290,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 4.73342,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 5.83439,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 47.1798,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 7.68748,
+            "unit": "7ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 10.0125,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 176.598,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"
