@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1702677481115,
+  "lastUpdate": 1704724332699,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-compile": [
@@ -13239,6 +13239,86 @@
           {
             "name": "regex-O1",
             "value": 1.76919,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.01795,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 9.17141,
+            "unit": "9ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "johnnymorganz@outlook.com",
+            "name": "JohnnyMorganz",
+            "username": "JohnnyMorganz"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "c0f55389470a2a30117dd7c938f9f7fee7d1795a",
+          "message": "Clone TableType typeLocation (#1136)\n\nThis was missed in #1046",
+          "timestamp": "2024-01-08T06:25:27-08:00",
+          "tree_id": "3e53549fa5d406a38d96fbc8f215a99dd5c0dd2f",
+          "url": "https://github.com/luau-lang/luau/commit/c0f55389470a2a30117dd7c938f9f7fee7d1795a"
+        },
+        "date": 1704724332695,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.678147,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.743477,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.817891,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 3.0534,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.59234,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.7692,
             "unit": "1ms",
             "range": "±0%",
             "extra": "luau-compile"
