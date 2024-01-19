@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1705409320207,
+  "lastUpdate": 1705687902760,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-compile": [
@@ -13493,6 +13493,86 @@
           {
             "name": "regex-O2-codegen",
             "value": 9.16081,
+            "unit": "9ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "75688451+vegorov-rbx@users.noreply.github.com",
+            "name": "vegorov-rbx",
+            "username": "vegorov-rbx"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "cdd1a380dbf768f168910317e7576210afcd9552",
+          "message": "Sync to upstream/release/609 (#1150)\n\n### What's changed?\r\n* Syntax for [read-only and write-only\r\nproperties](https://github.com/luau-lang/rfcs/pull/15) is now parsed,\r\nbut is not yet supported in typechecking\r\n\r\n### New Type Solver\r\n* `keyof` and `rawkeyof` type operators have been updated to match final\r\ntext of the [RFC](https://github.com/luau-lang/rfcs/pull/16)\r\n* Fixed issues with cyclic type families that were generated for mutable\r\nloop variables\r\n\r\n### Native Code Generation\r\n* Fixed inference for number / vector operation that caused an\r\nunnecessary VM assist\r\n\r\n---\r\n### Internal Contributors\r\nCo-authored-by: Aaron Weiss <aaronweiss@roblox.com>\r\nCo-authored-by: Andy Friesen <afriesen@roblox.com>\r\nCo-authored-by: Lily Brown <lbrown@roblox.com>\r\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com>",
+          "timestamp": "2024-01-19T10:04:46-08:00",
+          "tree_id": "6d7751963ffbda0958ea9913abdd6584a543ef09",
+          "url": "https://github.com/luau-lang/luau/commit/cdd1a380dbf768f168910317e7576210afcd9552"
+        },
+        "date": 1705687902756,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.678493,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.744202,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.817027,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 3.04848,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.5926,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.76883,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.01759,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 9.16109,
             "unit": "9ms",
             "range": "±0%",
             "extra": "luau-compile"
