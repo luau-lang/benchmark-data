@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1706326740953,
+  "lastUpdate": 1706551806453,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-analyze": [
@@ -10612,6 +10612,72 @@
           {
             "name": "regex-strict",
             "value": 9.93959,
+            "unit": "9ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 10683.4,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "johnnymorganz@outlook.com",
+            "name": "JohnnyMorganz",
+            "username": "JohnnyMorganz"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "c0b17daebd3e48c4b4edff74afda32fd87a8abb7",
+          "message": "Handle autocomplete in table when no initial character present (#1155)\n\nCloses #685",
+          "timestamp": "2024-01-29T09:52:00-08:00",
+          "tree_id": "6a54a9207467239215bcc3cd990b2779e18d94e0",
+          "url": "https://github.com/luau-lang/luau/commit/c0b17daebd3e48c4b4edff74afda32fd87a8abb7"
+        },
+        "date": 1706551806449,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 4.76099,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 5.81795,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 140.924,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 7.7213,
+            "unit": "7ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 9.93966,
             "unit": "9ms",
             "range": "±0%",
             "extra": "luau-analyze"
