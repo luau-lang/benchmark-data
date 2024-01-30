@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1706551806453,
+  "lastUpdate": 1706629327513,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-analyze": [
@@ -10678,6 +10678,72 @@
           {
             "name": "regex-strict",
             "value": 9.93966,
+            "unit": "9ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 10683.4,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "zxteam@protonmail.com",
+            "name": "Alex Orlenko",
+            "username": "khvzak"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "d409f7946dc2c9c6b77f039e9debe4b1c11761ae",
+          "message": "Fix setting sandbox on Lua instance without strlib (#1156)\n\nCurrently calling `luaL_sandbox` on Lua instance without loaded strlib\r\ncauses crash (assertion).\r\nIt happens because inside `luaL_sandbox` there is no check that\r\nmetatable for strings is present.",
+          "timestamp": "2024-01-30T07:23:58-08:00",
+          "tree_id": "8500362ee81daf889e43187b9c0c16b3498e4176",
+          "url": "https://github.com/luau-lang/luau/commit/d409f7946dc2c9c6b77f039e9debe4b1c11761ae"
+        },
+        "date": 1706629327509,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 4.76099,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 5.81795,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 140.924,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 7.72181,
+            "unit": "7ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 9.93965,
             "unit": "9ms",
             "range": "±0%",
             "extra": "luau-analyze"
