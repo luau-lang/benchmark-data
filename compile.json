@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1706629327660,
+  "lastUpdate": 1706794590088,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-compile": [
@@ -13813,6 +13813,86 @@
           {
             "name": "regex-O2-codegen",
             "value": 9.16775,
+            "unit": "9ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "arseny.kapoulkine@gmail.com",
+            "name": "Arseny Kapoulkine",
+            "username": "zeux"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "974963a87020d6392e36dc616d27d0f1df0765ae",
+          "message": "Enable newly added M1 GHA CI (#1158)\n\nGitHub just released support for M1 runners for open source projects via\r\nGHA. It can be selected by using macos-14 OS to run on.\r\n\r\nThis is very valuable because until now, Luau wasn't tested in OSS CI on\r\nArm64, despite the presence of a fairly large volume of AArch64 specific\r\ncode courtesy of A64 codegen. This change fixes that.\r\n\r\nIn the future we could also expand codecov reporting as it seems to work\r\nwell but it needs a little bit of cleanup for the build in question so\r\nlet's start small.",
+          "timestamp": "2024-02-01T05:18:27-08:00",
+          "tree_id": "850cb68783f89f5d057439cb43e2ac4e8ad94d2b",
+          "url": "https://github.com/luau-lang/luau/commit/974963a87020d6392e36dc616d27d0f1df0765ae"
+        },
+        "date": 1706794590085,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.680458,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.746209,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.81877,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 3.05166,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.59309,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.76987,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.01855,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 9.16771,
             "unit": "9ms",
             "range": "±0%",
             "extra": "luau-compile"

@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1706629327513,
+  "lastUpdate": 1706794589947,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-analyze": [
@@ -10744,6 +10744,72 @@
           {
             "name": "regex-strict",
             "value": 9.93965,
+            "unit": "9ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 10683.4,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "arseny.kapoulkine@gmail.com",
+            "name": "Arseny Kapoulkine",
+            "username": "zeux"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "974963a87020d6392e36dc616d27d0f1df0765ae",
+          "message": "Enable newly added M1 GHA CI (#1158)\n\nGitHub just released support for M1 runners for open source projects via\r\nGHA. It can be selected by using macos-14 OS to run on.\r\n\r\nThis is very valuable because until now, Luau wasn't tested in OSS CI on\r\nArm64, despite the presence of a fairly large volume of AArch64 specific\r\ncode courtesy of A64 codegen. This change fixes that.\r\n\r\nIn the future we could also expand codecov reporting as it seems to work\r\nwell but it needs a little bit of cleanup for the build in question so\r\nlet's start small.",
+          "timestamp": "2024-02-01T05:18:27-08:00",
+          "tree_id": "850cb68783f89f5d057439cb43e2ac4e8ad94d2b",
+          "url": "https://github.com/luau-lang/luau/commit/974963a87020d6392e36dc616d27d0f1df0765ae"
+        },
+        "date": 1706794589944,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 4.76099,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 5.81795,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 140.93,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 7.7219,
+            "unit": "7ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 9.9396,
             "unit": "9ms",
             "range": "±0%",
             "extra": "luau-analyze"
