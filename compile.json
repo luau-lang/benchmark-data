@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1706909969883,
+  "lastUpdate": 1707501474035,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-compile": [
@@ -13973,6 +13973,86 @@
           {
             "name": "regex-O2-codegen",
             "value": 9.16804,
+            "unit": "9ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "afriesen@roblox.com",
+            "name": "Andy Friesen",
+            "username": "andyfriesen"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "d6c2472f0c5c946a12ad54bb234747f62e15458f",
+          "message": "Sync to upstream/release/612 (#1162)\n\nNew solver\r\n\r\n* Fix bugs where bidirectional type inference would fail to take effect\r\nat the proper stage.\r\n* Improve inference of mutually recursive functions\r\n* Fix crashes\r\n\r\n---------\r\n\r\nCo-authored-by: Aaron Weiss <aaronweiss@roblox.com>\r\nCo-authored-by: Andy Friesen <afriesen@roblox.com>\r\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com>",
+          "timestamp": "2024-02-09T09:51:12-08:00",
+          "tree_id": "f9b2b636d868d4749c7132f29042017e13c5ab05",
+          "url": "https://github.com/luau-lang/luau/commit/d6c2472f0c5c946a12ad54bb234747f62e15458f"
+        },
+        "date": 1707501474031,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.680571,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.746348,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.818904,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 3.05184,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.59317,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.76998,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.01867,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 9.16803,
             "unit": "9ms",
             "range": "±0%",
             "extra": "luau-compile"
