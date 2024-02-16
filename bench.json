@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1708050085610,
+  "lastUpdate": 1708102069318,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "callgrind clang": [
@@ -43544,6 +43544,254 @@
           {
             "name": "voxelgen",
             "value": 49.865,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "arseny.kapoulkine@gmail.com",
+            "name": "Arseny Kapoulkine",
+            "username": "zeux"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "c5f4d973d75b17dd82dd7ad197860c96c211b884",
+          "message": "Improve A64 lowering for vector operations by using vector instructions (#1164)\n\nThis change replaces scalar versions of vector opcodes for A64 with\r\nactual vector instructions.\r\n\r\nWe take the approach similar to X64: patch last component with zero,\r\nperform the math, patch last component with type tag. I'm hoping that in\r\nthe future the type tag will be placed separately (separate IR opcode?)\r\nbecause right now chains of math operations result in excessive type tag\r\noperations.\r\n\r\nTo patch the type tag without always keeping a mask in a register,\r\nins.4s instructions can be used; unfortunately it's only capable of\r\npatching a register in-place, so we need an extra register copy in case\r\nit's not last-use. Usually it's last-use so the patch is free; probably\r\nwith IR rework mentioned above all of this can be improved (e.g.\r\nload-with-patch will never need to copy).\r\n\r\n~It's not 100% clear if we *have* to patch type tag: Apple does preserve\r\ndenormals but we'd need to benchmark this to see if there's an actual\r\nperformance impact. But for now we're playing it safe.~\r\n\r\nThis was tested by running the conformance tests, and new opcode\r\nimplementations were checked by comparing the result with\r\nhttps://armconverter.com/.\r\n\r\nPerformance testing is complicated by the fact that OSS Luau doesn't\r\nsupport vector constructor out of the box, and other limitations of\r\ncodegen. I've hacked vector constructor/type into REPL and confirmed\r\nthat on a test that calls this function in a loop (not inlined):\r\n\r\n```\r\nfunction fma(a: vector, b: vector, c: vector)\r\n        return a * b + c\r\nend\r\n```\r\n\r\n... this PR improves performance by ~6% (note that probably most of the\r\noverhead here is the call dispatch; I didn't want to brave testing a\r\nmore complex expression). The assembly for an individual operation\r\nchanges as follows:\r\n\r\nBefore:\r\n\r\n```\r\n#   %14 = MUL_VEC %12, %13                                    ; useCount: 2, lastUse: %22\r\n dup         s29,v31.s[0]\r\n dup         s28,v30.s[0]\r\n fmul        s29,s29,s28\r\n ins         v31.s[0],v29.s[0]\r\n dup         s29,v31.s[1]\r\n dup         s28,v30.s[1]\r\n fmul        s29,s29,s28\r\n ins         v31.s[1],v29.s[0]\r\n dup         s29,v31.s[2]\r\n dup         s28,v30.s[2]\r\n fmul        s29,s29,s28\r\n ins         v31.s[2],v29.s[0]\r\n```\r\n\r\nAfter:\r\n\r\n```\r\n#   %14 = MUL_VEC %12, %13                                    ; useCount: 2, lastUse: %22\r\n ins         v31.s[3],w31\r\n ins         v30.s[3],w31\r\n fmul        v31.4s,v31.4s,v30.4s\r\n movz        w17,#4\r\n ins         v31.s[3],w17\r\n```\r\n\r\n**edit** final form (see comments):\r\n\r\n```\r\n#   %14 = MUL_VEC %12, %13                                    ; useCount: 2, lastUse: %22\r\n fmul        v31.4s,v31.4s,v30.4s\r\n movz        w17,#4\r\n ins         v31.s[3],w17\r\n```",
+          "timestamp": "2024-02-16T08:30:35-08:00",
+          "tree_id": "23c45202906c12f0976ca2fe02f9aff5f84c0df3",
+          "url": "https://github.com/luau-lang/luau/commit/c5f4d973d75b17dd82dd7ad197860c96c211b884"
+        },
+        "date": 1708102069309,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "base64",
+            "value": 23.861,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "chess",
+            "value": 80.755,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "life",
+            "value": 84.068,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "matrixmult",
+            "value": 23.735,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "mesh-normal-scalar",
+            "value": 30.953,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "pcmmix",
+            "value": 9.73,
+            "unit": "9ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "qsort",
+            "value": 75.734,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "sha256",
+            "value": 24.555,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "ack",
+            "value": 65.085,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "binary-trees",
+            "value": 29.039,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "fannkuchen-redux",
+            "value": 11.895,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "fixpoint-fact",
+            "value": 60.909,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "heapsort",
+            "value": 20.734,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "mandel",
+            "value": 61.968,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "n-body",
+            "value": 37.289,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "qt",
+            "value": 56.172,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "queen",
+            "value": 1.913,
+            "unit": "1ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "scimark",
+            "value": 85.913,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "spectral-norm",
+            "value": 11.627,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "sieve",
+            "value": 100.669,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "3d-cube",
+            "value": 8.135,
+            "unit": "8ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "3d-morph",
+            "value": 9.825,
+            "unit": "9ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "3d-raytrace",
+            "value": 9.859,
+            "unit": "9ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "controlflow-recursive",
+            "value": 5.553,
+            "unit": "5ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "crypto-aes",
+            "value": 13.616,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "fannkuch",
+            "value": 24.428,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "math-cordic",
+            "value": 15.563,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "math-partial-sums",
+            "value": 4.777,
+            "unit": "4ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "n-body-oop",
+            "value": 55.738,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "tictactoe",
+            "value": 123.331,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "trig",
+            "value": 24.384,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "voxelgen",
+            "value": 49.866,
             "unit": "ms",
             "range": "±0.000%",
             "extra": "luau"

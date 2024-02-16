@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1708050086113,
+  "lastUpdate": 1708102069846,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-analyze": [
@@ -11008,6 +11008,72 @@
           {
             "name": "regex-strict",
             "value": 9.96125,
+            "unit": "9ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 9552.06,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "arseny.kapoulkine@gmail.com",
+            "name": "Arseny Kapoulkine",
+            "username": "zeux"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "c5f4d973d75b17dd82dd7ad197860c96c211b884",
+          "message": "Improve A64 lowering for vector operations by using vector instructions (#1164)\n\nThis change replaces scalar versions of vector opcodes for A64 with\r\nactual vector instructions.\r\n\r\nWe take the approach similar to X64: patch last component with zero,\r\nperform the math, patch last component with type tag. I'm hoping that in\r\nthe future the type tag will be placed separately (separate IR opcode?)\r\nbecause right now chains of math operations result in excessive type tag\r\noperations.\r\n\r\nTo patch the type tag without always keeping a mask in a register,\r\nins.4s instructions can be used; unfortunately it's only capable of\r\npatching a register in-place, so we need an extra register copy in case\r\nit's not last-use. Usually it's last-use so the patch is free; probably\r\nwith IR rework mentioned above all of this can be improved (e.g.\r\nload-with-patch will never need to copy).\r\n\r\n~It's not 100% clear if we *have* to patch type tag: Apple does preserve\r\ndenormals but we'd need to benchmark this to see if there's an actual\r\nperformance impact. But for now we're playing it safe.~\r\n\r\nThis was tested by running the conformance tests, and new opcode\r\nimplementations were checked by comparing the result with\r\nhttps://armconverter.com/.\r\n\r\nPerformance testing is complicated by the fact that OSS Luau doesn't\r\nsupport vector constructor out of the box, and other limitations of\r\ncodegen. I've hacked vector constructor/type into REPL and confirmed\r\nthat on a test that calls this function in a loop (not inlined):\r\n\r\n```\r\nfunction fma(a: vector, b: vector, c: vector)\r\n        return a * b + c\r\nend\r\n```\r\n\r\n... this PR improves performance by ~6% (note that probably most of the\r\noverhead here is the call dispatch; I didn't want to brave testing a\r\nmore complex expression). The assembly for an individual operation\r\nchanges as follows:\r\n\r\nBefore:\r\n\r\n```\r\n#   %14 = MUL_VEC %12, %13                                    ; useCount: 2, lastUse: %22\r\n dup         s29,v31.s[0]\r\n dup         s28,v30.s[0]\r\n fmul        s29,s29,s28\r\n ins         v31.s[0],v29.s[0]\r\n dup         s29,v31.s[1]\r\n dup         s28,v30.s[1]\r\n fmul        s29,s29,s28\r\n ins         v31.s[1],v29.s[0]\r\n dup         s29,v31.s[2]\r\n dup         s28,v30.s[2]\r\n fmul        s29,s29,s28\r\n ins         v31.s[2],v29.s[0]\r\n```\r\n\r\nAfter:\r\n\r\n```\r\n#   %14 = MUL_VEC %12, %13                                    ; useCount: 2, lastUse: %22\r\n ins         v31.s[3],w31\r\n ins         v30.s[3],w31\r\n fmul        v31.4s,v31.4s,v30.4s\r\n movz        w17,#4\r\n ins         v31.s[3],w17\r\n```\r\n\r\n**edit** final form (see comments):\r\n\r\n```\r\n#   %14 = MUL_VEC %12, %13                                    ; useCount: 2, lastUse: %22\r\n fmul        v31.4s,v31.4s,v30.4s\r\n movz        w17,#4\r\n ins         v31.s[3],w17\r\n```",
+          "timestamp": "2024-02-16T08:30:35-08:00",
+          "tree_id": "23c45202906c12f0976ca2fe02f9aff5f84c0df3",
+          "url": "https://github.com/luau-lang/luau/commit/c5f4d973d75b17dd82dd7ad197860c96c211b884"
+        },
+        "date": 1708102069843,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 4.78338,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 5.84335,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 142.972,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 7.74793,
+            "unit": "7ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 9.95678,
             "unit": "9ms",
             "range": "±0%",
             "extra": "luau-analyze"
