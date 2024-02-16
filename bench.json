@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1707501473408,
+  "lastUpdate": 1708050085610,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "callgrind clang": [
@@ -43296,6 +43296,254 @@
           {
             "name": "voxelgen",
             "value": 49.866,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "75688451+vegorov-rbx@users.noreply.github.com",
+            "name": "vegorov-rbx",
+            "username": "vegorov-rbx"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "ea14e65ea04a19882df99cfb8ec7d5b73ff50e82",
+          "message": "Sync to upstream/release/613 (#1167)\n\n# What's changed?\r\n\r\n* Compiler now targets bytecode version 5 by default, this includes\r\nsupport for vector type literals and sub/div opcodes with a constant on\r\nlhs\r\n\r\n### New Type Solver\r\n\r\n* Normalizer type inhabitance check has been optimized\r\n* Added ability to reduce cyclic `and`/`or` type families \r\n\r\n### Native Code Generation\r\n\r\n* `CodeGen::compile` now returns more specific causes of a code\r\ngeneration failure\r\n* Fixed linking issues on platforms that don't support unwind frame data\r\nregistration\r\n\r\n---\r\n\r\n### Internal Contributors\r\n\r\nCo-authored-by: Andy Friesen <afriesen@roblox.com>\r\nCo-authored-by: Aviral Goel <agoel@roblox.com>\r\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com>\r\n\r\n---------\r\n\r\nCo-authored-by: Aaron Weiss <aaronweiss@roblox.com>\r\nCo-authored-by: Alexander McCord <amccord@roblox.com>\r\nCo-authored-by: Andy Friesen <afriesen@roblox.com>\r\nCo-authored-by: Vighnesh <vvijay@roblox.com>\r\nCo-authored-by: Aviral Goel <agoel@roblox.com>\r\nCo-authored-by: David Cope <dcope@roblox.com>\r\nCo-authored-by: Lily Brown <lbrown@roblox.com>",
+          "timestamp": "2024-02-15T18:04:39-08:00",
+          "tree_id": "25d1706839d6b23b97174aafef0432b151590360",
+          "url": "https://github.com/luau-lang/luau/commit/ea14e65ea04a19882df99cfb8ec7d5b73ff50e82"
+        },
+        "date": 1708050085601,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "base64",
+            "value": 23.86,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "chess",
+            "value": 80.757,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "life",
+            "value": 84.068,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "matrixmult",
+            "value": 23.735,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "mesh-normal-scalar",
+            "value": 30.954,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "pcmmix",
+            "value": 9.73,
+            "unit": "9ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "qsort",
+            "value": 75.748,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "sha256",
+            "value": 24.555,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "ack",
+            "value": 65.085,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "binary-trees",
+            "value": 29.016,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "fannkuchen-redux",
+            "value": 11.895,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "fixpoint-fact",
+            "value": 61.005,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "heapsort",
+            "value": 20.743,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "mandel",
+            "value": 61.975,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "n-body",
+            "value": 37.289,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "qt",
+            "value": 56.167,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "queen",
+            "value": 1.913,
+            "unit": "1ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "scimark",
+            "value": 85.913,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "spectral-norm",
+            "value": 11.627,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "sieve",
+            "value": 100.683,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "3d-cube",
+            "value": 8.14,
+            "unit": "8ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "3d-morph",
+            "value": 9.825,
+            "unit": "9ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "3d-raytrace",
+            "value": 9.859,
+            "unit": "9ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "controlflow-recursive",
+            "value": 5.553,
+            "unit": "5ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "crypto-aes",
+            "value": 13.621,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "fannkuch",
+            "value": 24.428,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "math-cordic",
+            "value": 15.563,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "math-partial-sums",
+            "value": 4.777,
+            "unit": "4ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "n-body-oop",
+            "value": 55.738,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "tictactoe",
+            "value": 123.333,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "trig",
+            "value": 24.384,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "voxelgen",
+            "value": 49.865,
             "unit": "ms",
             "range": "±0.000%",
             "extra": "luau"

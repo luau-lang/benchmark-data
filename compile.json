@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1707501474035,
+  "lastUpdate": 1708050086260,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-compile": [
@@ -14053,6 +14053,86 @@
           {
             "name": "regex-O2-codegen",
             "value": 9.16803,
+            "unit": "9ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "75688451+vegorov-rbx@users.noreply.github.com",
+            "name": "vegorov-rbx",
+            "username": "vegorov-rbx"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "ea14e65ea04a19882df99cfb8ec7d5b73ff50e82",
+          "message": "Sync to upstream/release/613 (#1167)\n\n# What's changed?\r\n\r\n* Compiler now targets bytecode version 5 by default, this includes\r\nsupport for vector type literals and sub/div opcodes with a constant on\r\nlhs\r\n\r\n### New Type Solver\r\n\r\n* Normalizer type inhabitance check has been optimized\r\n* Added ability to reduce cyclic `and`/`or` type families \r\n\r\n### Native Code Generation\r\n\r\n* `CodeGen::compile` now returns more specific causes of a code\r\ngeneration failure\r\n* Fixed linking issues on platforms that don't support unwind frame data\r\nregistration\r\n\r\n---\r\n\r\n### Internal Contributors\r\n\r\nCo-authored-by: Andy Friesen <afriesen@roblox.com>\r\nCo-authored-by: Aviral Goel <agoel@roblox.com>\r\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com>\r\n\r\n---------\r\n\r\nCo-authored-by: Aaron Weiss <aaronweiss@roblox.com>\r\nCo-authored-by: Alexander McCord <amccord@roblox.com>\r\nCo-authored-by: Andy Friesen <afriesen@roblox.com>\r\nCo-authored-by: Vighnesh <vvijay@roblox.com>\r\nCo-authored-by: Aviral Goel <agoel@roblox.com>\r\nCo-authored-by: David Cope <dcope@roblox.com>\r\nCo-authored-by: Lily Brown <lbrown@roblox.com>",
+          "timestamp": "2024-02-15T18:04:39-08:00",
+          "tree_id": "25d1706839d6b23b97174aafef0432b151590360",
+          "url": "https://github.com/luau-lang/luau/commit/ea14e65ea04a19882df99cfb8ec7d5b73ff50e82"
+        },
+        "date": 1708050086256,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.680147,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.745908,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.818468,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 3.05138,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.59287,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.76969,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.01837,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 9.16752,
             "unit": "9ms",
             "range": "±0%",
             "extra": "luau-compile"
