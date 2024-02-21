@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1708102069676,
+  "lastUpdate": 1708528952635,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "callgrind gcc": [
@@ -43778,6 +43778,254 @@
           {
             "name": "tictactoe",
             "value": 133.718,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "trig",
+            "value": 25.972,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "voxelgen",
+            "value": 54.067,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "arseny.kapoulkine@gmail.com",
+            "name": "Arseny Kapoulkine",
+            "username": "zeux"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "80928acb92d1e4b6db16bada6d21b1fb6fa66265",
+          "message": "CodeGen: Extract all vector tag patching into TAG_VECTOR (#1171)\n\nInstead of patching the tag component with TVECTOR in every instruction\r\nthat produces a vector value, we now use a separate IR instruction to do\r\nthis. This reduces implementation redundancy, but more importantly\r\nallows for a class of optimizations:\r\n\r\n- NUM_TO_VECTOR previously patched the component unconditionally but the\r\nresult was used only in MUL/DIV_VEC instructions that ignore it anyway;\r\nwe can now remove this.\r\n\r\n- ADD_VEC et al can now forward the source of TAG_VECTOR instruction of\r\neither input; this shortens the latency chain and in the future could\r\nallow us to generate optimal vector instruction sequence once the\r\ntemporary stores are marked as dead.\r\n\r\n- In the future on X64, ADD_VEC et al will be able to analyze the input\r\ninstruction and remove tag masking conditionally. This is not part of\r\nthis PR as it requires a decision around expected FP environment and/or\r\nthe necessity of the existing masking to begin with.\r\n\r\nI've also renamed NUM_TO_VECTOR to NUM_TO_VEC so that \"VEC\" always\r\nrefers to \"3 float values\" and for consistency with ADD/etc.\r\n\r\nNote: ADD_VEC input forwarding is currently performed unconditionally;\r\nit may or may not increase the spills that can't be reloaded from the\r\nstack.\r\n\r\nOn A64 this makes the Taylor series computation a tiny bit faster\r\n(11.3ns => 11.0ns) as it removes the redundant ins instructions along\r\nthe NUM_TO_VEC path. Curiously, the optimization of forwarding\r\nTAG_VECTOR input to arithmetic instructions actually has a small penalty\r\nas without it this PR runs at 10.9 ns. I don't know if this is a\r\nproperty of the benchmark though, as I just noticed that in this\r\nbenchmark type inference actually fails to infer parts of the\r\ncomputation as a vector op. If desired I will happily omit this part of\r\nthe change and we can explore that separately.",
+          "timestamp": "2024-02-21T07:06:11-08:00",
+          "tree_id": "b7d4d9af6ad62f81cd583ae8f52847d3bfb92778",
+          "url": "https://github.com/luau-lang/luau/commit/80928acb92d1e4b6db16bada6d21b1fb6fa66265"
+        },
+        "date": 1708528952627,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "base64",
+            "value": 25.307,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "chess",
+            "value": 81.744,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "life",
+            "value": 89.768,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "matrixmult",
+            "value": 24.643,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "mesh-normal-scalar",
+            "value": 32.309,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "pcmmix",
+            "value": 10.52,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "qsort",
+            "value": 77.278,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "sha256",
+            "value": 26.049,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "ack",
+            "value": 65.366,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "binary-trees",
+            "value": 29.587,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "fannkuchen-redux",
+            "value": 12.876,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "fixpoint-fact",
+            "value": 59.54,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "heapsort",
+            "value": 22.193,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "mandel",
+            "value": 63.323,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "n-body",
+            "value": 37.759,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "qt",
+            "value": 60.738,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "queen",
+            "value": 1.968,
+            "unit": "1ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "scimark",
+            "value": 89.706,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "spectral-norm",
+            "value": 12.429,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "sieve",
+            "value": 105.762,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "3d-cube",
+            "value": 8.628,
+            "unit": "8ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "3d-morph",
+            "value": 10.294,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "3d-raytrace",
+            "value": 10.313,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "controlflow-recursive",
+            "value": 5.54,
+            "unit": "5ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "crypto-aes",
+            "value": 14.662,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "fannkuch",
+            "value": 26.444,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "math-cordic",
+            "value": 16.56,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "math-partial-sums",
+            "value": 5.028,
+            "unit": "5ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "n-body-oop",
+            "value": 56.24,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "tictactoe",
+            "value": 133.72,
             "unit": "ms",
             "range": "±0.000%",
             "extra": "luau-gcc"

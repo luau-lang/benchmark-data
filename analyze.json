@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1708102069846,
+  "lastUpdate": 1708528952801,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-analyze": [
@@ -11074,6 +11074,72 @@
           {
             "name": "regex-strict",
             "value": 9.95678,
+            "unit": "9ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 9552.06,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "arseny.kapoulkine@gmail.com",
+            "name": "Arseny Kapoulkine",
+            "username": "zeux"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "80928acb92d1e4b6db16bada6d21b1fb6fa66265",
+          "message": "CodeGen: Extract all vector tag patching into TAG_VECTOR (#1171)\n\nInstead of patching the tag component with TVECTOR in every instruction\r\nthat produces a vector value, we now use a separate IR instruction to do\r\nthis. This reduces implementation redundancy, but more importantly\r\nallows for a class of optimizations:\r\n\r\n- NUM_TO_VECTOR previously patched the component unconditionally but the\r\nresult was used only in MUL/DIV_VEC instructions that ignore it anyway;\r\nwe can now remove this.\r\n\r\n- ADD_VEC et al can now forward the source of TAG_VECTOR instruction of\r\neither input; this shortens the latency chain and in the future could\r\nallow us to generate optimal vector instruction sequence once the\r\ntemporary stores are marked as dead.\r\n\r\n- In the future on X64, ADD_VEC et al will be able to analyze the input\r\ninstruction and remove tag masking conditionally. This is not part of\r\nthis PR as it requires a decision around expected FP environment and/or\r\nthe necessity of the existing masking to begin with.\r\n\r\nI've also renamed NUM_TO_VECTOR to NUM_TO_VEC so that \"VEC\" always\r\nrefers to \"3 float values\" and for consistency with ADD/etc.\r\n\r\nNote: ADD_VEC input forwarding is currently performed unconditionally;\r\nit may or may not increase the spills that can't be reloaded from the\r\nstack.\r\n\r\nOn A64 this makes the Taylor series computation a tiny bit faster\r\n(11.3ns => 11.0ns) as it removes the redundant ins instructions along\r\nthe NUM_TO_VEC path. Curiously, the optimization of forwarding\r\nTAG_VECTOR input to arithmetic instructions actually has a small penalty\r\nas without it this PR runs at 10.9 ns. I don't know if this is a\r\nproperty of the benchmark though, as I just noticed that in this\r\nbenchmark type inference actually fails to infer parts of the\r\ncomputation as a vector op. If desired I will happily omit this part of\r\nthe change and we can explore that separately.",
+          "timestamp": "2024-02-21T07:06:11-08:00",
+          "tree_id": "b7d4d9af6ad62f81cd583ae8f52847d3bfb92778",
+          "url": "https://github.com/luau-lang/luau/commit/80928acb92d1e4b6db16bada6d21b1fb6fa66265"
+        },
+        "date": 1708528952798,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 4.78366,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 5.84335,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 142.972,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 7.74851,
+            "unit": "7ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 9.95675,
             "unit": "9ms",
             "range": "±0%",
             "extra": "luau-analyze"
