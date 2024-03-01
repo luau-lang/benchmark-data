@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1708528952801,
+  "lastUpdate": 1709319126378,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-analyze": [
@@ -11147,6 +11147,72 @@
           {
             "name": "regex-dcr",
             "value": 9552.06,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "75688451+vegorov-rbx@users.noreply.github.com",
+            "name": "vegorov-rbx",
+            "username": "vegorov-rbx"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "443903aa0044b20bb2cfa5a29c95092e4532f9c1",
+          "message": "Sync to upstream/release/615 (#1175)\n\n# What's changed?\r\n\r\n* Luau allocation scheme was changed to handle allocations in 513-1024\r\nbyte range internally without falling back to global allocator\r\n* coroutine/thread creation no longer requires any global allocations,\r\nmaking it up to 15% faster (vs libc malloc)\r\n* table construction for 17-32 keys or 33-64 array elements is up to 30%\r\nfaster (vs libc malloc)\r\n\r\n### New Type Solver\r\n\r\n* Cyclic unary negation type families are reduced to `number` when\r\npossible\r\n* Class types are skipped when searching for free types in unifier to\r\nimprove performance\r\n* Fixed issues with table type inference when metatables are present\r\n* Improved inference of iteration loop types\r\n* Fixed an issue with bidirectional inference of method calls\r\n* Type simplification will now preserve error suppression markers\r\n\r\n### Native Code Generation\r\n\r\n* Fixed TAG_VECTOR skip optimization to not break instruction use counts\r\n(broken optimization wasn't included in 614)\r\n* Fixed missing side-effect when optimizing generic loop preparation\r\ninstruction\r\n\r\n---\r\n\r\n### Internal Contributors\r\n\r\nCo-authored-by: Aaron Weiss <aaronweiss@roblox.com>\r\nCo-authored-by: Andy Friesen <afriesen@roblox.com>\r\nCo-authored-by: Lily Brown <lbrown@roblox.com>\r\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com>\r\n\r\n---------\r\n\r\nCo-authored-by: Aaron Weiss <aaronweiss@roblox.com>\r\nCo-authored-by: Alexander McCord <amccord@roblox.com>\r\nCo-authored-by: Andy Friesen <afriesen@roblox.com>\r\nCo-authored-by: Vighnesh <vvijay@roblox.com>\r\nCo-authored-by: Aviral Goel <agoel@roblox.com>\r\nCo-authored-by: David Cope <dcope@roblox.com>\r\nCo-authored-by: Lily Brown <lbrown@roblox.com>",
+          "timestamp": "2024-03-01T10:45:26-08:00",
+          "tree_id": "80ac967778228f47f7ae6f35e39685d35acb5ab9",
+          "url": "https://github.com/luau-lang/luau/commit/443903aa0044b20bb2cfa5a29c95092e4532f9c1"
+        },
+        "date": 1709319126375,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 4.78279,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 5.84205,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 45.722,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 7.74696,
+            "unit": "7ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 9.95919,
+            "unit": "9ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 59.015,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"
