@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1709319126378,
+  "lastUpdate": 1709658676103,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-analyze": [
@@ -11213,6 +11213,72 @@
           {
             "name": "regex-dcr",
             "value": 59.015,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "75688451+vegorov-rbx@users.noreply.github.com",
+            "name": "vegorov-rbx",
+            "username": "vegorov-rbx"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "9323be6110beda90ef9d9dcb43e49b9acdc224e5",
+          "message": "Fix ConstraintSolver linker errors in release configuration (#1180)\n\nThis fixes linker errors reported in\r\nhttps://github.com/luau-lang/luau/issues/1178",
+          "timestamp": "2024-03-05T09:04:28-08:00",
+          "tree_id": "8d907b19bea7f658398d1cc63ca171dc6c2dc249",
+          "url": "https://github.com/luau-lang/luau/commit/9323be6110beda90ef9d9dcb43e49b9acdc224e5"
+        },
+        "date": 1709658676100,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 4.7828,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 5.84202,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 45.7284,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 7.74646,
+            "unit": "7ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 9.95919,
+            "unit": "9ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 59.0176,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"
