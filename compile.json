@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1709945716769,
+  "lastUpdate": 1710160575580,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-compile": [
@@ -14512,6 +14512,86 @@
           {
             "name": "regex-O0",
             "value": 1.59273,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.76914,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.01791,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 10.0451,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "89617289+mxruben@users.noreply.github.com",
+            "name": "Maxwell Ruben",
+            "username": "mxruben"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "209fd506c9017b9e252408834811c8f5c5529158",
+          "message": "Fix REPL help message formatting (#1186)\n\nThe last line of the help message was missing a newline character. I\r\nfeel a little silly creating a pull request for a 2 character change but\r\nit was bothering me. Fixes #1185",
+          "timestamp": "2024-03-11T05:28:40-07:00",
+          "tree_id": "9d2dfe4fef6a471159da83db37bd9b6b7ef73252",
+          "url": "https://github.com/luau-lang/luau/commit/209fd506c9017b9e252408834811c8f5c5529158"
+        },
+        "date": 1710160575577,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.68034,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.746058,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.818622,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 3.27794,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.59272,
             "unit": "1ms",
             "range": "±0%",
             "extra": "luau-compile"

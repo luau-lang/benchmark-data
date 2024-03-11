@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1709945716616,
+  "lastUpdate": 1710160575440,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-analyze": [
@@ -11345,6 +11345,72 @@
           {
             "name": "regex-dcr",
             "value": 115.88,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "89617289+mxruben@users.noreply.github.com",
+            "name": "Maxwell Ruben",
+            "username": "mxruben"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "209fd506c9017b9e252408834811c8f5c5529158",
+          "message": "Fix REPL help message formatting (#1186)\n\nThe last line of the help message was missing a newline character. I\r\nfeel a little silly creating a pull request for a 2 character change but\r\nit was bothering me. Fixes #1185",
+          "timestamp": "2024-03-11T05:28:40-07:00",
+          "tree_id": "9d2dfe4fef6a471159da83db37bd9b6b7ef73252",
+          "url": "https://github.com/luau-lang/luau/commit/209fd506c9017b9e252408834811c8f5c5529158"
+        },
+        "date": 1710160575437,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 4.78157,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 5.8398,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 51.0584,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 7.75053,
+            "unit": "7ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 9.96325,
+            "unit": "9ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 115.89,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"
