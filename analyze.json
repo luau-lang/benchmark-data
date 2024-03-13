@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1710160575440,
+  "lastUpdate": 1710360181784,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-analyze": [
@@ -11404,6 +11404,72 @@
           {
             "name": "regex-strict",
             "value": 9.96325,
+            "unit": "9ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 115.89,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "arseny.kapoulkine@gmail.com",
+            "name": "Arseny Kapoulkine",
+            "username": "zeux"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "9aa82c6fb90e1dcd6e7f60626255d597ef0fdea1",
+          "message": "CodeGen: Improve lowering of NUM_TO_VEC on A64 for constants (#1194)\n\nWhen the input is a constant, we use a fairly inefficient sequence of\r\nfmov+fcvt+dup or, when the double isn't encodable in fmov,\r\nadr+ldr+fcvt+dup.\r\n\r\nInstead, we can use the same lowering as X64 when the input is a\r\nconstant, and load the vector from memory. However, if the constant is\r\nencodable via fmov, we can use a vector fmov instead (which is just one\r\ninstruction and doesn't need constant space).\r\n\r\nFortunately the bit encoding of fmov for 32-bit floating point numbers\r\nmatches that of 64-bit: the decoding algorithm is a little different\r\nbecause it expands into a larger exponent, but the values are\r\ncompatible, so if a double can be encoded into a scalar fmov with a\r\ngiven abcdefgh pattern, the same pattern should encode the same float;\r\ndue to the very limited number of mantissa and exponent bits, all values\r\nthat are encodable are also exact in both 32-bit and 64-bit floats.\r\n\r\nThis strategy is ~same as what gcc uses. For complex vectors, we\r\npreviously used 4 instructions and 8 bytes of constant storage, and now\r\nwe use 2 instructions and 16 bytes of constant storage, so the memory\r\nfootprint is the same; for simple vectors we just need 1 instruction (4\r\nbytes).\r\n\r\nclang lowers vector constants a little differently, opting to synthesize\r\na 64-bit integer using 4 instructions (mov/movk) and then move it to the\r\nvector register - this requires 5 instructions and 20 bytes, vs ours/gcc\r\n2 instructions and 8+16=24 bytes. I tried a simpler version of this that\r\nwould be more compact - synthesize a 32-bit integer constant with\r\nmov+movk, and move it to vector register via dup.4s - but this was a\r\nlittle slower on M2, so for now we prefer the slightly larger version as\r\nit's not a regression vs current implementation.\r\n\r\nOn the vector approximation benchmark we get:\r\n\r\n- Before this PR (flag=false): ~7.85 ns/op\r\n- After this PR (flag=true): ~7.74 ns/op\r\n- After this PR, with 0.125 instead of 0.123 in the benchmark code (to\r\nuse fmov): ~7.52 ns/op\r\n- Not part of this PR, but the mov/dup strategy described above: ~8.00\r\nns/op",
+          "timestamp": "2024-03-13T12:56:11-07:00",
+          "tree_id": "b46afdd603a2f3bd60b9cac918c2ddc0faf0d668",
+          "url": "https://github.com/luau-lang/luau/commit/9aa82c6fb90e1dcd6e7f60626255d597ef0fdea1"
+        },
+        "date": 1710360181780,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 4.78128,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 5.84051,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 51.0637,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 7.7506,
+            "unit": "7ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 9.96327,
             "unit": "9ms",
             "range": "±0%",
             "extra": "luau-analyze"

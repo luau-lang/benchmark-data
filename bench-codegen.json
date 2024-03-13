@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1710160575122,
+  "lastUpdate": 1710360181462,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "callgrind codegen": [
@@ -29663,6 +29663,254 @@
           {
             "name": "voxelgen",
             "value": 27.564,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-codegen"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "arseny.kapoulkine@gmail.com",
+            "name": "Arseny Kapoulkine",
+            "username": "zeux"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "9aa82c6fb90e1dcd6e7f60626255d597ef0fdea1",
+          "message": "CodeGen: Improve lowering of NUM_TO_VEC on A64 for constants (#1194)\n\nWhen the input is a constant, we use a fairly inefficient sequence of\r\nfmov+fcvt+dup or, when the double isn't encodable in fmov,\r\nadr+ldr+fcvt+dup.\r\n\r\nInstead, we can use the same lowering as X64 when the input is a\r\nconstant, and load the vector from memory. However, if the constant is\r\nencodable via fmov, we can use a vector fmov instead (which is just one\r\ninstruction and doesn't need constant space).\r\n\r\nFortunately the bit encoding of fmov for 32-bit floating point numbers\r\nmatches that of 64-bit: the decoding algorithm is a little different\r\nbecause it expands into a larger exponent, but the values are\r\ncompatible, so if a double can be encoded into a scalar fmov with a\r\ngiven abcdefgh pattern, the same pattern should encode the same float;\r\ndue to the very limited number of mantissa and exponent bits, all values\r\nthat are encodable are also exact in both 32-bit and 64-bit floats.\r\n\r\nThis strategy is ~same as what gcc uses. For complex vectors, we\r\npreviously used 4 instructions and 8 bytes of constant storage, and now\r\nwe use 2 instructions and 16 bytes of constant storage, so the memory\r\nfootprint is the same; for simple vectors we just need 1 instruction (4\r\nbytes).\r\n\r\nclang lowers vector constants a little differently, opting to synthesize\r\na 64-bit integer using 4 instructions (mov/movk) and then move it to the\r\nvector register - this requires 5 instructions and 20 bytes, vs ours/gcc\r\n2 instructions and 8+16=24 bytes. I tried a simpler version of this that\r\nwould be more compact - synthesize a 32-bit integer constant with\r\nmov+movk, and move it to vector register via dup.4s - but this was a\r\nlittle slower on M2, so for now we prefer the slightly larger version as\r\nit's not a regression vs current implementation.\r\n\r\nOn the vector approximation benchmark we get:\r\n\r\n- Before this PR (flag=false): ~7.85 ns/op\r\n- After this PR (flag=true): ~7.74 ns/op\r\n- After this PR, with 0.125 instead of 0.123 in the benchmark code (to\r\nuse fmov): ~7.52 ns/op\r\n- Not part of this PR, but the mov/dup strategy described above: ~8.00\r\nns/op",
+          "timestamp": "2024-03-13T12:56:11-07:00",
+          "tree_id": "b46afdd603a2f3bd60b9cac918c2ddc0faf0d668",
+          "url": "https://github.com/luau-lang/luau/commit/9aa82c6fb90e1dcd6e7f60626255d597ef0fdea1"
+        },
+        "date": 1710360181456,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "base64",
+            "value": 13.385,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-codegen"
+          },
+          {
+            "name": "chess",
+            "value": 52.018,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-codegen"
+          },
+          {
+            "name": "life",
+            "value": 23.356,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-codegen"
+          },
+          {
+            "name": "matrixmult",
+            "value": 9.336,
+            "unit": "9ms",
+            "range": "±0.000%",
+            "extra": "luau-codegen"
+          },
+          {
+            "name": "mesh-normal-scalar",
+            "value": 13,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-codegen"
+          },
+          {
+            "name": "pcmmix",
+            "value": 1.38,
+            "unit": "1ms",
+            "range": "±0.000%",
+            "extra": "luau-codegen"
+          },
+          {
+            "name": "qsort",
+            "value": 41.508,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-codegen"
+          },
+          {
+            "name": "sha256",
+            "value": 4.525,
+            "unit": "4ms",
+            "range": "±0.000%",
+            "extra": "luau-codegen"
+          },
+          {
+            "name": "ack",
+            "value": 40.021,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-codegen"
+          },
+          {
+            "name": "binary-trees",
+            "value": 20.853,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-codegen"
+          },
+          {
+            "name": "fannkuchen-redux",
+            "value": 3.878,
+            "unit": "3ms",
+            "range": "±0.000%",
+            "extra": "luau-codegen"
+          },
+          {
+            "name": "fixpoint-fact",
+            "value": 49.032,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-codegen"
+          },
+          {
+            "name": "heapsort",
+            "value": 7.701,
+            "unit": "7ms",
+            "range": "±0.000%",
+            "extra": "luau-codegen"
+          },
+          {
+            "name": "mandel",
+            "value": 40.471,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-codegen"
+          },
+          {
+            "name": "n-body",
+            "value": 9.707,
+            "unit": "9ms",
+            "range": "±0.000%",
+            "extra": "luau-codegen"
+          },
+          {
+            "name": "qt",
+            "value": 24.955,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-codegen"
+          },
+          {
+            "name": "queen",
+            "value": 0.805,
+            "unit": "0ms",
+            "range": "±0.000%",
+            "extra": "luau-codegen"
+          },
+          {
+            "name": "scimark",
+            "value": 24.643,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-codegen"
+          },
+          {
+            "name": "spectral-norm",
+            "value": 2.444,
+            "unit": "2ms",
+            "range": "±0.000%",
+            "extra": "luau-codegen"
+          },
+          {
+            "name": "sieve",
+            "value": 82.952,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-codegen"
+          },
+          {
+            "name": "3d-cube",
+            "value": 3.736,
+            "unit": "3ms",
+            "range": "±0.000%",
+            "extra": "luau-codegen"
+          },
+          {
+            "name": "3d-morph",
+            "value": 3.744,
+            "unit": "3ms",
+            "range": "±0.000%",
+            "extra": "luau-codegen"
+          },
+          {
+            "name": "3d-raytrace",
+            "value": 3.304,
+            "unit": "3ms",
+            "range": "±0.000%",
+            "extra": "luau-codegen"
+          },
+          {
+            "name": "controlflow-recursive",
+            "value": 3.463,
+            "unit": "3ms",
+            "range": "±0.000%",
+            "extra": "luau-codegen"
+          },
+          {
+            "name": "crypto-aes",
+            "value": 7.228,
+            "unit": "7ms",
+            "range": "±0.000%",
+            "extra": "luau-codegen"
+          },
+          {
+            "name": "fannkuch",
+            "value": 6.068,
+            "unit": "6ms",
+            "range": "±0.000%",
+            "extra": "luau-codegen"
+          },
+          {
+            "name": "math-cordic",
+            "value": 3.768,
+            "unit": "3ms",
+            "range": "±0.000%",
+            "extra": "luau-codegen"
+          },
+          {
+            "name": "math-partial-sums",
+            "value": 1.872,
+            "unit": "1ms",
+            "range": "±0.000%",
+            "extra": "luau-codegen"
+          },
+          {
+            "name": "n-body-oop",
+            "value": 13.714,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-codegen"
+          },
+          {
+            "name": "tictactoe",
+            "value": 62.961,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-codegen"
+          },
+          {
+            "name": "trig",
+            "value": 6.618,
+            "unit": "6ms",
+            "range": "±0.000%",
+            "extra": "luau-codegen"
+          },
+          {
+            "name": "voxelgen",
+            "value": 27.559,
             "unit": "ms",
             "range": "±0.000%",
             "extra": "luau-codegen"
