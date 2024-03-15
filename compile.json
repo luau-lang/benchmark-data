@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1710521766917,
+  "lastUpdate": 1710546261321,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-compile": [
@@ -14853,6 +14853,86 @@
           {
             "name": "regex-O2-codegen",
             "value": 10.0523,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "11488393+alexmccord@users.noreply.github.com",
+            "name": "Alexander McCord",
+            "username": "alexmccord"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "d21b6fdb936c4fc6f40caa225fc26d6c531beee5",
+          "message": "Sync to upstream/release/617 (#1204)\n\n# What's Changed\r\n\r\n* Fix a case where the stack wasn't completely cleaned up where\r\n`debug.info` errored when passed `\"f\"` option and a thread.\r\n* Fix a case of uninitialized field in `luaF_newproto`.\r\n\r\n### New Type Solver\r\n\r\n* When a local is captured in a function, don't add a new entry to the\r\n`DfgScope::bindings` if the capture occurs within a loop.\r\n* Fix a poor performance characteristic during unification by not trying\r\nto simplify an intersection.\r\n* Fix a case of multiple constraints mutating the same blocked type\r\ncausing incorrect inferences.\r\n* Fix a case of assertion failure when overload resolution encounters a\r\nreturn typepack mismatch.\r\n* When refining a property of the top `table` type, we no longer signal\r\nan unknown property error.\r\n* Fix a misuse of free types when trying to infer the type of a\r\nsubscript expression.\r\n* Fix a case of assertion failure when trying to resolve an overload\r\nfrom `never`.\r\n\r\n### Native Code Generation\r\n\r\n* Fix dead store optimization issues caused by partial stores.\r\n\r\n---\r\n\r\n### Internal Contributors\r\n\r\nCo-authored-by: Aaron Weiss <aaronweiss@roblox.com>\r\nCo-authored-by: Andy Friesen <afriesen@roblox.com>\r\nCo-authored-by: Aviral Goel <agoel@roblox.com>\r\nCo-authored-by: David Cope <dcope@roblox.com>\r\nCo-authored-by: Lily Brown <lbrown@roblox.com>\r\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com>\r\n\r\n---------\r\n\r\nCo-authored-by: Aaron Weiss <aaronweiss@roblox.com>\r\nCo-authored-by: Andy Friesen <afriesen@roblox.com>\r\nCo-authored-by: Vighnesh <vvijay@roblox.com>\r\nCo-authored-by: Aviral Goel <agoel@roblox.com>\r\nCo-authored-by: David Cope <dcope@roblox.com>\r\nCo-authored-by: Lily Brown <lbrown@roblox.com>\r\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com>",
+          "timestamp": "2024-03-15T16:37:39-07:00",
+          "tree_id": "b8e5f44155ca5693519d5889b5c069b7a37e3d5a",
+          "url": "https://github.com/luau-lang/luau/commit/d21b6fdb936c4fc6f40caa225fc26d6c531beee5"
+        },
+        "date": 1710546261318,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.680465,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.746248,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.818809,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 3.27758,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.59297,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.76952,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.01828,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 10.0515,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-compile"
