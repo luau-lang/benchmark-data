@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1710360181784,
+  "lastUpdate": 1710520764884,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-analyze": [
@@ -11477,6 +11477,72 @@
           {
             "name": "regex-dcr",
             "value": 115.89,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "arseny.kapoulkine@gmail.com",
+            "name": "Arseny Kapoulkine",
+            "username": "zeux"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "d2ed2150ca4c6dc84e77cbae930f6233354d9961",
+          "message": "Work around ASLR+ASAN compatibility issues in GHA (#1203)\n\nvm.mmap_rnd_bits has been recently changed to 32 on GHA, which triggers\r\nissues in ASAN builds that spuriously fail on startup. The fix requires\r\na more recent clang/gcc than the agents have available (clang 17, not\r\nsure what GCC version), so for now we need to work around this by\r\nrestricting the ASLR randomness.\r\n\r\nSee https://github.com/google/sanitizers/issues/1614",
+          "timestamp": "2024-03-15T09:32:27-07:00",
+          "tree_id": "00b3f739063e4f9f3bf13c67d2c3086574806d8e",
+          "url": "https://github.com/luau-lang/luau/commit/d2ed2150ca4c6dc84e77cbae930f6233354d9961"
+        },
+        "date": 1710520764880,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 4.78157,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 5.84048,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 51.0583,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 7.75002,
+            "unit": "7ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 9.95891,
+            "unit": "9ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 115.882,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"
