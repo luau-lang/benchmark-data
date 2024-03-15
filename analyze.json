@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1710520764884,
+  "lastUpdate": 1710521766766,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-analyze": [
@@ -11543,6 +11543,72 @@
           {
             "name": "regex-dcr",
             "value": 115.882,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "arseny.kapoulkine@gmail.com",
+            "name": "Arseny Kapoulkine",
+            "username": "zeux"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "a7683110d71a15bfc823688191476d4c822565cf",
+          "message": "CodeGen: Preserve known tags for LOAD_TVALUE synthesized from LOADK (#1201)\n\nWhen lowering LOADK for booleans/numbers/nils, we deconstruct the\r\noperation using STORE_TAG which informs the rest of the optimization\r\npipeline about the tag of the value. This is helpful to remove various\r\ntag checks.\r\n\r\nWhen the constant is a string or a vector, we just use\r\nLOAD_TVALUE/STORE_TVALUE. For strings, this could be replaced by pointer\r\nload/store, but for vectors there's no great alternative using current\r\nIR ops; in either case, the optimization needs to be carefully examined\r\nfor profitability as simply copying constants into registers for\r\nfunction calls could become more expensive.\r\n\r\nHowever, there are cases where it's still valuable to preserve the tag.\r\nFor vectors, doing any math with vector constants contains tag checks\r\nthat could be removed. For both strings and vectors, storing them into a\r\ntable has a barrier that for vectors could be elided, and for strings\r\ncould be simplified as there's no need to confirm the tag.\r\n\r\nWith this change we now carry the optional tag of the value with\r\nLOAD_TVALUE. This has no performance effect on existing benchmarks but\r\ndoes reduce the generated code for benchmarks by ~0.1%, and it makes\r\nvector code more efficient (~5% lift on X64 log1p approximation).",
+          "timestamp": "2024-03-15T09:49:00-07:00",
+          "tree_id": "938cdd11e50afda8289db168714a99e4e3e8fcc1",
+          "url": "https://github.com/luau-lang/luau/commit/a7683110d71a15bfc823688191476d4c822565cf"
+        },
+        "date": 1710521766763,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 4.78129,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 5.83977,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 51.0583,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 7.75053,
+            "unit": "7ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 9.9589,
+            "unit": "9ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 115.89,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"
