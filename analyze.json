@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1710546261161,
+  "lastUpdate": 1711130041972,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-analyze": [
@@ -11675,6 +11675,72 @@
           {
             "name": "regex-dcr",
             "value": 78.9335,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "afriesen@roblox.com",
+            "name": "Andy Friesen",
+            "username": "andyfriesen"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "c1830d8b813bbd79b2b3d94efa978a257bfb41b0",
+          "message": "Sync to upstream/release/618 (#1205)\n\n# What's changed\r\n\r\n### Debugger\r\n\r\n* Values after a 'continue' statement should not be accessible by\r\ndebugger in the 'until' condition\r\n\r\n### New Type Solver\r\n\r\n* Many fixes to crashes and hangs\r\n* Better bidirectional inference of table literal expressions\r\n\r\n### Native Code Generation\r\n\r\n* Initial steps toward a shared code allocator\r\n\r\n---\r\n\r\n### Internal Contributors\r\n\r\nCo-authored-by: Aaron Weiss <aaronweiss@roblox.com>\r\nCo-authored-by: Lily Brown <lbrown@roblox.com>\r\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com>",
+          "timestamp": "2024-03-22T10:47:10-07:00",
+          "tree_id": "959c67a123edb7037b2f353899f37be10599ff47",
+          "url": "https://github.com/luau-lang/luau/commit/c1830d8b813bbd79b2b3d94efa978a257bfb41b0"
+        },
+        "date": 1711130041969,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 4.78154,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 5.84077,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 58.7308,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 7.74924,
+            "unit": "7ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 9.95817,
+            "unit": "9ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 101.947,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"
