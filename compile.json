@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1711130042120,
+  "lastUpdate": 1711383316020,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-compile": [
@@ -15013,6 +15013,86 @@
           {
             "name": "regex-O2-codegen",
             "value": 10.0434,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "75688451+vegorov-rbx@users.noreply.github.com",
+            "name": "vegorov-rbx",
+            "username": "vegorov-rbx"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "bac85116f641de2ebac101fa30b95600b66705e6",
+          "message": "Fix CMake configuration error when CLI targets are not included (#1213)\n\nDoesn't really make sense to configure sources list based on target\r\npresence.\r\n\r\nShould fix https://github.com/luau-lang/luau/issues/1208",
+          "timestamp": "2024-03-25T09:08:15-07:00",
+          "tree_id": "33b8439a182abba78ca75b805f7f49dc019e60d5",
+          "url": "https://github.com/luau-lang/luau/commit/bac85116f641de2ebac101fa30b95600b66705e6"
+        },
+        "date": 1711383316016,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.68038,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.746202,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.818772,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 3.27578,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.59314,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.77011,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.01871,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 10.0435,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-compile"
