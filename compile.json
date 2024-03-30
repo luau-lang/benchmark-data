@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1711383316020,
+  "lastUpdate": 1711840900252,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-compile": [
@@ -15093,6 +15093,86 @@
           {
             "name": "regex-O2-codegen",
             "value": 10.0435,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "lbrown@roblox.com",
+            "name": "Lily Brown",
+            "username": "AmaranthineCodices"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "47ad768c69ca1995fa9c2fb3b18fab6d0f02527b",
+          "message": "Sync to upstream/release/619 (#1218)\n\n# What's Changed\r\n\r\n## New Type Solver\r\n- Many fixes to crashes, assertions, and hangs\r\n- Binary type family aliases now have a default parameter\r\n- Added a debug check for unsolved types escaping the constraint solver\r\n- Overloaded functions are no longer inferred\r\n- Unification creates additional subtyping constraints for blocked types\r\n- Attempt to guess the result type for type families that are too large\r\nto resolve timely\r\n\r\n## Native Code Generation\r\n- Fixed `IrCmd::CHECK_TRUTHY` lowering in a specific case\r\n- Detailed compilation errors are now supported\r\n- More work on the new allocator\r\n\r\n---\r\n\r\n# Internal Contributors\r\n\r\nCo-authored-by: Aaron Weiss <aaronweiss@roblox.com>\r\nCo-authored-by: Alexander McCord <amccord@roblox.com>\r\nCo-authored-by: Andy Friesen <afriesen@roblox.com>\r\nCo-authored-by: James McNellis <jmcnellis@roblox.com>\r\nCo-authored-by: Lily Brown <lbrown@roblox.com>\r\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com>\r\nCo-authored-by: Vighnesh Vijay <vvijay@roblox.com>",
+          "timestamp": "2024-03-30T16:14:44-07:00",
+          "tree_id": "943cedf3942ff36d24d93352173967c6db90cb4c",
+          "url": "https://github.com/luau-lang/luau/commit/47ad768c69ca1995fa9c2fb3b18fab6d0f02527b"
+        },
+        "date": 1711840900248,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.680406,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.746178,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.818736,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 3.27539,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.59315,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.76951,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.01811,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 10.0459,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-compile"
