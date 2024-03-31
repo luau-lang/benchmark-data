@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1711840900252,
+  "lastUpdate": 1711890411150,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-compile": [
@@ -15173,6 +15173,86 @@
           {
             "name": "regex-O2-codegen",
             "value": 10.0459,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "75688451+vegorov-rbx@users.noreply.github.com",
+            "name": "vegorov-rbx",
+            "username": "vegorov-rbx"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "9649e5e446e02e5383c11e16b300ab4b426242a1",
+          "message": "Fix CMake configuration error when CLI targets are not included again (#1219)\n\nA mistake was made in https://github.com/luau-lang/luau/pull/1218\r\n\r\nFixes https://github.com/luau-lang/luau/issues/1208",
+          "timestamp": "2024-03-31T05:59:46-07:00",
+          "tree_id": "e4fdf74f3f49ddfdcc0b4e71a66df129f02a7060",
+          "url": "https://github.com/luau-lang/luau/commit/9649e5e446e02e5383c11e16b300ab4b426242a1"
+        },
+        "date": 1711890411146,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.68036,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.746136,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.818691,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 3.27529,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.5931,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.76945,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.01806,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 10.0458,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-compile"

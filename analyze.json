@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1711840900104,
+  "lastUpdate": 1711890411009,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-analyze": [
@@ -11873,6 +11873,72 @@
           {
             "name": "regex-dcr",
             "value": 114.883,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "75688451+vegorov-rbx@users.noreply.github.com",
+            "name": "vegorov-rbx",
+            "username": "vegorov-rbx"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "9649e5e446e02e5383c11e16b300ab4b426242a1",
+          "message": "Fix CMake configuration error when CLI targets are not included again (#1219)\n\nA mistake was made in https://github.com/luau-lang/luau/pull/1218\r\n\r\nFixes https://github.com/luau-lang/luau/issues/1208",
+          "timestamp": "2024-03-31T05:59:46-07:00",
+          "tree_id": "e4fdf74f3f49ddfdcc0b4e71a66df129f02a7060",
+          "url": "https://github.com/luau-lang/luau/commit/9649e5e446e02e5383c11e16b300ab4b426242a1"
+        },
+        "date": 1711890411006,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 4.78138,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 5.84109,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 59.4785,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 7.74968,
+            "unit": "7ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 9.96023,
+            "unit": "9ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 114.884,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"
