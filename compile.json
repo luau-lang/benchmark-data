@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1711890411150,
+  "lastUpdate": 1712350330922,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-compile": [
@@ -15253,6 +15253,86 @@
           {
             "name": "regex-O2-codegen",
             "value": 10.0458,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "vvijay@roblox.com",
+            "name": "Vighnesh-V",
+            "username": "Vighnesh-V"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "67e16cba1826351e28d0bd193cedea14d01cbbee",
+          "message": "Sync to upstream/release/620 (#1223)\n\n# What's Changed\r\n\r\n## New Type Solver\r\n- Many more fixes to crashes, assertions, and hangs\r\n- Annotated locals now countermand the inferred types of locals, meaning\r\nthat for a type `type MyType = number | string`, `local foo : MyType =\r\n5` behaves the same as `local foo = 5 :: MyType`, where before, foo\r\nwould be assigned the type of the value on the rhs.\r\n- Type Normalization now respects resource limits.\r\n- Subtyping between classes and cyclic tables now supported\r\n\r\n## Native Code Generation\r\n- Work on the Native Code Generation(NCG) allocator continues\r\n\r\n---\r\n\r\n# Internal Contributors\r\n\r\nCo-authored-by: Aaron Weiss <aaronweiss@roblox.com>\r\nCo-authored-by: Alexander McCord <amccord@roblox.com>\r\nCo-authored-by: Andy Friesen <afriesen@roblox.com>\r\nCo-authored-by: James McNellis <jmcnellis@roblox.com>\r\nCo-authored-by: Vighnesh Vijay <vvijay@roblox.com>\r\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com>\r\n\r\n---------\r\n\r\nCo-authored-by: Aaron Weiss <aaronweiss@roblox.com>\r\nCo-authored-by: Alexander McCord <amccord@roblox.com>\r\nCo-authored-by: Andy Friesen <afriesen@roblox.com>\r\nCo-authored-by: Aviral Goel <agoel@roblox.com>\r\nCo-authored-by: David Cope <dcope@roblox.com>\r\nCo-authored-by: Lily Brown <lbrown@roblox.com>\r\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com>",
+          "timestamp": "2024-04-05T13:45:09-07:00",
+          "tree_id": "24b9826d04299be1711156c25cc62c48684e5fa7",
+          "url": "https://github.com/luau-lang/luau/commit/67e16cba1826351e28d0bd193cedea14d01cbbee"
+        },
+        "date": 1712350330918,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.680464,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.746308,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.818867,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 3.27558,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.59322,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.76971,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.01832,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 10.0463,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-compile"
