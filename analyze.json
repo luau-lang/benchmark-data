@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1712350330779,
+  "lastUpdate": 1712942752198,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-analyze": [
@@ -12005,6 +12005,72 @@
           {
             "name": "regex-dcr",
             "value": 127.984,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "75688451+vegorov-rbx@users.noreply.github.com",
+            "name": "vegorov-rbx",
+            "username": "vegorov-rbx"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "9c2146288d78e8beacefe692ae1149fec066440e",
+          "message": "Sync to upstream/release/621 (#1229)\n\n# What's changed?\r\n\r\n* Support for new 'require by string' RFC with relative paths and\r\naliases in now enabled in Luau REPL application\r\n\r\n### New Type Solver\r\n\r\n* Fixed assertion failure on generic table keys (`[expr] = value`)\r\n* Fixed an issue with type substitution traversing into the substituted\r\nparts during type instantiation\r\n* Fixed crash in union simplification when that union contained\r\nuninhabited unions and other types inside\r\n* Union types in binary type families like `add<a | b, c>` are expanded\r\ninto `add<a, c> | add<b, c>` to handle\r\n* Added handling for type family solving creating new type families\r\n* Fixed a bug with normalization operation caching types with unsolved\r\nparts\r\n* Tables with uninhabited properties are now simplified to `never`\r\n* Fixed failures found by fuzzer\r\n\r\n### Native Code Generation\r\n\r\n* Added support for shared code generation between multiple Luau VM\r\ninstances\r\n* Fixed issue in load-store propagation and new tagged LOAD_TVALUE\r\ninstructions\r\n* Fixed issues with partial register dead store elimination causing\r\nfailures in GC assists\r\n\r\n---\r\n\r\n### Internal Contributors\r\n\r\nCo-authored-by: Aaron Weiss <aaronweiss@roblox.com>\r\nCo-authored-by: Alexander McCord <amccord@roblox.com>\r\nCo-authored-by: Andy Friesen <afriesen@roblox.com>\r\nCo-authored-by: James McNellis <jmcnellis@roblox.com>\r\nCo-authored-by: Vighnesh Vijay <vvijay@roblox.com>\r\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com>",
+          "timestamp": "2024-04-12T10:18:49-07:00",
+          "tree_id": "a078c906edb0c5ef0214ab05bac50a4dadcb3645",
+          "url": "https://github.com/luau-lang/luau/commit/9c2146288d78e8beacefe692ae1149fec066440e"
+        },
+        "date": 1712942752195,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 4.78489,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 5.84517,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 58.9283,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 7.75698,
+            "unit": "7ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 9.96659,
+            "unit": "9ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 142.461,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"
