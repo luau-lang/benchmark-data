@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1714084609920,
+  "lastUpdate": 1714155901247,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-compile": [
@@ -15559,6 +15559,86 @@
           {
             "name": "regex-O1",
             "value": 1.77017,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.01919,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 10.0872,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "arseny.kapoulkine@gmail.com",
+            "name": "Arseny Kapoulkine",
+            "username": "zeux"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "af15c3cf17ed211f7f4a257cbc5bccd298c2e9e0",
+          "message": "CodeGen: Fix a typo in X64 (dis)assembler (#1238)",
+          "timestamp": "2024-04-26T11:14:13-07:00",
+          "tree_id": "e78bd2b11e2ea9eeacbabef77be77b4d9c051387",
+          "url": "https://github.com/luau-lang/luau/commit/af15c3cf17ed211f7f4a257cbc5bccd298c2e9e0"
+        },
+        "date": 1714155901243,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.668419,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.734212,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.807007,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 3.27777,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.59349,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.77018,
             "unit": "1ms",
             "range": "±0%",
             "extra": "luau-compile"
