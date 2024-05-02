@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1714393798608,
+  "lastUpdate": 1714664679428,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-analyze": [
@@ -12328,6 +12328,72 @@
           {
             "name": "regex-strict",
             "value": 9.96161,
+            "unit": "9ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 3776.05,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "75688451+vegorov-rbx@users.noreply.github.com",
+            "name": "vegorov-rbx",
+            "username": "vegorov-rbx"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "7edd58afede8950bde2042f9cfeed210242105ca",
+          "message": "Add benchmarks for native compilation with type info enabled (#1244)",
+          "timestamp": "2024-05-02T08:33:47-07:00",
+          "tree_id": "ba804df7a6b8fbc94c7104294e99b8f0e94b7a6a",
+          "url": "https://github.com/luau-lang/luau/commit/7edd58afede8950bde2042f9cfeed210242105ca"
+        },
+        "date": 1714664679424,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 4.75776,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 5.81254,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 48.2615,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 7.73866,
+            "unit": "7ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 9.96154,
             "unit": "9ms",
             "range": "±0%",
             "extra": "luau-analyze"
