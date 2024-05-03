@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1714664679582,
+  "lastUpdate": 1714767937382,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-compile": [
@@ -15827,6 +15827,100 @@
           {
             "name": "regex-O2-t1-codegen",
             "value": 10.1562,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "afriesen@roblox.com",
+            "name": "Andy Friesen",
+            "username": "andyfriesen"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "8a64cb8b73996bd69c2734c607acd4b7d092358a",
+          "message": "Sync to upstream/release/624 (#1245)\n\n# What's changed?\r\n\r\n* Optimize table.maxn.  This function is now 5-14x faster\r\n* Reserve Luau stack space for error message.\r\n\r\n## New Solver\r\n\r\n* Globals can be type-stated, but only if they are already in scope\r\n* Fix a stack overflow that could occur when normalizing certain kinds\r\nof recursive unions of intersections (of unions of intersections...)\r\n* Fix an assertion failure that would trigger when the __iter metamethod\r\nhas a bad signature\r\n\r\n## Native Codegen\r\n\r\n* Type propagation and temporary register type hints\r\n* Direct vector property access should only happen for names of right\r\nlength\r\n* BytecodeAnalysis will only predict that some of the vector value\r\nfields are numbers\r\n\r\n---\r\n\r\n## Internal Contributors\r\n\r\nCo-authored-by: Alexander McCord <amccord@roblox.com>\r\nCo-authored-by: Andy Friesen <afriesen@roblox.com>\r\nCo-authored-by: Aviral Goel <agoel@roblox.com>\r\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com>",
+          "timestamp": "2024-05-03T13:17:51-07:00",
+          "tree_id": "5ce0887ef6bdac8491162f117a38ee68067b16be",
+          "url": "https://github.com/luau-lang/luau/commit/8a64cb8b73996bd69c2734c607acd4b7d092358a"
+        },
+        "date": 1714767937378,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.669383,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.735179,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.807876,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 3.2787,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-t1-codegen",
+            "value": 3.37547,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.59734,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.77193,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.02093,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 10.0891,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-t1-codegen",
+            "value": 10.3563,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-compile"
