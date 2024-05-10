@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1714767937234,
+  "lastUpdate": 1715337856713,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-analyze": [
@@ -12460,6 +12460,72 @@
           {
             "name": "regex-strict",
             "value": 9.95756,
+            "unit": "9ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 792.553,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "mail@bjornbyt.es",
+            "name": "Bjorn",
+            "username": "bjornbytes"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "a775bbc6fc9f13ad1e353b2acabcc4965e74885a",
+          "message": "Fix confusing warning when CMake version is too low (#1251)\n\nExperienced brief moment of panic when this warning said I had clang 3\r\ninstalled.",
+          "timestamp": "2024-05-10T03:36:37-07:00",
+          "tree_id": "08b6d4328ed877793bab5bf2c9355a9aa9435878",
+          "url": "https://github.com/luau-lang/luau/commit/a775bbc6fc9f13ad1e353b2acabcc4965e74885a"
+        },
+        "date": 1715337856709,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 4.75748,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 5.81197,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 48.3114,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 7.73902,
+            "unit": "7ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 9.96192,
             "unit": "9ms",
             "range": "±0%",
             "extra": "luau-analyze"

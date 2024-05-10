@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1714767937382,
+  "lastUpdate": 1715337856859,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-compile": [
@@ -15921,6 +15921,100 @@
           {
             "name": "regex-O2-t1-codegen",
             "value": 10.3563,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "mail@bjornbyt.es",
+            "name": "Bjorn",
+            "username": "bjornbytes"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "a775bbc6fc9f13ad1e353b2acabcc4965e74885a",
+          "message": "Fix confusing warning when CMake version is too low (#1251)\n\nExperienced brief moment of panic when this warning said I had clang 3\r\ninstalled.",
+          "timestamp": "2024-05-10T03:36:37-07:00",
+          "tree_id": "08b6d4328ed877793bab5bf2c9355a9aa9435878",
+          "url": "https://github.com/luau-lang/luau/commit/a775bbc6fc9f13ad1e353b2acabcc4965e74885a"
+        },
+        "date": 1715337856855,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.669381,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.735178,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.807872,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 3.27871,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-t1-codegen",
+            "value": 3.37547,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.59735,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.77193,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.02093,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 10.0891,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-t1-codegen",
+            "value": 10.3562,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-compile"
