@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1716408994488,
+  "lastUpdate": 1716743809314,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-analyze": [
@@ -12731,6 +12731,72 @@
           {
             "name": "regex-dcr",
             "value": 2091.64,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "aaronweiss@roblox.com",
+            "name": "aaron",
+            "username": "aatxe"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "c8fe77c268cb7887d4bddcbc6e04183a289ec9af",
+          "message": "Sync to upstream/release/627 (#1266)\n\n### What's new?\r\n\r\n* Removed new `table.move` optimization because of correctness problems.\r\n\r\n### New Type Solver\r\n\r\n* Improved error messages for type families to describe what's wrong in\r\nmore detail, and ideally without using the term `type family` at all.\r\n* Change `boolean` and `string` singletons in type checking to report\r\nerrors to the user when they've gotten an impossible type (indicating a\r\ntype error from their context).\r\n* Split debugging flags for type family reduction\r\n(`DebugLuauLogTypeFamilies`) from general solver logging\r\n(`DebugLuauLogSolver`).\r\n* Improve type simplification to support patterns like `(number |\r\nstring) | (string | number)` becoming `number | string`.\r\n\r\n### Native Code Generation\r\n\r\n* Use templated `luaV_doarith` to speedup vector operation fallbacks.\r\n* Various small changes to better support arm64 on Windows.\r\n\r\n### Internal Contributors\r\nCo-authored-by: Aaron Weiss <aaronweiss@roblox.com>\r\nCo-authored-by: Andy Friesen <afriesen@roblox.com>\r\nCo-authored-by: James McNellis <jmcnellis@roblox.com>\r\nCo-authored-by: Vighnesh Vijay <vvijay@roblox.com>\r\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com>\r\n\r\n---------\r\n\r\nCo-authored-by: Alexander McCord <amccord@roblox.com>\r\nCo-authored-by: Andy Friesen <afriesen@roblox.com>\r\nCo-authored-by: Vighnesh <vvijay@roblox.com>\r\nCo-authored-by: Aviral Goel <agoel@roblox.com>\r\nCo-authored-by: David Cope <dcope@roblox.com>\r\nCo-authored-by: Lily Brown <lbrown@roblox.com>\r\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com>",
+          "timestamp": "2024-05-26T10:09:09-07:00",
+          "tree_id": "828dd50259d3a77bb36ebe2d3949371da4aecc3f",
+          "url": "https://github.com/luau-lang/luau/commit/c8fe77c268cb7887d4bddcbc6e04183a289ec9af"
+        },
+        "date": 1716743809310,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 4.7642,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 5.81687,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 51.2488,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 7.77325,
+            "unit": "7ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 9.98931,
+            "unit": "9ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 689.41,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"
