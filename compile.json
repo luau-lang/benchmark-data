@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1717187255021,
+  "lastUpdate": 1717538508169,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-compile": [
@@ -16485,6 +16485,100 @@
           {
             "name": "regex-O2-t1-codegen",
             "value": 10.3403,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "johnnymorganz@outlook.com",
+            "name": "JohnnyMorganz",
+            "username": "JohnnyMorganz"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "041b8ee4e71de42e686cd787d7fe28e7036209eb",
+          "message": "Fix edge case in 'findBindingAtPosition' when looking up global binding at start of file (#1254)\n\nThe 'findBindingAtPosition' AstQuery function can be used to lookup a\r\nlocal or global binding.\r\n\r\nInside of this function is a check to \"Ignore this binding if we're\r\ninside its definition. e.g. local abc = abc -- Will take the definition\r\nof abc from outer scope\".\r\n\r\nHowever, this check is incorrect when we are looking up a global binding\r\nat the start of a file.\r\n\r\nConsider a complete file with the contents:\r\n```lua\r\nlocal x = stri|ng.char(1)\r\n```\r\n\r\nand we pass the location of the marker `|` as the position to the find\r\nbinding position. We will pick up the global binding of the definition\r\n`string` coming from a builtin source (either defined via C++ code or a\r\ndefinitions file and loaded into the global scope).\r\n\r\nThe global binding `string` will have a zero position: `0,0,0,0`.\r\nHowever, the `findBindingLocalStatement` check works by looking up the\r\nAstAncestry at the binding's defined begin position *in the current\r\nsource module*. This will then incorrectly return the local statement\r\nfor `local x`, as that is at the start of the source code. Then in turn,\r\nwe assume we are in the `local abc = abc` case, and end up skipping over\r\nthe correct binding.\r\n\r\nWe fix this by checking if the binding is at the global position. If so,\r\nwe early exit because it is impossible for a global binding to be\r\ndefined in a local statement.",
+          "timestamp": "2024-06-04T13:53:01-07:00",
+          "tree_id": "c45b3bc60ee2544c0b70ee230b71f2af916b7a14",
+          "url": "https://github.com/luau-lang/luau/commit/041b8ee4e71de42e686cd787d7fe28e7036209eb"
+        },
+        "date": 1717538508165,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.658431,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.724447,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.797272,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 3.26818,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-t1-codegen",
+            "value": 3.36953,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.58822,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.76132,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.01138,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 10.0558,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-t1-codegen",
+            "value": 10.3404,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-compile"
