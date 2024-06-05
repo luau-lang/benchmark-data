@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1717538508025,
+  "lastUpdate": 1717603300310,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-analyze": [
@@ -12922,6 +12922,72 @@
           {
             "name": "regex-strict",
             "value": 9.98941,
+            "unit": "9ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 61548.5,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "85714123+jackdotink@users.noreply.github.com",
+            "name": "Jack",
+            "username": "jackdotink"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "43bf7c4e051b0d49dbb2bd3cbb2471d235da55db",
+          "message": "implement leading bar and ampersand in types (#1286)\n\nImplements the [Leading `|` and `&` in types](https://rfcs.luau-lang.org/syntax-leading-bar-and-ampersand.html) RFC.\r\n\r\nThe changes to the parser are exactly as described in the RFC.\r\n\r\n---------\r\n\r\nCo-authored-by: Alexander McCord <11488393+alexmccord@users.noreply.github.com>",
+          "timestamp": "2024-06-05T07:52:30-07:00",
+          "tree_id": "00fd7b4ef880f1fd73612f8feb37beb1a920686d",
+          "url": "https://github.com/luau-lang/luau/commit/43bf7c4e051b0d49dbb2bd3cbb2471d235da55db"
+        },
+        "date": 1717603300307,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 4.76486,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 5.81753,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 98.7599,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 7.77419,
+            "unit": "7ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 9.99074,
             "unit": "9ms",
             "range": "±0%",
             "extra": "luau-analyze"
