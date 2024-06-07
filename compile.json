@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1717603300463,
+  "lastUpdate": 1717783441917,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-compile": [
@@ -16631,6 +16631,100 @@
           {
             "name": "map-O2-codegen",
             "value": 3.2687,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-t1-codegen",
+            "value": 3.3679,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.58958,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.76255,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.01261,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 10.057,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-t1-codegen",
+            "value": 10.3442,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "arseny.kapoulkine@gmail.com",
+            "name": "Arseny Kapoulkine",
+            "username": "zeux"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "23b872620394c04592a0eae81491b4d2dcf5dfab",
+          "message": "Fix incorrect comment in lgc.h (#1288)\n\nThe comment gave an incorrect (reversed) version of the invariant, which\r\ncould be confusing for people who haven't read the full description in\r\nlgc.cpp.\r\n\r\nUnfortunately this change is difficult to flag.\r\n\r\nFixes #1282.",
+          "timestamp": "2024-06-07T09:56:00-07:00",
+          "tree_id": "b8867e794ab26dc096104eb2a4a4c2c5cc761eca",
+          "url": "https://github.com/luau-lang/luau/commit/23b872620394c04592a0eae81491b4d2dcf5dfab"
+        },
+        "date": 1717783441913,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.658948,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.724963,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.797783,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 3.26869,
             "unit": "3ms",
             "range": "±0%",
             "extra": "luau-compile"
