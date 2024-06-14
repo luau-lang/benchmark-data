@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1717784049635,
+  "lastUpdate": 1718407159119,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-compile": [
@@ -16861,6 +16861,100 @@
           {
             "name": "regex-O2-t1-codegen",
             "value": 10.3442,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "vvijay@roblox.com",
+            "name": "Vighnesh-V",
+            "username": "Vighnesh-V"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "7d4033071abebe09971b410d362c00ffb3084afb",
+          "message": "Sync to upstream/release/630 (#1295)\n\n### What's new\r\n\r\n* A bug in exception handling in GCC(11/12/13) on MacOS prevents our\r\ntest suite from running.\r\n* Parser now supports leading `|` or `&` when declaring `Union` and\r\n`Intersection` types (#1286)\r\n* We now support parsing of attributes on functions as described in the\r\n[rfc](https://github.com/luau-lang/rfcs/pull/30)\r\n* With this change, expressions such as `local x = @native function(x)\r\n    return x+1 end` and `f(@native function(x) return x+1 end)` are now\r\n    valid.\r\n* Added support for `@native` attribute - we can now force native\r\ncompilation of individual functions if the `@native` attribute is\r\nspecified before the `function` keyword (works for lambdas too).\r\n\r\n### New Solver\r\n\r\n* Many fixes in the new solver for crashes and instability\r\n* Refinements now use simplification and not normalization in a specific\r\ncase of two tables\r\n* Assume that compound assignments do not change the type of the\r\nleft-side operand\r\n* Fix error that prevented Class Methods from being overloaded\r\n\r\n### VM\r\n\r\n* Updated description of Garbage Collector invariant\r\n\r\n---\r\n### Internal Contributors\r\n\r\nCo-authored-by: Aaron Weiss <aaronweiss@roblox.com>\r\nCo-authored-by: Alexander McCord <amccord@roblox.com>\r\nCo-authored-by: Andy Friesen <afriesen@roblox.com>\r\nCo-authored-by: Aviral Goel <agoel@roblox.com>\r\nCo-authored-by: Vighnesh Vijay <vvijay@roblox.com>\r\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com>\r\n\r\n---------\r\n\r\nCo-authored-by: Aaron Weiss <aaronweiss@roblox.com>\r\nCo-authored-by: Alexander McCord <amccord@roblox.com>\r\nCo-authored-by: Andy Friesen <afriesen@roblox.com>\r\nCo-authored-by: Aviral Goel <agoel@roblox.com>\r\nCo-authored-by: David Cope <dcope@roblox.com>\r\nCo-authored-by: Lily Brown <lbrown@roblox.com>\r\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com>",
+          "timestamp": "2024-06-14T13:21:20-07:00",
+          "tree_id": "080f429027d91321e6585d706df7bc2d3eabbf3b",
+          "url": "https://github.com/luau-lang/luau/commit/7d4033071abebe09971b410d362c00ffb3084afb"
+        },
+        "date": 1718407159115,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.662658,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.728604,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.800562,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 3.37548,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-t1-codegen",
+            "value": 3.47976,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.60664,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.7803,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.02806,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 10.4193,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-t1-codegen",
+            "value": 10.6899,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-compile"
