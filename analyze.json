@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1718937925628,
+  "lastUpdate": 1719626027381,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-analyze": [
@@ -13259,6 +13259,72 @@
           {
             "name": "regex-dcr",
             "value": 177140,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "aaronweiss@roblox.com",
+            "name": "aaron",
+            "username": "aatxe"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "0d2688844ab285af1ef52f15878b57911c3cf056",
+          "message": "Sync to upstream/release/632 (#1307)\n\n# What's Changed?\r\n\r\n- Fix #1137 by appropriately retaining additional metadata from\r\ndefinition files throughout the type system.\r\n- Improve Frontend for LSPs by appropriately allowing the cancellation\r\nof typechecking while running its destructor.\r\n\r\n## New Solver\r\n\r\n- Added support for the `rawget` type function.\r\n- Reduced overall static memory usage of builtin type functions.\r\n- Fixed a crash where visitors could mutate a union or intersection type\r\nand fail to invalidate iteration over them in doing so.\r\n- Revised autocomplete functionality to not rely on a separate run of\r\nthe type solver when using the new solver.\r\n- Implemented a more relaxed semantic rule for casting.\r\n- Fixed some smaller crashes in the new solver.\r\n\r\n## Native Code Generation\r\n\r\n- Add additional codegen specialization for `math.sign`\r\n- Cleaned up a large number of outstanding fflags in the code.\r\n\r\n### Internal Contributors\r\n\r\nCo-authored-by: Aaron Weiss <aaronweiss@roblox.com>\r\nCo-authored-by: Alexander McCord <amccord@roblox.com>\r\nCo-authored-by: Andy Friesen <afriesen@roblox.com>\r\nCo-authored-by: James McNellis <jmcnellis@roblox.com>\r\nCo-authored-by: Jeremy Yoo <jyoo@roblox.com>\r\nCo-authored-by: Vighnesh Vijay <vvijay@roblox.com>\r\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com>\r\n\r\n---------\r\n\r\nCo-authored-by: Alexander McCord <amccord@roblox.com>\r\nCo-authored-by: Andy Friesen <afriesen@roblox.com>\r\nCo-authored-by: Vighnesh <vvijay@roblox.com>\r\nCo-authored-by: Aviral Goel <agoel@roblox.com>\r\nCo-authored-by: David Cope <dcope@roblox.com>\r\nCo-authored-by: Lily Brown <lbrown@roblox.com>\r\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com>",
+          "timestamp": "2024-06-28T17:34:49-07:00",
+          "tree_id": "78a61ae3d17f36dfebf385c7b64a2169b67370bc",
+          "url": "https://github.com/luau-lang/luau/commit/0d2688844ab285af1ef52f15878b57911c3cf056"
+        },
+        "date": 1719626027377,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 4.929,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 5.98079,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 47.3207,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 8.07437,
+            "unit": "8ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 10.4527,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 70235.1,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"
