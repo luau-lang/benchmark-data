@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1720564905579,
+  "lastUpdate": 1720566816080,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-compile": [
@@ -17282,6 +17282,100 @@
           {
             "name": "map-O2",
             "value": 0.800726,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 3.35048,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-t1-codegen",
+            "value": 3.44784,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.60728,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.78248,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.03,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 10.3517,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-t1-codegen",
+            "value": 10.6163,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "42277794+mttsner@users.noreply.github.com",
+            "name": "mttsner",
+            "username": "mttsner"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "6bfc38e61a67a308d7a4bfd03c544c5e93017e5e",
+          "message": "Fix incorrect comment in Bytecode.h (#1315)\n\nThe description of SUBRK/DIVRK is out of sync with the VM code.\r\n\r\nComment:\r\n```cpp\r\n// SUBRK, DIVRK: compute arithmetic operation between the constant and a source register and put the result into target register\r\n// A: target register\r\n// B: source register\r\n// C: constant table index (0..255); must refer to a number\r\nLOP_SUBRK,\r\nLOP_DIVRK,\r\n```\r\nVM snippet:\r\n```cpp\r\nVM_CASE(LOP_DIVRK)\r\n    {\r\n        Instruction insn = *pc++;\r\n        StkId ra = VM_REG(LUAU_INSN_A(insn));\r\n        TValue* kv = VM_KV(LUAU_INSN_B(insn));\r\n        StkId rc = VM_REG(LUAU_INSN_C(insn));\r\n        ...\r\n```",
+          "timestamp": "2024-07-09T16:00:17-07:00",
+          "tree_id": "aa299ac24be735c28a4b3ef232a81260c47326de",
+          "url": "https://github.com/luau-lang/luau/commit/6bfc38e61a67a308d7a4bfd03c544c5e93017e5e"
+        },
+        "date": 1720566816076,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.662623,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.728711,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.800722,
             "unit": "0ms",
             "range": "±0%",
             "extra": "luau-compile"
