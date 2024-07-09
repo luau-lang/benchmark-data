@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1720476621926,
+  "lastUpdate": 1720564905451,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-analyze": [
@@ -13391,6 +13391,72 @@
           {
             "name": "regex-dcr",
             "value": 5873.35,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "johnnymorganz@outlook.com",
+            "name": "JohnnyMorganz",
+            "username": "JohnnyMorganz"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "f5a2c5d55ed09f40e5f2170f84920ce8587a7d20",
+          "message": "Keep commentLocations on SourceModule for definition files (#1314)\n\nRight now, the commentLocations are not transferred over to the\r\nSourceModule for definition files, like they are for normal source\r\nmodules. This means we lose out on finding documentation comments. We\r\nadd that in here\r\n\r\nhttps://github.com/luau-lang/luau/issues/1137#issuecomment-2212413633",
+          "timestamp": "2024-07-09T15:28:21-07:00",
+          "tree_id": "6e063c33288868ed09fb55aa243632d5bb63e800",
+          "url": "https://github.com/luau-lang/luau/commit/f5a2c5d55ed09f40e5f2170f84920ce8587a7d20"
+        },
+        "date": 1720564905447,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 4.92862,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 5.98002,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 47.2914,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 8.07423,
+            "unit": "8ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 10.4526,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 5873.4,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"

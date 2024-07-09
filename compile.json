@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1720476622056,
+  "lastUpdate": 1720564905579,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-compile": [
@@ -17188,6 +17188,100 @@
           {
             "name": "map-O2",
             "value": 0.800719,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 3.35048,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-t1-codegen",
+            "value": 3.44784,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.60728,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.78248,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.03,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 10.3517,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-t1-codegen",
+            "value": 10.6163,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "johnnymorganz@outlook.com",
+            "name": "JohnnyMorganz",
+            "username": "JohnnyMorganz"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "f5a2c5d55ed09f40e5f2170f84920ce8587a7d20",
+          "message": "Keep commentLocations on SourceModule for definition files (#1314)\n\nRight now, the commentLocations are not transferred over to the\r\nSourceModule for definition files, like they are for normal source\r\nmodules. This means we lose out on finding documentation comments. We\r\nadd that in here\r\n\r\nhttps://github.com/luau-lang/luau/issues/1137#issuecomment-2212413633",
+          "timestamp": "2024-07-09T15:28:21-07:00",
+          "tree_id": "6e063c33288868ed09fb55aa243632d5bb63e800",
+          "url": "https://github.com/luau-lang/luau/commit/f5a2c5d55ed09f40e5f2170f84920ce8587a7d20"
+        },
+        "date": 1720564905574,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.662628,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.728706,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.800726,
             "unit": "0ms",
             "range": "±0%",
             "extra": "luau-compile"
