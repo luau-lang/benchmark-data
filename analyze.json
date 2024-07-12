@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1720566815946,
+  "lastUpdate": 1720804622127,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-analyze": [
@@ -13523,6 +13523,72 @@
           {
             "name": "regex-dcr",
             "value": 5873.4,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "59751754+joonyoo181@users.noreply.github.com",
+            "name": "Junseo Yoo",
+            "username": "joonyoo181"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "b6b74b44259a41b88751cf223fde90e3d80de53c",
+          "message": "Sync to upstream/release/634 (#1325)\n\n# What's Changed?\r\n\r\n- Performance improvement in the old solver\r\n- Bugfixes in the new solver\r\n\r\n## Old Solver\r\n\r\n- Mark types that do not need instantiation when being exported to\r\nprevent unnecessary work from being done\r\n\r\n## New Solver\r\n\r\n- Refactored instances of \"type family\" with \"type function\"\r\n- Index-out-of-bounds bug fix in the resolution resolver\r\n- Subtyping reasonings are merged only if all failed\r\n\r\n---\r\n### Internal Contributors\r\n\r\nCo-authored-by: Aaron Weiss <aaronweiss@roblox.com>\r\nCo-authored-by: Vighnesh Vijay <vvijay@roblox.com>\r\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com>\r\n\r\n---------\r\n\r\nCo-authored-by: Aaron Weiss <aaronweiss@roblox.com>\r\nCo-authored-by: Alexander McCord <amccord@roblox.com>\r\nCo-authored-by: Andy Friesen <afriesen@roblox.com>\r\nCo-authored-by: Vighnesh <vvijay@roblox.com>\r\nCo-authored-by: Aviral Goel <agoel@roblox.com>\r\nCo-authored-by: David Cope <dcope@roblox.com>\r\nCo-authored-by: Lily Brown <lbrown@roblox.com>\r\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com>",
+          "timestamp": "2024-07-12T10:03:36-07:00",
+          "tree_id": "77665064e68af56a5a76f233ac97ea1613a9263e",
+          "url": "https://github.com/luau-lang/luau/commit/b6b74b44259a41b88751cf223fde90e3d80de53c"
+        },
+        "date": 1720804622123,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 4.93023,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 5.98231,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 48.0516,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 8.02603,
+            "unit": "8ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 10.4055,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 5884.28,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"
