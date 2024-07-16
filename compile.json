@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1720804622265,
+  "lastUpdate": 1721152128029,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-compile": [
@@ -17519,6 +17519,100 @@
           {
             "name": "regex-O2-t1-codegen",
             "value": 10.5031,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "11488393+alexmccord@users.noreply.github.com",
+            "name": "Alexander McCord",
+            "username": "alexmccord"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "e1bf6289c705e08fc859cb04aceb32c6a8322f81",
+          "message": "Equality graphs (#1285)\n\nWorking towards a full e-graph implementation as described by the [egg\r\npaper](https://arxiv.org/pdf/2004.03082).\r\n\r\nThe type system has a couple of places where e-graphs would've been\r\nuseful and solved some classes of problems trivially. For example:\r\n\r\n1. Normalization and simplification cannot handle cyclic types due to\r\nthe nature of their implementation.\r\n2. Normalization can't tell when two tables or functions are equivalent,\r\nbut simplification theoretically can albeit not implemented.\r\n3. Normalization requires deep normalization for inhabitance check,\r\nwhereas simplification would've returned the `never` type itself\r\nindicating uninhabited.\r\n4. Simplification requires constraint ordering to have perfect timing to\r\nsimplify.\r\n5. Adding a rewrite rule requires implementing it twice, once in\r\nsimplification and once again in normalization with completely different\r\ncode design making it hard to verify that their behavior is materially\r\nequivalent.\r\n6. In cases where we must cache for performance, two different types\r\nthat are isomorphic have different cache entries resulting in cache\r\nmisses.\r\n7. Type family reduction can handle cyclic type families, but only if\r\nthe cycle is not obscured by a different type family instance. (`t1\r\nwhere t1 = union<number, add<t1, number>>` is irreducible)\r\n\r\nI think we're getting the point!\r\n\r\n---\r\n\r\nCurrently the implementation is missing a few features that makes\r\ne-graphs actually useful. Those will be coming in a future PR.\r\n\r\n1. Pattern matching,\r\n6. Applying rewrites,\r\n7. Rewrite until saturation, and\r\n8. Extracting the best e-node according to some cost function.",
+          "timestamp": "2024-07-16T10:35:20-07:00",
+          "tree_id": "ed7b6e48f80fa58bc7fbdab57f5c294be8664edc",
+          "url": "https://github.com/luau-lang/luau/commit/e1bf6289c705e08fc859cb04aceb32c6a8322f81"
+        },
+        "date": 1721152128024,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.662185,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.728271,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.800287,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 3.31316,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-t1-codegen",
+            "value": 3.41251,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.6057,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.78097,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.02849,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 10.2352,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-t1-codegen",
+            "value": 10.503,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-compile"

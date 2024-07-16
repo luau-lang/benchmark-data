@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1720804621673,
+  "lastUpdate": 1721152127429,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "callgrind clang": [
@@ -53216,6 +53216,254 @@
           {
             "name": "voxelgen",
             "value": 49.562,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "11488393+alexmccord@users.noreply.github.com",
+            "name": "Alexander McCord",
+            "username": "alexmccord"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "e1bf6289c705e08fc859cb04aceb32c6a8322f81",
+          "message": "Equality graphs (#1285)\n\nWorking towards a full e-graph implementation as described by the [egg\r\npaper](https://arxiv.org/pdf/2004.03082).\r\n\r\nThe type system has a couple of places where e-graphs would've been\r\nuseful and solved some classes of problems trivially. For example:\r\n\r\n1. Normalization and simplification cannot handle cyclic types due to\r\nthe nature of their implementation.\r\n2. Normalization can't tell when two tables or functions are equivalent,\r\nbut simplification theoretically can albeit not implemented.\r\n3. Normalization requires deep normalization for inhabitance check,\r\nwhereas simplification would've returned the `never` type itself\r\nindicating uninhabited.\r\n4. Simplification requires constraint ordering to have perfect timing to\r\nsimplify.\r\n5. Adding a rewrite rule requires implementing it twice, once in\r\nsimplification and once again in normalization with completely different\r\ncode design making it hard to verify that their behavior is materially\r\nequivalent.\r\n6. In cases where we must cache for performance, two different types\r\nthat are isomorphic have different cache entries resulting in cache\r\nmisses.\r\n7. Type family reduction can handle cyclic type families, but only if\r\nthe cycle is not obscured by a different type family instance. (`t1\r\nwhere t1 = union<number, add<t1, number>>` is irreducible)\r\n\r\nI think we're getting the point!\r\n\r\n---\r\n\r\nCurrently the implementation is missing a few features that makes\r\ne-graphs actually useful. Those will be coming in a future PR.\r\n\r\n1. Pattern matching,\r\n6. Applying rewrites,\r\n7. Rewrite until saturation, and\r\n8. Extracting the best e-node according to some cost function.",
+          "timestamp": "2024-07-16T10:35:20-07:00",
+          "tree_id": "ed7b6e48f80fa58bc7fbdab57f5c294be8664edc",
+          "url": "https://github.com/luau-lang/luau/commit/e1bf6289c705e08fc859cb04aceb32c6a8322f81"
+        },
+        "date": 1721152127419,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "base64",
+            "value": 21.42,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "chess",
+            "value": 79.888,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "life",
+            "value": 83.424,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "matrixmult",
+            "value": 23.432,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "mesh-normal-scalar",
+            "value": 30.519,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "pcmmix",
+            "value": 9.22,
+            "unit": "9ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "qsort",
+            "value": 75.318,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "sha256",
+            "value": 24.255,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "ack",
+            "value": 65.921,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "binary-trees",
+            "value": 28.585,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "fannkuchen-redux",
+            "value": 11.807,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "fixpoint-fact",
+            "value": 61.386,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "heapsort",
+            "value": 20.664,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "mandel",
+            "value": 60.784,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "n-body",
+            "value": 36.475,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "qt",
+            "value": 56.34,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "queen",
+            "value": 1.887,
+            "unit": "1ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "scimark",
+            "value": 84.625,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "spectral-norm",
+            "value": 11.345,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "sieve",
+            "value": 100.479,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "3d-cube",
+            "value": 7.947,
+            "unit": "7ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "3d-morph",
+            "value": 9.626,
+            "unit": "9ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "3d-raytrace",
+            "value": 9.713,
+            "unit": "9ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "controlflow-recursive",
+            "value": 5.622,
+            "unit": "5ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "crypto-aes",
+            "value": 13.436,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "fannkuch",
+            "value": 24.127,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "math-cordic",
+            "value": 15.263,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "math-partial-sums",
+            "value": 4.698,
+            "unit": "4ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "n-body-oop",
+            "value": 54.688,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "tictactoe",
+            "value": 122.75,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "trig",
+            "value": 23.916,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "voxelgen",
+            "value": 49.564,
             "unit": "ms",
             "range": "±0.000%",
             "extra": "luau"
