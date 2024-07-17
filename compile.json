@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1721153119166,
+  "lastUpdate": 1721228223896,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-compile": [
@@ -17707,6 +17707,100 @@
           {
             "name": "regex-O2-t1-codegen",
             "value": 10.5031,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "johnnymorganz@outlook.com",
+            "name": "JohnnyMorganz",
+            "username": "JohnnyMorganz"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "623e1e30dbf0e875349182d75937caa57d6b9c1a",
+          "message": "Store `definitionLocation` in ClassType (#1313)\n\nStore the location of an `AstStatDeclareClass` in the `ClassType` as\r\n`definitionLocation`.\r\n\r\nThis is useful for documentation comments and Go To Definition on a\r\nclass type\r\n\r\nhttps://github.com/luau-lang/luau/issues/1137#issuecomment-2212413633",
+          "timestamp": "2024-07-17T07:43:31-07:00",
+          "tree_id": "ab806fa920949c122220617781229d125540529f",
+          "url": "https://github.com/luau-lang/luau/commit/623e1e30dbf0e875349182d75937caa57d6b9c1a"
+        },
+        "date": 1721228223891,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.662136,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.728219,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.800239,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 3.31311,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-t1-codegen",
+            "value": 3.41251,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.60565,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.78091,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.02843,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 10.2352,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-t1-codegen",
+            "value": 10.503,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-compile"
