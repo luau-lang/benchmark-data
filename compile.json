@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1721228223896,
+  "lastUpdate": 1721259200320,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-compile": [
@@ -17787,6 +17787,100 @@
           {
             "name": "regex-O2",
             "value": 2.02843,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 10.2352,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-t1-codegen",
+            "value": 10.503,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "31601136+birds3345@users.noreply.github.com",
+            "name": "birds3345",
+            "username": "birds3345"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "2874ca9e86aae9e75178602a27db77179bf37428",
+          "message": "Optimizations for UnionFind (#1334)\n\nImplements ranks & path compression for union find.\r\n\r\n---------\r\n\r\nCo-authored-by: Alexander McCord <11488393+alexmccord@users.noreply.github.com>",
+          "timestamp": "2024-07-17T16:19:57-07:00",
+          "tree_id": "82b034491e13b0d787f6b4e5bd6901396788ee36",
+          "url": "https://github.com/luau-lang/luau/commit/2874ca9e86aae9e75178602a27db77179bf37428"
+        },
+        "date": 1721259200315,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.66219,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.728272,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.800287,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 3.31316,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-t1-codegen",
+            "value": 3.41251,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.6057,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.78097,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.02849,
             "unit": "2ms",
             "range": "±0%",
             "extra": "luau-compile"

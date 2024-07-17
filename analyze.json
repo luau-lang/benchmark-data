@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1721228223759,
+  "lastUpdate": 1721259200188,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-analyze": [
@@ -13787,6 +13787,72 @@
           {
             "name": "regex-dcr",
             "value": 5884.84,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "31601136+birds3345@users.noreply.github.com",
+            "name": "birds3345",
+            "username": "birds3345"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "2874ca9e86aae9e75178602a27db77179bf37428",
+          "message": "Optimizations for UnionFind (#1334)\n\nImplements ranks & path compression for union find.\r\n\r\n---------\r\n\r\nCo-authored-by: Alexander McCord <11488393+alexmccord@users.noreply.github.com>",
+          "timestamp": "2024-07-17T16:19:57-07:00",
+          "tree_id": "82b034491e13b0d787f6b4e5bd6901396788ee36",
+          "url": "https://github.com/luau-lang/luau/commit/2874ca9e86aae9e75178602a27db77179bf37428"
+        },
+        "date": 1721259200184,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 4.93023,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 5.98231,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 48.0487,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 8.02662,
+            "unit": "8ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 10.4054,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 5884.28,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"
