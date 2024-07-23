@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1721688581895,
+  "lastUpdate": 1721748120588,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-analyze": [
@@ -13978,6 +13978,72 @@
           {
             "name": "regex-strict",
             "value": 10.4011,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 5900.32,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "75688451+vegorov-rbx@users.noreply.github.com",
+            "name": "vegorov-rbx",
+            "username": "vegorov-rbx"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "a80abdb9b39c77b9813fba7005eaec73adad70bc",
+          "message": "Add new solver pass to the coverage build (#1341)",
+          "timestamp": "2024-07-23T08:08:32-07:00",
+          "tree_id": "7165e022b52c73b2fd4ef02dda95e4466bd40f1a",
+          "url": "https://github.com/luau-lang/luau/commit/a80abdb9b39c77b9813fba7005eaec73adad70bc"
+        },
+        "date": 1721748120584,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 4.93005,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 5.9822,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 39.3251,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 8.02595,
+            "unit": "8ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 10.4053,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"
