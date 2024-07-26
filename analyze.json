@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1721748120588,
+  "lastUpdate": 1722016884133,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-analyze": [
@@ -14051,6 +14051,72 @@
           {
             "name": "regex-dcr",
             "value": 5900.32,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "59751754+joonyoo181@users.noreply.github.com",
+            "name": "Junseo Yoo",
+            "username": "joonyoo181"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "5e0779fd57edf4669ab63ddc02b4c830bbdcd18e",
+          "message": "Sync to upstream/release/636 (#1346)\n\n# What's Changed?\r\n\r\n- Telemetry support for usage of any type in old/new solver\r\n- Bug fixes and flag removals with the new solver\r\n\r\n## New Solver\r\n\r\n- Fixed constraint ordering bug to infer types more accurately\r\n- Improved inferring a call to `setmetatable()`\r\n\r\n## VM\r\n\r\n- Restored global metatable lookup for `typeof` on lightuserdata to fix\r\nunintentional API change (Fixes #1335)\r\n\r\n---\r\n### Internal Contributors\r\n\r\nCo-authored-by: Aaron Weiss <aaronweiss@roblox.com>\r\nCo-authored-by: Alexander McCord <amccord@roblox.com>\r\nCo-authored-by: Andy Friesen <afriesen@roblox.com>\r\nCo-authored-by: Dibri Nsofor <dnsofor@roblox.com>\r\nCo-authored-by: Jeremy Yoo <jyoo@roblox.com>\r\nCo-authored-by: Vighnesh Vijay <vvijay@roblox.com>\r\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com>\r\n\r\n---------\r\n\r\nCo-authored-by: Aaron Weiss <aaronweiss@roblox.com>\r\nCo-authored-by: Alexander McCord <amccord@roblox.com>\r\nCo-authored-by: Andy Friesen <afriesen@roblox.com>\r\nCo-authored-by: Vighnesh <vvijay@roblox.com>\r\nCo-authored-by: Aviral Goel <agoel@roblox.com>\r\nCo-authored-by: David Cope <dcope@roblox.com>\r\nCo-authored-by: Lily Brown <lbrown@roblox.com>\r\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com>",
+          "timestamp": "2024-07-26T10:47:49-07:00",
+          "tree_id": "a843f34f9d4b92529932cddbe72cf72ee1022ba4",
+          "url": "https://github.com/luau-lang/luau/commit/5e0779fd57edf4669ab63ddc02b4c830bbdcd18e"
+        },
+        "date": 1722016884129,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 4.9701,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 6.01967,
+            "unit": "6ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 39.5205,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 8.2363,
+            "unit": "8ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 10.6534,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 5680.74,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"
