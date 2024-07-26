@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1722016884266,
+  "lastUpdate": 1722030490919,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-compile": [
@@ -18257,6 +18257,100 @@
           {
             "name": "regex-O2",
             "value": 2.02714,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 10.2339,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-t1-codegen",
+            "value": 10.5017,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "72112344+ds-sloth@users.noreply.github.com",
+            "name": "ds-sloth",
+            "username": "ds-sloth"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "58f8c24ddb6c509bd570cd7d3232b9f006c175a5",
+          "message": "BytecodeBuilder.cpp: fix invalid assumption that int32_t aliases int (#1347)\n\nI found that Luau failed to build on the devkitPro toolchain for 3DS.\r\n\r\nThis target uses an ILP32 model, and `int32_t` is an alias of `long`.\r\n`BytecodeBuilder.cpp` includes a line where an `int` is passed by\r\nreference to a function expecting an `int32_t`.",
+          "timestamp": "2024-07-26T14:34:58-07:00",
+          "tree_id": "12f8437555ae0ebe76c32a055394824c07e46d97",
+          "url": "https://github.com/luau-lang/luau/commit/58f8c24ddb6c509bd570cd7d3232b9f006c175a5"
+        },
+        "date": 1722030490914,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.662154,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.728244,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.800259,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 3.31313,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-t1-codegen",
+            "value": 3.41033,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.6044,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.77963,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.02715,
             "unit": "2ms",
             "range": "±0%",
             "extra": "luau-compile"
