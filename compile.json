@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1722609812832,
+  "lastUpdate": 1723224685513,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-compile": [
@@ -18417,6 +18417,100 @@
           {
             "name": "map-O2-codegen",
             "value": 3.31286,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-t1-codegen",
+            "value": 3.41124,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.60486,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.78005,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.02757,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 10.2343,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-t1-codegen",
+            "value": 10.5021,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "afriesen@roblox.com",
+            "name": "Andy Friesen",
+            "username": "andyfriesen"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "bfad1fa7771c97e29648dd98fe94953660b02f80",
+          "message": "Sync to upstream/release/638 (#1360)\n\nNew Solver\r\n\r\n* Fix some type inference issues surrounding updates to upvalues eg\r\n\r\n```luau\r\nlocal x = 0\r\n\r\nfunction f()\r\n    x = x + 1\r\nend\r\n```\r\n\r\n* User-defined type function progress\r\n* Bugfixes for normalization of negated class types. eg `SomeClass &\r\n(class & ~SomeClass)`\r\n* Fixes to subtyping between tables and the top `table` type.\r\n\r\n---------\r\n\r\nCo-authored-by: Aaron Weiss <aaronweiss@roblox.com>\r\nCo-authored-by: Vighnesh <vvijay@roblox.com>\r\nCo-authored-by: Aviral Goel <agoel@roblox.com>\r\nCo-authored-by: David Cope <dcope@roblox.com>\r\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com>\r\nCo-authored-by: Junseo Yoo <jyoo@roblox.com>",
+          "timestamp": "2024-08-09T10:18:20-07:00",
+          "tree_id": "1b4426d81f21ea8959f4b4f9b697928bba8ad646",
+          "url": "https://github.com/luau-lang/luau/commit/bfad1fa7771c97e29648dd98fe94953660b02f80"
+        },
+        "date": 1723224685509,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.661888,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.727973,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.799987,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 3.31287,
             "unit": "3ms",
             "range": "±0%",
             "extra": "luau-compile"
