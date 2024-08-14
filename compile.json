@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1723641285287,
+  "lastUpdate": 1723650300168,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-compile": [
@@ -18647,6 +18647,100 @@
           {
             "name": "regex-O2-t1-codegen",
             "value": 10.5021,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "153110145+Ketasaja@users.noreply.github.com",
+            "name": "Ketasaja",
+            "username": "Ketasaja"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "1788e237fcf8b7059966dffe1e11cd65028733c9",
+          "message": "Make `os.clock` use `clock_gettime` on FreeBSD (#1364)",
+          "timestamp": "2024-08-14T08:31:59-07:00",
+          "tree_id": "01d6d84b703540536705789bffbdcf7a9bcd790e",
+          "url": "https://github.com/luau-lang/luau/commit/1788e237fcf8b7059966dffe1e11cd65028733c9"
+        },
+        "date": 1723650300163,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.66194,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.728029,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.800044,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 3.31292,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-t1-codegen",
+            "value": 3.41125,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.60492,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.78011,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.02763,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 10.2344,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-t1-codegen",
+            "value": 10.5022,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-compile"
