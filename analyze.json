@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1723224685384,
+  "lastUpdate": 1723641285152,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-analyze": [
@@ -14308,6 +14308,72 @@
           {
             "name": "regex-strict",
             "value": 10.6536,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 5939.5,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "petrihakkinen@users.noreply.github.com",
+            "name": "Petri Häkkinen",
+            "username": "petrihakkinen"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "9dc299ecafd2178e7eff97dcb2437f2568e16d3c",
+          "message": "Fix size of userdata metatable array (#1366)\n\nFix udatamt array to use the correct limit for tagged userdata.",
+          "timestamp": "2024-08-14T06:00:21-07:00",
+          "tree_id": "d3101e336bd87f18278500e0762ca3c500acb75e",
+          "url": "https://github.com/luau-lang/luau/commit/9dc299ecafd2178e7eff97dcb2437f2568e16d3c"
+        },
+        "date": 1723641285147,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 4.96986,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 6.0196,
+            "unit": "6ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 28.7305,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 8.23656,
+            "unit": "8ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 10.6579,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"
