@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1723650300039,
+  "lastUpdate": 1723833832915,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-analyze": [
@@ -14447,6 +14447,72 @@
           {
             "name": "regex-dcr",
             "value": 5939.35,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "vvijay@roblox.com",
+            "name": "Vighnesh-V",
+            "username": "Vighnesh-V"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "25f91aa8b82fa3a9e415afbb83574c56b43cad80",
+          "message": "Sync to upstream/release/639 (#1368)\n\n# What's Changed?\r\n\r\n- Variety of bugfixes in the new solver\r\n\r\n## New Solver\r\n\r\n- Fix an issue where we would hit a recursion limit when applying long\r\nchains of type refinements.\r\n- Weaken the types of `table.freeze` and `table.clone` in the new solver\r\nso we can accept common code patterns like `local a = table.freeze({x=5,\r\nx=0})` at the expense of accepting code like `table.freeze(true)`.\r\n- Don't warn when the # operator is used on a value of type never\r\n\r\n## VM\r\n- Fix a bug in lua_resume where too many values might be removed from\r\nstack when resume throws an error\r\n\r\n---\r\nCo-authored-by: Aaron Weiss <aaronweiss@roblox.com>\r\nCo-authored-by: Andy Friesen <afriesen@roblox.com>\r\nCo-authored-by: Vighnesh Vijay <vvijay@roblox.com>\r\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com>\r\n\r\n---------\r\n\r\nCo-authored-by: Aaron Weiss <aaronweiss@roblox.com>\r\nCo-authored-by: Alexander McCord <amccord@roblox.com>\r\nCo-authored-by: Andy Friesen <afriesen@roblox.com>\r\nCo-authored-by: Aviral Goel <agoel@roblox.com>\r\nCo-authored-by: David Cope <dcope@roblox.com>\r\nCo-authored-by: Lily Brown <lbrown@roblox.com>\r\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com>\r\nCo-authored-by: Junseo Yoo <jyoo@roblox.com>",
+          "timestamp": "2024-08-16T11:29:33-07:00",
+          "tree_id": "d2c0847077620db0b22fa2d140ce0128ab33f5a0",
+          "url": "https://github.com/luau-lang/luau/commit/25f91aa8b82fa3a9e415afbb83574c56b43cad80"
+        },
+        "date": 1723833832911,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 4.96625,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 6.01526,
+            "unit": "6ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 28.7361,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 8.23116,
+            "unit": "8ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 10.6514,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 6911.65,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"
