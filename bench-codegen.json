@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1723833832614,
+  "lastUpdate": 1724074573399,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "callgrind codegen": [
@@ -41319,6 +41319,254 @@
           {
             "name": "voxelgen",
             "value": 27.631,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-codegen"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "49699333+dependabot[bot]@users.noreply.github.com",
+            "name": "dependabot[bot]",
+            "username": "dependabot[bot]"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "91ab45ff4330c720f545d52d1da22f0ba95f19f0",
+          "message": "Bump jinja2 from 3.1.2 to 3.1.3 in /tools/fuzz (#1144)\n\nBumps [jinja2](https://github.com/pallets/jinja) from 3.1.2 to 3.1.3.\r\n<details>\r\n<summary>Release notes</summary>\r\n<p><em>Sourced from <a\r\nhref=\"https://github.com/pallets/jinja/releases\">jinja2's\r\nreleases</a>.</em></p>\r\n<blockquote>\r\n<h2>3.1.3</h2>\r\n<p>This is a fix release for the 3.1.x feature branch.</p>\r\n<ul>\r\n<li>Fix for <a\r\nhref=\"https://github.com/pallets/jinja/security/advisories/GHSA-h5c8-rqwp-cp95\">GHSA-h5c8-rqwp-cp95</a>.\r\nYou are affected if you are using <code>xmlattr</code> and passing user\r\ninput as attribute keys.</li>\r\n<li>Changes: <a\r\nhref=\"https://jinja.palletsprojects.com/en/3.1.x/changes/#version-3-1-3\">https://jinja.palletsprojects.com/en/3.1.x/changes/#version-3-1-3</a></li>\r\n<li>Milestone: <a\r\nhref=\"https://github.com/pallets/jinja/milestone/15?closed=1\">https://github.com/pallets/jinja/milestone/15?closed=1</a></li>\r\n</ul>\r\n</blockquote>\r\n</details>\r\n<details>\r\n<summary>Changelog</summary>\r\n<p><em>Sourced from <a\r\nhref=\"https://github.com/pallets/jinja/blob/main/CHANGES.rst\">jinja2's\r\nchangelog</a>.</em></p>\r\n<blockquote>\r\n<h2>Version 3.1.3</h2>\r\n<p>Released 2024-01-10</p>\r\n<ul>\r\n<li>Fix compiler error when checking if required blocks in parent\r\ntemplates are\r\nempty. :pr:<code>1858</code></li>\r\n<li><code>xmlattr</code> filter does not allow keys with spaces.\r\nGHSA-h5c8-rqwp-cp95</li>\r\n<li>Make error messages stemming from invalid nesting of <code>{% trans\r\n%}</code> blocks\r\nmore helpful. :pr:<code>1918</code></li>\r\n</ul>\r\n</blockquote>\r\n</details>\r\n<details>\r\n<summary>Commits</summary>\r\n<ul>\r\n<li><a\r\nhref=\"https://github.com/pallets/jinja/commit/d9de4bb215fd1cc8092a410fb834c7c4060b1fc1\"><code>d9de4bb</code></a>\r\nrelease version 3.1.3</li>\r\n<li><a\r\nhref=\"https://github.com/pallets/jinja/commit/50124e16561f17f6c1ec85a692f6551418971cdc\"><code>50124e1</code></a>\r\nskip test pypi</li>\r\n<li><a\r\nhref=\"https://github.com/pallets/jinja/commit/9ea7222ef3f184480be0d0884e30ccfb4172b17b\"><code>9ea7222</code></a>\r\nuse trusted publishing</li>\r\n<li><a\r\nhref=\"https://github.com/pallets/jinja/commit/da703f7aae36b1e88baaa20de334d7ff6378fdde\"><code>da703f7</code></a>\r\nuse trusted publishing</li>\r\n<li><a\r\nhref=\"https://github.com/pallets/jinja/commit/bce174692547464512383ec40e0f8338b8811983\"><code>bce1746</code></a>\r\nuse trusted publishing</li>\r\n<li><a\r\nhref=\"https://github.com/pallets/jinja/commit/7277d8068be593deab3555c7c14f974ada373af1\"><code>7277d80</code></a>\r\nupdate pre-commit hooks</li>\r\n<li><a\r\nhref=\"https://github.com/pallets/jinja/commit/5c8a10522421270f66376a24ec8e0d6812bc4b14\"><code>5c8a105</code></a>\r\nMake nested-trans-block exceptions nicer (<a\r\nhref=\"https://redirect.github.com/pallets/jinja/issues/1918\">#1918</a>)</li>\r\n<li><a\r\nhref=\"https://github.com/pallets/jinja/commit/19a55db3b411343309f2faaffaedbb089e841895\"><code>19a55db</code></a>\r\nMake nested-trans-block exceptions nicer</li>\r\n<li><a\r\nhref=\"https://github.com/pallets/jinja/commit/716795349a41d4983a9a4771f7d883c96ea17be7\"><code>7167953</code></a>\r\nMerge pull request from GHSA-h5c8-rqwp-cp95</li>\r\n<li><a\r\nhref=\"https://github.com/pallets/jinja/commit/7dd3680e6eea0d77fde024763657aa4d884ddb23\"><code>7dd3680</code></a>\r\nxmlattr filter disallows keys with spaces</li>\r\n<li>Additional commits viewable in <a\r\nhref=\"https://github.com/pallets/jinja/compare/3.1.2...3.1.3\">compare\r\nview</a></li>\r\n</ul>\r\n</details>\r\n<br />\r\n\r\n\r\n[![Dependabot compatibility\r\nscore](https://dependabot-badges.githubapp.com/badges/compatibility_score?dependency-name=jinja2&package-manager=pip&previous-version=3.1.2&new-version=3.1.3)](https://docs.github.com/en/github/managing-security-vulnerabilities/about-dependabot-security-updates#about-compatibility-scores)\r\n\r\nDependabot will resolve any conflicts with this PR as long as you don't\r\nalter it yourself. You can also trigger a rebase manually by commenting\r\n`@dependabot rebase`.\r\n\r\n[//]: # (dependabot-automerge-start)\r\n[//]: # (dependabot-automerge-end)\r\n\r\n---\r\n\r\n<details>\r\n<summary>Dependabot commands and options</summary>\r\n<br />\r\n\r\nYou can trigger Dependabot actions by commenting on this PR:\r\n- `@dependabot rebase` will rebase this PR\r\n- `@dependabot recreate` will recreate this PR, overwriting any edits\r\nthat have been made to it\r\n- `@dependabot merge` will merge this PR after your CI passes on it\r\n- `@dependabot squash and merge` will squash and merge this PR after\r\nyour CI passes on it\r\n- `@dependabot cancel merge` will cancel a previously requested merge\r\nand block automerging\r\n- `@dependabot reopen` will reopen this PR if it is closed\r\n- `@dependabot close` will close this PR and stop Dependabot recreating\r\nit. You can achieve the same result by closing it manually\r\n- `@dependabot show <dependency name> ignore conditions` will show all\r\nof the ignore conditions of the specified dependency\r\n- `@dependabot ignore this major version` will close this PR and stop\r\nDependabot creating any more for this major version (unless you reopen\r\nthe PR or upgrade to it yourself)\r\n- `@dependabot ignore this minor version` will close this PR and stop\r\nDependabot creating any more for this minor version (unless you reopen\r\nthe PR or upgrade to it yourself)\r\n- `@dependabot ignore this dependency` will close this PR and stop\r\nDependabot creating any more for this dependency (unless you reopen the\r\nPR or upgrade to it yourself)\r\nYou can disable automated security fix PRs for this repo from the\r\n[Security Alerts\r\npage](https://github.com/luau-lang/luau/network/alerts).\r\n\r\n</details>\r\n\r\nSigned-off-by: dependabot[bot] <support@github.com>\r\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>",
+          "timestamp": "2024-08-19T06:21:55-07:00",
+          "tree_id": "70764e2035a21d467d8e0c7e9d3e5caa2025ed67",
+          "url": "https://github.com/luau-lang/luau/commit/91ab45ff4330c720f545d52d1da22f0ba95f19f0"
+        },
+        "date": 1724074573389,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "base64",
+            "value": 11.527,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-codegen"
+          },
+          {
+            "name": "chess",
+            "value": 51.507,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-codegen"
+          },
+          {
+            "name": "life",
+            "value": 23.355,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-codegen"
+          },
+          {
+            "name": "matrixmult",
+            "value": 9.335,
+            "unit": "9ms",
+            "range": "±0.000%",
+            "extra": "luau-codegen"
+          },
+          {
+            "name": "mesh-normal-scalar",
+            "value": 12.988,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-codegen"
+          },
+          {
+            "name": "pcmmix",
+            "value": 1.36,
+            "unit": "1ms",
+            "range": "±0.000%",
+            "extra": "luau-codegen"
+          },
+          {
+            "name": "qsort",
+            "value": 41.477,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-codegen"
+          },
+          {
+            "name": "sha256",
+            "value": 4.57,
+            "unit": "4ms",
+            "range": "±0.000%",
+            "extra": "luau-codegen"
+          },
+          {
+            "name": "ack",
+            "value": 40.016,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-codegen"
+          },
+          {
+            "name": "binary-trees",
+            "value": 20.628,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-codegen"
+          },
+          {
+            "name": "fannkuchen-redux",
+            "value": 3.892,
+            "unit": "3ms",
+            "range": "±0.000%",
+            "extra": "luau-codegen"
+          },
+          {
+            "name": "fixpoint-fact",
+            "value": 48.311,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-codegen"
+          },
+          {
+            "name": "heapsort",
+            "value": 7.715,
+            "unit": "7ms",
+            "range": "±0.000%",
+            "extra": "luau-codegen"
+          },
+          {
+            "name": "mandel",
+            "value": 39.781,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-codegen"
+          },
+          {
+            "name": "n-body",
+            "value": 9.707,
+            "unit": "9ms",
+            "range": "±0.000%",
+            "extra": "luau-codegen"
+          },
+          {
+            "name": "qt",
+            "value": 24.907,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-codegen"
+          },
+          {
+            "name": "queen",
+            "value": 0.805,
+            "unit": "0ms",
+            "range": "±0.000%",
+            "extra": "luau-codegen"
+          },
+          {
+            "name": "scimark",
+            "value": 24.635,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-codegen"
+          },
+          {
+            "name": "spectral-norm",
+            "value": 2.444,
+            "unit": "2ms",
+            "range": "±0.000%",
+            "extra": "luau-codegen"
+          },
+          {
+            "name": "sieve",
+            "value": 83.546,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-codegen"
+          },
+          {
+            "name": "3d-cube",
+            "value": 3.696,
+            "unit": "3ms",
+            "range": "±0.000%",
+            "extra": "luau-codegen"
+          },
+          {
+            "name": "3d-morph",
+            "value": 3.747,
+            "unit": "3ms",
+            "range": "±0.000%",
+            "extra": "luau-codegen"
+          },
+          {
+            "name": "3d-raytrace",
+            "value": 3.267,
+            "unit": "3ms",
+            "range": "±0.000%",
+            "extra": "luau-codegen"
+          },
+          {
+            "name": "controlflow-recursive",
+            "value": 3.464,
+            "unit": "3ms",
+            "range": "±0.000%",
+            "extra": "luau-codegen"
+          },
+          {
+            "name": "crypto-aes",
+            "value": 7.143,
+            "unit": "7ms",
+            "range": "±0.000%",
+            "extra": "luau-codegen"
+          },
+          {
+            "name": "fannkuch",
+            "value": 6.167,
+            "unit": "6ms",
+            "range": "±0.000%",
+            "extra": "luau-codegen"
+          },
+          {
+            "name": "math-cordic",
+            "value": 3.768,
+            "unit": "3ms",
+            "range": "±0.000%",
+            "extra": "luau-codegen"
+          },
+          {
+            "name": "math-partial-sums",
+            "value": 1.917,
+            "unit": "1ms",
+            "range": "±0.000%",
+            "extra": "luau-codegen"
+          },
+          {
+            "name": "n-body-oop",
+            "value": 13.739,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-codegen"
+          },
+          {
+            "name": "tictactoe",
+            "value": 62.817,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-codegen"
+          },
+          {
+            "name": "trig",
+            "value": 6.65,
+            "unit": "6ms",
+            "range": "±0.000%",
+            "extra": "luau-codegen"
+          },
+          {
+            "name": "voxelgen",
+            "value": 27.629,
             "unit": "ms",
             "range": "±0.000%",
             "extra": "luau-codegen"
