@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1724074573872,
+  "lastUpdate": 1724075537364,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-compile": [
@@ -18873,6 +18873,100 @@
           {
             "name": "map-O1",
             "value": 0.727962,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.799976,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 3.31285,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-t1-codegen",
+            "value": 3.41028,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.60515,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.78033,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.02785,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 10.2346,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-t1-codegen",
+            "value": 10.5024,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "49699333+dependabot[bot]@users.noreply.github.com",
+            "name": "dependabot[bot]",
+            "username": "dependabot[bot]"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "1dde4de793982dd1365d4ab8790b4bf6e411e07f",
+          "message": "Bump jinja2 from 3.1.3 to 3.1.4 in /tools/fuzz (#1371)\n\nBumps [jinja2](https://github.com/pallets/jinja) from 3.1.3 to 3.1.4.\r\n<details>\r\n<summary>Release notes</summary>\r\n<p><em>Sourced from <a\r\nhref=\"https://github.com/pallets/jinja/releases\">jinja2's\r\nreleases</a>.</em></p>\r\n<blockquote>\r\n<h2>3.1.4</h2>\r\n<p>This is the Jinja 3.1.4 security release, which fixes security issues\r\nand bugs but does not otherwise change behavior and should not result in\r\nbreaking changes.</p>\r\n<p>PyPI: <a\r\nhref=\"https://pypi.org/project/Jinja2/3.1.4/\">https://pypi.org/project/Jinja2/3.1.4/</a>\r\nChanges: <a\r\nhref=\"https://jinja.palletsprojects.com/en/3.1.x/changes/#version-3-1-4\">https://jinja.palletsprojects.com/en/3.1.x/changes/#version-3-1-4</a></p>\r\n<ul>\r\n<li>The <code>xmlattr</code> filter does not allow keys with\r\n<code>/</code> solidus, <code>&gt;</code> greater-than sign, or\r\n<code>=</code> equals sign, in addition to disallowing spaces.\r\nRegardless of any validation done by Jinja, user input should never be\r\nused as keys to this filter, or must be separately validated first.\r\nGHSA-h75v-3vvj-5mfj</li>\r\n</ul>\r\n</blockquote>\r\n</details>\r\n<details>\r\n<summary>Changelog</summary>\r\n<p><em>Sourced from <a\r\nhref=\"https://github.com/pallets/jinja/blob/main/CHANGES.rst\">jinja2's\r\nchangelog</a>.</em></p>\r\n<blockquote>\r\n<h2>Version 3.1.4</h2>\r\n<p>Released 2024-05-05</p>\r\n<ul>\r\n<li>The <code>xmlattr</code> filter does not allow keys with\r\n<code>/</code> solidus, <code>&gt;</code>\r\ngreater-than sign, or <code>=</code> equals sign, in addition to\r\ndisallowing spaces.\r\nRegardless of any validation done by Jinja, user input should never be\r\nused\r\nas keys to this filter, or must be separately validated first.\r\n:ghsa:<code>h75v-3vvj-5mfj</code></li>\r\n</ul>\r\n</blockquote>\r\n</details>\r\n<details>\r\n<summary>Commits</summary>\r\n<ul>\r\n<li><a\r\nhref=\"https://github.com/pallets/jinja/commit/dd4a8b5466d8790540c181590b14db4d4d889d57\"><code>dd4a8b5</code></a>\r\nrelease version 3.1.4</li>\r\n<li><a\r\nhref=\"https://github.com/pallets/jinja/commit/0668239dc6b44ef38e7a6c9f91f312fd4ca581cb\"><code>0668239</code></a>\r\nMerge pull request from GHSA-h75v-3vvj-5mfj</li>\r\n<li><a\r\nhref=\"https://github.com/pallets/jinja/commit/d655030770081e2dfe46f90e27620472a502289d\"><code>d655030</code></a>\r\ndisallow invalid characters in keys to xmlattr filter</li>\r\n<li><a\r\nhref=\"https://github.com/pallets/jinja/commit/a7863ba9d3521f1450f821119c50d19d7ecea329\"><code>a7863ba</code></a>\r\nadd ghsa links</li>\r\n<li><a\r\nhref=\"https://github.com/pallets/jinja/commit/b5c98e78c2ee7d2bf0aa06d29ed9bf7082de9cf4\"><code>b5c98e7</code></a>\r\nstart version 3.1.4</li>\r\n<li><a\r\nhref=\"https://github.com/pallets/jinja/commit/da3a9f0b804199845fcb76f2e08748bdaeba93ee\"><code>da3a9f0</code></a>\r\nupdate project files (<a\r\nhref=\"https://redirect.github.com/pallets/jinja/issues/1968\">#1968</a>)</li>\r\n<li><a\r\nhref=\"https://github.com/pallets/jinja/commit/0ee5eb41d1a2d7d9a05a02dc26dd70e63aaaeeb1\"><code>0ee5eb4</code></a>\r\nsatisfy formatter, linter, and strict mypy</li>\r\n<li><a\r\nhref=\"https://github.com/pallets/jinja/commit/20477c63575175196bfc8103f223cc9f5642595d\"><code>20477c6</code></a>\r\nupdate project files (<a\r\nhref=\"https://redirect.github.com/pallets/jinja/issues/5457\">#5457</a>)</li>\r\n<li><a\r\nhref=\"https://github.com/pallets/jinja/commit/e491223739dedbb1f4fc6a71340c1484e149d947\"><code>e491223</code></a>\r\nupdate pyyaml dev dependency</li>\r\n<li><a\r\nhref=\"https://github.com/pallets/jinja/commit/36f98854c721f98ba103f97f65a8a098da5af0d7\"><code>36f9885</code></a>\r\nfix pr link</li>\r\n<li>Additional commits viewable in <a\r\nhref=\"https://github.com/pallets/jinja/compare/3.1.3...3.1.4\">compare\r\nview</a></li>\r\n</ul>\r\n</details>\r\n<br />\r\n\r\n\r\n[![Dependabot compatibility\r\nscore](https://dependabot-badges.githubapp.com/badges/compatibility_score?dependency-name=jinja2&package-manager=pip&previous-version=3.1.3&new-version=3.1.4)](https://docs.github.com/en/github/managing-security-vulnerabilities/about-dependabot-security-updates#about-compatibility-scores)\r\n\r\nDependabot will resolve any conflicts with this PR as long as you don't\r\nalter it yourself. You can also trigger a rebase manually by commenting\r\n`@dependabot rebase`.\r\n\r\n[//]: # (dependabot-automerge-start)\r\n[//]: # (dependabot-automerge-end)\r\n\r\n---\r\n\r\n<details>\r\n<summary>Dependabot commands and options</summary>\r\n<br />\r\n\r\nYou can trigger Dependabot actions by commenting on this PR:\r\n- `@dependabot rebase` will rebase this PR\r\n- `@dependabot recreate` will recreate this PR, overwriting any edits\r\nthat have been made to it\r\n- `@dependabot merge` will merge this PR after your CI passes on it\r\n- `@dependabot squash and merge` will squash and merge this PR after\r\nyour CI passes on it\r\n- `@dependabot cancel merge` will cancel a previously requested merge\r\nand block automerging\r\n- `@dependabot reopen` will reopen this PR if it is closed\r\n- `@dependabot close` will close this PR and stop Dependabot recreating\r\nit. You can achieve the same result by closing it manually\r\n- `@dependabot show <dependency name> ignore conditions` will show all\r\nof the ignore conditions of the specified dependency\r\n- `@dependabot ignore this major version` will close this PR and stop\r\nDependabot creating any more for this major version (unless you reopen\r\nthe PR or upgrade to it yourself)\r\n- `@dependabot ignore this minor version` will close this PR and stop\r\nDependabot creating any more for this minor version (unless you reopen\r\nthe PR or upgrade to it yourself)\r\n- `@dependabot ignore this dependency` will close this PR and stop\r\nDependabot creating any more for this dependency (unless you reopen the\r\nPR or upgrade to it yourself)\r\nYou can disable automated security fix PRs for this repo from the\r\n[Security Alerts\r\npage](https://github.com/luau-lang/luau/network/alerts).\r\n\r\n</details>\r\n\r\nSigned-off-by: dependabot[bot] <support@github.com>\r\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>",
+          "timestamp": "2024-08-19T06:38:10-07:00",
+          "tree_id": "a8f507c5a5e1952437c921a026c0787a60799df6",
+          "url": "https://github.com/luau-lang/luau/commit/1dde4de793982dd1365d4ab8790b4bf6e411e07f"
+        },
+        "date": 1724075537360,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.661877,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.727959,
             "unit": "0ms",
             "range": "±0%",
             "extra": "luau-compile"
