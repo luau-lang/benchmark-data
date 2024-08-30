@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1724431792735,
+  "lastUpdate": 1725049436868,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-analyze": [
@@ -14711,6 +14711,72 @@
           {
             "name": "regex-dcr",
             "value": 6902.23,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "aaronweiss@roblox.com",
+            "name": "aaron",
+            "username": "aatxe"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "b23d43496bed0f16eb6225551a9ce30435e4b4f2",
+          "message": "Sync to upstream/release/641 (#1382)\n\n### What's new\r\n\r\n* Light update this week, mostly fast flag cleanups.\r\n\r\n### New Solver\r\n\r\n* Rename flag to enable new solver from\r\n`DebugLuauDeferredConstraintResolution` to `LuauSolverV2`\r\n* Added support for magic functions for the new type checker (as opposed\r\nto the type inference component)\r\n* Improved handling of `string.format` with magic function improvements\r\n* Cleaning up some of the reported errors by the new type checker\r\n* Minor refactoring of `TypeChecker2.cpp` that happens to make the diff\r\nvery hard to read.\r\n\r\n---\r\n\r\n### Internal Contributors\r\n\r\nCo-authored-by: Aaron Weiss <aaronweiss@roblox.com>\r\nCo-authored-by: Andy Friesen <afriesen@roblox.com>\r\nCo-authored-by: Vighnesh Vijay <vvijay@roblox.com>\r\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com>\r\n\r\n---------\r\n\r\nCo-authored-by: Alexander McCord <amccord@roblox.com>\r\nCo-authored-by: Andy Friesen <afriesen@roblox.com>\r\nCo-authored-by: Vighnesh <vvijay@roblox.com>\r\nCo-authored-by: Aviral Goel <agoel@roblox.com>\r\nCo-authored-by: David Cope <dcope@roblox.com>\r\nCo-authored-by: Lily Brown <lbrown@roblox.com>\r\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com>\r\nCo-authored-by: Junseo Yoo <jyoo@roblox.com>",
+          "timestamp": "2024-08-30T13:16:51-07:00",
+          "tree_id": "efd010f0f81d9c33b115469c73a0f2bfe59daadf",
+          "url": "https://github.com/luau-lang/luau/commit/b23d43496bed0f16eb6225551a9ce30435e4b4f2"
+        },
+        "date": 1725049436864,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 4.97385,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 6.0361,
+            "unit": "6ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 6.03516,
+            "unit": "6ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 8.22925,
+            "unit": "8ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 10.7161,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 10.7116,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"
