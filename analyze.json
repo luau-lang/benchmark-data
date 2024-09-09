@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1725655304035,
+  "lastUpdate": 1725915522953,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-analyze": [
@@ -14829,6 +14829,72 @@
           {
             "name": "regex-nonstrict",
             "value": 8.22822,
+            "unit": "8ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 10.7156,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 10.7155,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "karl-police2001@bluewin.ch",
+            "name": "karl-police",
+            "username": "karl-police"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "a8047b2e46e357737abb6283fccebc1d1b4f3f8f",
+          "message": "keyof - fix LUAU_ASSERT when there's only one key entry (#1388)\n\nFixes https://github.com/luau-lang/luau/issues/1387\r\n\r\nWas suggested by @alexmccord \r\n\r\nI changed ``singletons[0]`` to ``singletons.front()``, unsure if that\r\nmakes a huge difference, and then I added the rest of the things needed\r\nfor the return type.\r\n\r\nMaybe it's also the ideal location since doing it before looping through\r\n``keys`` won't add the string into the type arena.\r\n\r\nI put comments next to it based on how I thought it would make sense.\r\n\r\n&nbsp;\r\n\r\n``LUAU_ASSERT`` seems to trigger when there's only one entry being put\r\ninside a UnionType. It's as if it was put there for quality.\r\n\r\nAllow edits by maintainers is enabled.\r\n\r\n\r\nI tested this with a quick Unit Test something like\r\n\r\n```lua\r\nlocal test: keyof<typeof({a=\"test\"})>\r\n```",
+          "timestamp": "2024-09-09T13:51:33-07:00",
+          "tree_id": "0deb0f319b24a86653d4b9293da98908d455b01f",
+          "url": "https://github.com/luau-lang/luau/commit/a8047b2e46e357737abb6283fccebc1d1b4f3f8f"
+        },
+        "date": 1725915522949,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 4.97403,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 6.03619,
+            "unit": "6ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 6.03602,
+            "unit": "6ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 8.22889,
             "unit": "8ms",
             "range": "±0%",
             "extra": "luau-analyze"
