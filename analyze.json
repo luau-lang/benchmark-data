@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1725915522953,
+  "lastUpdate": 1726246695811,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-analyze": [
@@ -14909,6 +14909,72 @@
           {
             "name": "regex-dcr",
             "value": 10.7155,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "karl-police2001@bluewin.ch",
+            "name": "karl-police",
+            "username": "karl-police"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "5cdea64b7a7442265566cf1ca16b2d0592c66af1",
+          "message": "Add default \"out\" folder for CMake Project Visual Studio (#1394)\n\nhttps://learn.microsoft.com/en-us/cpp/build/cmake-projects-in-visual-studio?view=msvc-170#ide-integration\r\n\r\nApparently ``/out`` is a default folder when opening the project as a\r\nCMake project in Visual Studio.\r\n\r\n&nbsp;\r\n\r\nCould it be added to the ``.gitignore`` please.\r\n\r\n\r\n![image](https://github.com/user-attachments/assets/10add17c-bbfc-4811-8c43-0ed2e84c5b9e)",
+          "timestamp": "2024-09-13T09:51:10-07:00",
+          "tree_id": "1f02aa3e0a5749d620e086551995835b229f11b3",
+          "url": "https://github.com/luau-lang/luau/commit/5cdea64b7a7442265566cf1ca16b2d0592c66af1"
+        },
+        "date": 1726246695807,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 4.97438,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 6.03623,
+            "unit": "6ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 6.03533,
+            "unit": "6ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 8.22817,
+            "unit": "8ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 10.7113,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 10.7111,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"
