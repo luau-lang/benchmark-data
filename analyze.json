@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1726248205576,
+  "lastUpdate": 1726253738297,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-analyze": [
@@ -15041,6 +15041,72 @@
           {
             "name": "regex-dcr",
             "value": 10.7155,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "vvijay@roblox.com",
+            "name": "Vighnesh-V",
+            "username": "Vighnesh-V"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "b765d7bafdb64c52e6985cbc45bb791e7df71dd5",
+          "message": "Sync to upstream/release/643 (#1408)\n\nPretty small release this week as well.\r\n\r\n## New Solver\r\n* We now unconditionally generalize functions with explicit generics\r\n* Bugfixes for how we run builtin tests\r\n\r\n## VM\r\n* Fixed running Luau conformance tests in LUA_VECTOR_SIZE == 4\r\nconfiguration\r\n\r\nInternal Contributors:\r\n\r\nCo-authored-by: Hunter Goldstein <hgoldstein@roblox.com>\r\nCo-authored-by: James McNellis <jmcnellis@roblox.com>\r\nCo-authored-by: Vighnesh Vijay <vvijay@roblox.com>\r\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com>\r\n\r\n---------\r\n\r\nCo-authored-by: Aaron Weiss <aaronweiss@roblox.com>\r\nCo-authored-by: Alexander McCord <amccord@roblox.com>\r\nCo-authored-by: Andy Friesen <afriesen@roblox.com>\r\nCo-authored-by: Aviral Goel <agoel@roblox.com>\r\nCo-authored-by: David Cope <dcope@roblox.com>\r\nCo-authored-by: Lily Brown <lbrown@roblox.com>\r\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com>\r\nCo-authored-by: Junseo Yoo <jyoo@roblox.com>",
+          "timestamp": "2024-09-13T11:48:25-07:00",
+          "tree_id": "d91b1785f0e5836f6cac8458fec71bd4f4433cd1",
+          "url": "https://github.com/luau-lang/luau/commit/b765d7bafdb64c52e6985cbc45bb791e7df71dd5"
+        },
+        "date": 1726253738292,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 4.97403,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 6.03622,
+            "unit": "6ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 6.03533,
+            "unit": "6ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 8.22885,
+            "unit": "8ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 10.7113,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 10.7111,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"
