@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1726253738297,
+  "lastUpdate": 1726258599903,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-analyze": [
@@ -15107,6 +15107,72 @@
           {
             "name": "regex-dcr",
             "value": 10.7111,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "vvijay@roblox.com",
+            "name": "Vighnesh-V",
+            "username": "Vighnesh-V"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "cd1803e35e212ea5c12ae5d7fb68834c3c2bc74d",
+          "message": "upgrade `release.yml` to upload-artifact@v4 (#1410)\n\nGithub has deprecated `v1` and `v2` of `actions/upload-artifact` which\r\ncauses occassional CI failures and will affect our ability to make new\r\nreleases in the future. This PR updates the version used in\r\n`release.yml`.",
+          "timestamp": "2024-09-13T13:09:42-07:00",
+          "tree_id": "826675671c448ad03554841884dd700e252edfef",
+          "url": "https://github.com/luau-lang/luau/commit/cd1803e35e212ea5c12ae5d7fb68834c3c2bc74d"
+        },
+        "date": 1726258599898,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 4.97404,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 6.03623,
+            "unit": "6ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 6.03604,
+            "unit": "6ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 8.22822,
+            "unit": "8ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 10.7156,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 10.7155,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"
