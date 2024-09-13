@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1726246695952,
+  "lastUpdate": 1726248205715,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-compile": [
@@ -19486,6 +19486,100 @@
           {
             "name": "regex-O2-codegen",
             "value": 10.2278,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-t1-codegen",
+            "value": 10.4966,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "karl-police2001@bluewin.ch",
+            "name": "karl-police",
+            "username": "karl-police"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "f2488bdfa4986f55c84d4f07246c3fe8bfdd6608",
+          "message": "Fix crash with the index type function, where it would stack overflow due to not waiting for a pending-expansion (#1407)\n\nFix for https://github.com/luau-lang/luau/issues/1406\r\n\r\nWhile it is good to let ``index`` wait for the pending-expansion. To\r\nre-produce the issue you need more than just this code:\r\nhttps://i.imgur.com/b3OmUGF.png\r\n\r\nIt needs this, else it won't crash.\r\n\r\n```lua\r\nlocal function ProblemCauser(key: Keys, value)\r\n    PlayerData[key] = value\r\nend\r\n```\r\n\r\n&nbsp;\r\n\r\nBut regarding \"pending things\", I'd recommend **generalized functions**\r\nfor sanity checks like these, since there will be more cases of similar\r\nissues I believe. But I am 100% sure that eventually this issue here can\r\nmaybe be prevented if looking at the Constraints. _(And optimization)_\r\nNot sure if ``index`` needs the table fully completed, or if it is\r\npreferred that the info is available based on **how much info is\r\navailable at the current position in the code**.\r\n\r\nBut if this gets done, I hope that they'll be connected to the Solver\r\nLogger, because I actually refined mine with colors and more info _(yet\r\nneed to finish that)_ to understand the Luau Source Code more and to\r\ndebug issues.\r\n\r\n---------\r\n\r\nCo-authored-by: aaron <aweiss@hey.com>",
+          "timestamp": "2024-09-13T10:16:30-07:00",
+          "tree_id": "b9cce6d43b7e28e80cdca98232799482eee1b458",
+          "url": "https://github.com/luau-lang/luau/commit/f2488bdfa4986f55c84d4f07246c3fe8bfdd6608"
+        },
+        "date": 1726248205709,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.662412,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.728711,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.800611,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 3.31146,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-t1-codegen",
+            "value": 3.40937,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.60487,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.78065,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.02837,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 10.2279,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-compile"
