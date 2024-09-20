@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1726259609636,
+  "lastUpdate": 1726851621437,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-analyze": [
@@ -15239,6 +15239,72 @@
           {
             "name": "regex-dcr",
             "value": 10.7155,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "75688451+vegorov-rbx@users.noreply.github.com",
+            "name": "vegorov-rbx",
+            "username": "vegorov-rbx"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "f5dabc299868f4a55e3c9089515a2adc56025bbd",
+          "message": "Sync to upstream/release/644 (#1432)\n\nIn this update we improve overall stability of the new type solver and\r\naddress some type inference issues with it.\r\n\r\nIf you use the new solver and want to use all new fixes included in this\r\nrelease, you have to reference an additional Luau flag:\r\n```c++\r\nLUAU_DYNAMIC_FASTINT(LuauTypeSolverRelease)\r\n```\r\nAnd set its value to `644`:\r\n```c++\r\nDFInt::LuauTypeSolverRelease.value = 644; // Or a higher value for future updates\r\n```\r\n\r\n## New Solver\r\n* Fixed a debug assertion failure in autocomplete (Fixes #1391)\r\n* Fixed type function distribution issue which transformed `len<>` and\r\n`unm<>` into `not<>` (Fixes #1416)\r\n* Placed a limit on the possible normalized table intersection size as a\r\ntemporary measure to avoid hangs and out-of-memory issues for complex\r\ntype refinements\r\n* Internal recursion limits are now respected in the subtyping\r\noperations and in autocomplete, to avoid stack overflow crashes\r\n* Fixed false positive errors on assignments to tables whose indexers\r\nare unions of strings\r\n* Fixed memory corruption crashes in subtyping of generic types\r\ncontaining other generic types in their bounds\r\n\r\n---\r\n\r\nInternal Contributors:\r\n\r\nCo-authored-by: Aaron Weiss <aaronweiss@roblox.com>\r\nCo-authored-by: Andy Friesen <afriesen@roblox.com>\r\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com>",
+          "timestamp": "2024-09-20T09:53:26-07:00",
+          "tree_id": "760e0d0da8a6d0250042aaf4374fcd686e9f79ab",
+          "url": "https://github.com/luau-lang/luau/commit/f5dabc299868f4a55e3c9089515a2adc56025bbd"
+        },
+        "date": 1726851621433,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 4.97348,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 6.03493,
+            "unit": "6ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 6.03547,
+            "unit": "6ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 8.22794,
+            "unit": "8ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 10.7154,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 10.7153,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"
