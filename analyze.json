@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1726854830631,
+  "lastUpdate": 1727297403412,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-analyze": [
@@ -15371,6 +15371,72 @@
           {
             "name": "regex-dcr",
             "value": 6507.97,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "aaronweiss@roblox.com",
+            "name": "aaron",
+            "username": "aatxe"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "c188715605b850fc075b5972d42a030284df7acd",
+          "message": "Include luau-ast in the releases (#1439)",
+          "timestamp": "2024-09-25T16:36:12-04:00",
+          "tree_id": "19276cc5797366533778ab24be327519f6d079ad",
+          "url": "https://github.com/luau-lang/luau/commit/c188715605b850fc075b5972d42a030284df7acd"
+        },
+        "date": 1727297403407,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 4.97348,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 6.03565,
+            "unit": "6ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 28.6177,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 8.22793,
+            "unit": "8ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 10.7154,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 6508.04,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"
