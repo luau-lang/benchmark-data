@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1727464335317,
+  "lastUpdate": 1728067446290,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-compile": [
@@ -20245,6 +20245,100 @@
           {
             "name": "regex-O2-t1-codegen",
             "value": 10.4972,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "afriesen@roblox.com",
+            "name": "Andy Friesen",
+            "username": "andyfriesen"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "543de6e9395e3884e20c6a454cc9e93a65045588",
+          "message": "Sync to upstream/release/646 (#1458)\n\n# General Updates\r\n\r\n* Fix some cases where documentation symbols would not be available when\r\nmouseovering at certain positions in the code\r\n* Scaffolding to help embedders have more control over how `typeof(x)`\r\nrefines types\r\n* Refinements to require-by-string semantics. See\r\nhttps://github.com/luau-lang/rfcs/pull/56 for details.\r\n* Fix for https://github.com/luau-lang/luau/issues/1405\r\n\r\n# New Solver\r\n\r\n* Fix many crashes (thanks you for your bug reports!)\r\n* Type functions can now call each other\r\n* Type functions all evaluate in a single VM. This should improve\r\ntypechecking performance and reduce memory use.\r\n* `export type function` is now forbidden and fails with a clear error\r\nmessage\r\n* Type functions that access locals in the surrounding environment are\r\nnow properly a parse error\r\n* You can now use `:setindexer(types.never, types.never)` to delete an\r\nindexer from a table type.\r\n\r\n# Internal Contributors\r\n\r\nCo-authored-by: Aaron Weiss <aaronweiss@roblox.com>\r\nCo-authored-by: Hunter Goldstein <hgoldstein@roblox.com>\r\nCo-authored-by: Varun Saini <vsaini@roblox.com>\r\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com>",
+          "timestamp": "2024-10-04T11:29:55-07:00",
+          "tree_id": "eadada5a6e9260fcbe625e1a1341fd3df6fe5dac",
+          "url": "https://github.com/luau-lang/luau/commit/543de6e9395e3884e20c6a454cc9e93a65045588"
+        },
+        "date": 1728067446285,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.6628,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.729094,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.800999,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 3.31179,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-t1-codegen",
+            "value": 3.40971,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.60685,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.78268,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.03039,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 10.2299,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-t1-codegen",
+            "value": 10.4986,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-compile"
