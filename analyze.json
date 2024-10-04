@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1728067446158,
+  "lastUpdate": 1728083655124,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-analyze": [
@@ -15562,6 +15562,72 @@
           {
             "name": "regex-strict",
             "value": 10.714,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 6463.08,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "micah@uplift.games",
+            "name": "Micah",
+            "username": "Dekkonot"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "ae7b07d60fa66bacacaa94f002359f5e3052c02c",
+          "message": "Rename `type` field of AstStatTypeAlias in JSON Encoder (#1461)\n\nCloses #1460.\r\n\r\nThis renames the `type` field of `AstStatTypeAlias` to `value` during\r\nthe JSON encoding process.\r\n\r\nI've chosen to just rename the field in the JSON encoder rather than\r\nrename the actual field since it's a lot further reaching. Another\r\noption would have been to rename what the actual type of an AST node is\r\nwritten to be something like `tokenType` instead of `type`, but that's a\r\nbigger diff and technically breaking (as opposed to this one which\r\nisn't!)",
+          "timestamp": "2024-10-04T16:00:25-07:00",
+          "tree_id": "6d8dcd736bc49ddd336ade8b27694c1f1e9e5c2d",
+          "url": "https://github.com/luau-lang/luau/commit/ae7b07d60fa66bacacaa94f002359f5e3052c02c"
+        },
+        "date": 1728083655119,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 4.97426,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 6.03607,
+            "unit": "6ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 28.6297,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 8.23157,
+            "unit": "8ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 10.7184,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"
