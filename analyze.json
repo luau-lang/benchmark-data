@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1728083655124,
+  "lastUpdate": 1728396692481,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-analyze": [
@@ -15635,6 +15635,72 @@
           {
             "name": "regex-dcr",
             "value": 6463.08,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "dekkonot@rocketmail.com",
+            "name": "Micah",
+            "username": "Dekkonot"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "4559ef26b2d4ea2567e5d91fb944695374bdb4e5",
+          "message": "Support function attributes in luau-ast (#1466)\n\nNoticed while using luau-ast that function attributes aren't included in\r\nthe output. This PR corrects that.\r\n---------\r\n\r\nCo-authored-by: vegorov-rbx <75688451+vegorov-rbx@users.noreply.github.com>",
+          "timestamp": "2024-10-08T06:57:41-07:00",
+          "tree_id": "c56fefd290465a8105e103f960f7bff10ce65850",
+          "url": "https://github.com/luau-lang/luau/commit/4559ef26b2d4ea2567e5d91fb944695374bdb4e5"
+        },
+        "date": 1728396692476,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 4.97391,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 6.03607,
+            "unit": "6ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 28.628,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 8.23098,
+            "unit": "8ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 10.714,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 6463.01,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"
