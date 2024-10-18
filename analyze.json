@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1728396692481,
+  "lastUpdate": 1729273266014,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-analyze": [
@@ -15701,6 +15701,72 @@
           {
             "name": "regex-dcr",
             "value": 6463.01,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "75688451+vegorov-rbx@users.noreply.github.com",
+            "name": "vegorov-rbx",
+            "username": "vegorov-rbx"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "e491128f95ceea762171525fccbb557b84811e1b",
+          "message": "Sync to upstream/release/648 (#1477)\n\n## What's new\r\n\r\n* Added `math.map` function to the standard library, based on\r\nhttps://rfcs.luau-lang.org/function-math-map.html\r\n* `FileResolver` can provide an implementation of\r\n`getRequireSuggestions` to provide auto-complete suggestions for\r\nrequire-by-string\r\n\r\n## New Solver\r\n\r\n* In user-defined type functions, `readproperty` and `writeproperty`\r\nwill return `nil` instead of erroring if property is not found\r\n* Fixed incorrect scope of variadic arguments in the data-flow graph\r\n* Fixed multiple assertion failures\r\n\r\n---\r\n\r\nInternal Contributors:\r\n\r\nCo-authored-by: Aaron Weiss <aaronweiss@roblox.com>\r\nCo-authored-by: Hunter Goldstein <hgoldstein@roblox.com>\r\nCo-authored-by: Varun Saini <vsaini@roblox.com>\r\nCo-authored-by: Vighnesh Vijay <vvijay@roblox.com>\r\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com>",
+          "timestamp": "2024-10-18T10:27:15-07:00",
+          "tree_id": "65a53b472806b28e6eb1e6270ce254526821f49a",
+          "url": "https://github.com/luau-lang/luau/commit/e491128f95ceea762171525fccbb557b84811e1b"
+        },
+        "date": 1729273266009,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 4.96939,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 6.02825,
+            "unit": "6ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 28.9833,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 8.21192,
+            "unit": "8ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 10.6983,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 6381.44,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"
