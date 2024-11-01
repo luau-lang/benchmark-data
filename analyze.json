@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1729888150666,
+  "lastUpdate": 1730488783825,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-analyze": [
@@ -15833,6 +15833,72 @@
           {
             "name": "regex-dcr",
             "value": 6404.96,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "afriesen@roblox.com",
+            "name": "Andy Friesen",
+            "username": "andyfriesen"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "a251bc68a2b70212e53941fd541d16ce523a1e01",
+          "message": "Sync to upstream/release/650 (#1502)\n\n* New `vector` library! See https://rfcs.luau.org/vector-library.html\r\nfor details\r\n* Replace the use of non-portable `strnlen` with `memchr`. `strnlen` is\r\nnot part of any C or C++ standard.\r\n* Introduce `lua_newuserdatataggedwithmetatable` for faster tagged\r\nuserdata creation of userdata with metatables registered with\r\n`lua_setuserdatametatable`\r\n\r\nOld Solver\r\n\r\n* It used to be the case that a module's result type would\r\nunconditionally be inferred to be `any` if it imported any module that\r\nparticipates in any import cycle. This is now fixed.\r\n\r\nNew Solver\r\n\r\n* Improve inference of `table.freeze`: We now infer read-only properties\r\non tables after they have been frozen.\r\n* We now correctly flag cases where `string.format` is called with 0\r\narguments.\r\n* Fix a bug in user-defined type functions where table properties could\r\nbe lost if the table had a metatable\r\n* Reset the random number seed for each evaluation of a type function\r\n* We now retry subtyping arguments if it failed due to hidden variadics.\r\n\r\n---------\r\n\r\nCo-authored-by: Aaron Weiss <aaronweiss@roblox.com>\r\nCo-authored-by: Alexander McCord <amccord@roblox.com>\r\nCo-authored-by: Vighnesh <vvijay@roblox.com>\r\nCo-authored-by: Aviral Goel <agoel@roblox.com>\r\nCo-authored-by: David Cope <dcope@roblox.com>\r\nCo-authored-by: Lily Brown <lbrown@roblox.com>\r\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com>\r\nCo-authored-by: Junseo Yoo <jyoo@roblox.com>",
+          "timestamp": "2024-11-01T12:06:07-07:00",
+          "tree_id": "ee0c93aa5610500b54e218ae4243762822ca8507",
+          "url": "https://github.com/luau-lang/luau/commit/a251bc68a2b70212e53941fd541d16ce523a1e01"
+        },
+        "date": 1730488783820,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 4.86562,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 5.92246,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 28.8823,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 8.16815,
+            "unit": "8ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 10.6309,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 6212.71,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"
