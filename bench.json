@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1730832421582,
+  "lastUpdate": 1730849701963,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "callgrind clang": [
@@ -62172,6 +62172,268 @@
           {
             "name": "voxelgen",
             "value": 49.598,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "devsmash1@gmail.com",
+            "name": "checkraisefold",
+            "username": "checkraisefold"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "f1d4621d591b6c4fadef99f446967479605b60d4",
+          "message": "Pre-populate/duplicate check class definitions (new solver) (#1493)\n\nCloses #1492\r\nTested and working with the test case in the aforementioned issue, along\r\nwith the full defs of luau-lsp with no issues or type errors\r\n\r\nIn normal Luau files, you can use type aliases and type functions before\r\nthey are declared. The same extends to declaration files, **except** in\r\nthe new solver. The old solver perfectly allows this, and in fact\r\nintentionally adds it:\r\nhttps://github.com/luau-lang/luau/blob/db809395bf5739c895a24dc73960b9e9ab6468c5/Analysis/src/TypeInfer.cpp#L1711-L1717\r\n\r\nThis causes *much* headache and pain for external projects that make use\r\nof declaration files; namely, luau-lsp generates them from MaximumADHD's\r\nAPI dump, which is not ordered by dependency. This means silent\r\nerror-types popping up everywhere because types are used before they are\r\ndeclared. The workaround would be to make code to manually reorder class\r\ndefinitions based on their dependencies with a bunch of code, but this\r\nis clearly not ideal, and won't work for classes dependent on each\r\nother/recursive.\r\n\r\nThe solution used here is the same as is used for type aliases - the\r\nname binding for the class is given a blocked type before running the\r\nrest of constraint generation on the block. Questions remain:\r\n- Should the logic be split off of `checkAliases`?\r\n- Should a bound type be used, or should the (blocked) binding type be\r\ndirectly emplaced with the class type? What are the ramifications of\r\nemplacing with the bound versus the raw type? One ramification was\r\ninitially ran into through an assertion because the class\r\n`superTy`/`parent` was bound, and several pieces of code assume it is\r\nnot, so it had to be made followed.\r\n- Is folllowing `superTy` to set `parent` the correct workaround for the\r\nassertions thrown, or should the code expecting `parent` to be a\r\nClassType without following it be modified instead to follow `parent`?\r\n- Should `scope->privateTypeBindings` also be checked for the duplicate\r\nerror? I would presume so, since having a class with the same name as a\r\nprivate alias or type function should error as well?\r\n\r\nThe extraneous whitespace changes are clang-format ones done\r\nautomatically that should've been done in the last release - I can\r\nremove them if necessary and let another sync or OSS cleanup commit fix\r\nit.",
+          "timestamp": "2024-11-05T15:21:18-08:00",
+          "tree_id": "8aec83cd82a0d2ec27ab1629b698abe30553cc98",
+          "url": "https://github.com/luau-lang/luau/commit/f1d4621d591b6c4fadef99f446967479605b60d4"
+        },
+        "date": 1730849701951,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "base64",
+            "value": 21.428,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "chess",
+            "value": 80.408,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "life",
+            "value": 83.424,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "matrixmult",
+            "value": 23.433,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "mesh-normal-scalar",
+            "value": 30.585,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "mesh-normal-vector",
+            "value": 17.567,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "pcmmix",
+            "value": 9.22,
+            "unit": "9ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "qsort",
+            "value": 75.257,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "sha256",
+            "value": 24.258,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "ack",
+            "value": 65.921,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "binary-trees",
+            "value": 28.841,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "fannkuchen-redux",
+            "value": 11.807,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "fixpoint-fact",
+            "value": 61.92,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "heapsort",
+            "value": 20.66,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "mandel",
+            "value": 61.427,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "n-body",
+            "value": 36.475,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "qt",
+            "value": 56.405,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "queen",
+            "value": 1.887,
+            "unit": "1ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "scimark",
+            "value": 84.621,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "spectral-norm",
+            "value": 11.345,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "sieve",
+            "value": 102.124,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "3d-cube",
+            "value": 7.982,
+            "unit": "7ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "3d-morph",
+            "value": 9.626,
+            "unit": "9ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "3d-raytrace",
+            "value": 9.726,
+            "unit": "9ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "controlflow-recursive",
+            "value": 5.622,
+            "unit": "5ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "crypto-aes",
+            "value": 13.473,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "fannkuch",
+            "value": 24.127,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "math-cordic",
+            "value": 15.263,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "math-partial-sums",
+            "value": 4.698,
+            "unit": "4ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "n-body-oop",
+            "value": 54.689,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "tictactoe",
+            "value": 122.884,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "trig",
+            "value": 23.916,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "vector",
+            "value": null,
+            "unit": ":",
+            "range": "±+/-",
+            "extra": "on"
+          },
+          {
+            "name": "voxelgen",
+            "value": 49.596,
             "unit": "ms",
             "range": "±0.000%",
             "extra": "luau"
