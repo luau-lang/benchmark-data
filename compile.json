@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1730488783967,
+  "lastUpdate": 1730832422184,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-compile": [
@@ -20802,6 +20802,100 @@
           {
             "name": "regex-O2-codegen",
             "value": 10.233,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-t1-codegen",
+            "value": 10.5065,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "devsmash1@gmail.com",
+            "name": "checkraisefold",
+            "username": "checkraisefold"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "9a4bc6aeb8a5178c7e80d80363c6ce2634446ecb",
+          "message": "Fix definition module name & location (#1495)\n\nCloses #1441 \r\n\r\nBrings behavior to parity with the old solver by filling in\r\ndefinitionLocation and definitionModuleName for Luau-consuming\r\nprograms/libraries to use.",
+          "timestamp": "2024-11-05T10:33:21-08:00",
+          "tree_id": "b19cee7ed0ccf00629733df1dccd9ef1bc66551d",
+          "url": "https://github.com/luau-lang/luau/commit/9a4bc6aeb8a5178c7e80d80363c6ce2634446ecb"
+        },
+        "date": 1730832422179,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.662066,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.728071,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.799955,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 3.31117,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-t1-codegen",
+            "value": 3.40853,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.60764,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.78385,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.03291,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 10.2329,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-compile"
