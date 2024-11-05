@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1730849702443,
+  "lastUpdate": 1730849940892,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-analyze": [
@@ -16024,6 +16024,72 @@
           {
             "name": "regex-strict",
             "value": 10.6268,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 5676.67,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "aaronweiss@roblox.com",
+            "name": "aaron",
+            "username": "aatxe"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "47543e5df11bb4e7e9f7b653c65cee54d957b307",
+          "message": "Set the defining module even when the new solver cloned the type. (#1506)\n\nFollow up to #1495: a small fixup for the defining module and location\r\nto get set even when cloning was required.",
+          "timestamp": "2024-11-05T15:25:38-08:00",
+          "tree_id": "27112455be01476aefe0593bc5d309cec8d4667c",
+          "url": "https://github.com/luau-lang/luau/commit/47543e5df11bb4e7e9f7b653c65cee54d957b307"
+        },
+        "date": 1730849940888,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 4.86603,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 5.92244,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 27.0059,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 8.16894,
+            "unit": "8ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 10.6312,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"
