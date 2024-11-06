@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1730849940892,
+  "lastUpdate": 1730936233512,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-analyze": [
@@ -16090,6 +16090,72 @@
           {
             "name": "regex-strict",
             "value": 10.6312,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 5676.67,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "34089907+Barocena@users.noreply.github.com",
+            "name": "Barış",
+            "username": "Barocena"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "26b2307a8bc0c3783029da4e2bb34347f8ff9c32",
+          "message": "Replace old site urls (#1505)\n\nthis PR replaces all the old site urls from luau-lang.org to luau.org",
+          "timestamp": "2024-11-06T15:23:33-08:00",
+          "tree_id": "4624272f5766e080dc7e86307ae3b68eb1a96a0a",
+          "url": "https://github.com/luau-lang/luau/commit/26b2307a8bc0c3783029da4e2bb34347f8ff9c32"
+        },
+        "date": 1730936233508,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 4.86599,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 5.92245,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 27.0029,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 8.16835,
+            "unit": "8ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 10.6269,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"
