@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1731103069070,
+  "lastUpdate": 1731112783238,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-analyze": [
@@ -16222,6 +16222,72 @@
           {
             "name": "regex-strict",
             "value": 10.6253,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 7742.64,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "arseny.kapoulkine@gmail.com",
+            "name": "Arseny Kapoulkine",
+            "username": "zeux"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "e6bf71871a6b9f601545dba8a42ce89c6069675c",
+          "message": "CodeGen: Rewrite dot product lowering using a dedicated IR instruction (#1512)\n\nInstead of doing the dot product related math in scalar IR, we lift the\r\ncomputation into a dedicated IR instruction.\r\n\r\nOn x64, we can use VDPPS which was more or less tailor made for this\r\npurpose. This is better than manual scalar lowering that requires\r\nreloading components from memory; it's not always a strict improvement\r\nover the shuffle+add version (which we never had), but this can now be\r\nadjusted in the IR lowering in an optimal fashion (maybe even based on\r\nCPU vendor, although that'd create issues for offline compilation).\r\n\r\nOn A64, we can either use naive adds or paired adds, as there is no\r\ndedicated vector-wide horizontal instruction until SVE. Both run at\r\nabout the same performance on M2, but paired adds require fewer\r\ninstructions and temporaries.\r\n\r\nI've measured this using mesh-normal-vector benchmark, changing the\r\nbenchmark to just report the time of the second loop inside\r\n`calculate_normals`, testing master vs #1504 vs this PR, also increasing\r\nthe grid size to 400 for more stable timings.\r\n\r\nOn Zen 4 (7950X), this PR is comfortably ~8% faster vs master, while I\r\nsee neutral to negative results in #1504.\r\nOn M2 (base), this PR is ~28% faster vs master, while #1504 is only\r\nabout ~10% faster.\r\n\r\nIf I measure the second loop in `calculate_tangent_space` instead, I\r\nget:\r\n\r\nOn Zen 4 (7950X), this PR is ~12% faster vs master, while #1504 is ~3%\r\nfaster\r\nOn M2 (base), this PR is ~24% faster vs master, while #1504 is only\r\nabout ~13% faster.\r\n\r\nNote that the loops in question are not quite optimal, as they store and\r\nreload various vectors to dictionary values due to inappropriate use of\r\nlocals. The underlying gains in individual functions are thus larger\r\nthan the numbers above; for example, changing the `calculate_normals`\r\nloop to use a local variable to store the normalized vector (but still\r\nsaving the result to dictionary value), I get a ~24% performance\r\nincrease from this PR on Zen4 vs master instead of just 8% (#1504 is\r\n~15% slower in this setup).",
+          "timestamp": "2024-11-08T16:23:09-08:00",
+          "tree_id": "c5bf52046b7ad7c495e930780fe8ba3a95d09432",
+          "url": "https://github.com/luau-lang/luau/commit/e6bf71871a6b9f601545dba8a42ce89c6069675c"
+        },
+        "date": 1731112783233,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 4.86579,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 5.92236,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 26.9731,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 8.16724,
+            "unit": "8ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 10.6295,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"

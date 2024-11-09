@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1731103068606,
+  "lastUpdate": 1731112782727,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "callgrind clang": [
@@ -63199,6 +63199,268 @@
           {
             "name": "tictactoe",
             "value": 122.885,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "trig",
+            "value": 23.916,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "vector",
+            "value": null,
+            "unit": ":",
+            "range": "±+/-",
+            "extra": "on"
+          },
+          {
+            "name": "voxelgen",
+            "value": 49.597,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "arseny.kapoulkine@gmail.com",
+            "name": "Arseny Kapoulkine",
+            "username": "zeux"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "e6bf71871a6b9f601545dba8a42ce89c6069675c",
+          "message": "CodeGen: Rewrite dot product lowering using a dedicated IR instruction (#1512)\n\nInstead of doing the dot product related math in scalar IR, we lift the\r\ncomputation into a dedicated IR instruction.\r\n\r\nOn x64, we can use VDPPS which was more or less tailor made for this\r\npurpose. This is better than manual scalar lowering that requires\r\nreloading components from memory; it's not always a strict improvement\r\nover the shuffle+add version (which we never had), but this can now be\r\nadjusted in the IR lowering in an optimal fashion (maybe even based on\r\nCPU vendor, although that'd create issues for offline compilation).\r\n\r\nOn A64, we can either use naive adds or paired adds, as there is no\r\ndedicated vector-wide horizontal instruction until SVE. Both run at\r\nabout the same performance on M2, but paired adds require fewer\r\ninstructions and temporaries.\r\n\r\nI've measured this using mesh-normal-vector benchmark, changing the\r\nbenchmark to just report the time of the second loop inside\r\n`calculate_normals`, testing master vs #1504 vs this PR, also increasing\r\nthe grid size to 400 for more stable timings.\r\n\r\nOn Zen 4 (7950X), this PR is comfortably ~8% faster vs master, while I\r\nsee neutral to negative results in #1504.\r\nOn M2 (base), this PR is ~28% faster vs master, while #1504 is only\r\nabout ~10% faster.\r\n\r\nIf I measure the second loop in `calculate_tangent_space` instead, I\r\nget:\r\n\r\nOn Zen 4 (7950X), this PR is ~12% faster vs master, while #1504 is ~3%\r\nfaster\r\nOn M2 (base), this PR is ~24% faster vs master, while #1504 is only\r\nabout ~13% faster.\r\n\r\nNote that the loops in question are not quite optimal, as they store and\r\nreload various vectors to dictionary values due to inappropriate use of\r\nlocals. The underlying gains in individual functions are thus larger\r\nthan the numbers above; for example, changing the `calculate_normals`\r\nloop to use a local variable to store the normalized vector (but still\r\nsaving the result to dictionary value), I get a ~24% performance\r\nincrease from this PR on Zen4 vs master instead of just 8% (#1504 is\r\n~15% slower in this setup).",
+          "timestamp": "2024-11-08T16:23:09-08:00",
+          "tree_id": "c5bf52046b7ad7c495e930780fe8ba3a95d09432",
+          "url": "https://github.com/luau-lang/luau/commit/e6bf71871a6b9f601545dba8a42ce89c6069675c"
+        },
+        "date": 1731112782715,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "base64",
+            "value": 21.428,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "chess",
+            "value": 80.406,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "life",
+            "value": 83.424,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "matrixmult",
+            "value": 23.433,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "mesh-normal-scalar",
+            "value": 30.585,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "mesh-normal-vector",
+            "value": 17.567,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "pcmmix",
+            "value": 9.22,
+            "unit": "9ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "qsort",
+            "value": 75.282,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "sha256",
+            "value": 24.258,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "ack",
+            "value": 65.921,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "binary-trees",
+            "value": 28.922,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "fannkuchen-redux",
+            "value": 11.807,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "fixpoint-fact",
+            "value": 61.97,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "heapsort",
+            "value": 20.658,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "mandel",
+            "value": 61.42,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "n-body",
+            "value": 36.475,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "qt",
+            "value": 56.405,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "queen",
+            "value": 1.887,
+            "unit": "1ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "scimark",
+            "value": 84.621,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "spectral-norm",
+            "value": 11.345,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "sieve",
+            "value": 102.12,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "3d-cube",
+            "value": 7.984,
+            "unit": "7ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "3d-morph",
+            "value": 9.626,
+            "unit": "9ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "3d-raytrace",
+            "value": 9.726,
+            "unit": "9ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "controlflow-recursive",
+            "value": 5.622,
+            "unit": "5ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "crypto-aes",
+            "value": 13.473,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "fannkuch",
+            "value": 24.127,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "math-cordic",
+            "value": 15.263,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "math-partial-sums",
+            "value": 4.698,
+            "unit": "4ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "n-body-oop",
+            "value": 54.689,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "tictactoe",
+            "value": 122.884,
             "unit": "ms",
             "range": "±0.000%",
             "extra": "luau"
