@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1731112783238,
+  "lastUpdate": 1731358519931,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-analyze": [
@@ -16281,6 +16281,72 @@
           {
             "name": "regex-nonstrict",
             "value": 8.16724,
+            "unit": "8ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 10.6295,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 7742.64,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "arseny.kapoulkine@gmail.com",
+            "name": "Arseny Kapoulkine",
+            "username": "zeux"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "53e6e4b8f0b74e8770c41ff9bf7165ecfa9da1e2",
+          "message": "Fix mesh-normal-vector benchmark array access (#1514)\n\nmesh-normal-scalar correctly fills sequential values in the output for\r\ntriangle cone function, but mesh-normal-vector accidentally reuses the\r\nloop index, which results in writes to every third index of the array\r\n(1, 4, etc.).\r\n\r\nThis is both slower (as the table turns into a hash map), and incorrect,\r\nespecially as we have a scalar version of the benchmark that does the\r\nright thing.\r\n\r\nNote: there's a bunch of inefficiencies in the benchmark code that I\r\nhave not fixed (around field access mostly, e.g. writing to `v.n` and\r\nthen immediately reading it again). These are not ideal for performance,\r\nbut they can be valuable to keep as is because this redundancy is common\r\nin real-world code, and it would be nice to see codegen optimizations\r\neliminating most of that overhead. This one, however, is a straight up\r\nbug, and sparse arrays should not really be the thing this benchmark\r\nhits.",
+          "timestamp": "2024-11-11T12:39:09-08:00",
+          "tree_id": "33125a1774937c1419c8a454052d870163b89eb2",
+          "url": "https://github.com/luau-lang/luau/commit/53e6e4b8f0b74e8770c41ff9bf7165ecfa9da1e2"
+        },
+        "date": 1731358519927,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 4.86544,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 5.92229,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 26.9731,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 8.16718,
             "unit": "8ms",
             "range": "±0%",
             "extra": "luau-analyze"

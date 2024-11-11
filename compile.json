@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1731112783373,
+  "lastUpdate": 1731358520061,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-compile": [
@@ -21310,6 +21310,100 @@
           {
             "name": "map-O0",
             "value": 0.661156,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.727146,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.799033,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 3.31653,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-t1-codegen",
+            "value": 3.41458,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.60529,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.78124,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.0303,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 10.2517,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-t1-codegen",
+            "value": 10.5215,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "arseny.kapoulkine@gmail.com",
+            "name": "Arseny Kapoulkine",
+            "username": "zeux"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "53e6e4b8f0b74e8770c41ff9bf7165ecfa9da1e2",
+          "message": "Fix mesh-normal-vector benchmark array access (#1514)\n\nmesh-normal-scalar correctly fills sequential values in the output for\r\ntriangle cone function, but mesh-normal-vector accidentally reuses the\r\nloop index, which results in writes to every third index of the array\r\n(1, 4, etc.).\r\n\r\nThis is both slower (as the table turns into a hash map), and incorrect,\r\nespecially as we have a scalar version of the benchmark that does the\r\nright thing.\r\n\r\nNote: there's a bunch of inefficiencies in the benchmark code that I\r\nhave not fixed (around field access mostly, e.g. writing to `v.n` and\r\nthen immediately reading it again). These are not ideal for performance,\r\nbut they can be valuable to keep as is because this redundancy is common\r\nin real-world code, and it would be nice to see codegen optimizations\r\neliminating most of that overhead. This one, however, is a straight up\r\nbug, and sparse arrays should not really be the thing this benchmark\r\nhits.",
+          "timestamp": "2024-11-11T12:39:09-08:00",
+          "tree_id": "33125a1774937c1419c8a454052d870163b89eb2",
+          "url": "https://github.com/luau-lang/luau/commit/53e6e4b8f0b74e8770c41ff9bf7165ecfa9da1e2"
+        },
+        "date": 1731358520055,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.661154,
             "unit": "0ms",
             "range": "±0%",
             "extra": "luau-compile"
