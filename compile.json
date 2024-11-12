@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1731358520061,
+  "lastUpdate": 1731451287605,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-compile": [
@@ -21467,6 +21467,100 @@
           {
             "name": "regex-O2-t1-codegen",
             "value": 10.5215,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "61795485+vrn-sn@users.noreply.github.com",
+            "name": "Varun Saini",
+            "username": "vrn-sn"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "d1025d00292c4fda84a94ead6b6705c0bedf8e06",
+          "message": "Remove noexcepts from Config (#1523)\n\nFixes https://github.com/luau-lang/luau/issues/1515.\r\n\r\nBy removing these `noexcept`s, we guarantee that the internal call to\r\n`std::swap` uses move semantics when a `Config` is copy-assigned.",
+          "timestamp": "2024-11-12T14:25:04-08:00",
+          "tree_id": "92e9ad811ec620b90250dc9d53763f18a9bd004a",
+          "url": "https://github.com/luau-lang/luau/commit/d1025d00292c4fda84a94ead6b6705c0bedf8e06"
+        },
+        "date": 1731451287599,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.661205,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.727196,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.799079,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 3.31658,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-t1-codegen",
+            "value": 3.41467,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.60533,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.78129,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.03035,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 10.2517,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-t1-codegen",
+            "value": 10.5216,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-compile"
