@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1731451287458,
+  "lastUpdate": 1731937496501,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-analyze": [
@@ -16427,6 +16427,72 @@
           {
             "name": "regex-dcr",
             "value": 7742.66,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "61795485+vrn-sn@users.noreply.github.com",
+            "name": "Varun Saini",
+            "username": "vrn-sn"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "c2e4ee0203b78ce390dadc1de91fb9e69a2ef425",
+          "message": "Fix benchmark runner bug introduced in release 0.652 (#1530)\n\n### Problem\r\n\r\nIn release 0.652, `RequireResolver` was refactored to add support for\r\n`luau-analyze`.\r\n\r\nAs part of this update, `RuntimeRequireContext` introduced a new\r\nconvention where a file's chunkname must be prefixed with `@` (e.g.,\r\n`@./some/path.luau`). This change applies to all chunknames generated\r\nwithin `RuntimeRequireContext`. However, when a `.luau` file is executed\r\ndirectly from the command line (e.g., `luau ./my/script.luau`), the\r\nchunkname is still generated with the old `=` prefix (e.g.,\r\n`=./some/path.luau`).\r\n\r\nSince `RuntimeRequireContext` no longer recognizes chunknames prefixed\r\nwith `=`, any attempt to directly execute a `.luau` file from the\r\ncommand line fails. For example, running `luau ./my/script.luau` results\r\nin an error stating that the context is unsupported. [This issue also\r\naffects tools like the benchmark\r\nrunner](https://github.com/luau-lang/luau/pull/1525#issuecomment-2480454018),\r\nwhich rely on direct file execution.\r\n\r\n### Solution\r\n\r\nUpdate `runFile` to replace the `=` prefix in generated chunknames with\r\n`@`.",
+          "timestamp": "2024-11-18T04:20:05-08:00",
+          "tree_id": "d77a76e483c71cfda7829736446e7b756da6c37b",
+          "url": "https://github.com/luau-lang/luau/commit/c2e4ee0203b78ce390dadc1de91fb9e69a2ef425"
+        },
+        "date": 1731937496496,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 4.86562,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 5.92216,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 28.8832,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 8.16641,
+            "unit": "8ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 10.6295,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 69390.7,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"
