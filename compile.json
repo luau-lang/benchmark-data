@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1731937496634,
+  "lastUpdate": 1732036174919,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-compile": [
@@ -21655,6 +21655,100 @@
           {
             "name": "regex-O2-t1-codegen",
             "value": 10.5226,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "arseny.kapoulkine@gmail.com",
+            "name": "Arseny Kapoulkine",
+            "username": "zeux"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "b1b21f395aee3257c32eaaf2b320db613c3bc4d6",
+          "message": "Compiler: Optimize k*n and k+n when types are known (#1529)\n\nWhen type information is specified, we can compile k*n and k+n into\r\nMULK/ADDK forms that are faster to execute, as long as we think n is a\r\nnumber. Since we generally restrict type aware optimizations to O2, this\r\ndoes that as well.\r\n\r\nThis makes trig benchmark ~4% faster on Apple M2 in VM, and also a tiny\r\nimprovement on scimark (~0.1%) can be observed. The optimization only\r\naffects interpreted execution, as NCG already can synthesize optimal\r\ncode here.\r\n\r\nIf the type information is not truthful (e.g. user annotates type as a\r\nnumber and it's not), the worst case scenario is flipped arguments to\r\nmetamethods like __add/__mul for constant left hand side.\r\n\r\nFixes #626 (the fix requires type information or NCG but I doubt any\r\nfurther work on this is warranted)\r\n\r\n---------\r\n\r\nCo-authored-by: vegorov-rbx <75688451+vegorov-rbx@users.noreply.github.com>",
+          "timestamp": "2024-11-19T07:42:44-08:00",
+          "tree_id": "d91046d07f05b9935600ec241d3833fb171be44c",
+          "url": "https://github.com/luau-lang/luau/commit/b1b21f395aee3257c32eaaf2b320db613c3bc4d6"
+        },
+        "date": 1732036174913,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.661256,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.727302,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.799189,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 3.31669,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-t1-codegen",
+            "value": 3.41694,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.6054,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.78128,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.03014,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 10.2515,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-t1-codegen",
+            "value": 10.5224,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-compile"
