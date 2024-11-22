@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1732066807357,
+  "lastUpdate": 1732314451978,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-compile": [
@@ -21843,6 +21843,100 @@
           {
             "name": "regex-O2-t1-codegen",
             "value": 10.5224,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "ayoungblood@roblox.com",
+            "name": "ayoungbloodrbx",
+            "username": "ayoungbloodrbx"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "d19a5f06991ac9e723055f5b2bbef7724fd203cf",
+          "message": "Sync to upstream/release/653 (#1541)\n\n## What's Changed?\r\n\r\n* Optimized the vector dot product by up to 24%\r\n* Allow for x/y/z/X/Y/Z vector field access by registering a `vector`\r\nmetatable\r\nwith an `__index` method (Fixes #1521)\r\n* Fixed a bug preventing consistent recovery from parse errors in table\r\ntypes.\r\n* Optimized `k*n` and `k+n` when types are known\r\n* Allow fragment autocomplete to handle cases like the automatic\r\ninsertion of\r\nparens, keywords, strings, etc., while maintaining a correct relative\r\npositioning\r\n\r\n### New Solver\r\n\r\n* Allow for `nil` assignment to tables and classes with indexers\r\n\r\n---------\r\n\r\nCo-authored-by: Aaron Weiss <aaronweiss@roblox.com>\r\nCo-authored-by: Andy Friesen <afriesen@roblox.com>\r\nCo-authored-by: Aviral Goel <agoel@roblox.com>\r\nCo-authored-by: Hunter Goldstein <hgoldstein@roblox.com>\r\nCo-authored-by: Varun Saini <vsaini@roblox.com>\r\nCo-authored-by: Vighnesh Vijay <vvijay@roblox.com>\r\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com>",
+          "timestamp": "2024-11-22T13:00:51-08:00",
+          "tree_id": "768919ae9342e9835b59eb6fdb0925e5ccf92af7",
+          "url": "https://github.com/luau-lang/luau/commit/d19a5f06991ac9e723055f5b2bbef7724fd203cf"
+        },
+        "date": 1732314451972,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.660953,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.726989,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.798876,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 3.31634,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-t1-codegen",
+            "value": 3.41405,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.60342,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.77929,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.02816,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 10.2495,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-t1-codegen",
+            "value": 10.5205,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-compile"
