@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1732716713268,
+  "lastUpdate": 1732725229724,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-compile": [
@@ -21989,6 +21989,100 @@
           {
             "name": "map-O2-codegen",
             "value": 3.33821,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-t1-codegen",
+            "value": 3.4356,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.60344,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.77932,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.02818,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 10.3217,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-t1-codegen",
+            "value": 10.5911,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "arseny.kapoulkine@gmail.com",
+            "name": "Arseny Kapoulkine",
+            "username": "zeux"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "8f2ab4cbad609162f052a189902768c8b6bba320",
+          "message": "Minor tweak to FASTCALL3 instruction (#1548)\n\nIn all other places, L->top is extracted to a local when writing to\r\nstack; this helps compilers without TBAA (MSVC) to not reload L->top\r\nredundantly.\r\n\r\nAlso assert that we do in fact have 2 slots of stack space (which we\r\ndo).",
+          "timestamp": "2024-11-27T07:07:37-08:00",
+          "tree_id": "c5e2f190312ad247241b08a8bf405d4ad11ebc56",
+          "url": "https://github.com/luau-lang/luau/commit/8f2ab4cbad609162f052a189902768c8b6bba320"
+        },
+        "date": 1732725229718,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.66097,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.727015,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.798901,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 3.3382,
             "unit": "3ms",
             "range": "±0%",
             "extra": "luau-compile"
