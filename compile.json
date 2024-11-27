@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1732314451978,
+  "lastUpdate": 1732716713268,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-compile": [
@@ -21937,6 +21937,100 @@
           {
             "name": "regex-O2-t1-codegen",
             "value": 10.5205,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "arseny.kapoulkine@gmail.com",
+            "name": "Arseny Kapoulkine",
+            "username": "zeux"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "b5801d33772cad05d0cc2d708f0ca41fea168aa5",
+          "message": "CodeGen: Optimize arithmetics for basic identities (#1545)\n\nThis change folds:\r\n\r\n\ta * 1 => a\r\n\ta / 1 => a\r\n\ta * -1 => -a\r\n\ta / -1 => -a\r\n\ta * 2 => a + a\r\n\ta / 2^k => a * 2^-k\r\n\ta - 0 => a\r\n\ta + (-0) => a\r\n\r\nNote that the following folds are all invalid:\r\n\r\n\ta + 0 => a (breaks for negative zero)\r\n\ta - (-0) => a (breaks for negative zero)\r\n\ta - a => 0 (breaks for Inf/NaN)\r\n\t0 - a => -a (breaks for negative zero)\r\n\r\nVarious cases of UNM_NUM could be optimized (eg (-a) * (-b) = a * b),\r\nbut that doesn't happen in benchmarks.\r\n\r\nWhile it would be possible to also fold inverse multiplications (k * v),\r\nthese do not happen in benchmarks and rarely happen in bytecode due\r\nto type based optimizations. Maybe this can be improved with some sort\r\nof\r\nIR canonicalization in the future if necessary.\r\n\r\nI've considered moving some of these, like division strength reduction,\r\nto IR translation (as this is where POW is lowered presently) but it\r\ndidn't\r\nseem better one way or the other.\r\n\r\nThis change improves performance on some benchmarks, e.g. trig and\r\nvoxelgen,\r\nand should be a strict uplift as it never generates more instructions or\r\nlonger\r\nlatency chains. On Apple M2, without division->multiplication\r\noptimization, both\r\nbenchmarks see 0.1-0.2% uplift. Division optimization makes trig 3%\r\nfaster; I expect\r\nthe gains on X64 will be more muted, but on Apple this seems to allow\r\nloop iterations\r\nto overlap better by removing the division bottleneck.",
+          "timestamp": "2024-11-27T04:44:39-08:00",
+          "tree_id": "d29de234207fe58437a7fc287b1b2df715b953c1",
+          "url": "https://github.com/luau-lang/luau/commit/b5801d33772cad05d0cc2d708f0ca41fea168aa5"
+        },
+        "date": 1732716713262,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.660971,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.727011,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.798897,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 3.33821,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-t1-codegen",
+            "value": 3.4356,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.60344,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.77932,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.02818,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 10.3217,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-t1-codegen",
+            "value": 10.5911,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-compile"
