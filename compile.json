@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1732725229724,
+  "lastUpdate": 1732726809089,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-compile": [
@@ -22125,6 +22125,100 @@
           {
             "name": "regex-O2-t1-codegen",
             "value": 10.5911,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "ramdoysdirect@gmail.com",
+            "name": "ramdoys",
+            "username": "Ramdoys"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "8cc289fae430d9b0c22bde209fe5cf2d01751ff1",
+          "message": "Replace parser test getParseError function for matchParseError (#1532)\n\nRemoves the getParseError function in Parser.test.cpp to use\r\nmatchParseError instead.",
+          "timestamp": "2024-11-27T07:34:14-08:00",
+          "tree_id": "5bcec456f9f5dd51256af33704c276a1f9c5ef44",
+          "url": "https://github.com/luau-lang/luau/commit/8cc289fae430d9b0c22bde209fe5cf2d01751ff1"
+        },
+        "date": 1732726809079,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.660906,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.726947,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.798835,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 3.3382,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-t1-codegen",
+            "value": 3.43555,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.60337,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.77926,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.02812,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 10.3216,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-t1-codegen",
+            "value": 10.591,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-compile"

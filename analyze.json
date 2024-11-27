@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1732725229585,
+  "lastUpdate": 1732726808949,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-analyze": [
@@ -16823,6 +16823,72 @@
           {
             "name": "regex-dcr",
             "value": 69370.1,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "ramdoysdirect@gmail.com",
+            "name": "ramdoys",
+            "username": "Ramdoys"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "8cc289fae430d9b0c22bde209fe5cf2d01751ff1",
+          "message": "Replace parser test getParseError function for matchParseError (#1532)\n\nRemoves the getParseError function in Parser.test.cpp to use\r\nmatchParseError instead.",
+          "timestamp": "2024-11-27T07:34:14-08:00",
+          "tree_id": "5bcec456f9f5dd51256af33704c276a1f9c5ef44",
+          "url": "https://github.com/luau-lang/luau/commit/8cc289fae430d9b0c22bde209fe5cf2d01751ff1"
+        },
+        "date": 1732726808944,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 4.85883,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 5.92695,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 28.5673,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 8.16229,
+            "unit": "8ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 10.6211,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 69370.2,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"
