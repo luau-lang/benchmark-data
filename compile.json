@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1732726809089,
+  "lastUpdate": 1733190070518,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-compile": [
@@ -22219,6 +22219,100 @@
           {
             "name": "regex-O2-t1-codegen",
             "value": 10.591,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "aviralg@users.noreply.github.com",
+            "name": "Aviral Goel",
+            "username": "aviralg"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "d0222bb55465e05f03d4e4a84f7eb53d49c0c3f4",
+          "message": "Sync to upstream/release/654 (#1552)\n\n# What's Changed\r\n\r\n* Support dead store elimination for `STORE_VECTOR` instruction\r\n* Fix parser hang when a separator is used between Luau class\r\ndeclaration properties\r\n* Provide properties and metatable for built-in vector type definition\r\nto fix type errors\r\n* Fix Fragment Autocomplete to ensure correct parentheses insertion\r\nbehavior.\r\n* Add support for 'thread' and 'buffer' primitive types in user-defined\r\ntype functions\r\n\r\n---------\r\n\r\nCo-authored-by: Andy Friesen <afriesen@roblox.com>\r\nCo-authored-by: Hunter Goldstein <hgoldstein@roblox.com>\r\nCo-authored-by: Vighnesh Vijay <vvijay@roblox.com>\r\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com>",
+          "timestamp": "2024-12-02T16:16:33-08:00",
+          "tree_id": "9bfbe64cb40718753da2f88cef9487761832d4d4",
+          "url": "https://github.com/luau-lang/luau/commit/d0222bb55465e05f03d4e4a84f7eb53d49c0c3f4"
+        },
+        "date": 1733190070512,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.666589,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.732581,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.804469,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 3.34398,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-t1-codegen",
+            "value": 3.44406,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.61934,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.7953,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.04416,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 10.3381,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-t1-codegen",
+            "value": 10.6077,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-compile"
