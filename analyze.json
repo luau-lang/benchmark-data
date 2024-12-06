@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1733190070387,
+  "lastUpdate": 1733513434169,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-analyze": [
@@ -16948,6 +16948,72 @@
           {
             "name": "regex-strict",
             "value": 10.6149,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 68846,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "78873527+jkelaty-rbx@users.noreply.github.com",
+            "name": "jkelaty-rbx",
+            "username": "jkelaty-rbx"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "8b8118b027b10585af90273b649c1de286c05497",
+          "message": "Convert Luau heap dumps to Chrome heap snapshots (#1554)\n\nAdds a script for (approximately) converting Luau heap dumps to Chrome\r\nheap snapshots. Useful for visually inspecting a heap dump within\r\nChrome's UI.",
+          "timestamp": "2024-12-06T10:04:57-08:00",
+          "tree_id": "30379024247d12278bdd5319009ce5f29593e400",
+          "url": "https://github.com/luau-lang/luau/commit/8b8118b027b10585af90273b649c1de286c05497"
+        },
+        "date": 1733513434164,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 4.86364,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 5.93351,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 28.5513,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 8.15154,
+            "unit": "8ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 10.6107,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"
