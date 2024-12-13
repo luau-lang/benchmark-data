@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1733513434309,
+  "lastUpdate": 1734129126086,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-compile": [
@@ -22407,6 +22407,100 @@
           {
             "name": "regex-O2-t1-codegen",
             "value": 10.6077,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "vvijay@roblox.com",
+            "name": "Vighnesh-V",
+            "username": "Vighnesh-V"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "2e6fdd90a0fd97832a1ce3da12636a0c44c10b45",
+          "message": "Sync to upstream/release/655 (#1563)\n\n## New Solver\r\n* Type functions should be able to signal whether or not irreducibility\r\nis due to an error\r\n* Do not generate extra expansion constraint for uninvoked user-defined\r\ntype functions\r\n* Print in a user-defined type function reports as an error instead of\r\nlogging to stdout\r\n* Many e-graphs bugfixes and performance improvements\r\n* Many general bugfixes and improvements to the new solver as a whole\r\n* Fixed issue with used-defined type functions not being able to call\r\neach other\r\n* Infer types of globals under new type solver\r\n\r\n## Fragment Autocomplete\r\n* Miscellaneous fixes to make interop with the old solver better\r\n\r\n## Runtime\r\n* Support disabling specific built-in functions from being fast-called\r\nor constant-evaluated (Closes #1538)\r\n* New compiler option `disabledBuiltins` accepts a list of library\r\nfunction names like \"tonumber\" or \"math.cos\"\r\n* Added constant folding for vector arithmetic\r\n* Added constant propagation and type inference for vector globals\r\n(Fixes #1511)\r\n* New compiler option `librariesWithKnownMembers` accepts a list of\r\nlibraries for members of which a request for constant value and/or type\r\nwill be made\r\n* `libraryMemberTypeCb` callback is called to get the type of a global,\r\nreturn one of the `LuauBytecodeType` values. 'boolean', 'number',\r\n'string' and 'vector' type are supported.\r\n* `libraryMemberConstantCb` callback is called to setup the constant\r\nvalue of a global. To set a value, C API `luau_set_compile_constant_*`\r\nor C++ API `setCompileConstant*` functions should be used.\r\n\r\n---\r\nCo-authored-by: Aaron Weiss <aaronweiss@roblox.com>\r\nCo-authored-by: Andy Friesen <afriesen@roblox.com>\r\nCo-authored-by: Aviral Goel <agoel@roblox.com>\r\nCo-authored-by: Daniel Angel <danielangel@roblox.com>\r\nCo-authored-by: Jonathan Kelaty <jkelaty@roblox.com>\r\nCo-authored-by: Hunter Goldstein <hgoldstein@roblox.com>\r\nCo-authored-by: Varun Saini <vsaini@roblox.com>\r\nCo-authored-by: Vighnesh Vijay <vvijay@roblox.com>\r\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com>\r\n\r\n---------\r\n\r\nCo-authored-by: Aaron Weiss <aaronweiss@roblox.com>\r\nCo-authored-by: Alexander McCord <amccord@roblox.com>\r\nCo-authored-by: Andy Friesen <afriesen@roblox.com>\r\nCo-authored-by: Aviral Goel <agoel@roblox.com>\r\nCo-authored-by: David Cope <dcope@roblox.com>\r\nCo-authored-by: Lily Brown <lbrown@roblox.com>\r\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com>\r\nCo-authored-by: Junseo Yoo <jyoo@roblox.com>\r\nCo-authored-by: Hunter Goldstein <hgoldstein@roblox.com>\r\nCo-authored-by: Varun Saini <61795485+vrn-sn@users.noreply.github.com>\r\nCo-authored-by: Alexander Youngblood <ayoungblood@roblox.com>\r\nCo-authored-by: Varun Saini <vsaini@roblox.com>\r\nCo-authored-by: Andrew Miranti <amiranti@roblox.com>\r\nCo-authored-by: Shiqi Ai <sai@roblox.com>\r\nCo-authored-by: Yohoo Lin <yohoo@roblox.com>\r\nCo-authored-by: Daniel Angel <danielangel@roblox.com>\r\nCo-authored-by: Jonathan Kelaty <jkelaty@roblox.com>",
+          "timestamp": "2024-12-13T13:02:30-08:00",
+          "tree_id": "c715e1fcb6fe9d0be92bb579ffd0b6f06071ad28",
+          "url": "https://github.com/luau-lang/luau/commit/2e6fdd90a0fd97832a1ce3da12636a0c44c10b45"
+        },
+        "date": 1734129126080,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.660745,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.726857,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.79887,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 3.33836,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-t1-codegen",
+            "value": 3.43789,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.60311,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.77945,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.02931,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 10.3233,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-t1-codegen",
+            "value": 10.5971,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-compile"
