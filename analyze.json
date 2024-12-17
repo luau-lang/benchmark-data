@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1734401371287,
+  "lastUpdate": 1734477606218,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-analyze": [
@@ -17153,6 +17153,72 @@
           {
             "name": "regex-dcr",
             "value": 71704,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "aaronweiss@roblox.com",
+            "name": "aaron",
+            "username": "aatxe"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "8f94786ceb5e34ad50a1ddcfae26c4dce862bdb7",
+          "message": "Refactor CLI structure to match the include/src split that our other projects have. (#1573)\n\nThis PR refactors the CLI folder to use the same project split between\r\ninclude and src directories that we have for all the other artifacts in\r\nluau. It also includes the require-by-string implementation we already\r\nhave as a feature of `Luau.CLI.lib`. Both of these changes are targeted\r\nat making it easier for embedding projects to setup an effective\r\nequivalent to the standalone `luau` executable with whatever runtime\r\nlibraries they need attached and without having to unnecessarily\r\nduplicate code from luau itself.",
+          "timestamp": "2024-12-17T13:50:27-08:00",
+          "tree_id": "6fcf4723224c64f39bcbf5531e23df38e359191f",
+          "url": "https://github.com/luau-lang/luau/commit/8f94786ceb5e34ad50a1ddcfae26c4dce862bdb7"
+        },
+        "date": 1734477606213,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 4.87244,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 5.94871,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 28.5982,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 8.22494,
+            "unit": "8ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 10.6774,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 71704.1,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"

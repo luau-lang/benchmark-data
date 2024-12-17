@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1734401371420,
+  "lastUpdate": 1734477606362,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-compile": [
@@ -22595,6 +22595,100 @@
           {
             "name": "regex-O2-t1-codegen",
             "value": 10.5972,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "aaronweiss@roblox.com",
+            "name": "aaron",
+            "username": "aatxe"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "8f94786ceb5e34ad50a1ddcfae26c4dce862bdb7",
+          "message": "Refactor CLI structure to match the include/src split that our other projects have. (#1573)\n\nThis PR refactors the CLI folder to use the same project split between\r\ninclude and src directories that we have for all the other artifacts in\r\nluau. It also includes the require-by-string implementation we already\r\nhave as a feature of `Luau.CLI.lib`. Both of these changes are targeted\r\nat making it easier for embedding projects to setup an effective\r\nequivalent to the standalone `luau` executable with whatever runtime\r\nlibraries they need attached and without having to unnecessarily\r\nduplicate code from luau itself.",
+          "timestamp": "2024-12-17T13:50:27-08:00",
+          "tree_id": "6fcf4723224c64f39bcbf5531e23df38e359191f",
+          "url": "https://github.com/luau-lang/luau/commit/8f94786ceb5e34ad50a1ddcfae26c4dce862bdb7"
+        },
+        "date": 1734477606356,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.660742,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.72686,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.798875,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 3.33838,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-t1-codegen",
+            "value": 3.43787,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.60311,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.77944,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.02931,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 10.3233,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-t1-codegen",
+            "value": 10.5971,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-compile"
