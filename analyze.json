@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1734728342214,
+  "lastUpdate": 1736449789751,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-analyze": [
@@ -17278,6 +17278,72 @@
           {
             "name": "regex-strict",
             "value": 10.6818,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 71704.1,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "arseny.kapoulkine@gmail.com",
+            "name": "Arseny Kapoulkine",
+            "username": "zeux"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "8a4ef26f89d959d94333fee41d09387b278d0e8d",
+          "message": "Implement support for math.lerp (#1608)\n\nThis change implements math.lerp RFC with C function definition, builtin\r\nfunction, builtin constant folding and tests.\r\n\r\nThe tests validate a few lerp properties by providing counter-examples\r\nfor popular lerp implementations; the testing is of course not\r\nexhaustive, as exhaustive testing was done offline using fuzzing.\r\n\r\nType definitions will be updated separately.\r\n\r\nCodegen support will be implemented separately: it requires new IR for\r\nconditional\r\nselects to represent the desired logic without using a branch.",
+          "timestamp": "2025-01-09T09:42:07-08:00",
+          "tree_id": "ed489f29aab3b25f2b59c08322dd0fab4f977c9e",
+          "url": "https://github.com/luau-lang/luau/commit/8a4ef26f89d959d94333fee41d09387b278d0e8d"
+        },
+        "date": 1736449789746,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 4.87274,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 5.94793,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 28.6001,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 8.2245,
+            "unit": "8ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 10.6819,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"
