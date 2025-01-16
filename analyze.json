@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1736542916598,
+  "lastUpdate": 1737058533509,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-analyze": [
@@ -17417,6 +17417,72 @@
           {
             "name": "regex-dcr",
             "value": 70721.3,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "arseny.kapoulkine@gmail.com",
+            "name": "Arseny Kapoulkine",
+            "username": "zeux"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "24cacc94edaae6311f668e8c8cb4b223ff39cf24",
+          "message": "CodeGen: Implement support for math.lerp lowering (#1609)\n\nTo implement math.lerp without branches, we add SELECT_NUM which\r\nselects one of the two inputs based on the comparison condition.\r\n\r\nFor simplicity, we only support C == D for now; this can be extended to\r\na more generic version with a IrCondition operand E, but that requires\r\nmore work on the SSE side (to flip the comparison for some conditions\r\nlike Greater, and expose more generic vcmpsd).\r\n\r\nNote: On AArch64 this will effectively result in a change in floating\r\npoint\r\nbehavior between native code and non-native code: clang synthesizes\r\nfmadd (because floating point contraction is allowed by default, and the\r\narch always has the instruction), whereas this change will use\r\nfmul+fadd.\r\n\r\nI am not sure if this is good or bad, and if this is a problem in C or\r\nnot.\r\nSpecifically, clang's behavior results in different results between X64\r\nand AArch64 when *not* using codegen, and with this change the behavior\r\nwhen using codegen is... the same? :)\r\n\r\nFixing this will require either using LERP_NUM instead and hand-coding\r\nlowering, or exposing some sort of \"quasi\" MADD_NUM (which would\r\nlower to fma on AArch64 and mul+add on X64).\r\n\r\nA small benefit to the current approach is `lerp(1, 5, t)`\r\nconstant-folds the\r\nsubtraction. With LERP_NUM this optimization will need to be implemented\r\nmanually as a partial constant-folding for LERP_NUM.\r\n\r\nA similar problem exists today for vector.cross & vector.dot. So maybe\r\nthis\r\nis not something we need to fix, unsure.",
+          "timestamp": "2025-01-16T10:48:27-08:00",
+          "tree_id": "cddb4c8f93a2f64f9deff40e06706bde3048d4b9",
+          "url": "https://github.com/luau-lang/luau/commit/24cacc94edaae6311f668e8c8cb4b223ff39cf24"
+        },
+        "date": 1737058533504,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 4.86911,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 5.94268,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 28.5929,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 8.23848,
+            "unit": "8ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 10.6996,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 70721.2,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"
