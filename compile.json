@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1737058533644,
+  "lastUpdate": 1737137620712,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-compile": [
@@ -23065,6 +23065,100 @@
           {
             "name": "regex-O2-t1-codegen",
             "value": 10.6151,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "petrihakkinen@users.noreply.github.com",
+            "name": "Petri Häkkinen",
+            "username": "petrihakkinen"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "67e9d85124df48b68fa385f55f891e2ad7b94b7f",
+          "message": "Add 2-component vector constructor (#1569)\n\nImplement RFC: 2-component vector constructor. This includes 2-component\r\noverload for `vector.create` and associated fastcall function, and its\r\ntype definition. These features are controlled by a new feature flag\r\n`LuauVector2Constructor`. Additionally constant folding now supports two\r\ncomponents when `LuauVector2Constants` feature flag is set.\r\n\r\nNote: this work does not include changes to CodeGen. Thus calls to\r\n`vector.create` with only two arguments are not natively compiled\r\ncurrently. This is left for future work.",
+          "timestamp": "2025-01-17T08:45:03-08:00",
+          "tree_id": "25a8f111049b47ca2d51409b20dd55f273ff8f08",
+          "url": "https://github.com/luau-lang/luau/commit/67e9d85124df48b68fa385f55f891e2ad7b94b7f"
+        },
+        "date": 1737137620706,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.661033,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.727181,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.799195,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 3.34426,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-t1-codegen",
+            "value": 3.44429,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.60311,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.77959,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.02945,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 10.3408,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-t1-codegen",
+            "value": 10.6145,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-compile"
