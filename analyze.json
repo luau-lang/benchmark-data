@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1737137620574,
+  "lastUpdate": 1737159749585,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-analyze": [
@@ -17549,6 +17549,72 @@
           {
             "name": "regex-dcr",
             "value": 71727,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "61795485+vrn-sn@users.noreply.github.com",
+            "name": "Varun Saini",
+            "username": "vrn-sn"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "29047504daa8f9bba574d86b8be8b6145ad86fd8",
+          "message": "Sync to upstream/release/657 (#1619)\n\n## General\r\n- Fix a parsing bug related to the starting position of function names.\r\n- Rename Luau's `Table` struct to `LuaTable`.\r\n\r\n## New Solver\r\n- Add support for generics in user-defined type functions\r\n([RFC](https://rfcs.luau.org/support-for-generic-function-types-in-user-defined-type-functions.html)).\r\n- Provide a definition of `math.lerp` to the typechecker.\r\n- Implement error suppression in `string.format`.\r\n  - Fixes #1587.\r\n- Ensure function call discriminant types are always filled when\r\nresolving `FunctionCallConstraint`.\r\n\r\n---\r\n\r\nCo-authored-by: Ariel Weiss <aaronweiss@roblox.com>\r\nCo-authored-by: Hunter Goldstein <hgoldstein@roblox.com>\r\nCo-authored-by: Talha Pathan <tpathan@roblox.com>\r\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com>",
+          "timestamp": "2025-01-17T14:55:39-08:00",
+          "tree_id": "edf7ece3003dfd4d978dc807ab1b5df63af61aa6",
+          "url": "https://github.com/luau-lang/luau/commit/29047504daa8f9bba574d86b8be8b6145ad86fd8"
+        },
+        "date": 1737159749580,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 4.86916,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 5.94075,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 28.5351,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 8.25076,
+            "unit": "8ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 10.7117,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 70422.4,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"

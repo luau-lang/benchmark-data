@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1737137620712,
+  "lastUpdate": 1737159749725,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-compile": [
@@ -23152,6 +23152,100 @@
           {
             "name": "regex-O2-codegen",
             "value": 10.3408,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-t1-codegen",
+            "value": 10.6145,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "61795485+vrn-sn@users.noreply.github.com",
+            "name": "Varun Saini",
+            "username": "vrn-sn"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "29047504daa8f9bba574d86b8be8b6145ad86fd8",
+          "message": "Sync to upstream/release/657 (#1619)\n\n## General\r\n- Fix a parsing bug related to the starting position of function names.\r\n- Rename Luau's `Table` struct to `LuaTable`.\r\n\r\n## New Solver\r\n- Add support for generics in user-defined type functions\r\n([RFC](https://rfcs.luau.org/support-for-generic-function-types-in-user-defined-type-functions.html)).\r\n- Provide a definition of `math.lerp` to the typechecker.\r\n- Implement error suppression in `string.format`.\r\n  - Fixes #1587.\r\n- Ensure function call discriminant types are always filled when\r\nresolving `FunctionCallConstraint`.\r\n\r\n---\r\n\r\nCo-authored-by: Ariel Weiss <aaronweiss@roblox.com>\r\nCo-authored-by: Hunter Goldstein <hgoldstein@roblox.com>\r\nCo-authored-by: Talha Pathan <tpathan@roblox.com>\r\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com>",
+          "timestamp": "2025-01-17T14:55:39-08:00",
+          "tree_id": "edf7ece3003dfd4d978dc807ab1b5df63af61aa6",
+          "url": "https://github.com/luau-lang/luau/commit/29047504daa8f9bba574d86b8be8b6145ad86fd8"
+        },
+        "date": 1737159749719,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.660971,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.727099,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.799114,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 3.34419,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-t1-codegen",
+            "value": 3.44312,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.60308,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.77965,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.02951,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 10.3409,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-compile"
