@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1737330050654,
+  "lastUpdate": 1737394470460,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-compile": [
@@ -23340,6 +23340,100 @@
           {
             "name": "regex-O2-codegen",
             "value": 10.3414,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-t1-codegen",
+            "value": 10.6151,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "75688451+vegorov-rbx@users.noreply.github.com",
+            "name": "vegorov-rbx",
+            "username": "vegorov-rbx"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "6061a14e9f77608ad25ffa8e865471c65bf8404d",
+          "message": "Fixup desync between internal and external codebases (#1622)\n\nDuring conflict resolution while transferring patches back and forth,\r\nsome conflict resolutions may cause differences that are harder to spot.\r\n\r\nThis process would have also cleaned up differences noted in\r\nhttps://github.com/luau-lang/luau/pull/1621",
+          "timestamp": "2025-01-20T08:05:58-08:00",
+          "tree_id": "04e2c01305c535491c771283995447af58b7e5de",
+          "url": "https://github.com/luau-lang/luau/commit/6061a14e9f77608ad25ffa8e865471c65bf8404d"
+        },
+        "date": 1737394470454,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.66102,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.72715,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.79916,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 3.34425,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-t1-codegen",
+            "value": 3.44646,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.60311,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.78022,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.03008,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 10.3415,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-compile"
