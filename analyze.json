@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1737394470316,
+  "lastUpdate": 1737755042741,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-analyze": [
@@ -17747,6 +17747,72 @@
           {
             "name": "regex-dcr",
             "value": 70422.3,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "ayoungblood@roblox.com",
+            "name": "ayoungbloodrbx",
+            "username": "ayoungbloodrbx"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "c13b5b7440a65987ee9dd592ee468d421d83f223",
+          "message": "Sync to upstream/release/658 (#1625)\n\n## What's Changed\r\n\r\n### General\r\n- Allow types of tables to diverge after using `table.clone` (fixes\r\n#1617).\r\n- Allow 2-argument vector.create in Luau.\r\n- Fix a crash when suggesting autocomplete after encountering parsing\r\nerrors.\r\n- Add lua_tolstringatom C API which returns the string length (whether\r\nor not the atom exists) and which extends the existing lua_tostringatom\r\nfunction the same way lua_tolstring/lua_tostring do.\r\n- Luau now retains the DFGs of typechecked modules.\r\n\r\n### Magic Functions Migration Note\r\nWe've made a change to the API used to define magic functions.\r\n\r\nPreviously, we had a set of function pointers on each `FunctionType`\r\nthat would be invoked by the type inference engine at the correct point.\r\n\r\nThe problem we'd run into is that they were all `std::function`s, we'd\r\ngrown quite a few of them, and Luau allocates tens of thousands of types\r\nas it performs type inference. This adds up to a large amount of memory\r\nfor data that isn't used by 99% of types.\r\n\r\nTo slim things down a bit, we've replaced all of those `std::function`s\r\nwith a single `shared_ptr` to a new interface called `MagicFunction`.\r\nThis slims down the memory footprint of each type by about 50 bytes.\r\n\r\nThe virtual methods of `MagicFunction` have roughly 1:1 correspondence\r\nwith the old interface, so updating things should not be too difficult:\r\n\r\n* `FunctionType::magicFunction` is now `MagicFunction::handleOldSolver`\r\n* `FunctionType::dcrMagicFunction` is now `MagicFunction::infer`\r\n* `FunctionType::dcrMagicRefinement` is now `MagicFunction::refine`\r\n* `FunctionType::dcrMagicTypeCheck` is now `MagicFunction::typeCheck`\r\n\r\n**Full Changelog**:\r\nhttps://github.com/luau-lang/luau/compare/0.657...0.658\r\n\r\n---\r\n\r\nCo-authored-by: Andy Friesen <afriesen@roblox.com>\r\nCo-authored-by: Ariel Weiss <aaronweiss@roblox.com>\r\nCo-authored-by: Aviral Goel <agoel@roblox.com>\r\nCo-authored-by: Hunter Goldstein <hgoldstein@roblox.com>\r\nCo-authored-by: Talha Pathan <tpathan@roblox.com>\r\nCo-authored-by: Varun Saini <vsaini@roblox.com>\r\nCo-authored-by: Vighnesh Vijay <vvijay@roblox.com>\r\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com>",
+          "timestamp": "2025-01-24T12:15:19-08:00",
+          "tree_id": "2d871ad6068a480eb11722067cf3e568523b7baa",
+          "url": "https://github.com/luau-lang/luau/commit/c13b5b7440a65987ee9dd592ee468d421d83f223"
+        },
+        "date": 1737755042736,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 4.85259,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 5.90715,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 28.5779,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 8.19895,
+            "unit": "8ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 10.6298,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 71350.9,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"
