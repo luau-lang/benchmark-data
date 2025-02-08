@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1738383976312,
+  "lastUpdate": 1738975068806,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-analyze": [
@@ -17879,6 +17879,72 @@
           {
             "name": "regex-dcr",
             "value": 71340.5,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "aviralg@users.noreply.github.com",
+            "name": "Aviral Goel",
+            "username": "aviralg"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "2e61028cba15bce9ab65b465fb484a371d18b4d7",
+          "message": "Sync to upstream/release/660 (#1643)\n\n# General\r\n\r\nThis release introduces initial work on a Roundtrippable AST for Luau,\r\nand numerous fixes to the new type solver, runtime, and fragment\r\nautocomplete.\r\n\r\n## Roundtrippable AST\r\n\r\nTo support tooling around source code transformations, we are extending\r\nthe parser to retain source information so that we can re-emit the\r\ninitial source code exactly as the author wrote it. We have made\r\nnumerous changes to the Transpiler, added new AST types such as\r\n`AstTypeGroup`, and added source information to AST nodes such as\r\n`AstExprInterpString`, `AstExprIfElse`, `AstTypeTable`,\r\n`AstTypeReference`, `AstTypeSingletonString`, and `AstTypeTypeof`.\r\n\r\n## New Type Solver\r\n\r\n* Implement `setmetatable` and `getmetatable` type functions.\r\n* Fix handling of nested and recursive union type functions to prevent\r\nthe solver from getting stuck.\r\n* Free types in both old and new solver now have an upper and lower\r\nbound to resolve mixed mode usage of the solvers in fragment\r\nautocomplete.\r\n* Fix infinite recursion during normalization of cyclic tables.\r\n* Add normalization support for intersections of subclasses with negated\r\nsuperclasses.\r\n\r\n## Runtime\r\n* Fix compilation error in Luau buffer bit operations for big-endian\r\nmachines.\r\n\r\n## Miscellaneous\r\n* Add test and bugfixes to fragment autocomplete.\r\n* Fixed `clang-tidy` warnings in `Simplify.cpp`.\r\n\r\n**Full Changelog**:\r\nhttps://github.com/luau-lang/luau/compare/0.659...0.660\r\n\r\n---\r\n\r\nCo-authored-by: Ariel Weiss <aaronweiss@roblox.com>\r\nCo-authored-by: Hunter Goldstein <hgoldstein@roblox.com>\r\nCo-authored-by: Talha Pathan <tpathan@roblox.com>\r\nCo-authored-by: Varun Saini <vsaini@roblox.com>\r\nCo-authored-by: Vighnesh Vijay <vvijay@roblox.com>\r\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com>\r\n\r\n---------\r\n\r\nCo-authored-by: Hunter Goldstein <hgoldstein@roblox.com>\r\nCo-authored-by: Varun Saini <61795485+vrn-sn@users.noreply.github.com>\r\nCo-authored-by: Alexander Youngblood <ayoungblood@roblox.com>\r\nCo-authored-by: Menarul Alam <malam@roblox.com>",
+          "timestamp": "2025-02-07T16:17:11-08:00",
+          "tree_id": "d8ee87a5491dc602113a49deec086504c08b5085",
+          "url": "https://github.com/luau-lang/luau/commit/2e61028cba15bce9ab65b465fb484a371d18b4d7"
+        },
+        "date": 1738975068801,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 4.85395,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 5.90658,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 28.2212,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 8.22514,
+            "unit": "8ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 10.6541,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 13071.2,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"
