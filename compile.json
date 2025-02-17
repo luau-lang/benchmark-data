@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1739812737682,
+  "lastUpdate": 1739815027711,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-compile": [
@@ -23904,6 +23904,100 @@
           {
             "name": "regex-O2-codegen",
             "value": 10.3536,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-t1-codegen",
+            "value": 10.6268,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "65153224+nothing1649@users.noreply.github.com",
+            "name": "nothing",
+            "username": "nothing1649"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "9c198413ece76474da64e6718696521a0b6cb200",
+          "message": "Analysis: Make typeof on a type userdata return \"type\" (#1568)\n\nThis change introduces a flag (`LuauUserTypeFunTypeofReturnsType`) that,\r\nwhen enabled, sets `__type` on the type userdata's metatable to \"type\".\r\nThis behaviour was described in the user-defined type function RFC\r\n(https://rfcs.luau.org/user-defined-type-functions.html), but seems to\r\nhave been missed; this change implements that behaviour.\r\n\r\nCurrently this does not change `typeof(t) == 'type'` emitting an unknown\r\ntype warning as I don't trust myself to implement it due to my general\r\nlack of C++ knowledge; this can be worked on later.",
+          "timestamp": "2025-02-17T09:36:52-08:00",
+          "tree_id": "7bd201df1b3ce4604f294a4de0f0c48c882f9b6d",
+          "url": "https://github.com/luau-lang/luau/commit/9c198413ece76474da64e6718696521a0b6cb200"
+        },
+        "date": 1739815027705,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.665626,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.731848,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.805362,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 3.35083,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-t1-codegen",
+            "value": 3.44878,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.6178,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.79335,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.04193,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 10.3537,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-compile"

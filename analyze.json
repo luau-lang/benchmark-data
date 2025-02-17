@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1739812737538,
+  "lastUpdate": 1739815027571,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-analyze": [
@@ -18070,6 +18070,72 @@
           {
             "name": "regex-strict",
             "value": 10.6527,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 12238.7,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "65153224+nothing1649@users.noreply.github.com",
+            "name": "nothing",
+            "username": "nothing1649"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "9c198413ece76474da64e6718696521a0b6cb200",
+          "message": "Analysis: Make typeof on a type userdata return \"type\" (#1568)\n\nThis change introduces a flag (`LuauUserTypeFunTypeofReturnsType`) that,\r\nwhen enabled, sets `__type` on the type userdata's metatable to \"type\".\r\nThis behaviour was described in the user-defined type function RFC\r\n(https://rfcs.luau.org/user-defined-type-functions.html), but seems to\r\nhave been missed; this change implements that behaviour.\r\n\r\nCurrently this does not change `typeof(t) == 'type'` emitting an unknown\r\ntype warning as I don't trust myself to implement it due to my general\r\nlack of C++ knowledge; this can be worked on later.",
+          "timestamp": "2025-02-17T09:36:52-08:00",
+          "tree_id": "7bd201df1b3ce4604f294a4de0f0c48c882f9b6d",
+          "url": "https://github.com/luau-lang/luau/commit/9c198413ece76474da64e6718696521a0b6cb200"
+        },
+        "date": 1739815027566,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 4.86347,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 5.91631,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 28.6722,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 8.22405,
+            "unit": "8ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 10.6526,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"
