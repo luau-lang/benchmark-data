@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1739571481574,
+  "lastUpdate": 1739812737538,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-analyze": [
@@ -18004,6 +18004,72 @@
           {
             "name": "regex-strict",
             "value": 10.6529,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 12238.7,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "49699333+dependabot[bot]@users.noreply.github.com",
+            "name": "dependabot[bot]",
+            "username": "dependabot[bot]"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "bd4fe54f4b931bb0f94881e569ebda8b32447a97",
+          "message": "Bump jinja2 from 3.1.4 to 3.1.5 in /tools/fuzz (#1607)",
+          "timestamp": "2025-02-17T08:58:48-08:00",
+          "tree_id": "382b5438e8f5f53120c374bbac9e084d2f7ef21b",
+          "url": "https://github.com/luau-lang/luau/commit/bd4fe54f4b931bb0f94881e569ebda8b32447a97"
+        },
+        "date": 1739812737532,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 4.86351,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 5.91635,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 28.6723,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 8.22365,
+            "unit": "8ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 10.6527,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"
