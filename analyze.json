@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1740077569663,
+  "lastUpdate": 1740084795213,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-analyze": [
@@ -18202,6 +18202,72 @@
           {
             "name": "regex-strict",
             "value": 10.6526,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 12238.7,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "karl-police2001@bluewin.ch",
+            "name": "karl-police",
+            "username": "karl-police"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "29a5198055450451bf7f9e65c08f4ca9157c45ff",
+          "message": "Fix the order of the arguments being inputted into result.append in print() from the Type Function Runtime (#1676)\n\n---\n\nCo-authored-by: vegorov-rbx <75688451+vegorov-rbx@users.noreply.github.com>",
+          "timestamp": "2025-02-20T12:32:47-08:00",
+          "tree_id": "9c3abbc5e9556c2c9956546986d99dc0c2ec2bb5",
+          "url": "https://github.com/luau-lang/luau/commit/29a5198055450451bf7f9e65c08f4ca9157c45ff"
+        },
+        "date": 1740084795208,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 4.86347,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 5.91698,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 28.674,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 8.22461,
+            "unit": "8ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 10.6531,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"
