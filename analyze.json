@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1739815027571,
+  "lastUpdate": 1740077569663,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-analyze": [
@@ -18129,6 +18129,72 @@
           {
             "name": "regex-nonstrict",
             "value": 8.22405,
+            "unit": "8ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 10.6526,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 12238.7,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "75688451+vegorov-rbx@users.noreply.github.com",
+            "name": "vegorov-rbx",
+            "username": "vegorov-rbx"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "14ccae9b44b1a5149a999f2b5c0266c05784f752",
+          "message": "Update minimal Ubuntu version in workflows from 20.04 to 22.04 (#1670)\n\nUbuntu 20.04 LTS is reaching the end of its standard support period.\nGitHub runners are going to stop providing images for it soon.\n\nThis PR updates all workflows to use 22.04 instead of 20.04.\nWhile this will impact the compatibility of prebuilt release binaries on\n20.04, users of those systems can always build Luau from source.\n\n`coverage` workflow is also updating from clang++10 to clang++ (defaults\nto clang++14 today).\nLine coverage with this switch drops from 89.65% to 87.45%, function\ncoverage remains 91.26%.\nAs a bonus, we now get branch coverage information.",
+          "timestamp": "2025-02-20T10:32:33-08:00",
+          "tree_id": "a227fc1ce00a6c1c58b51e7a8e01b6a8ff533f33",
+          "url": "https://github.com/luau-lang/luau/commit/14ccae9b44b1a5149a999f2b5c0266c05784f752"
+        },
+        "date": 1740077569658,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 4.86347,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 5.91632,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 28.6721,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 8.22348,
             "unit": "8ms",
             "range": "±0%",
             "extra": "luau-analyze"
