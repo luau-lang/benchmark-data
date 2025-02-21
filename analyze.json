@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1740084795213,
+  "lastUpdate": 1740163170141,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-analyze": [
@@ -18275,6 +18275,72 @@
           {
             "name": "regex-dcr",
             "value": 12238.7,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "75688451+vegorov-rbx@users.noreply.github.com",
+            "name": "vegorov-rbx",
+            "username": "vegorov-rbx"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "c2e72666d9925b4d76d1e6689b176b770e52998c",
+          "message": "Sync to upstream/release/662 (#1681)\n\n## What's new\n\nThis update brings improvements to the new type solver, roundtrippable\nAST parsing mode and closes multiple issues reported in this repository.\n\n* `require` dependency tracing for non-string requires now supports `()`\ngroups in expressions and types as well as an ability to type annotate a\nvalue with a `typeof` of a different module path\n* Fixed rare misaligned memory access in Compiler/Typechecker on 32 bit\nplatforms (Closes #1572)\n\n## New Solver\n\n* Fixed crash/UB in subtyping of type packs (Closes #1449)\n* Fixed incorrect type errors when calling `debug.info` (Closes #1534\nand Resolves #966)\n* Fixed incorrect boolean and string equality comparison result in\nuser-defined type functions (Closes #1623)\n* Fixed incorrect class types being produced in user-defined type\nfunctions when multiple classes share the same name (Closes #1639)\n* Improved bidirectional typechecking for table literals containing\nelements that have not been solved yet (Closes #1641)\n\n## Roundtrippable AST\n\n* Added source information for `AstStatTypeAlias`\n* Fixed an issue with `AstTypeGroup` node (added in #1643) producing\ninvalid AST json. Contained type is now named 'inner' instead of 'type'\n* Fixed end location of the `do ... end` statement\n\n---\n\nInternal Contributors:\n\nCo-authored-by: Hunter Goldstein <hgoldstein@roblox.com>\nCo-authored-by: Talha Pathan <tpathan@roblox.com>\nCo-authored-by: Varun Saini <vsaini@roblox.com>\nCo-authored-by: Vighnesh Vijay <vvijay@roblox.com>\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com>",
+          "timestamp": "2025-02-21T10:24:12-08:00",
+          "tree_id": "161cbd47ab09c80838a9e1ab3cc05fae6ce7eedc",
+          "url": "https://github.com/luau-lang/luau/commit/c2e72666d9925b4d76d1e6689b176b770e52998c"
+        },
+        "date": 1740163170132,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 4.85819,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 5.91262,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 27.7936,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 8.27886,
+            "unit": "8ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 10.7064,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 7643.44,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"
