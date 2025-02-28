@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1740444090768,
+  "lastUpdate": 1740783495461,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-compile": [
@@ -24475,6 +24475,100 @@
           {
             "name": "regex-O2-t1-codegen",
             "value": 10.6269,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "aaronweiss@roblox.com",
+            "name": "ariel",
+            "username": "aatxe"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "640ebbc0a51bef0daa7c9b8c943d522dacb6a9a8",
+          "message": "Sync to upstream/release/663 (#1699)\n\nHey folks, another week means another Luau release! This one features a\nnumber of bug fixes in the New Type Solver including improvements to\nuser-defined type functions and a bunch of work to untangle some of the\noutstanding issues we've been seeing with constraint solving not\ncompleting in real world use. We're also continuing to make progress on\ncrashes and other problems that affect the stability of fragment\nautocomplete, as we work towards delivering consistent, low-latency\nautocomplete for any editor environment.\n\n## New Type Solver\n\n- Fix a bug in user-defined type functions where `print` would\nincorrectly insert `\\1` a number of times.\n- Fix a bug where attempting to refine an optional generic with a type\ntest will cause a false positive type error (fixes #1666)\n- Fix a bug where the `refine` type family would not skip over\n`*no-refine*` discriminants (partial resolution for #1424)\n- Fix a constraint solving bug where recursive function calls would\nconsistently produce cyclic constraints leading to incomplete or\ninaccurate type inference.\n- Implement `readparent` and `writeparent` for class types in\nuser-defined type functions, replacing the incorrectly included `parent`\nmethod.\n- Add initial groundwork (under a debug flag) for eager free type\ngeneralization, moving us towards further improvements to constraint\nsolving incomplete errors.\n\n## Fragment Autocomplete\n\n- Ease up some assertions to improve stability of mixed-mode use of the\ntwo type solvers (i.e. using Fragment Autocomplete on a type graph\noriginally produced by the old type solver)\n- Resolve a bug with type compatibility checks causing internal compiler\nerrors in autocomplete.\n\n## Lexer and Parser\n\n- Improve the accuracy of the roundtrippable AST parsing mode by\ncorrectly placing closing parentheses on type groupings.\n- Add a getter for `offset` in the Lexer by @aduermael in #1688\n- Add a second entry point to the parser to parse an expression,\n`parseExpr`\n\n## Internal Contributors\n\nCo-authored-by: Andy Friesen <afriesen@roblox.com>\nCo-authored-by: Ariel Weiss <aaronweiss@roblox.com>\nCo-authored-by: Aviral Goel <agoel@roblox.com>\nCo-authored-by: Hunter Goldstein <hgoldstein@roblox.com>\nCo-authored-by: James McNellis <jmcnellis@roblox.com>\nCo-authored-by: Talha Pathan <tpathan@roblox.com>\nCo-authored-by: Vighnesh Vijay <vvijay@roblox.com>\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com>\n\n---------\n\nCo-authored-by: Hunter Goldstein <hgoldstein@roblox.com>\nCo-authored-by: Varun Saini <61795485+vrn-sn@users.noreply.github.com>\nCo-authored-by: Alexander Youngblood <ayoungblood@roblox.com>\nCo-authored-by: Menarul Alam <malam@roblox.com>\nCo-authored-by: Aviral Goel <agoel@roblox.com>\nCo-authored-by: Vighnesh <vvijay@roblox.com>\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com>",
+          "timestamp": "2025-02-28T14:42:30-08:00",
+          "tree_id": "41443e592755afcf619c791b20694e87080481a5",
+          "url": "https://github.com/luau-lang/luau/commit/640ebbc0a51bef0daa7c9b8c943d522dacb6a9a8"
+        },
+        "date": 1740783495454,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.665725,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.731924,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.805438,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 3.3489,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-t1-codegen",
+            "value": 3.44798,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.61835,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.7944,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.04299,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 10.3485,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-t1-codegen",
+            "value": 10.6218,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-compile"
