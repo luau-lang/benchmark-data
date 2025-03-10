@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1741371840700,
+  "lastUpdate": 1741612733517,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-compile": [
@@ -24656,6 +24656,100 @@
           {
             "name": "regex-O2-codegen",
             "value": 10.3481,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-t1-codegen",
+            "value": 10.6214,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "kostadinshishmanov@protonmail.com",
+            "name": "Kostadin",
+            "username": "kostadinsh"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "b0c3f40b0c23682376c90d3e16eff57b81367870",
+          "message": "Add #include <stdint.h> to fix building with gcc 15 (#1720)\n\nWith gcc 15, the C++ Standard Library no longer includes other headers\nthat were internally used by the library. In Luau's case the missing\nheader is `<stdint.h>`\n\nDownstream Gentoo bug: https://bugs.gentoo.org/938122\nSigned-off-by: Kostadin Shishmanov <kostadinshishmanov@protonmail.com>\n\n---------\n\nCo-authored-by: vegorov-rbx <75688451+vegorov-rbx@users.noreply.github.com>",
+          "timestamp": "2025-03-10T06:02:09-07:00",
+          "tree_id": "25b165bc6b185709a666d87e1f02a1773259c9e1",
+          "url": "https://github.com/luau-lang/luau/commit/b0c3f40b0c23682376c90d3e16eff57b81367870"
+        },
+        "date": 1741612733510,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.665665,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.731869,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.805383,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 3.34883,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-t1-codegen",
+            "value": 3.45059,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.61841,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.79397,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.04255,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 10.348,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-compile"

@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1741371840561,
+  "lastUpdate": 1741612733385,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-analyze": [
@@ -18598,6 +18598,72 @@
           {
             "name": "regex-strict",
             "value": 10.6808,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 8566.92,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "kostadinshishmanov@protonmail.com",
+            "name": "Kostadin",
+            "username": "kostadinsh"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "b0c3f40b0c23682376c90d3e16eff57b81367870",
+          "message": "Add #include <stdint.h> to fix building with gcc 15 (#1720)\n\nWith gcc 15, the C++ Standard Library no longer includes other headers\nthat were internally used by the library. In Luau's case the missing\nheader is `<stdint.h>`\n\nDownstream Gentoo bug: https://bugs.gentoo.org/938122\nSigned-off-by: Kostadin Shishmanov <kostadinshishmanov@protonmail.com>\n\n---------\n\nCo-authored-by: vegorov-rbx <75688451+vegorov-rbx@users.noreply.github.com>",
+          "timestamp": "2025-03-10T06:02:09-07:00",
+          "tree_id": "25b165bc6b185709a666d87e1f02a1773259c9e1",
+          "url": "https://github.com/luau-lang/luau/commit/b0c3f40b0c23682376c90d3e16eff57b81367870"
+        },
+        "date": 1741612733379,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 4.85421,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 5.91159,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 27.7853,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 8.2573,
+            "unit": "8ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 10.685,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"
