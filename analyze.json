@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1741612733385,
+  "lastUpdate": 1741984083153,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-analyze": [
@@ -18671,6 +18671,72 @@
           {
             "name": "regex-dcr",
             "value": 8566.92,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "hgoldstein@roblox.com",
+            "name": "Hunter Goldstein",
+            "username": "hgoldstein"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "e0b55a9cb1857bc699a20f0aa3099c7a495a0152",
+          "message": "Sync to upstream/release/665 (#1732)\n\nHello all! Another week, another Luau release!\n\n# Change to `lua_setuserdatametatable`\n\nThis release fixes #1710: `lua_setuserdatametatable` is being changed so\nthat it _only_ operates on the top of the stack: the `idx` parameter is\nbeing removed. Prior to this, `lua_setuserdatametable` would set the\nmetatable of the value in the stack at `idx`, but _always_ pop the top\nof the stack. The old behavior is available in this release as\n`lua_setuserdatametatable_DEPRECATED`.\n\n# General\n\nThis release exposes a generalized implementation of require-by-string's\nautocomplete logic. `FileResolver` can now be optionally constructed\nwith a `RequireSuggester`, which provides an interface for converting a\ngiven module to a `RequireNode`. Consumers of this new API implement a\n`RequireNode` to define how modules are represented in their embedded\ncontext, and the new API manages the logic specific to\nrequire-by-string, including providing suggestions for require aliases.\nThis enhancement moves toward integrating require-by-string's semantics\ninto the language itself, rather than merely providing a specification\nfor community members to implement themselves.\n\n# New Type Solver\n* Fixed a source of potential `Luau::follow detected a Type cycle`\ninternal compiler exceptions when assigning a global to itself.\n* Fixed an issue whereby `*no-refine*` (a type which should not be\nvisible at the end of type checking) was not being properly elided,\ncausing inference of class-like tables to become unreadable / induce\ncrashes in autocomplete.\n* Fixed a case of incomplete constraint solving when performing basic\nmath in a loop\n\n# Fragment Autocomplete\n* Fixed several crashes related to not properly filling in scope\ninformation for the fragments\n* Fixed a source of memory corruption by isolating the return type of a\nfragment when it is type checked.\n* Improved performance by opting not to clone persistent types for the\nfragment (e.g.: built in types)\n \n# Internal Contributors\nCo-authored-by: Andy Friesen <afriesen@roblox.com>\nCo-authored-by: Hunter Goldstein <hgoldstein@roblox.com>\nCo-authored-by: Talha Pathan <tpathan@roblox.com>\nCo-authored-by: Varun Saini <vsaini@roblox.com>\nCo-authored-by: Vighnesh Vijay <vvijay@roblox.com>\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com>\n\n---------\n\nCo-authored-by: Varun Saini <61795485+vrn-sn@users.noreply.github.com>\nCo-authored-by: Alexander Youngblood <ayoungblood@roblox.com>\nCo-authored-by: Menarul Alam <malam@roblox.com>\nCo-authored-by: Aviral Goel <agoel@roblox.com>\nCo-authored-by: Vighnesh <vvijay@roblox.com>\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com>\nCo-authored-by: Ariel Weiss <aaronweiss@roblox.com>",
+          "timestamp": "2025-03-14T13:11:24-07:00",
+          "tree_id": "050af41226fc0a2d931746040c07b49888663b9d",
+          "url": "https://github.com/luau-lang/luau/commit/e0b55a9cb1857bc699a20f0aa3099c7a495a0152"
+        },
+        "date": 1741984083147,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 4.85422,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 5.91233,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 27.7464,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 8.25672,
+            "unit": "8ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 10.6801,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 8606.93,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"
