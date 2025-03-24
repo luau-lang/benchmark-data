@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1742594350496,
+  "lastUpdate": 1742834568687,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-compile": [
@@ -24903,6 +24903,100 @@
           {
             "name": "map-O2-codegen",
             "value": 3.44198,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-t1-codegen",
+            "value": 3.45351,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.61965,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.79568,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.30249,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 10.608,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-t1-codegen",
+            "value": 10.6239,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "175355178+vvatheus@users.noreply.github.com",
+            "name": "Matheus",
+            "username": "vvatheus"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "2621488abea019bb1c22a84e784aadd3f1bc4cad",
+          "message": "Fix singleton parameters in overloaded functions (#1694)\n\n- Fixes #1691 \n- Fixes #1589\n\n---------\n\nCo-authored-by: Math <175355178+maffeus@users.noreply.github.com>\nCo-authored-by: ariel <aaronweiss@roblox.com>\nCo-authored-by: Matheus <175355178+m4fh@users.noreply.github.com>\nCo-authored-by: ariel <aweiss@hey.com>",
+          "timestamp": "2025-03-24T09:27:13-07:00",
+          "tree_id": "0de0d8a04398dc4029c49f4a6f38928f85d246af",
+          "url": "https://github.com/luau-lang/luau/commit/2621488abea019bb1c22a84e784aadd3f1bc4cad"
+        },
+        "date": 1742834568680,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.668018,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.733959,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.884754,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 3.44197,
             "unit": "3ms",
             "range": "±0%",
             "extra": "luau-compile"
