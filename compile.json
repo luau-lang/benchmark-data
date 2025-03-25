@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1742834568687,
+  "lastUpdate": 1742945643358,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-compile": [
@@ -25039,6 +25039,100 @@
           {
             "name": "regex-O2-t1-codegen",
             "value": 10.6239,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "85714123+jackdotink@users.noreply.github.com",
+            "name": "Jack",
+            "username": "jackdotink"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "12dac2f1f4f48aa587f4162a0a7ec34f4a37ee87",
+          "message": "fix parsing string union indexers (#1750)\n\nToday this code results in a syntax error: `type foo = { [\"bar\" |\n\"baz\"]: number }`. This is odd and I believe it is a bug. I have fixed\nthis so that it is now parsed as an indexer field with a union type.\nThis change should not affect the way any code is parsed today, and\nallow types in indexers to begin with string literals.\n\n---------\n\nCo-authored-by: ariel <aweiss@hey.com>",
+          "timestamp": "2025-03-25T16:18:22-07:00",
+          "tree_id": "4891c9b0111317907881aee3bd4b04b1d295da67",
+          "url": "https://github.com/luau-lang/luau/commit/12dac2f1f4f48aa587f4162a0a7ec34f4a37ee87"
+        },
+        "date": 1742945643351,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.6676,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.733532,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.880505,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 3.43773,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-t1-codegen",
+            "value": 3.44926,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.61967,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.79523,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.30202,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 10.6075,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-t1-codegen",
+            "value": 10.6235,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-compile"
