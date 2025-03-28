@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1742945643214,
+  "lastUpdate": 1743204698530,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-analyze": [
@@ -18935,6 +18935,72 @@
           {
             "name": "regex-dcr",
             "value": 7750.46,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "ayoungblood@roblox.com",
+            "name": "ayoungbloodrbx",
+            "username": "ayoungbloodrbx"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "6b33251b89a11b7d945dcb77e77604e4b208b524",
+          "message": "Sync to upstream/release/667 (#1754)\n\nAfter a very auspicious release last week, we have a new bevy of changes\nfor you!\n\n## What's Changed\n\n### Deprecated Attribute\n\nThis release includes an implementation of the `@deprecated` attribute\nproposed in [this\nRFC](https://rfcs.luau.org/syntax-attribute-functions-deprecated.html).\nIt relies on the new type solver to propagate deprecation information\nfrom function and method AST nodes to the corresponding type objects.\nThese objects are queried by a linter pass when it encounters local,\nglobal, or indexed variables, to issue deprecation warnings. Uses of\ndeprecated functions and methods in recursion are ignored. To support\ndeprecation of class methods, the parser has been extended to allow\nattribute declarations on class methods. The implementation does not\nsupport parameters, so it is not currently possible for users to\ncustomize deprecation messages.\n\n### General\n\n- Add a limit for normalization of function types.\n\n### New Type Solver\n\n- Fix type checker to accept numbers as concat operands (Fixes #1671).\n- Fix user-defined type functions failing when used inside type\naliases/nested calls (Fixes #1738, Fixes #1679).\n- Improve constraint generation for overloaded functions (in part thanks\nto @vvatheus in #1694).\n- Improve type inference for indexers on table literals, especially when\npassing table literals directly as a function call argument.\n- Equate regular error type and intersection with a negation of an error\ntype.\n- Avoid swapping types in 2-part union when RHS is optional.\n- Use simplification when doing `~nil` refinements.\n- `len<>` now works on metatables without `__len` function.\n\n### AST\n\n- Retain source information for `AstTypeUnion` and\n`AstTypeIntersection`.\n\n### Transpiler\n\n- Print attributes on functions.\n\n### Parser\n\n- Allow types in indexers to begin with string literals by @jackdotink\nin #1750.\n\n### Autocomplete\n\n- Evaluate user-defined type functions in ill-formed source code to\nprovide autocomplete.\n- Fix the start location of functions that have attributes.\n- Implement better fragment selection.\n\n### Internal Contributors\n\nCo-authored-by: Andy Friesen <afriesen@roblox.com>\nCo-authored-by: Ariel Weiss <aaronweiss@roblox.com>\nCo-authored-by: Aviral Goel <agoel@roblox.com>\nCo-authored-by: Hunter Goldstein <hgoldstein@roblox.com>\nCo-authored-by: Sora Kanosue <skanosue@roblox.com>\nCo-authored-by: Talha Pathan <tpathan@roblox.com>\nCo-authored-by: Varun Saini <vsaini@roblox.com>\nCo-authored-by: Vighnesh Vijay <vvijay@roblox.com>\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com>\n\n**Full Changelog**:\nhttps://github.com/luau-lang/luau/compare/0.666...0.667\n\n---------\n\nCo-authored-by: Hunter Goldstein <hgoldstein@roblox.com>\nCo-authored-by: Varun Saini <61795485+vrn-sn@users.noreply.github.com>\nCo-authored-by: Menarul Alam <malam@roblox.com>\nCo-authored-by: Aviral Goel <agoel@roblox.com>\nCo-authored-by: Vighnesh <vvijay@roblox.com>\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com>\nCo-authored-by: Ariel Weiss <aaronweiss@roblox.com>",
+          "timestamp": "2025-03-28T16:15:46-07:00",
+          "tree_id": "e1e4ef6198e5280adc8c5f6824294765e12f5ce3",
+          "url": "https://github.com/luau-lang/luau/commit/6b33251b89a11b7d945dcb77e77604e4b208b524"
+        },
+        "date": 1743204698525,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 4.87379,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 5.92635,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 25.8037,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 8.28363,
+            "unit": "8ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 10.7104,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 7888.28,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"
