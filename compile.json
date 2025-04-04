@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1743204698670,
+  "lastUpdate": 1743802120563,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-compile": [
@@ -25227,6 +25227,100 @@
           {
             "name": "regex-O2-t1-codegen",
             "value": 10.6239,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "aviralg@users.noreply.github.com",
+            "name": "Aviral Goel",
+            "username": "aviralg"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "ee1c6bf0db9948b5e89e2ee66be72f6235bf0696",
+          "message": "Sync to upstream/release/668 (#1760)\n\n## New Type Solver\n\n1. Update resolved types for singleton unions and intersections to avoid\ncrashing when type checking type assertions.\n2. Generalize free return type pack of a function type inferred at call\nsite to ensure that the free type does not leak to another module.\n3. Fix crash from cyclic indexers by reducing if possible or producing\nan error otherwise.\n4. Fix handling of irreducible type functions to prevent type inference\nfrom failing.\n5. Fix handling of recursive metatables to avoid infinite recursion.\n\n## New and Old Type Solver\n\nFix accidental capture of all exceptions in multi-threaded typechecking\nby converting all typechecking exceptions to `InternalCompilerError` and\nonly capturing those.\n\n## Fragment Autocomplete\n\n1. Add a block based diff algorithm based on class index and span for\nre-typechecking. This reduces the granularity of fragment autocomplete\nto avoid flakiness when the fragment does not have enough type\ninformation.\n2. Fix bugs arising from incorrect scope selection for autocompletion.\n\n## Roundtrippable AST\n\nStore type alias location in `TypeFun` class to ensure it is accessible\nfor exported types as part of the public interface.\n\n## Build System\n\n1. Bump minimum supported CMake version to 3.10 since GitHub is phasing\nout the currently supported minimum version 3.0, released 11 years ago.\n2. Fix compilation when `HARDSTACKTESTS` is enabled.\n\n## Miscellaneous\n\nFlag removals and cleanup of unused code.\n\n## Internal Contributors\n\nCo-authored-by: Andy Friesen <afriesen@roblox.com>\nCo-authored-by: Ariel Weiss <aaronweiss@roblox.com>\nCo-authored-by: Hunter Goldstein <hgoldstein@roblox.com>\nCo-authored-by: Talha Pathan <tpathan@roblox.com>\nCo-authored-by: Vighnesh Vijay <vvijay@roblox.com>\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com>\n\n## External Contributors\n\nThanks to [@grh-official](https://github.com/grh-official) for PR #1759 \n\n**Full Changelog**:\nhttps://github.com/luau-lang/luau/compare/0.667...0.668\n\n---------\n\nCo-authored-by: Hunter Goldstein <hgoldstein@roblox.com>\nCo-authored-by: Varun Saini <61795485+vrn-sn@users.noreply.github.com>\nCo-authored-by: Alexander Youngblood <ayoungblood@roblox.com>\nCo-authored-by: Menarul Alam <malam@roblox.com>\nCo-authored-by: Vighnesh <vvijay@roblox.com>\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com>\nCo-authored-by: Ariel Weiss <aaronweiss@roblox.com>",
+          "timestamp": "2025-04-04T14:11:51-07:00",
+          "tree_id": "275f1d63c977e2f54a0aef5c9c4e677049352325",
+          "url": "https://github.com/luau-lang/luau/commit/ee1c6bf0db9948b5e89e2ee66be72f6235bf0696"
+        },
+        "date": 1743802120556,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.668885,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.734934,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.886783,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 3.44403,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-t1-codegen",
+            "value": 3.45551,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.62011,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.79569,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.30249,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 10.608,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-t1-codegen",
+            "value": 10.624,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-compile"
