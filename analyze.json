@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1744397405273,
+  "lastUpdate": 1744566228381,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-analyze": [
@@ -19133,6 +19133,72 @@
           {
             "name": "regex-dcr",
             "value": 8966.42,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "61795485+vrn-sn@users.noreply.github.com",
+            "name": "Varun Saini",
+            "username": "vrn-sn"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "50f32a1400ab028f6574d59101f3ec21d18233e1",
+          "message": "Do not store file extensions in module chunknames [Luau CLI] (#1772)",
+          "timestamp": "2025-04-13T10:31:45-07:00",
+          "tree_id": "bccbc8f8dc3ec71bb40f7fbda6e6640d9cf5b42d",
+          "url": "https://github.com/luau-lang/luau/commit/50f32a1400ab028f6574d59101f3ec21d18233e1"
+        },
+        "date": 1744566228376,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 4.8821,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 5.93866,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 25.8291,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 8.27135,
+            "unit": "8ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 10.7107,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 3805.49,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"
