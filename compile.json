@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1744566228514,
+  "lastUpdate": 1744675665956,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-compile": [
@@ -25502,6 +25502,100 @@
           {
             "name": "regex-O2-codegen",
             "value": 10.6076,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-t1-codegen",
+            "value": 10.6236,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "hgoldstein@roblox.com",
+            "name": "Hunter Goldstein",
+            "username": "hgoldstein"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "d110c812bb754d47ecc37b87db0d4e20a12aacc9",
+          "message": "Disable `LuauNonReentrantGeneralization` for some tests (#1775)\n\nFor now, this flag causes a stack overflow for some tests on\nWindows: we end up minting a massive recursive intersection during\ngeneralization. Let's flip it off until a fix arrives.",
+          "timestamp": "2025-04-14T16:55:31-07:00",
+          "tree_id": "00925e1d35ade7a14293ba1e7fe9ae970d049a90",
+          "url": "https://github.com/luau-lang/luau/commit/d110c812bb754d47ecc37b87db0d4e20a12aacc9"
+        },
+        "date": 1744675665949,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.668782,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.734739,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.884767,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 3.44195,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-t1-codegen",
+            "value": 3.45353,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.6198,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.79533,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.30217,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 10.6077,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-compile"

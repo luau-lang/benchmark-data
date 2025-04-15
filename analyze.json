@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1744566228381,
+  "lastUpdate": 1744675665810,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-analyze": [
@@ -19192,6 +19192,72 @@
           {
             "name": "regex-strict",
             "value": 10.7107,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 3805.49,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "hgoldstein@roblox.com",
+            "name": "Hunter Goldstein",
+            "username": "hgoldstein"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "d110c812bb754d47ecc37b87db0d4e20a12aacc9",
+          "message": "Disable `LuauNonReentrantGeneralization` for some tests (#1775)\n\nFor now, this flag causes a stack overflow for some tests on\nWindows: we end up minting a massive recursive intersection during\ngeneralization. Let's flip it off until a fix arrives.",
+          "timestamp": "2025-04-14T16:55:31-07:00",
+          "tree_id": "00925e1d35ade7a14293ba1e7fe9ae970d049a90",
+          "url": "https://github.com/luau-lang/luau/commit/d110c812bb754d47ecc37b87db0d4e20a12aacc9"
+        },
+        "date": 1744675665803,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 4.88176,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 5.93869,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 25.8308,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 8.27082,
+            "unit": "8ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 10.7063,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"
