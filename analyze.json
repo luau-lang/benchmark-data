@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1744675665810,
+  "lastUpdate": 1745616493845,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-analyze": [
@@ -19265,6 +19265,72 @@
           {
             "name": "regex-dcr",
             "value": 3805.49,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "afriesen@roblox.com",
+            "name": "Andy Friesen",
+            "username": "andyfriesen"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "c51743268bcbe5c5af1bd78bcacaefe7f6fe3391",
+          "message": "Sync to upstream/release/671 (#1787)\n\n# General\n\n* Internally rename `ClassType` to `ExternType`. In definition files,\nthe syntax to define these types has changed to `declare extern type Foo\nwith prop: type end`\n* Add `luarequire_registermodule` to Luau.Require\n* Support yieldable Luau C functions calling other functions\n* Store return types as `AstTypePack*` on Ast nodes\n\n## New Solver\n\n* Improve the logic that determines constraint dispatch ordering\n* Fix a crash in the type solver that arose when using multi-return\nfunctions with `string.format`\n* Fix https://github.com/luau-lang/luau/issues/1736\n* Initial steps toward rethinking function generalization:\n* Instead of generalizing every type in a function all at once, we will\ninstead generalize individual type variables once their bounds have been\nfully resolved. This will make it possible to properly interleave type\nfunction reduction and generalization.\n* Magic functions are no longer considered magical in cases where they\nare not explicitly called by the code.\n* The most prominent example of this is in `for..in` loops where the\nfunction call is part of the desugaring process.\n* Almost all magic functions work by directly inspecting the AST, so\nthey can't work without an AST fragment anyway.\n* Further, none of the magic functions we have are usefully used in this\nway.\n\nCo-authored-by: Andy Friesen <afriesen@roblox.com>\nCo-authored-by: Ariel Weiss <aaronweiss@roblox.com>\nCo-authored-by: Hunter Goldstein <hgoldstein@roblox.com>\nCo-authored-by: Sora Kanosue <skanosue@roblox.com>\nCo-authored-by: Talha Pathan <tpathan@roblox.com>\nCo-authored-by: Varun Saini <vsaini@roblox.com>\nCo-authored-by: Vighnesh Vijay <vvijay@roblox.com>\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com>",
+          "timestamp": "2025-04-25T14:19:27-07:00",
+          "tree_id": "aba45b315aa9952ea55d298cad8806eb67bf8696",
+          "url": "https://github.com/luau-lang/luau/commit/c51743268bcbe5c5af1bd78bcacaefe7f6fe3391"
+        },
+        "date": 1745616493840,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 4.84736,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 5.91588,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 26.2264,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 8.23592,
+            "unit": "8ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 10.6783,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 1097.33,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"
