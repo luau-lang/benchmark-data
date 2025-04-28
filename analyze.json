@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1745616493845,
+  "lastUpdate": 1745864677045,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-analyze": [
@@ -19317,6 +19317,72 @@
           {
             "name": "regex-nonstrict",
             "value": 8.23592,
+            "unit": "8ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 10.6783,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 1097.33,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "61795485+vrn-sn@users.noreply.github.com",
+            "name": "Varun Saini",
+            "username": "vrn-sn"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "d9aa88e772a7a460272e3efc79f029b64ac18022",
+          "message": "Fix crash when `require` is called from root VM stack (#1788)\n\nCopied from #1785:\n> If require is called from the root interpreter stack (e.g. using C\nAPI) then lua_getinfo call will not succeed, leaving garbage in\nlua_Debug ar struct.\n> Accessing later ar.source as null-terminated string is unsafe and can\ncause a crash.\n> \n> This PR adds a check to ensure that lua_getinfo call is successful.\n\nCo-authored-by: Alex Orlenko <zxteam@protonmail.com>",
+          "timestamp": "2025-04-28T11:15:43-07:00",
+          "tree_id": "5313f5834b5c7cb00cf8f581a3c2d500066cdcda",
+          "url": "https://github.com/luau-lang/luau/commit/d9aa88e772a7a460272e3efc79f029b64ac18022"
+        },
+        "date": 1745864677039,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 4.84735,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 5.91588,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 26.2281,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 8.23645,
             "unit": "8ms",
             "range": "±0%",
             "extra": "luau-analyze"

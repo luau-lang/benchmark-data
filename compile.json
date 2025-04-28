@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1745616493995,
+  "lastUpdate": 1745864677187,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-compile": [
@@ -25676,6 +25676,100 @@
           {
             "name": "regex-O1",
             "value": 1.79769,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.30286,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 10.6199,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-t1-codegen",
+            "value": 10.6359,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "61795485+vrn-sn@users.noreply.github.com",
+            "name": "Varun Saini",
+            "username": "vrn-sn"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "d9aa88e772a7a460272e3efc79f029b64ac18022",
+          "message": "Fix crash when `require` is called from root VM stack (#1788)\n\nCopied from #1785:\n> If require is called from the root interpreter stack (e.g. using C\nAPI) then lua_getinfo call will not succeed, leaving garbage in\nlua_Debug ar struct.\n> Accessing later ar.source as null-terminated string is unsafe and can\ncause a crash.\n> \n> This PR adds a check to ensure that lua_getinfo call is successful.\n\nCo-authored-by: Alex Orlenko <zxteam@protonmail.com>",
+          "timestamp": "2025-04-28T11:15:43-07:00",
+          "tree_id": "5313f5834b5c7cb00cf8f581a3c2d500066cdcda",
+          "url": "https://github.com/luau-lang/luau/commit/d9aa88e772a7a460272e3efc79f029b64ac18022"
+        },
+        "date": 1745864677176,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.668711,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.734514,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.881579,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 3.44253,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-t1-codegen",
+            "value": 3.45341,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.62213,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.79768,
             "unit": "1ms",
             "range": "±0%",
             "extra": "luau-compile"
