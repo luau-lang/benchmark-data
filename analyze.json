@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1746220167311,
+  "lastUpdate": 1746475049536,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-analyze": [
@@ -19442,6 +19442,72 @@
           {
             "name": "map-dcr",
             "value": 26.1799,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 8.2663,
+            "unit": "8ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 10.7061,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 1266.63,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "zxteam@protonmail.com",
+            "name": "Alex Orlenko",
+            "username": "khvzak"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "42281aa8deb79b4a3bb4883247937499f3576b2f",
+          "message": "(regression) Fix `lua_requireinternal` to use variable number of stack args (#1804)\n\nSince 0.672 the `lua_proxyrequire` function is broken and attempt to use\nit fails with the error message `module must return a single value`.\n\nThis function takes two stack arguments (`lua_require` takes one), but\n`lua_requireinternal` expects only one extra argument and pushes another\none (`cacheKey`).\nAs a result, the continuation function `lua_requirecont` (that has\nhardcoded number of stack args = 2) thinks that module returned more\nthan one result and throw an exception.\n\nThe fix instead of hardcoding number of arguments in the continuation\nfunction, pass this number in a first stack argument.\nThis will allow both `lua_require` and `lua_proxyrequire` work at the\nsame time.",
+          "timestamp": "2025-05-05T12:48:28-07:00",
+          "tree_id": "b5b9073d27fdb3dd530aa0a5761c8d9d7bc76ef5",
+          "url": "https://github.com/luau-lang/luau/commit/42281aa8deb79b4a3bb4883247937499f3576b2f"
+        },
+        "date": 1746475049530,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 4.84469,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 5.91269,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 26.1784,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"
