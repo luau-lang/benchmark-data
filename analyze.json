@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1746475049536,
+  "lastUpdate": 1746834315453,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-analyze": [
@@ -19529,6 +19529,72 @@
           {
             "name": "regex-dcr",
             "value": 1266.63,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "afriesen@roblox.com",
+            "name": "Andy Friesen",
+            "username": "andyfriesen"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "3eb0c1367889e37fb0b3f0ab6d21b6a8cce10eae",
+          "message": "Sync to upstream/release/673 (#1812)\n\n# General Changes\n\n* Remove a `static_assert` that prevented Luau from building on 32-bit\ntargets.\n* Fix `proxyrequire` (see https://github.com/luau-lang/luau/pull/1804)\n* Replace contents API with new `loadname` API in Luau.Require\n* Store the positions of `:` symbols in the CST.\n* Fix a minor bug in the new incremental autocomplete engine: Properly\nsuggest `else` and `elseif` if the cursor is currently within an `if`\nblock.\n\n# New Type Solver\n\n* Allow generics to be substituted for negation types when performing\nsubtype tests\n* Crash fixes\n* Surface subtyping errors more consistently.\n* Avoid creating double-negation types (like `~~(false?)`) when\ngenerating constraints.\n\n# Internal Contributors\n\nCo-authored-by: Andy Friesen <afriesen@roblox.com>\nCo-authored-by: Ariel Weiss <aaronweiss@roblox.com>\nCo-authored-by: Aviral Goel <agoel@roblox.com>\nCo-authored-by: Hunter Goldstein <hgoldstein@roblox.com>\nCo-authored-by: Sora Kanosue <skanosue@roblox.com>\nCo-authored-by: Talha Pathan <tpathan@roblox.com>\nCo-authored-by: Varun Saini <vsaini@roblox.com>\nCo-authored-by: Vighnesh Vijay <vvijay@roblox.com>\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com>\n\n---------\n\nCo-authored-by: Hunter Goldstein <hgoldstein@roblox.com>\nCo-authored-by: Varun Saini <61795485+vrn-sn@users.noreply.github.com>\nCo-authored-by: Alexander Youngblood <ayoungblood@roblox.com>\nCo-authored-by: Menarul Alam <malam@roblox.com>\nCo-authored-by: Aviral Goel <agoel@roblox.com>\nCo-authored-by: Vighnesh <vvijay@roblox.com>\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com>\nCo-authored-by: Ariel Weiss <aaronweiss@roblox.com>",
+          "timestamp": "2025-05-09T16:35:47-07:00",
+          "tree_id": "0a88e642c91fbdb5cabd04233018433feafbb3bf",
+          "url": "https://github.com/luau-lang/luau/commit/3eb0c1367889e37fb0b3f0ab6d21b6a8cce10eae"
+        },
+        "date": 1746834315447,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 4.8486,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 5.9165,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 26.2541,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 8.23851,
+            "unit": "8ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 10.674,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 1412,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"
