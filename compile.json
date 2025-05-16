@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1746834315593,
+  "lastUpdate": 1747424908026,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-compile": [
@@ -26073,6 +26073,100 @@
           {
             "name": "regex-O2-t1-codegen",
             "value": 10.6435,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "hgoldstein@roblox.com",
+            "name": "Hunter Goldstein",
+            "username": "hgoldstein"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "92cce5776c6ce556271aafbd2b8fbc6aba032289",
+          "message": "Sync to upstream/release/674 (#1832)\n\n# General\n\n* Expose an optional `get_alias` API as an alternative to `get_config`\nin Luau.Require and Luau.RequireNavigator.\n* Improve the Luau CLI's virtual filesystem implementation to fix bugs\nrelated to `init.luau`. Fixes\nhttps://github.com/luau-lang/luau/issues/1816\n\n\n# New Type Solver\n\n* Avoid double reporting errors when erroneous arguments are provided to\ntype functions.\n* Fix some instances of unresovable cyclic type functions in loops by\nonly considering the first loop cycles. This results in some type\ninference inaccuracies when the type of a variable in loop through\nmultiple iterations. Fixes\nhttps://github.com/luau-lang/luau/issues/1413.\n* Better generalize free types that have meaningful lower and upper\nbounds, especially for table indexers.\n* Report more specific errors when assigning or returning table literal\ntypes, instead of citing the *entire* table type.\n* Inference for functions with generic type packs is greatly improved.\n* Fix some internal compiler exceptions when using type-stating\nfunctions like `table.freeze` in `if _ then _ else _` expressions and\nshort circuiting binary operations.\n* More consistently simplify unions of primitive types, especially in\narray-like and dictionary-like tables.\n* Fix a crash when type checking an erroneous type alias containing\n`typeof` with a type assertion expression, as in:\n  ```\n  type MyTable = {}\n  -- This will error at type checking time as it's a duplicate\n  type MyTable = typeof(setmetatable(SomeTable :: {}, SomeMetaTable));\n  ```\n* Fix a crash when inferring the type of an index expression where the\nindexee is invalid (e.g. `nil`).\n\n# Runtime\n* Avoid throwing an exception from `luau_load` if we run out of memory.\n* Type functions are no longer compiled and included in bytecode. Fixes\n#1817.\n* Fix some instances of Luau C API functions reading invalid debug\ninformation (generally when the first or last instruction of a block was\nbeing inspected). Fixes #1369.\n* Avoid potential signed integer overflow when doing bounds checks on\ntables.\n* Support 16 byte aligned userdata objects when system allocation\nalignment is also 16 bytes.\n* Fix memory leaks in `Luau.Require` when using VM build with no\nexceptions. Fixes #1827.\n\n---------\n\nCo-authored-by: Andy Friesen <afriesen@roblox.com>\nCo-authored-by: Ariel Weiss <aaronweiss@roblox.com>\nCo-authored-by: Hunter Goldstein <hgoldstein@roblox.com>\nCo-authored-by: James McNellis <jmcnellis@roblox.com>\nCo-authored-by: Sora Kanosue <skanosue@roblox.com>\nCo-authored-by: Talha Pathan <tpathan@roblox.com>\nCo-authored-by: Varun Saini <vsaini@roblox.com>\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com>",
+          "timestamp": "2025-05-16T12:39:58-07:00",
+          "tree_id": "386c59665087081db7672a2e86e5290105a31629",
+          "url": "https://github.com/luau-lang/luau/commit/92cce5776c6ce556271aafbd2b8fbc6aba032289"
+        },
+        "date": 1747424908019,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.666387,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.732522,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.880432,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 3.44123,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-t1-codegen",
+            "value": 3.45309,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.62303,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.80004,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.3124,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 10.6298,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-t1-codegen",
+            "value": 10.6449,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-compile"
