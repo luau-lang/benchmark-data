@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1748629575707,
+  "lastUpdate": 1748971428245,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-compile": [
@@ -26341,6 +26341,100 @@
           {
             "name": "regex-O2",
             "value": 2.31127,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 10.6287,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-t1-codegen",
+            "value": 10.6438,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "vinnyhorgan@gmail.com",
+            "name": "Daniel Vincent Horgan",
+            "username": "vinnyhorgan"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "7a27c38147fe632ba0e72f6bc2e7b77ba13c95da",
+          "message": "Add missing <memory> include in Web.cpp (#1833)\n\n`Web.cpp` is missing a `<memory>` include.",
+          "timestamp": "2025-06-03T10:15:07-07:00",
+          "tree_id": "c48b6c4ca7352aafa7f9ac5f87b9409c09825074",
+          "url": "https://github.com/luau-lang/luau/commit/7a27c38147fe632ba0e72f6bc2e7b77ba13c95da"
+        },
+        "date": 1748971428238,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.666625,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.732694,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.881061,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 3.44185,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-t1-codegen",
+            "value": 3.45371,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.62477,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.80098,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.31128,
             "unit": "2ms",
             "range": "±0%",
             "extra": "luau-compile"
