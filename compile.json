@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1748971428245,
+  "lastUpdate": 1749236449163,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-compile": [
@@ -26449,6 +26449,100 @@
           {
             "name": "regex-O2-t1-codegen",
             "value": 10.6438,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "75688451+vegorov-rbx@users.noreply.github.com",
+            "name": "vegorov-rbx",
+            "username": "vegorov-rbx"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "68cdcc4a3a5f3ed23186c4f7f6b8a5aacf835bee",
+          "message": "Sync to upstream/release/677 (#1872)\n\n# What's Changed?\n\nThis week comes with many improvements to the new type solver and an important fix to the garbage collection to make it more robust in memory constrained scenarios.\n\n# Runtime\n- Garbage collection will no longer run out of memory itself, which could have happened when resizing arrays to a smaller size\n\n# New Type Solver\n- Type refinements on external types should now work and should no longer normalize the type into `never`\n- Improved error reporting when `string.format` is used with a dynamic format string\n- Updated type signature of `getmetatable` library function to use the corresponding type function and produce better type inference\n- Restored a type mismatch error when converting function types with different number of generic parameters, like `() -> ()` into `<T>() -> ()`\n- Types resulting from compound assignments have been simplified, reducing cyclic type introduction and inference failures\n- Fixed function generic types leaking into tables during bidirectional type inference (Fixes #1808 and #1821 )\n- Stability and performance improvements (Fixes #1860 )\n\n# Internal Contributors\n\nCo-authored-by: Andy Friesen <afriesen@roblox.com>\nCo-authored-by: Ariel Weiss <aaronweiss@roblox.com>\nCo-authored-by: Hunter Goldstein <hgoldstein@roblox.com>\nCo-authored-by: Sora Kanosue <skanosue@roblox.com>\nCo-authored-by: Varun Saini <vsaini@roblox.com>\nCo-authored-by: Vighnesh Vijay <vvijay@roblox.com>\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com>",
+          "timestamp": "2025-06-06T11:52:47-07:00",
+          "tree_id": "a3c49bbcc161532abdca382a79f029db149be681",
+          "url": "https://github.com/luau-lang/luau/commit/68cdcc4a3a5f3ed23186c4f7f6b8a5aacf835bee"
+        },
+        "date": 1749236449157,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.666709,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.732774,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.881668,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 3.44246,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-t1-codegen",
+            "value": 3.45433,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.62485,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.80108,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.31332,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 10.6308,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-t1-codegen",
+            "value": 10.6459,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-compile"
