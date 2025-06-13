@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1749236449021,
+  "lastUpdate": 1749833102209,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-analyze": [
@@ -19925,6 +19925,72 @@
           {
             "name": "regex-dcr",
             "value": 348.659,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "afriesen@roblox.com",
+            "name": "Andy Friesen",
+            "username": "andyfriesen"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "713ee2ff8b378441cde556dcea6f85054ffcf995",
+          "message": "Sync to upstream/release/678 (#1878)\n\n# What's Changed?\n\nWe've been hard at work fixing bugs in the new type solver and getting\nit ready to go!\n\n## Native Codegen\n\n* Specialized Luau Codegen instruction for fetching an import.\nAs a reminder, an import is an expression like `global.thing` and covers\nstuff like libraries without fastcalls `coroutine.resume`) and atomic\nextern libraries.\n\n## New Type Solver\n\n* Fix an issue that prevented eager generalization from working properly\nwith OO styled code.\n* Avoid copying uninitialized memory in Luau attribute parsing\n* Improve type inference of unsealed tables.\n    * This fixes https://github.com/luau-lang/luau/issues/1838\n    * and https://github.com/luau-lang/luau/issues/1859\n* Infer potential singleton string keys in autocomplete when the\nexpected index type is a union type.\n* Avoid creating cyclic types when reducing types of the form `t1 where\nt1 = refine<T, t1, Y>`\n* The type cloner now does the same thing for the new and old solvers.\n* Properly infer polarity (aka variance) for divergent table properties.\n(ie tables whose read type and write type are not the same)\n* Crash fixes.\n\n---------\n\nCo-authored-by: Hunter Goldstein <hgoldstein@roblox.com>\nCo-authored-by: Varun Saini <61795485+vrn-sn@users.noreply.github.com>\nCo-authored-by: Alexander Youngblood <ayoungblood@roblox.com>\nCo-authored-by: Menarul Alam <malam@roblox.com>\nCo-authored-by: Aviral Goel <agoel@roblox.com>\nCo-authored-by: Vighnesh <vvijay@roblox.com>\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com>\nCo-authored-by: Ariel Weiss <aaronweiss@roblox.com>",
+          "timestamp": "2025-06-13T09:36:35-07:00",
+          "tree_id": "54c61722a2002ea2bb630d33654c104069da3b09",
+          "url": "https://github.com/luau-lang/luau/commit/713ee2ff8b378441cde556dcea6f85054ffcf995"
+        },
+        "date": 1749833102203,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 4.8601,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 5.94823,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 46.4543,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 8.11335,
+            "unit": "8ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 10.5488,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 386.855,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"
