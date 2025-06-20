@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1749833102209,
+  "lastUpdate": 1750460631910,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-analyze": [
@@ -19991,6 +19991,72 @@
           {
             "name": "regex-dcr",
             "value": 386.855,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "35981995+menarulalam@users.noreply.github.com",
+            "name": "menarulalam",
+            "username": "menarulalam"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "8fe64db609ccbffb0abb7507c7ecef8c88327ef3",
+          "message": "Sync to upstream/release/679 (#1884)\n\n# What's Changed?\n\nWe've been hard at work fixing bugs and introducing new features!\n\n## VM \n* Include constant-folding information in Luau cost model for inlining\nand loop unrolling\n   * ~1% improvement in compile times\n\n## New Type Solver\n* `Luau::shallowClone`'s last argument, whether to clone persistent\n(builtin) types, is now non-optional.\n* Refinements on properties of tables are now computed with a `read`\ntable property. This resolves some issues around refining table\nproperies and then trying to set them. Fixes #1344. Fixes #1651.\n```\nif foo.bar then\n    -- Prior to this release, this would be `typeof(foo) & { bar: ~(false?) }\n    -- Now, this is `typeof(foo) & { read bar: ~(false?) }\nend\n```\n* The type function `keyof` should respect the empty string as a\nproperty, as in:\n```\n-- equivalent to type Foo =\"\"\ntype Foo = keyof<{ [\"\"]: number }>\n```\n* Descend into literals to report subtyping errors for function calls:\nthis both improves bidirectional inference and makes errors more\nspecific. Before, the error reporting for a table with incorrect members\npassed to a function would cite the entire table, but now it only cites\nthe members that are incorrectly typed.\n* Fixes a case where intersecting two tables without any common\nproperties would create `never`, instead of a table with both of their\nproperties.\n\n# Internal Contributors\nCo-authored-by: Ariel Weiss <aaronweiss@roblox.com>\nCo-authored-by: Hunter Goldstein <hgoldstein@roblox.com>\nCo-authored-by: James McNellis <jmcnellis@roblox.com>\nCo-authored-by: Sora Kanosue <skanosue@roblox.com>\nCo-authored-by: Talha Pathan <tpathan@roblox.com>\nCo-authored-by: Vighnesh Vijay <vvijay@roblox.com>\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com>\n\n---------\n\nCo-authored-by: Hunter Goldstein <hgoldstein@roblox.com>\nCo-authored-by: Varun Saini <61795485+vrn-sn@users.noreply.github.com>\nCo-authored-by: Alexander Youngblood <ayoungblood@roblox.com>\nCo-authored-by: Aviral Goel <agoel@roblox.com>\nCo-authored-by: Vighnesh <vvijay@roblox.com>\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com>\nCo-authored-by: Ariel Weiss <aaronweiss@roblox.com>\nCo-authored-by: Andy Friesen <afriesen@roblox.com>",
+          "timestamp": "2025-06-20T15:55:42-07:00",
+          "tree_id": "fd73665e690e1c3aacab15cf537d03a339303a90",
+          "url": "https://github.com/luau-lang/luau/commit/8fe64db609ccbffb0abb7507c7ecef8c88327ef3"
+        },
+        "date": 1750460631904,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 4.85361,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 5.94792,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 49.7033,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 8.11444,
+            "unit": "8ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 10.549,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 392.019,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"
