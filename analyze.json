@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1750460631910,
+  "lastUpdate": 1751055806083,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-analyze": [
@@ -20057,6 +20057,72 @@
           {
             "name": "regex-dcr",
             "value": 392.019,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "vighneshv@proton.me",
+            "name": "Vighnesh-V",
+            "username": "Vighnesh-V"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "e190754565fd9aae95d81007902fe184193b0689",
+          "message": "Sync to upstream/release/680 (#1894)\n\n# What's Changed?\n\nThis week includes many changes to bring the behaviours of the Old and\nNew Luau Type Solver more in line.\n* The old solver now stringifies tables identically to the new solver.\nSealed tables are stringified as `{ ... }` and unsealed tables are\nrepresented by `{| ... |}`, regardless of your choice of solver.\n\n\n## New Type Solver\n\n* Miscellaneous fixes to make the Luau Frontend able to dynamically\ntoggle which solve is used.\n* Small fixes to reduce instances of nondeterminism of the New Type\nSolver.\n* Issue an error when a function that has multiple non-viable overloads\nis used.\n* Subtyping now returns more information about the generics for type\ninference to consume.\n* Stop stuck type-functions from blocking type inference. This should\nlead to fewer instances of 'type inference failed to complete'.\n\n## Fragment Autocomplete\n* Fixed a bug where incremental autocomplete wouldn't be able to provide\nresults directly on a required module script.\n`require(script.Module).{request completions here}` will now recommend\nthe properties returned by the required object.\n\n---\nCo-authored-by: Andy Friesen <afriesen@roblox.com>\nCo-authored-by: Hunter Goldstein <hgoldstein@roblox.com>\nCo-authored-by: Sora Kanosue <skanosue@roblox.com>\nCo-authored-by: Talha Pathan <tpathan@roblox.com>\nCo-authored-by: Vighnesh Vijay <vvijay@roblox.com>",
+          "timestamp": "2025-06-27T13:14:36-07:00",
+          "tree_id": "a7c4b60c2e4b28157240d5131404e361fb2d0341",
+          "url": "https://github.com/luau-lang/luau/commit/e190754565fd9aae95d81007902fe184193b0689"
+        },
+        "date": 1751055806073,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 4.85367,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 5.9482,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 49.6286,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 8.11358,
+            "unit": "8ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 10.5529,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 364.659,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"
