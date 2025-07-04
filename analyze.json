@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1751055806083,
+  "lastUpdate": 1751646884365,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-analyze": [
@@ -20123,6 +20123,72 @@
           {
             "name": "regex-dcr",
             "value": 364.659,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "vighneshv@proton.me",
+            "name": "Vighnesh-V",
+            "username": "Vighnesh-V"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "60cd88af329b2468f273c1ec4943ec6ec15b79e3",
+          "message": "Sync to upstream/release/681 (#1902)\n\n# What's Changed?\nShort week, so a slightly shorter release! This one has been focused on\nimproving polish in fragment autocomplete and the new solver.\n\n## New Type Solver\n* Fix a bug where we didn't infer self types correctly under\nbidirectional type inference.\n* Improve the memory consumption of the new solver by reducing the\nnumber of expensive allocations performed by `Substitution`.\n* The New non strict Mode shouldn't issue errors when we call checked\nfunctions with `never` values.\n* Extend the number of cases in which the new non strict mode can report\nunknown symbols.\n* Fix a bug where `and` and `or` expressions didn't correctly forward\ninformation computed by their operands. This should allow more programs\nusing these expressions to complete typechecking correctly.\n* Small performance improvements for `Generalization`\n\n## Fragment Autocomplete\n* Fragment autocomplete provides richer autofill information when typing\n`self.|`\n* Fragment autocomplete now uses refinement information computed in the\nnew solver to provide more accurate incremental completion.\n\n## Code Generation\n* Fix a bug where Codegen could sometimes try to execute a\nnon-executable page\n\n---\nCo-authored-by: Ariel Weiss <aaronweiss@roblox.com>\nCo-authored-by: Hunter Goldstein <hgoldstein@roblox.com>\nCo-authored-by: Vighnesh Vijay <vvijay@roblox.com>\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com>\n\n---------\n\nCo-authored-by: Hunter Goldstein <hgoldstein@roblox.com>\nCo-authored-by: Varun Saini <61795485+vrn-sn@users.noreply.github.com>\nCo-authored-by: Alexander Youngblood <ayoungblood@roblox.com>\nCo-authored-by: Menarul Alam <malam@roblox.com>\nCo-authored-by: Aviral Goel <agoel@roblox.com>\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com>\nCo-authored-by: Ariel Weiss <aaronweiss@roblox.com>\nCo-authored-by: Andy Friesen <afriesen@roblox.com>",
+          "timestamp": "2025-07-04T09:26:45-07:00",
+          "tree_id": "a58cbc425eba8812cf3af8d8cc30ccd0da4b7290",
+          "url": "https://github.com/luau-lang/luau/commit/60cd88af329b2468f273c1ec4943ec6ec15b79e3"
+        },
+        "date": 1751646884359,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 4.85391,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 5.9477,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 29.7563,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 8.11455,
+            "unit": "8ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 10.5533,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 319.061,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"
