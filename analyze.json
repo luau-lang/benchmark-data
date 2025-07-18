@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1752259500731,
+  "lastUpdate": 1752872048245,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-analyze": [
@@ -20255,6 +20255,72 @@
           {
             "name": "regex-dcr",
             "value": 337.927,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "61795485+vrn-sn@users.noreply.github.com",
+            "name": "Varun Saini",
+            "username": "vrn-sn"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "0ce993fe6cf9850a144eaa398f6c0e2dc2f955b1",
+          "message": "Sync to upstream/release/683 (#1921)\n\nAnother week, another release!\n\n## Analysis\n- Hide errors in all solver modes (not just strict mode) if the only\nerror is that type inference failed to complete.\n- Make various analysis components solver-agnostic (`setType`, `visit`,\n`Scope` methods).\n- Fix an issue where type inference may fail to complete when assigning\na table's member to the table itself.\n- Fix a bug when accessing a table member on a local after the local is\nassigned to in an if-else block, loop, or other similar language\nconstruct.\n  - Fixes #1914.\n- Fix type-checking of if-then-else expressions.\n  - Fixes #1815.\n\n---\n\nCo-authored-by: Hunter Goldstein <hgoldstein@roblox.com>\nCo-authored-by: Vighnesh Vijay <vvijay@roblox.com>\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com>",
+          "timestamp": "2025-07-18T13:46:08-07:00",
+          "tree_id": "badcf35f451bfff68c6c1dc6165ff7424a3a4582",
+          "url": "https://github.com/luau-lang/luau/commit/0ce993fe6cf9850a144eaa398f6c0e2dc2f955b1"
+        },
+        "date": 1752872048238,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 4.8568,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 5.95521,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 29.6186,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 8.11346,
+            "unit": "8ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 10.5502,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 289.773,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"
