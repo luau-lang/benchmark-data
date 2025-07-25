@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1753207262113,
+  "lastUpdate": 1753483320216,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-analyze": [
@@ -20387,6 +20387,72 @@
           {
             "name": "regex-dcr",
             "value": 289.782,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "ayoungblood@roblox.com",
+            "name": "ayoungbloodrbx",
+            "username": "ayoungbloodrbx"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "66202dc4ac15f39a6ce8f732e2be19b636ee2af1",
+          "message": "Sync to upstream/release/684 (#1930)\n\n## General\n- Support AstStatDeclareGlobal output as a source string (via\n@karl-police in #1889)\n- Luau heap dump correctly reports the size of a string, now including\noverhead for the string type\n- Prevent yields from Luau `xpcall` error handling function.\n \n## Analysis\n- Avoid exponential blowup when normalizing union of normalized free\nvariables.\n- Fix type pack-related bugs that caused infinite recursion when:\n  - A generic type pack was bound to itself during subtyping.\n- In type pack flattening, when that same generic type pack was now\nbeing bound another generic type pack which contained it.\n- Properly simplify `any & (*error-type* | string)` to `*error-type* |\n*error-type* | string` instead of hanging due to creating a huge union\ntype.\n\n---\n\nCo-authored-by: Andy Friesen <afriesen@roblox.com>\nCo-authored-by: Ariel Weiss <aaronweiss@roblox.com>\nCo-authored-by: Hunter Goldstein <hgoldstein@roblox.com>\nCo-authored-by: Sora Kanosue <skanosue@roblox.com>\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com>\n\n---------\n\nCo-authored-by: Hunter Goldstein <hgoldstein@roblox.com>\nCo-authored-by: Varun Saini <61795485+vrn-sn@users.noreply.github.com>\nCo-authored-by: Menarul Alam <malam@roblox.com>\nCo-authored-by: Aviral Goel <agoel@roblox.com>\nCo-authored-by: Vighnesh <vvijay@roblox.com>\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com>\nCo-authored-by: Ariel Weiss <aaronweiss@roblox.com>\nCo-authored-by: Andy Friesen <afriesen@roblox.com>",
+          "timestamp": "2025-07-25T15:33:42-07:00",
+          "tree_id": "1e03afbafb5938328d0f104c9492b6e86306845c",
+          "url": "https://github.com/luau-lang/luau/commit/66202dc4ac15f39a6ce8f732e2be19b636ee2af1"
+        },
+        "date": 1753483320210,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 5.2271,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 6.4762,
+            "unit": "6ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 32.0505,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 8.29547,
+            "unit": "8ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 10.9055,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 292.866,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"
