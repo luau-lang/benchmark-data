@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1753483320216,
+  "lastUpdate": 1753977751084,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-analyze": [
@@ -20453,6 +20453,72 @@
           {
             "name": "regex-dcr",
             "value": 292.866,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "open64cc@proton.me",
+            "name": "Amy Wysocka",
+            "username": "emosaker"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "eaab9c43639adba7b9c6cfd14bbb5f526b7b5c01",
+          "message": "Add missing documentation for FORGPREP_INEXT and FORGPREP_NEXT (#1933)\n\nAdded documentation for FORGPREP_INEXT and FORGPREP_NEXT regarding the D\nargument, which is used as the jump offset to the corresponding FORGLOOP\ninstruction.",
+          "timestamp": "2025-07-31T08:54:37-07:00",
+          "tree_id": "316e1482f52b58298adf8ad6729ed7a8eccf69c0",
+          "url": "https://github.com/luau-lang/luau/commit/eaab9c43639adba7b9c6cfd14bbb5f526b7b5c01"
+        },
+        "date": 1753977751078,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 5.22675,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 6.47621,
+            "unit": "6ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 32.0522,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 8.29549,
+            "unit": "8ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 10.9094,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 292.875,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"

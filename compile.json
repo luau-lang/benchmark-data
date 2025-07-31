@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1753483320372,
+  "lastUpdate": 1753977751219,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-compile": [
@@ -27274,6 +27274,100 @@
           {
             "name": "regex-O1",
             "value": 1.7964,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.33535,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 10.1232,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-t1-codegen",
+            "value": 10.2618,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "open64cc@proton.me",
+            "name": "Amy Wysocka",
+            "username": "emosaker"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "eaab9c43639adba7b9c6cfd14bbb5f526b7b5c01",
+          "message": "Add missing documentation for FORGPREP_INEXT and FORGPREP_NEXT (#1933)\n\nAdded documentation for FORGPREP_INEXT and FORGPREP_NEXT regarding the D\nargument, which is used as the jump offset to the corresponding FORGLOOP\ninstruction.",
+          "timestamp": "2025-07-31T08:54:37-07:00",
+          "tree_id": "316e1482f52b58298adf8ad6729ed7a8eccf69c0",
+          "url": "https://github.com/luau-lang/luau/commit/eaab9c43639adba7b9c6cfd14bbb5f526b7b5c01"
+        },
+        "date": 1753977751212,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.670898,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.736372,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.890875,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 3.37473,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-t1-codegen",
+            "value": 3.38646,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.62072,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.79641,
             "unit": "1ms",
             "range": "±0%",
             "extra": "luau-compile"
