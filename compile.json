@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1754085186903,
+  "lastUpdate": 1754673996854,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-compile": [
@@ -27483,6 +27483,100 @@
           {
             "name": "regex-O2-t1-codegen",
             "value": 10.2618,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "vvijay@roblox.com",
+            "name": "Vighnesh-V",
+            "username": "Vighnesh-V"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "8863bfc950d52e9e7b468354d353ca43623da4f6",
+          "message": "Sync to upstream/release/686 (#1948)\n\n## General\nThis week has been spent mostly on fixing bugs in incremental\nautocomplete as well as making the new Type Solver more stable.\n\n- Fixes a bug where registered \"require\" aliases were case-sensitive\ninstead of case-insensitive.\n### New Type Solver\n- Adjust literal sub typing logic to account for unreduced type\nfunctions\n- Implement a number of subtyping stack utilization improvements\n- Emit a single error if an internal type escapes a module's interface\n- Checked function errors in the New Non Strict warn about incorrect\nargument use with one-indexed positions, e.g. `argument #1 was used\nincorrectly` instead of `argument #0 was used incorrectly`.\n- Improvements to type function reduction that let us progress further\nwhile reducing\n- Augment the generalization system to not emit duplicate constraints.\n- Fix a bug where we didn't seal tables in modules that failed to\ncomplete typechecking.\n\n### Fragment Autocomplete\n- Provide richer autocomplete suggestions inside of for loops\n- Provide richer autocomplete suggestions inside of interpolated string\nexpressions\n- Improve the quality of error messages when typing out interpolated\nstrings.\n\n### Compiler\n- Fixes REX encoding of extended byte registers for the x86 assembly\ncode generation.\n- Fixes for table shape constant data encoding\n\n---\nCo-authored-by: Andy Friesen <afriesen@roblox.com>\nCo-authored-by: Ariel Weiss <aaronweiss@roblox.com>\nCo-authored-by: Hunter Goldstein <hgoldstein@roblox.com>\nCo-authored-by: Sora Kanosue <skanosue@roblox.com>\nCo-authored-by: Varun Saini <vsaini@roblox.com>\nCo-authored-by: Vighnesh Vijay <vvijay@roblox.com>\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com>",
+          "timestamp": "2025-08-08T10:18:16-07:00",
+          "tree_id": "499de07302ba221ab73167e4c437e9262218c738",
+          "url": "https://github.com/luau-lang/luau/commit/8863bfc950d52e9e7b468354d353ca43623da4f6"
+        },
+        "date": 1754673996847,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.670809,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.736347,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.893138,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 3.43431,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-t1-codegen",
+            "value": 3.44595,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.62077,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.79699,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.33642,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 10.253,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-t1-codegen",
+            "value": 10.3864,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-compile"
