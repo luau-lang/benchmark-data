@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1754673996717,
+  "lastUpdate": 1755284241821,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-analyze": [
@@ -20651,6 +20651,72 @@
           {
             "name": "regex-dcr",
             "value": 301.999,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "75688451+vegorov-rbx@users.noreply.github.com",
+            "name": "vegorov-rbx",
+            "username": "vegorov-rbx"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "55f3e0093843c2d3745c5041d2093172f0959bc1",
+          "message": "Sync to upstream/release/687 (#1954)\n\n## What's Changed?\n\nThis week we have an update with an implementation for one of the RFCs\nwe had approved before, an improvement of the new type solver and a\nsmall Lua 5.1 C API compatibility improvement.\n\n* `@deprecated` attribute can now have a custom suggestion for a\nreplacement and a reason message as described in [deprecated attribute\nparameters\nRFC](https://rfcs.luau.org/syntax-attribute-functions-deprecated.html)\n\nFor example:\n```luau\n@[deprecated {reason = \"foo suffers from performance issues\", use = \"bar\"}]\nlocal function foo()\n    ...\nend\n\n-- Function 'foo' is deprecated, use 'bar' instead. foo suffers from performance issues\nfoo()\n```\n\n* `lua_cpcall` C API function has been restored both for compatibility\nwith Lua 5.1 and as a safe way to enter protected call environment to\nwork with Luau C API functions that may error\n\nInstead of\n```\nif (!lua_checkstack(L, 2))\n    return -1;\nlua_pushcfunction(L, test, nullptr);\nlua_pushlightuserdata(L, context);\nint status = lua_pcall(L, 1, 0, 0);\n```\nyou can simply do \n```\nint status = lua_cpcall(L, test, context);\n```\n\n* In Luau CLI, required module return values can now have any type\n\n## New Type Solver\n- Additional improvements on type refinements used with external types\nshould fix some reported false positive errors where types refined to\n`never`\n- Fixed an issue in recursive refinement types in a form of `t1 where t1\n= refine<t1, _>` getting 'stuck'\n- Fixed an issue in subtyping of generic functions, it is now possible\nto assign `<T>(T, (T) -> T) -> T` to `(number, <X>(X) -> X) -> number`\n- Fixed an ICE caused by recursive types (Fixes #1686)\n- Added additional iteration and recursion limits to stop the type\nsolver before system resources are used up\n\n## Internal Contributors\n\nCo-authored-by: Andy Friesen <afriesen@roblox.com>\nCo-authored-by: Annie Tang <annietang@roblox.com>\nCo-authored-by: Ariel Weiss <aaronweiss@roblox.com>\nCo-authored-by: Hunter Goldstein <hgoldstein@roblox.com>\nCo-authored-by: Ilya Rezvov <irezvov@roblox.com>\nCo-authored-by: Sora Kanosue <skanosue@roblox.com>\nCo-authored-by: Vighnesh Vijay <vvijay@roblox.com>\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com>",
+          "timestamp": "2025-08-15T11:48:43-07:00",
+          "tree_id": "d2640cc23137b6a5faf91958648492cd49327972",
+          "url": "https://github.com/luau-lang/luau/commit/55f3e0093843c2d3745c5041d2093172f0959bc1"
+        },
+        "date": 1755284241815,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 5.26836,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 6.51706,
+            "unit": "6ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 36.1673,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 8.43743,
+            "unit": "8ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 11.0595,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 242.473,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"
