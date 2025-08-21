@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1755284241821,
+  "lastUpdate": 1755784826544,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-analyze": [
@@ -20710,6 +20710,72 @@
           {
             "name": "regex-strict",
             "value": 11.0595,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 242.473,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "80861876+ffrostfall@users.noreply.github.com",
+            "name": "ffrostfall",
+            "username": "ffrostfall"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "31725a65216635400130cc51a971c98e3f37c9b7",
+          "message": "Fix the fuzzer being built even if LUAU_BUILD_TESTS is off (#1830)\n\nThis PR fixes the fuzzer always being built even when LUAU_BUILD_TESTS\nis off. This is done by moving the `include_subdirectory` for the fuzzer\ninside of the if block under LUAU_BUILD_TESTS.",
+          "timestamp": "2025-08-21T06:51:52-07:00",
+          "tree_id": "7b54503c55cc72e926fb468f032392d8ed13d73f",
+          "url": "https://github.com/luau-lang/luau/commit/31725a65216635400130cc51a971c98e3f37c9b7"
+        },
+        "date": 1755784826538,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 5.26836,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 6.51698,
+            "unit": "6ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 36.1673,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 8.43744,
+            "unit": "8ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 11.0596,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"

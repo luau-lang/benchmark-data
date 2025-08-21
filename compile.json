@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1755284241961,
+  "lastUpdate": 1755784826683,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-compile": [
@@ -27657,6 +27657,100 @@
           {
             "name": "regex-O2",
             "value": 2.33977,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 10.2539,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-t1-codegen",
+            "value": 10.3873,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "80861876+ffrostfall@users.noreply.github.com",
+            "name": "ffrostfall",
+            "username": "ffrostfall"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "31725a65216635400130cc51a971c98e3f37c9b7",
+          "message": "Fix the fuzzer being built even if LUAU_BUILD_TESTS is off (#1830)\n\nThis PR fixes the fuzzer always being built even when LUAU_BUILD_TESTS\nis off. This is done by moving the `include_subdirectory` for the fuzzer\ninside of the if block under LUAU_BUILD_TESTS.",
+          "timestamp": "2025-08-21T06:51:52-07:00",
+          "tree_id": "7b54503c55cc72e926fb468f032392d8ed13d73f",
+          "url": "https://github.com/luau-lang/luau/commit/31725a65216635400130cc51a971c98e3f37c9b7"
+        },
+        "date": 1755784826675,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.673917,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.739383,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.895307,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 3.43578,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-t1-codegen",
+            "value": 3.44742,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.6241,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.79975,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.33976,
             "unit": "2ms",
             "range": "±0%",
             "extra": "luau-compile"
