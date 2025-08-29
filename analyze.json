@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1755902090123,
+  "lastUpdate": 1756498440078,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-analyze": [
@@ -20849,6 +20849,72 @@
           {
             "name": "regex-dcr",
             "value": 244.865,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "afriesen@roblox.com",
+            "name": "Andy Friesen",
+            "username": "andyfriesen"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "5189ad927ecae483fc3d26641fc21dc5992ae008",
+          "message": "Sync to upstream/release/689 (#1981)\n\n# General Improvements\n\n* Fix a crash that could occur when the `deprecated` attribute is used\nin a syntactically incorrect way.\n* Improve stack utilization in the parser. This should make it harder\nfor deeply nested constructs to exhaust the C stack.\n* Fixed the `xpcall` continuation to handle errors handling the same way\nas main execution path.\n* The fuzzer now enables all Luau flags..\n* The fuzzer will now add attributes and create table literal\nexpressions.\n* The type of `rawget` is now `<K, V>(tab: {[K]: V}, k: K) -> V?` to\nreflect the fact that it returns `nil` when the key is not present.\n* Implement native codegen lowering for `vector.lerp`\n\n# Autocomplete\n\n* Autocomplete will also now suggest hot comments like `--!strict` and\n`--!optimize`\n* Incremental autocomplete had a bug where it wasn't selecting the\ncorrect refinement of the autocomplete subject. This is now fixed.\n\n# New Solver\n\n* Fix an incorrect refinement that caused autocomplete to fail on\nstatements of the following form: `if #some_local.`\n* Improve the error feedback when a type function is not passed required\narguments. (ie no `<>` afterward at all)\n* Improvements to bidirectional table inference\n\n## Internal Contributors\n\nCo-authored-by: Andy Friesen <afriesen@roblox.com>\nCo-authored-by: Annie Tang <annietang@roblox.com>\nCo-authored-by: Hunter Goldstein <hgoldstein@roblox.com>\nCo-authored-by: Ilya Rezvov <irezvov@roblox.com>\nCo-authored-by: Sora Kanosue <skanosue@roblox.com>\nCo-authored-by: Varun Saini <vsaini@roblox.com>\nCo-authored-by: Vighnesh Vijay <vvijay@roblox.com>\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com>\n\n---------\n\nCo-authored-by: Hunter Goldstein <hgoldstein@roblox.com>\nCo-authored-by: Varun Saini <61795485+vrn-sn@users.noreply.github.com>\nCo-authored-by: Alexander Youngblood <ayoungblood@roblox.com>\nCo-authored-by: Menarul Alam <malam@roblox.com>\nCo-authored-by: Aviral Goel <agoel@roblox.com>\nCo-authored-by: Vighnesh <vvijay@roblox.com>\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com>\nCo-authored-by: Ariel Weiss <aaronweiss@roblox.com>",
+          "timestamp": "2025-08-29T13:05:44-07:00",
+          "tree_id": "69a24b91d6283ababc77c9993b5cb2e7305a4d57",
+          "url": "https://github.com/luau-lang/luau/commit/5189ad927ecae483fc3d26641fc21dc5992ae008"
+        },
+        "date": 1756498440072,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 5.27834,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 6.53346,
+            "unit": "6ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 36,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 8.37537,
+            "unit": "8ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 11.0167,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 233.545,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"
