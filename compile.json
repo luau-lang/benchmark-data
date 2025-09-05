@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1757098517350,
+  "lastUpdate": 1757105127281,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-compile": [
@@ -28012,6 +28012,100 @@
           {
             "name": "map-O2-t1-codegen",
             "value": 3.45302,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.6259,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.80133,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.34229,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 10.285,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-t1-codegen",
+            "value": 10.3775,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "85714123+jackdotink@users.noreply.github.com",
+            "name": "Jack",
+            "username": "jackdotink"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "5059095fec64b658ea9f7c5fae61cc770fe0d9af",
+          "message": "Allow files to return strings and enforce a single return value in the REPL's require implementation (#1967)\n\nThis PR changes the Luau CLI to allow string values to be returned from\nrequired files and to error whenever a file returns no values or more\nthan one value.",
+          "timestamp": "2025-09-05T13:37:22-07:00",
+          "tree_id": "7ace734d39e889c22273b2f258868c6eb8ff65e3",
+          "url": "https://github.com/luau-lang/luau/commit/5059095fec64b658ea9f7c5fae61cc770fe0d9af"
+        },
+        "date": 1757105127274,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.675896,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.741359,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.895822,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 3.44192,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-t1-codegen",
+            "value": 3.45301,
             "unit": "3ms",
             "range": "±0%",
             "extra": "luau-compile"
