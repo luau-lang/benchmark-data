@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1756498439928,
+  "lastUpdate": 1757098517057,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "callgrind gcc": [
@@ -81801,6 +81801,268 @@
           {
             "name": "tictactoe",
             "value": 133.969,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "trig",
+            "value": 24.864,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "vector-math",
+            "value": 10.89,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "voxelgen",
+            "value": 54.139,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "hgoldstein@roblox.com",
+            "name": "Hunter Goldstein",
+            "username": "hgoldstein"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "fb63edcceadafc7144d3de7a6ccb0fee83978cf0",
+          "message": "Sync to upstream/release/690 (#1992)\n\n# New Type Solver\n* Improve the error message for an uninstantiated type alias, as in:\n```luau\ntype Packed<T...> = (T...) -> T...\nlocal a: Packed -- Now has a single, specific, error\n```\n* Improve refinements of extern types against table types, ensuring the\nextern part is dropped less often, as in:\n```luau\nlocal function update(foo: Instance)\n    assert(foo.Name == \"bubbles\")\n    -- Previously might have been `{ read Name: \"bubbles\" }`, \n    -- will now be `Instance & { read Name: \"bubbles\" }`\n    return foo \nend\n```\n* Resolve an internal complier exception when attempting to use `typeof`\ninside the generic type default of an alias. Fixes #1462.\n* No longer throw an internal compiler exception for exceptionally large\nASTs, though a `CodeTooComplex` error will still be raised.\n* Broadly rework generic pack subtyping to allow code like the following\nto type check without errors:\n```luau\nfunction f(foo: (number) -> number): () end\ntype T = <A...>(A...) -> number\nlocal t: T\n-- OK, as a function that takes some generic pack of arguments can receive a `number` as well.\nf(t)\n```\n* Report an error when a type pack is provided to a generic alias that\ncan receive a type _and_ a type pack, as in:\n```luau\ntype Y<T = string, U... = ...string> = { a: (T) -> U... }\n-- Now errors as you must provide a type before the pack.\nlocal a: Y<...number>\n```\n* Fix an instance of generics leaking when returning a function from\nanother function with explicitly defined generics. Fixes #1971.\n* Cache `HasPropConstraint`s such that for every pair of subject type\nand desired property, we only emit a single constraint and blocked type;\nthis incidentally fixes some bugs around inferring the types of\nproperties on `self`.\n* Table types associated with table literals are now tracked specially\nto make type checking more permissive, such as in:\n```luau\ntype Foo = { name: string?, flag: boolean? }\nlocal arr: {Foo} = {}\nlocal function foo(arg: {name: string}?)\n    local name = if arg and arg.name then arg.name else nil\n    -- Previously would error as bidirectional inference would not\n    -- kick in as often.\n    table.insert(arr, {\n        name = name or \"\",\n        flag = name ~= nil and name ~= \"\",\n    })\nend\n```\n\n# Native Codegen\n* Lowering to arm64 for some local heavy functions will now succeed\nwhereas prior they failed due to running out of registers for live\nvalues.\n\n--- \nCo-authored-by: Andy Friesen <afriesen@roblox.com>\nCo-authored-by: Annie Tang <annietang@roblox.com>\nCo-authored-by: Hunter Goldstein <hgoldstein@roblox.com>\nCo-authored-by: Sora Kanosue <skanosue@roblox.com>\nCo-authored-by: Vighnesh Vijay <vvijay@roblox.com>\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com>",
+          "timestamp": "2025-09-05T11:47:07-07:00",
+          "tree_id": "3b3fc5cfbcea2912ea3b112b6970d8370744dbb8",
+          "url": "https://github.com/luau-lang/luau/commit/fb63edcceadafc7144d3de7a6ccb0fee83978cf0"
+        },
+        "date": 1757098517038,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "base64",
+            "value": 23.07,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "chess",
+            "value": 82.572,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "life",
+            "value": 89.766,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "matrixmult",
+            "value": 24.643,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "mesh-normal-scalar",
+            "value": 32.416,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "mesh-normal-vector",
+            "value": 16.458,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "pcmmix",
+            "value": 10.26,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "qsort",
+            "value": 77.642,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "sha256",
+            "value": 26.243,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "ack",
+            "value": 65.924,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "binary-trees",
+            "value": 30.132,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "fannkuchen-redux",
+            "value": 12.877,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "fixpoint-fact",
+            "value": 60.74,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "heapsort",
+            "value": 22.219,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "mandel",
+            "value": 64.529,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "n-body",
+            "value": 37.783,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "qt",
+            "value": 61.018,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "queen",
+            "value": 1.971,
+            "unit": "1ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "scimark",
+            "value": 89.666,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "spectral-norm",
+            "value": 12.429,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "sieve",
+            "value": 105.724,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "3d-cube",
+            "value": 8.661,
+            "unit": "8ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "3d-morph",
+            "value": 10.316,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "3d-raytrace",
+            "value": 10.328,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "controlflow-recursive",
+            "value": 5.591,
+            "unit": "5ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "crypto-aes",
+            "value": 14.728,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "fannkuch",
+            "value": 26.461,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "math-cordic",
+            "value": 16.685,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "math-partial-sums",
+            "value": 5.04,
+            "unit": "5ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "n-body-oop",
+            "value": 56.268,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "tictactoe",
+            "value": 133.968,
             "unit": "ms",
             "range": "±0.000%",
             "extra": "luau-gcc"
