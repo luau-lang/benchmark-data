@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1757105127281,
+  "lastUpdate": 1757968023692,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-compile": [
@@ -28141,6 +28141,100 @@
           {
             "name": "regex-O2-t1-codegen",
             "value": 10.3775,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "35981995+menarulalam@users.noreply.github.com",
+            "name": "Menarul Alam",
+            "username": "menarulalam"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "ae59a0e33c537080c38811df030a733fd5a2cbd7",
+          "message": "Sync to upstream/release/691 (#1998)\n\n# New Type Solver\n* Fixed https://github.com/luau-lang/luau/issues/1983 by adding\nadditional context to permit some expressions otherwise not allowed\n* We now skip issuing CheckedFunctionWarnings on use of unreduced type\nfunctions\n* Fix gcc compile error\n* Handle expressions `a == b` and `a ~= b` more efficiently  \n* Subtyping now correctly handles generics over unions and intersections\nin cases such as\n```\nlocal function a<T>(arr: { T }) end\n\na({ 'one', 'two' })\n```\n* Rearrange unification cases to avoid free type generalization to never\n* Improve generic bounds mismatch error message\n* Fix Ancestry bug in visitor for incomplete repeat blocks such as\n```\nlocal t = {}\nfunction t:Foo() end\n\nrepeat\n  t:|\n  ```\n*  Support autocomplete for attributes\n\n# Native Codegen\n* Unwind info has support on Android\n* Introduced a separate ctypeof function which does not constant-fold for vector arguments.\n* We now perform string concatenation at compile time if possible (there is a known issue with the optimization that we will address next week)\n* Make vector.lerp and math.lerp more efficient with FMA\n* Record STORE_SPLIT_TVALUE as a potential restore operation to reduce number of spills to stack \n* When native execution is disabled, we now mark the call frame as not executing natively, making resumption safer\n\n--- \nCo-authored-by: Andy Friesen <afriesen@roblox.com>\nCo-authored-by: Annie Tang <annietang@roblox.com>\nCo-authored-by: Hunter Goldstein <hgoldstein@roblox.com>\nCo-authored-by: Ilya Rezvov <irezvov@roblox.com>\nCo-authored-by: Sora Kanosue <skanosue@roblox.com>\nCo-authored-by: Varun Saini <vsaini@roblox.com>\nCo-authored-by: Vighnesh Vijay <vvijay@roblox.com>\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com>\n\n---------\n\nCo-authored-by: Hunter Goldstein <hgoldstein@roblox.com>\nCo-authored-by: Varun Saini <61795485+vrn-sn@users.noreply.github.com>\nCo-authored-by: Alexander Youngblood <ayoungblood@roblox.com>\nCo-authored-by: Aviral Goel <agoel@roblox.com>\nCo-authored-by: Vighnesh <vvijay@roblox.com>\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com>\nCo-authored-by: Ariel Weiss <aaronweiss@roblox.com>\nCo-authored-by: Andy Friesen <afriesen@roblox.com>",
+          "timestamp": "2025-09-15T13:16:27-07:00",
+          "tree_id": "c19022ca82a39dfbd44d481b81e3f8f6361fb1f1",
+          "url": "https://github.com/luau-lang/luau/commit/ae59a0e33c537080c38811df030a733fd5a2cbd7"
+        },
+        "date": 1757968023685,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.675913,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.741371,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.89694,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 3.4363,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-t1-codegen",
+            "value": 3.4473,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.62604,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.80155,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.34017,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 10.2634,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-t1-codegen",
+            "value": 10.3555,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-compile"
