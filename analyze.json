@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1757968023549,
+  "lastUpdate": 1758315970205,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-analyze": [
@@ -21113,6 +21113,72 @@
           {
             "name": "regex-dcr",
             "value": 2789.07,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "61795485+vrn-sn@users.noreply.github.com",
+            "name": "Varun Saini",
+            "username": "vrn-sn"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "9457397af45f9d69423c5168d23fddd998a5f0fd",
+          "message": "Sync to origin/release/692 (#2012)\n\nAnother week, another release!\n\n## Analysis/Autocomplete\n\n- Improve recursive type lookups by using scoped tracking of processed\ntypes.\n- Enforce recursion limits in subtyping on type packs, not just on\ntypes.\n- Simplify type checking for intersections between tables and\ndiscriminants containing read-only table properties.\n- Allow fields provided by `__index` to satisfy subtyping relationships.\n- Improve the ability for the type checker to do proper generic\nsubstitution in `for ... in` loops.\n- Fix a fragment autocomplete bug that caused fragments to be selected\nincorrectly in `for ... in` loops.\n- Fix a crash caused by `typeof` containing an unterminated function\ndefinition: `typeof(function())`.\n- Fix a flagging issue that may have been causing stack overflows in the\nprevious release.\n\n## Runtime\n\n- Support constant folding for interpolated strings.\n- Fix a bug caused by the empty string being the result of constant\nfolding.\n- Add helper macros in Bytecode.h to help access data in Luau auxiliary\ninstruction bits.\n- Add support for branchless `==`/`~=` comparisons in CodeGen (in\ncertain cases).\n\n---\n\nCo-authored-by: Andy Friesen <afriesen@roblox.com>\nCo-authored-by: Annie Tang <annietang@roblox.com>\nCo-authored-by: Ariel Weiss <aaronweiss@roblox.com>\nCo-authored-by: Hunter Goldstein <hgoldstein@roblox.com>\nCo-authored-by: Ilya Rezvov <irezvov@roblox.com>\nCo-authored-by: Sora Kanosue <skanosue@roblox.com>\nCo-authored-by: Vighnesh Vijay <vvijay@roblox.com>\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com>",
+          "timestamp": "2025-09-19T13:58:08-07:00",
+          "tree_id": "89ad5d6809bc20a5541072edf951db4bad603860",
+          "url": "https://github.com/luau-lang/luau/commit/9457397af45f9d69423c5168d23fddd998a5f0fd"
+        },
+        "date": 1758315970199,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 5.27513,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 6.52644,
+            "unit": "6ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 39.7592,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 8.3835,
+            "unit": "8ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 11.0223,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 216.24,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"
