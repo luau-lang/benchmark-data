@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1758324792375,
+  "lastUpdate": 1758918563578,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-compile": [
@@ -28423,6 +28423,100 @@
           {
             "name": "regex-O2-t1-codegen",
             "value": 10.3203,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "hgoldstein@roblox.com",
+            "name": "Hunter Goldstein",
+            "username": "hgoldstein"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "0084576e6f8dc9865f27d296f0357794894bd38d",
+          "message": "Sync to upstream/release/693 (#2021)\n\n# New Solver\n* Avoid bidirectional inference always forcing constraints for simple\ncode such as the example below. Fixes #2017.\n```luau\ntype Suit = \"Hearts\" | \"Spades\" | \"Clubs\" | \"Diamonds\"\n\nlocal getSuits(): { Suit }\n    return { \"Hearts\", \"Spades\", \"Clubs\", \"Diamonds\" }\nend\n```\n* Iterating over an empty pack, such as in the below example, should\nerror but still allow type inference to complete.\n```luau\nlocal function foo() end -- has type `() -> ()`\nfor _ in foo() do end -- Errors, as you can't iterate over `()`, but type inference still completes.\n```\n* Implement arity based overload selection: this allows for overloaded\nfunctions with generics to more consistently infer reasonable results.\nFor example:\n```luau\n-- This code no longer errors  as we determine that the first overload to \n-- table.insert is what the author intended.\ntable.insert({} :: { any }, 42)\n```\n* Allow the`table` type to be a subtype of generic tables. This means\ncode like the following no longer raises a type error:\n```luau\nlocal function doSomething(t: unknown)\n    if type(t) == \"table\" then\n        -- Prior we would error as `table` is not a subtype of a generic table\n        -- Also works with `pairs` and similar builtin functions.\n        local foo, bar = next(t)\n    end\nend\n```\n* Descend into intersection types when performing bidirectional\ninference, this allows us to correctly bidirectionally infer code like:\n```luau\ntype A = { foo: \"a\" }\ntype B = { bar: \"b\" }\ntype AB = A & B\n-- No longer errors as the literals \"a\" and \"b\" will be inferred to be their singleton types.\nlocal t: AB = { foo = \"a\", bar = \"b\" }\n```\n* #2008\n* Fix intersections between table types and extern types to preserve\nintersections when either type contains an indexer, fixing a regression\nintroduced when trying to refine table and extern types more precisely:\n```luau\nfunction f(obj: { [any]: any }, functionName: string)\n    if typeof(obj) == \"userdata\" then\n        -- No longer errors as we still have a `class & { [any]: any }` rather than a `class`\n        local _ = obj[functionName]\n    end\nend\n```\n* Separated recursion limits for different parts of the new solver. No\nimmediate changes, but this creates more tools to tamp down on stack\noverflows without affecting other subsystems.\n\n# Runtime\n* Implement \"stackless\" `pcall` / `xpcall` in yieldable contexts: this\nlets recursive calls to `pcall` nest further, erroring at the Luau call\nstack limit (20000 calls as of this writing) rather than the C call\nstack limit (200 calls as of this writing)\n\n---\n\nCo-authored-by: Ariel Weiss <aaronweiss@roblox.com>\nCo-authored-by: Hunter Goldstein <hgoldstein@roblox.com>\nCo-authored-by: Sora Kanosue <skanosue@roblox.com>\nCo-authored-by: Varun Saini <vsaini@roblox.com>\nCo-authored-by: Vighnesh Vijay <vvijay@roblox.com>\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com>\n\n---------\n\nCo-authored-by: Varun Saini <61795485+vrn-sn@users.noreply.github.com>\nCo-authored-by: Alexander Youngblood <ayoungblood@roblox.com>\nCo-authored-by: Menarul Alam <malam@roblox.com>\nCo-authored-by: Aviral Goel <agoel@roblox.com>\nCo-authored-by: Vighnesh <vvijay@roblox.com>\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com>\nCo-authored-by: Ariel Weiss <aaronweiss@roblox.com>\nCo-authored-by: Andy Friesen <afriesen@roblox.com>",
+          "timestamp": "2025-09-26T13:21:09-07:00",
+          "tree_id": "584a7977f215b10a2ceb9f288f69fec48233bc1d",
+          "url": "https://github.com/luau-lang/luau/commit/0084576e6f8dc9865f27d296f0357794894bd38d"
+        },
+        "date": 1758918563569,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.675915,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.741369,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.897424,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 3.36753,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-t1-codegen",
+            "value": 3.37846,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.62604,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.80191,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.34045,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 10.2261,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-t1-codegen",
+            "value": 10.32,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-compile"
