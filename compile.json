@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1759508511768,
+  "lastUpdate": 1760222327540,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-compile": [
@@ -28611,6 +28611,100 @@
           {
             "name": "regex-O2-t1-codegen",
             "value": 10.319,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "arielweiss@roblox.com",
+            "name": "ariel",
+            "username": "aatxe"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "1f6ff5d6f0072f2fab2adf35d1ffbaae7d848ad0",
+          "message": "Sync to upstream/release/695 (#2043)\n\nHey there friends, apologies for the late release this week! Most of the\nchanges amount to essentially spring (really, autumn) cleaning as we\nprepare for the next stage of release for the New Type Solver! We've\ncleaned up lots of flags, enabled regression tests that had been\ndisabled because the New Type Solver did not support them, done some\nrefactoring and otherwise cleaned up bits of code. None of these are\nreally worth capturing beyond the high-level of saying we cleaned things\nup, but there's also a few small runtime fixes that we'll describe\nbelow.\n\n### Runtime\n\n- Fix a bug with the argument ordering for the `vblendvps` and\n`vblendvpd` instructions in our Native Code Generation IR that led to\n`vector.lerp` having the wrong argument order in some situations when\nusing NCG. `vector.lerp` should now behave correctly under NCG.\n- Remove an incorrect debug assertion in Native Code Generation's\nregister allocation implementation for A64 assembly (i.e. for ARM's\n64-bit architecture).\n\n--- \n\nCo-authored-by: Andy Friesen <afriesen@roblox.com>\nCo-authored-by: Annie Tang <annietang@roblox.com>\nCo-authored-by: Ariel Weiss <aaronweiss@roblox.com>\nCo-authored-by: Hunter Goldstein <hgoldstein@roblox.com>\nCo-authored-by: Ilya Rezvov <irezvov@roblox.com>\nCo-authored-by: Sora Kanosue <skanosue@roblox.com>\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com>\n\n---------\n\nCo-authored-by: Hunter Goldstein <hgoldstein@roblox.com>\nCo-authored-by: Varun Saini <61795485+vrn-sn@users.noreply.github.com>\nCo-authored-by: Alexander Youngblood <ayoungblood@roblox.com>\nCo-authored-by: Menarul Alam <malam@roblox.com>\nCo-authored-by: Aviral Goel <agoel@roblox.com>\nCo-authored-by: Vighnesh <vvijay@roblox.com>\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com>\nCo-authored-by: Andy Friesen <afriesen@roblox.com>",
+          "timestamp": "2025-10-11T15:31:03-07:00",
+          "tree_id": "54e831d3a0b6fc81b7a40f11ecc39f115d3325bd",
+          "url": "https://github.com/luau-lang/luau/commit/1f6ff5d6f0072f2fab2adf35d1ffbaae7d848ad0"
+        },
+        "date": 1760222327530,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.6759,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.741351,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.895034,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 3.36498,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-t1-codegen",
+            "value": 3.37592,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.62603,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.8014,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.34037,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 10.225,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-t1-codegen",
+            "value": 10.3192,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-compile"
