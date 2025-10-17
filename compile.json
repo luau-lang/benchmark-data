@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1760222327540,
+  "lastUpdate": 1760722442120,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-compile": [
@@ -28705,6 +28705,100 @@
           {
             "name": "regex-O2-t1-codegen",
             "value": 10.3192,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "afriesen@roblox.com",
+            "name": "Andy Friesen",
+            "username": "andyfriesen"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "6169fa15d85c766c108c90eb68289021b5eee705",
+          "message": "Sync to upstream/release/696 (#2050)\n\nHey everyone. In preparation for the next phase of the New Type Solver\nrollout, we have another round of important bugfixes.\n\nWe've also got a few improvements to the new require alias machinery and\na little optimization to native codegen.\n\n## New Type Solver\n\n* Fix a case where Luau would erroneously simplify `{} & { p: number |\nstring }` to `number`.\n* Fix a crash that could occur within generic substitution. TODO: Sora\nto help word this.\n* Fix a case where Luau would infer a spurious union type as the result\nof a `setmetatable` call.\n* Fix https://github.com/luau-lang/luau/issues/1803\n* Improve bidirectional inference of table literals in the case that the\nexpected type has an indexer.\n\n## Luau.Require\n\n* Zero-initialize `luarequire_Configuration` function pointers before\nuser initialization\n* Error if ambiguity is detected during alias discovery\n\n## Native Codegen\n\n* Do not replace known constant value with a load propagation in\nSTORE_TVALUE\n\n---------\n\nCo-authored-by: Annie Tang <annietang@roblox.com>\nCo-authored-by: Hunter Goldstein <hgoldstein@roblox.com>\nCo-authored-by: Sora Kanosue <skanosue@roblox.com>\nCo-authored-by: Varun Saini <vsaini@roblox.com>\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com>",
+          "timestamp": "2025-10-17T10:25:51-07:00",
+          "tree_id": "d584f7addc1fe27341c05038a7fa5c9c330da4f9",
+          "url": "https://github.com/luau-lang/luau/commit/6169fa15d85c766c108c90eb68289021b5eee705"
+        },
+        "date": 1760722442112,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.673985,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.739462,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.897356,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 3.36539,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-t1-codegen",
+            "value": 3.37635,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.62406,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.79941,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.33726,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 10.2151,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-t1-codegen",
+            "value": 10.3095,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-compile"
