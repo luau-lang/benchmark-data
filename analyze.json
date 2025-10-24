@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1760722441983,
+  "lastUpdate": 1761337511100,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-analyze": [
@@ -21509,6 +21509,72 @@
           {
             "name": "regex-dcr",
             "value": 82.8147,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "hgoldstein@roblox.com",
+            "name": "Hunter Goldstein",
+            "username": "hgoldstein"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "5836a9cf3e9e14ba4e7a6529340ff0e94c56ef39",
+          "message": "Sync to upstream/release/697 (#2058)\n\nAnother somewhat small release as we work our way up to the next stage\nof the new type solver!\n\n# General\n\n* Implement configuration extraction as per the [Luau-syntax\nconfiguration files\nRFC](https://github.com/luau-lang/rfcs/blob/master/docs/config-luauconfig.md):\nwe now expose a low-level `extractConfig` API and a higher level\n`extractLuauConfig` API for extracting configurations from these files.\nThe runtime and analysis integrations with `require`, for this feature,\nare coming in a later release.\n\n# Analysis\n\n* Implemented native stack guards: on Windows and MacOS spots where we\nattempt to guard against stack overflows by using a counter now _also_\ncheck whether we are close to hitting the runtime stack limit via OS\nspecific APIs.\n* Fix a performance issue that could occur when trying to reduce type\nfunctions for math operations in the new solver, causing the new solver\nto fail to solve all constraints and take a disproportionate amount of\ntime to finish solving.\n* Improve the new solver's non-strict checking performance when checking\nexceptionally large function calls and function definitions.\n\n---------\n\nCo-authored-by: Varun Saini <61795485+vrn-sn@users.noreply.github.com>\nCo-authored-by: Alexander Youngblood <ayoungblood@roblox.com>\nCo-authored-by: Menarul Alam <malam@roblox.com>\nCo-authored-by: Aviral Goel <agoel@roblox.com>\nCo-authored-by: Vighnesh <vvijay@roblox.com>\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com>\nCo-authored-by: Ariel Weiss <aaronweiss@roblox.com>\nCo-authored-by: Andy Friesen <afriesen@roblox.com>",
+          "timestamp": "2025-10-24T13:17:02-07:00",
+          "tree_id": "3a71a35410784fce894c23dfea88f625c58daa54",
+          "url": "https://github.com/luau-lang/luau/commit/5836a9cf3e9e14ba4e7a6529340ff0e94c56ef39"
+        },
+        "date": 1761337511094,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 5.0714,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 6.25578,
+            "unit": "6ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 36.1274,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 8.38495,
+            "unit": "8ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 11.0001,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 78.3257,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"
