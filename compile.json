@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1761337511239,
+  "lastUpdate": 1761683525028,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-compile": [
@@ -28872,6 +28872,100 @@
           {
             "name": "regex-O1",
             "value": 1.79937,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.33717,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 10.215,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-t1-codegen",
+            "value": 10.3094,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "sentrycraft123@gmail.com",
+            "name": "Jan",
+            "username": "Jan200101"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "6b787963bc2b590f9909bf33aced826c43328444",
+          "message": "Make enums and structs in Luau.Require header C compatible (#2060)",
+          "timestamp": "2025-10-28T13:24:37-07:00",
+          "tree_id": "66f892c25fa0979737d34a655ec332601cf0c9bf",
+          "url": "https://github.com/luau-lang/luau/commit/6b787963bc2b590f9909bf33aced826c43328444"
+        },
+        "date": 1761683525019,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.673951,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.739424,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.894601,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 3.36265,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-t1-codegen",
+            "value": 3.37358,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.62405,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.79936,
             "unit": "1ms",
             "range": "±0%",
             "extra": "luau-compile"
