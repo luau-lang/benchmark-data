@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1761683524903,
+  "lastUpdate": 1761764489660,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-analyze": [
@@ -21641,6 +21641,72 @@
           {
             "name": "regex-dcr",
             "value": 78.3217,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "alirezafa@rocketmail.com",
+            "name": "Seyed Alireza Fatemi Jahromi",
+            "username": "SeyedAlirezaFatemi"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "c906d5926190fe60bc2a08e31883d73fbaa836c4",
+          "message": "Remove NBSP from Require.h (#2067)\n\nWell this is a pretty small thing. There is one NBSP in the document in\nthe file that I removed😅",
+          "timestamp": "2025-10-29T11:51:49-07:00",
+          "tree_id": "2a1fd7c86fff2ea8b84c38a230fee9408b2d449f",
+          "url": "https://github.com/luau-lang/luau/commit/c906d5926190fe60bc2a08e31883d73fbaa836c4"
+        },
+        "date": 1761764489654,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 5.0714,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 6.25578,
+            "unit": "6ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 36.1281,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 8.38433,
+            "unit": "8ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 11.0001,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 78.322,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"
