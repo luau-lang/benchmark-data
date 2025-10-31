@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1761764489806,
+  "lastUpdate": 1761881189013,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-compile": [
@@ -29081,6 +29081,100 @@
           {
             "name": "regex-O2-t1-codegen",
             "value": 10.3094,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "61795485+vrn-sn@users.noreply.github.com",
+            "name": "Varun Saini",
+            "username": "vrn-sn"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "ff6d381e57bcd1799d850d7fabe543c0f0980a5d",
+          "message": "Sync to upstream/release/698 (#2070)\n\n# General\n\nAnother week, another release. Happy Halloween! 🎃\n\n## Require\n- Integrate support for `.config.luau` files into `Luau.Require` as part\nof the [Luau-syntax configuration files\nRFC](https://rfcs.luau.org/config-luauconfig.html).\n  - `is_config_present` has been replaced with `get_config_status`.\n- `get_luau_config_timeout` has been added to configure extraction\ntimeouts at runtime.\n- Enable support for `.config.luau` files in `luau` and `luau-analyze`.\n- Merge the `Luau.RequireNavigator` static library into `Luau.Require`.\n\n## Analysis\n- Add fuel-based limits for normalization: normalization will now take a\nset number of steps (the \"fuel\") and stop when we hit a certain number\nof steps (\"run out of fuel\"). This is in lieu of trying to check static\nlimits on the size of its inputs. This may result in seeing more \"code\ntoo complex\" errors but should dramatically reduce the number of cases\nwhere Luau becomes unresponsive and uses several gigabytes of memory. We\nplan to tune this limit over time to find the right balance between\nresponsiveness and completeness.\n- Fix a case where refining a variable with the type `any` would cause\nit to become `unknown` instead due to normalization not preserving `any`\nin the top type position.\n- Improve the wording of type errors in the new non-strict mode.\n- Fix #1910.\n- Fix #2065.\n- Fix #1483.\n- Fix #2018.\n\n## Miscellaneous\n- Introduce `Luau::overloaded` to facilitate interacting with\n`Luau::Variant`.\n- Add type checking support to the [Luau demo](https://luau.org/demo)!\n\n---\n\nCo-authored-by: Annie Tang <annietang@roblox.com>\nCo-authored-by: Ariel Weiss <arielweiss@roblox.com>\nCo-authored-by: Hunter Goldstein <hgoldstein@roblox.com>\nCo-authored-by: Ilya Rezvov <irezvov@roblox.com>\nCo-authored-by: Sora Kanosue <skanosue@roblox.com>\nCo-authored-by: Varun Saini <vsaini@roblox.com>",
+          "timestamp": "2025-10-30T20:18:46-07:00",
+          "tree_id": "68041c6ba746b3b0793a38d319a792ee19d9db00",
+          "url": "https://github.com/luau-lang/luau/commit/ff6d381e57bcd1799d850d7fabe543c0f0980a5d"
+        },
+        "date": 1761881189004,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.670991,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.736441,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.892479,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 3.36052,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-t1-codegen",
+            "value": 3.37146,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.62014,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.79547,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.33847,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 10.2163,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-t1-codegen",
+            "value": 10.3107,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-compile"
