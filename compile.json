@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1762546994215,
+  "lastUpdate": 1763156077779,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-compile": [
@@ -29269,6 +29269,100 @@
           {
             "name": "regex-O2-t1-codegen",
             "value": 10.3065,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "rezvov.ilya@gmail.com",
+            "name": "Ilya Rezvov",
+            "username": "SPY"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "282ddfade7f3b9b675dd61aa9120076b10aaaf42",
+          "message": "Sync to upstream/release/700 (#2090)\n\nWe have reached release 700!\n\n# Analysis\n\n* `table.isfrozen` and `table.clear` use `{}` instead of generic table\ntype to make it work with union of table types.\n* Relax typing definitions for `types.newtable` to make it easier to\nspecify read-only table properties\n* Do not drop explicit generic type packs. Hopefully fixes #2075 \n* Added protection against stack overflows to more spots in `Unifier2`\n* Improved bidirectionally inferring lambdas. When performing inference\non a lambda, check _right_ before we attempt to emplace a free type\nwhether there's a generic.\n* Reworked overload resolution interface.\n`OverloadResolver::resolveOverload` was introduced to abstract and unify\nexisting resolving machinery.\n* `instantiation2` selects more useful bounds.\n- If we have positive or negative polarity, blindly use the upper/lower\nbounds respectively.\n- Otherwise, attempt to find a reasonable bound by first avoiding\npicking `never` or `unknown`, then doing a subtype test to try to pick a\ntight bound.\n* Added protection against stack overflows to the non-strict type\nchecker\n* Luau-syntax configuration extraction can now be timed out during\nanalysis. See `CLI/src/Analyze.cpp` for an example.\n\n# Require\n* Support chained aliases with built-in cycle detection:\nhttps://github.com/luau-lang/rfcs/pull/145.\n* Resolve https://github.com/JohnnyMorganz/luau-lsp/issues/1246.\n\n# Autocomplete\n\n* Do not recommend generic types for anonymous functions being passed as\narguments\n\n---\n\nCo-authored-by: Andy Friesen <afriesen@roblox.com>\nCo-authored-by: Annie Tang <annietang@roblox.com>\nCo-authored-by: Ariel Weiss <arielweiss@roblox.com>\nCo-authored-by: Hunter Goldstein <hgoldstein@roblox.com>\nCo-authored-by: Varun Saini <vsaini@roblox.com>",
+          "timestamp": "2025-11-14T13:26:21-08:00",
+          "tree_id": "ed152aac1afbbac29327cabb36e5a9b056bdf6ec",
+          "url": "https://github.com/luau-lang/luau/commit/282ddfade7f3b9b675dd61aa9120076b10aaaf42"
+        },
+        "date": 1763156077771,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.670853,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.736316,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.89126,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 3.35921,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-t1-codegen",
+            "value": 3.37015,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.62003,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.79558,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.33468,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 10.212,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-t1-codegen",
+            "value": 10.3064,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-compile"
