@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1763156077637,
+  "lastUpdate": 1763161893131,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-analyze": [
@@ -21891,6 +21891,72 @@
           {
             "name": "regex-nonstrict",
             "value": 8.41735,
+            "unit": "8ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 11.0324,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 66.9741,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "61795485+vrn-sn@users.noreply.github.com",
+            "name": "Varun Saini",
+            "username": "vrn-sn"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "3e1c94ec2c1a077497b7ac21f580745c7aeeefae",
+          "message": "Infra: validate version format before creating draft release (#2091)\n\nThis should help us catch the (somewhat common) case where a release\ngets tagged `xyz` instead of `0.xyz`.",
+          "timestamp": "2025-11-14T15:03:39-08:00",
+          "tree_id": "416ee630e04706fd3b5d1f1271d91e8aa93b6cfc",
+          "url": "https://github.com/luau-lang/luau/commit/3e1c94ec2c1a077497b7ac21f580745c7aeeefae"
+        },
+        "date": 1763161893124,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 5.06234,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 6.23898,
+            "unit": "6ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 36.3143,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 8.41745,
             "unit": "8ms",
             "range": "±0%",
             "extra": "luau-analyze"
