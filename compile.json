@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1763162661746,
+  "lastUpdate": 1763479210492,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-compile": [
@@ -29551,6 +29551,100 @@
           {
             "name": "regex-O2-t1-codegen",
             "value": 10.3064,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "86601049+PhoenixWhitefire@users.noreply.github.com",
+            "name": "PhoenixWhitefire",
+            "username": "PhoenixWhitefire"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "f071cb12f4e932e9f09b2c1adac422e1472c1c9a",
+          "message": "math.isnan, .isinf and .isfinite implementation (#2078)\n\nImplements:\n- The modifications to the `math` library type definition\n- The new members of the `math` table\n- The new fastcalls\n- Additional tests\n- Constant folding\n- 3 new flags: `LuauMathIsNanInfFinite`,\n`LuauCompileMathIsNanInfFinite`, `LuauTypeCheckerMathIsNanInfFinite`\n\n, as per RFC https://rfcs.luau.org/math-isnan-isfinite-isinf.html\n\nThis PR does not implement NCG",
+          "timestamp": "2025-11-18T07:12:02-08:00",
+          "tree_id": "ae7c608016dbedb41ac29d9de23a93bbaf03d52e",
+          "url": "https://github.com/luau-lang/luau/commit/f071cb12f4e932e9f09b2c1adac422e1472c1c9a"
+        },
+        "date": 1763479210483,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.670904,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.736383,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.894494,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 3.36245,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-t1-codegen",
+            "value": 3.3734,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.62011,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.79563,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.33495,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 10.2124,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-t1-codegen",
+            "value": 10.3067,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-compile"

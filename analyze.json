@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1763162661609,
+  "lastUpdate": 1763479210349,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-analyze": [
@@ -22037,6 +22037,72 @@
           {
             "name": "regex-dcr",
             "value": 66.9741,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "86601049+PhoenixWhitefire@users.noreply.github.com",
+            "name": "PhoenixWhitefire",
+            "username": "PhoenixWhitefire"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "f071cb12f4e932e9f09b2c1adac422e1472c1c9a",
+          "message": "math.isnan, .isinf and .isfinite implementation (#2078)\n\nImplements:\n- The modifications to the `math` library type definition\n- The new members of the `math` table\n- The new fastcalls\n- Additional tests\n- Constant folding\n- 3 new flags: `LuauMathIsNanInfFinite`,\n`LuauCompileMathIsNanInfFinite`, `LuauTypeCheckerMathIsNanInfFinite`\n\n, as per RFC https://rfcs.luau.org/math-isnan-isfinite-isinf.html\n\nThis PR does not implement NCG",
+          "timestamp": "2025-11-18T07:12:02-08:00",
+          "tree_id": "ae7c608016dbedb41ac29d9de23a93bbaf03d52e",
+          "url": "https://github.com/luau-lang/luau/commit/f071cb12f4e932e9f09b2c1adac422e1472c1c9a"
+        },
+        "date": 1763479210342,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 5.0627,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 6.23979,
+            "unit": "6ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 36.2952,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 8.43629,
+            "unit": "8ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 11.0507,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 67.1027,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"
