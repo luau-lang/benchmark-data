@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1763753017251,
+  "lastUpdate": 1764718240852,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-compile": [
@@ -29833,6 +29833,100 @@
           {
             "name": "regex-O2-t1-codegen",
             "value": 39.6326,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "afriesen@roblox.com",
+            "name": "Andy Friesen",
+            "username": "andyfriesen"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "c836feb2450a074581010f84da2eadeea38a3d55",
+          "message": "Sync to upstream/release/702 (#2126)\n\nHello!\n\nThis week, we've made a bunch of improvements to the performance and\nstability of the analysis system. We've also made some small\nimprovements to inlining and native codegen.\n\n# Autocomplete\n\n* Suggest singleton string keys from indexers\n\n# General\n\n* Reduce stack utilization of the parser\n\n# Analysis\n\n* User-defined type functions don't need separate irreducible errors\nwhen they error.\n* Fix a performance problem that could occur when selecting an overload\nfor a function call.\n* Fix a hang that could occur in function generalization.\n* Delete EqSat. It was a very promising experiment but it didn't work\nout.\n* Properly treat negation types as being contravariant in their\noperands. (ie if `A <: B`, then `~B <: ~A`)\n* Add a new C++ utility function `Frontend::parseType`. This function\nallocates a `TypeId` from a string that contains a valid Luau type\nannotation.\n* Correctly infer the type of a property lookup on a table which\ncontains an indexer which is a union of string singletons. (eg\n`{[\"foo\"|\"bar\"]: number}`)\n\n# VM\n\n* Reevaluate the inlining cost model using constant function arguments.\n* Constant-fold `string.char` and `string.sub`.\n\n# Native Codegen\n* Fix a perfermance regression that could happen when running out of\nregisters.\n* 32-bit integer addition and subtraction using bit32 library can be\nperformed by integer instructions without extra double conversions\n \n# Internal Contributors\n\nCo-authored-by: Andy Friesen <afriesen@roblox.com>\nCo-authored-by: Ariel Weiss <arielweiss@roblox.com>\nCo-authored-by: Hunter Goldstein <hgoldstein@roblox.com>\nCo-authored-by: Sora Kanosue <skanosue@roblox.com>\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com>\n\n---------\n\nCo-authored-by: Hunter Goldstein <hgoldstein@roblox.com>\nCo-authored-by: Varun Saini <61795485+vrn-sn@users.noreply.github.com>\nCo-authored-by: Alexander Youngblood <ayoungblood@roblox.com>\nCo-authored-by: Menarul Alam <malam@roblox.com>\nCo-authored-by: Aviral Goel <agoel@roblox.com>\nCo-authored-by: Vighnesh <vvijay@roblox.com>\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com>\nCo-authored-by: Ariel Weiss <aaronweiss@roblox.com>\nCo-authored-by: Ilya Rezvov <irezvov@roblox.com>",
+          "timestamp": "2025-12-02T15:22:03-08:00",
+          "tree_id": "9bd11de624f7ee1e7857d25afaa75d081e704575",
+          "url": "https://github.com/luau-lang/luau/commit/c836feb2450a074581010f84da2eadeea38a3d55"
+        },
+        "date": 1764718240844,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.673064,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.739677,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.92049,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 3.44616,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-t1-codegen",
+            "value": 3.45714,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.63193,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.81233,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.90146,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 10.9722,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-t1-codegen",
+            "value": 11.0554,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-compile"
