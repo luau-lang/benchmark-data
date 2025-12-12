@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1764718240218,
+  "lastUpdate": 1765569544335,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "callgrind clang": [
@@ -87324,6 +87324,275 @@
           {
             "name": "voxelgen",
             "value": 47.953,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "hgoldstein@roblox.com",
+            "name": "Hunter Goldstein",
+            "username": "hgoldstein"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "c33adf13ed76302c293c442ab13fc84874c53ea5",
+          "message": "Sync to upstream/release/703 (#2146)\n\nThis will be Luau's last release for the year! Happy holidays and we'll\nsee y'all in 2026.\n\n# Analysis\n* Fix a bug in type checking functions where oversaturation (passing too\nmany arguments to a function) was sometimes missed, for example:\n```luau\ntype T = { method: (T, number) -> number }\n\nlocal function onT(a: T)\n    a:method(5, 7) -- This would not error prior\nend\n```\n* Type mismatch error wording has been improved: instead of talking\nabout \"X could not be converted into Y,\" we talk about \"expecting X\" but\n\"getting Y.\"\n* Builtin type functions now use improved logic for overload resolution.\n* Type annotations on for-in loops are now respected, for example:\n```luau\nfunction my_iter(): any\n    return {}\nend\n\nfor index: number, value: string in my_iter() do\n    -- This now errors, whereas prior we'd infer `index` to be of type `any`\n    local ohno: boolean = index\nend\n```\n* Function statements for table members now have their types checked,\nfor example the following used to not error:\n```luau\nlocal Library: { isnan: (number) -> number } = {} :: any\n\nfunction Library.isnan(s: string): boolean\n    return s == \"NaN\"\nend\n```\n* Nil-able lambdas can now participate in bidirectional inference, for\nexample:\n```luau\nlocal listdir: (string, ((string) -> boolean)?) -> { string } = nil :: any\nlistdir(\"my_directory\", function (path)\n    -- `path` will now have type `string` here\nend)\n```\n* Internal compiler errors when operating on exceptionally large types\nshould be less common, thanks to some non-recursive implementations of\ncommon visitors.\n* Fix a crash that could occur when deserializing user defined type\nfunctions, one such example being:\n```luau\ntype function identity(t: type)\n    return t\nend\ntype func<parameters...> = typeof(function(...: parameters...) end)\nlocal whomp: <T>(arg1: T) -> identity<T>\nwhomp(function(...) end :: func<any>)\n```\n* Fix instantiation picking unhelpful (and sometimes plain incorrect)\nbounds. Fixes https://github.com/luau-lang/luau/issues/2125. Fixes\nhttps://github.com/luau-lang/luau/issues/2118.\n```luau\nlocal foo: <P>(constructor: (P) -> any) -> (P) -> any = (nil :: any)\n-- Prior `fn` would be of type `(never) -> any`, and will now be the more useful\n-- ({ test: true }) -> any\nlocal fn = foo(function (value: { test: true })\n    return value.test\nend)\n```\n* Fix a class of constraint solving incomplete errors that could occur\nwhen referencing globals inside lambdas.\n* `types.unionof` and `types.intersectionof` will now attempt to\nsimplify their arguments, avoiding producing nested intersections and\nunions, as well as removing identity types like `never` and `unknown`.\n* The `setmetatable` type function now waits for its arguments before\nresolving, fixing a class of constraint ordering bugs. Fixes\nhttps://github.com/luau-lang/luau/issues/2106:\n```luau\nlocal MyClass = {}\nlocal MyClassMetatable = table.freeze({  __index = MyClass })\n\ntype MyClass = setmetatable<{ name: string }, typeof(MyClassMetatable)>\n\nfunction MyClass.new(name: string): MyClass\n    return setmetatable({ name = name }, MyClassMetatable)\nend\n\nfunction MyClass.hello(self: MyClass): string\n    return `Hello, {self.name}!`\nend\n\nlocal instance = MyClass.new(\"World\")\n -- This would sometimes be inferred as `any` due to constraint ordering bugs.\nlocal g = instance:hello()\n```\n\n# Native Codegen\n\nWe now internally encode true float registers, as opposed to treating\nall floats as doubles (as Luau does). This allows us to skip conversions\nto and from a double when lowering operations on floats. Additionally,\nwe've added several optimizations for converting in between different\nkinds of numbers (32-bit integers, 32-bit unsigned integers, floats,\ndoubles, etc.).\n\nConsequently, an important notice for users of `CodeGen::HostIrHooks`:\nwe are updating the behavior of `LOAD_FLOAT`, `DOT_VEC`, `EXTRACT_VEC`,\n`BUFFER_READF32`, `BUFFER_WRITEF32`, and `STORE_VECTOR` to produce or\nconsume single floating-point number instead of a double. When\n`FFlag::LuauCodegenSplitFloat` is enabled, `FLOAT_TO_NUM` and\n`NUM_TO_FLOAT` have to be used for explicit conversions.\n\n* Double the amount of registers that are spilt for ints and floats on\nx64. This fixes NCG failing to compile snippets that end up generating\nmany transient numbers. Fixes #1468.\n* Fix a bug where NCG might improperly claim a stored value (and its\ntag) can be elided after a GC check.\n* NCG now optimizes buffer and userdata loads that can be computed from\nprevious stores (e.g. if you write `42` to the nth byte in a buffer and\nthen immediately read said byte).\n* NCG will now try to remove unused temporary userdata allocations\n* Fix a bug where NCG might claim a spilt register has been restored but\nnot actually do so, causing a garbage read from a register.\n* NCG now optimizes upvalue loads and stores.\n* NCG now optimizes `and` and `or` without generating basic blocks,\nallowing more optimizations to occur.\n* Fix a bug where NCG on arm64, restoring spilling registers may require\nusing an (already occupied) temporary register.\n* Runtime type checks internal to a function that are redundant with\ntype checks added through annotations are now elided.\n* NCG had an off-by-one bug where loop step detection was not kicking in\nfor non-constant end ranges in for-in loops: `i = 1,10` would be\noptimized and `i = 1,#t` would not be.\n\n# Require\n\n* Added a `to_alias_override` callback: this allows embedders to provide\nan alias that _cannot_ be overridden by users.",
+          "timestamp": "2025-12-12T11:50:52-08:00",
+          "tree_id": "0f12dc97e412ea73a151f95dce611271cc6419b2",
+          "url": "https://github.com/luau-lang/luau/commit/c33adf13ed76302c293c442ab13fc84874c53ea5"
+        },
+        "date": 1765569544314,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "base64",
+            "value": 21.424,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "chess",
+            "value": 80.332,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "life",
+            "value": 83.507,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "matrixmult",
+            "value": 23.531,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "mesh-normal-scalar",
+            "value": 30.602,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "mesh-normal-vector",
+            "value": 15.618,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "pcmmix",
+            "value": 9.19,
+            "unit": "9ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "qsort",
+            "value": 74.761,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "sha256",
+            "value": 24.316,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "ack",
+            "value": 65.093,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "binary-trees",
+            "value": 28.775,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "fannkuchen-redux",
+            "value": 11.861,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "fixpoint-fact",
+            "value": 61.355,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "heapsort",
+            "value": 20.677,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "mandel",
+            "value": 62.229,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "n-body-vec",
+            "value": 18.621,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "n-body",
+            "value": 36.511,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "qt",
+            "value": 56.092,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "queen",
+            "value": 1.887,
+            "unit": "1ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "scimark",
+            "value": 84.96,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "spectral-norm",
+            "value": 11.385,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "sieve",
+            "value": 109.339,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "3d-cube",
+            "value": 8.007,
+            "unit": "8ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "3d-morph",
+            "value": 9.652,
+            "unit": "9ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "3d-raytrace",
+            "value": 9.705,
+            "unit": "9ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "controlflow-recursive",
+            "value": 5.549,
+            "unit": "5ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "crypto-aes",
+            "value": 13.494,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "fannkuch",
+            "value": 24.224,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "math-cordic",
+            "value": 15.39,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "math-partial-sums",
+            "value": 4.701,
+            "unit": "4ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "n-body-oop",
+            "value": 54.738,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "tictactoe",
+            "value": 122.973,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "trig",
+            "value": 22.886,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "vector-math",
+            "value": 10.31,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "voxelgen",
+            "value": 47.956,
             "unit": "ms",
             "range": "±0.000%",
             "extra": "luau"
