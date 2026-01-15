@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1768495522716,
+  "lastUpdate": 1768497833268,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-compile": [
@@ -30477,6 +30477,100 @@
           {
             "name": "regex-O2",
             "value": 2.89942,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 11.4889,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-t1-codegen",
+            "value": 11.5598,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "Sleitnick@users.noreply.github.com",
+            "name": "Stephen Leitnick",
+            "username": "Sleitnick"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "b92fe7386751982cfa28cba004d47b79a9d2968a",
+          "message": "Fix comparison issue with `api_update_top` (#2054)\n\nFixes a comparison issue with `api_update_top` (`<` instead of `<=`),\ncausing an error to be thrown if the macro attempts to update `L->top`\nto the same value of `L->ci->top`. More details and a reproduction of\nthe issue is in the attached issue.\n\nCloses #2053",
+          "timestamp": "2026-01-15T09:15:44-08:00",
+          "tree_id": "e628e65e43f2a81e26807347e3c78a3a55b86cbd",
+          "url": "https://github.com/luau-lang/luau/commit/b92fe7386751982cfa28cba004d47b79a9d2968a"
+        },
+        "date": 1768497833259,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.673584,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.740166,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.918067,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 3.59508,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-t1-codegen",
+            "value": 3.61173,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.63254,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.81307,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.89947,
             "unit": "2ms",
             "range": "±0%",
             "extra": "luau-compile"

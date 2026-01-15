@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1768495522571,
+  "lastUpdate": 1768497833125,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-analyze": [
@@ -22697,6 +22697,72 @@
           {
             "name": "regex-dcr",
             "value": 67.8974,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "Sleitnick@users.noreply.github.com",
+            "name": "Stephen Leitnick",
+            "username": "Sleitnick"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "b92fe7386751982cfa28cba004d47b79a9d2968a",
+          "message": "Fix comparison issue with `api_update_top` (#2054)\n\nFixes a comparison issue with `api_update_top` (`<` instead of `<=`),\ncausing an error to be thrown if the macro attempts to update `L->top`\nto the same value of `L->ci->top`. More details and a reproduction of\nthe issue is in the attached issue.\n\nCloses #2053",
+          "timestamp": "2026-01-15T09:15:44-08:00",
+          "tree_id": "e628e65e43f2a81e26807347e3c78a3a55b86cbd",
+          "url": "https://github.com/luau-lang/luau/commit/b92fe7386751982cfa28cba004d47b79a9d2968a"
+        },
+        "date": 1768497833118,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 5.04756,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 6.21851,
+            "unit": "6ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 36.237,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 8.35414,
+            "unit": "8ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 10.9089,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 67.899,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"
