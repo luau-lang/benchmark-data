@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1768484896731,
+  "lastUpdate": 1768486704501,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-analyze": [
@@ -22558,6 +22558,72 @@
           {
             "name": "regex-strict",
             "value": 10.9033,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 67.884,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "johnnymorganz@outlook.com",
+            "name": "JohnnyMorganz",
+            "username": "JohnnyMorganz"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "059d3ced0e1072be618cdc075b10e484d081fff0",
+          "message": "Handle AstStatLocalFunction in findBindingAtPosition (#2166)\n\nGiven the code:\n\n```luau\nlocal function foo()\nend\n```\n\nRight now, `findBindingAtPosition` does not work when querying on the\nlocal function name `foo`. This is because it uses `findExprAtPosition`\ninternally, however an AstStatLocalFunction name is just an `AstName`\n(unlike an `AstExpr` used in AstStatFunction).\n\nThis PR fixes this by using `findExprOrLocalAtPosition` query function\ninstead. `FindExprOrLocal` visitor will appropriately visit the\nAstStatLocalFunction name.\n\nNote that this changes the behaviour of\n`getDocumentationSymbolAtPosition` when applied on a function parameter.\n`getDocumentationSymbolAtPosition` will first call\n`findBindingAtPosition`. Previously, findBindingAtPosition would not\ninclude function parameter AstLocals, but now it does after switching to\n`FindExprOrLocal`, so then we take the `return\ncheckOverloadedDocumentationSymbol` branch.\n`getDocumentationSymbolAtPosition` has some special-case handling for\nfunction parameters that are part of callbacks, that now gets ignored.\nWe fix this by deferring the binding check to after the special-case\nhandling.\n\nThis change is gated behind the FFlag `LuauQueryLocalFunctionBinding`\n\nCloses #1883 (and looks like CLI-114385 too!)",
+          "timestamp": "2026-01-15T06:10:21-08:00",
+          "tree_id": "d69999b4a86439fb054c6f0950f418dfea72bf0a",
+          "url": "https://github.com/luau-lang/luau/commit/059d3ced0e1072be618cdc075b10e484d081fff0"
+        },
+        "date": 1768486704494,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 5.04769,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 6.21854,
+            "unit": "6ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 36.2358,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 8.35502,
+            "unit": "8ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 10.906,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"
