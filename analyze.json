@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1767985290721,
+  "lastUpdate": 1768484896731,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-analyze": [
@@ -22485,6 +22485,72 @@
           {
             "name": "regex-nonstrict",
             "value": 8.35502,
+            "unit": "8ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 10.9033,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 67.884,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "nero.9@hotmail.de",
+            "name": "Nerixyz",
+            "username": "Nerixyz"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "91fbd9225026389f816b92aca07359c4fbf35f4d",
+          "message": "Expose `luaL_traceback` from Lua C API (#2167)\n\n[`luaL_traceback`](https://www.lua.org/manual/5.5/manual.html#luaL_traceback)\nwas added in Lua 5.2. It's essentially a programmatic version of\n`debug.traceback`:\n\n> Creates and pushes a traceback of the stack L1. If msg is not NULL it\nis appended at the beginning of the traceback. The level parameter tells\nat which level to start the traceback.\n\nAlthough Luau is derived from 5.1, adding this 5.2 API makes it easier\nto use/embed.",
+          "timestamp": "2026-01-15T05:40:09-08:00",
+          "tree_id": "6a9191f2a433a4379aa79c18b548227180b96e4b",
+          "url": "https://github.com/luau-lang/luau/commit/91fbd9225026389f816b92aca07359c4fbf35f4d"
+        },
+        "date": 1768484896725,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 5.04769,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 6.21856,
+            "unit": "6ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 36.234,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 8.35498,
             "unit": "8ms",
             "range": "±0%",
             "extra": "luau-analyze"

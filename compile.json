@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1767985290866,
+  "lastUpdate": 1768484896876,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-compile": [
@@ -30174,6 +30174,100 @@
           {
             "name": "map-O2-t1-codegen",
             "value": 3.61169,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.63248,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.81302,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.89942,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 11.4889,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-t1-codegen",
+            "value": 11.5598,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "nero.9@hotmail.de",
+            "name": "Nerixyz",
+            "username": "Nerixyz"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "91fbd9225026389f816b92aca07359c4fbf35f4d",
+          "message": "Expose `luaL_traceback` from Lua C API (#2167)\n\n[`luaL_traceback`](https://www.lua.org/manual/5.5/manual.html#luaL_traceback)\nwas added in Lua 5.2. It's essentially a programmatic version of\n`debug.traceback`:\n\n> Creates and pushes a traceback of the stack L1. If msg is not NULL it\nis appended at the beginning of the traceback. The level parameter tells\nat which level to start the traceback.\n\nAlthough Luau is derived from 5.1, adding this 5.2 API makes it easier\nto use/embed.",
+          "timestamp": "2026-01-15T05:40:09-08:00",
+          "tree_id": "6a9191f2a433a4379aa79c18b548227180b96e4b",
+          "url": "https://github.com/luau-lang/luau/commit/91fbd9225026389f816b92aca07359c4fbf35f4d"
+        },
+        "date": 1768484896867,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.673547,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.740135,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.918031,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 3.595,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-t1-codegen",
+            "value": 3.61171,
             "unit": "3ms",
             "range": "±0%",
             "extra": "luau-compile"
