@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1768497833125,
+  "lastUpdate": 1768498659835,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-analyze": [
@@ -22763,6 +22763,72 @@
           {
             "name": "regex-dcr",
             "value": 67.899,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "seyedalirezafatemijahromi@gmail.com",
+            "name": "Seyed Alireza Fatemi Jahromi",
+            "username": "SeyedAlirezaFatemi"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "4e6ff59d9e691810080c6f9251d06626419f7e88",
+          "message": "Add branch for Emscripten to clock (#2069)\n\nI had problem of getting 0 from lua_clock when using Emscripten. This\npull request adds a define check for when using Emscripten and uses\n[emscripten_get_now](https://emscripten.org/docs/api_reference/emscripten.h.html#c.emscripten_get_now).",
+          "timestamp": "2026-01-15T09:30:01-08:00",
+          "tree_id": "f7c6efb7a0f783701be148aaaa60545cd4236ebc",
+          "url": "https://github.com/luau-lang/luau/commit/4e6ff59d9e691810080c6f9251d06626419f7e88"
+        },
+        "date": 1768498659828,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 5.0472,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 6.21783,
+            "unit": "6ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 36.2353,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 8.35418,
+            "unit": "8ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 10.9062,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 67.8975,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"

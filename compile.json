@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1768497833268,
+  "lastUpdate": 1768498659972,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-compile": [
@@ -30536,6 +30536,100 @@
           {
             "name": "map-O2",
             "value": 0.918067,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 3.59508,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-t1-codegen",
+            "value": 3.61173,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.63254,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.81307,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.89947,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 11.4889,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-t1-codegen",
+            "value": 11.5598,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "seyedalirezafatemijahromi@gmail.com",
+            "name": "Seyed Alireza Fatemi Jahromi",
+            "username": "SeyedAlirezaFatemi"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "4e6ff59d9e691810080c6f9251d06626419f7e88",
+          "message": "Add branch for Emscripten to clock (#2069)\n\nI had problem of getting 0 from lua_clock when using Emscripten. This\npull request adds a define check for when using Emscripten and uses\n[emscripten_get_now](https://emscripten.org/docs/api_reference/emscripten.h.html#c.emscripten_get_now).",
+          "timestamp": "2026-01-15T09:30:01-08:00",
+          "tree_id": "f7c6efb7a0f783701be148aaaa60545cd4236ebc",
+          "url": "https://github.com/luau-lang/luau/commit/4e6ff59d9e691810080c6f9251d06626419f7e88"
+        },
+        "date": 1768498659962,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.673585,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.74017,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.91807,
             "unit": "0ms",
             "range": "±0%",
             "extra": "luau-compile"
