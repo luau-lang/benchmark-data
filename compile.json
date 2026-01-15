@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1768486704640,
+  "lastUpdate": 1768495522716,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-compile": [
@@ -30369,6 +30369,100 @@
           {
             "name": "regex-O0",
             "value": 1.63249,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.81302,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.89942,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 11.4889,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-t1-codegen",
+            "value": 11.5598,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "johnnymorganz@outlook.com",
+            "name": "JohnnyMorganz",
+            "username": "JohnnyMorganz"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "af9f26ebc11e13a1e17a8e51006f1a1dd84656c3",
+          "message": "Track type spans in ToStringResult to support decomposition (#2163)\n\nThis PR implements a new `typeSpans` field on ToStringResult to record\nwhich TypeId produced parts of the substring in the stringified output.\nThis enables tooling to decompose the result and map positions in the\ntype string back to their source types, powering features such as\nGo-To-Definition in Inlay Hints.\n\n`typeSpans` is a vector of `{startOffset, endOffset, typeId}` within the\nstring. We only populate spans for named types, i.e. extern types and\nnamed table / metatable types. The rest of the type kinds are ignored.\n\nSpecial attention needs to be given for `UnionType` and\n`IntersectionType`. When stringifying these compound types, it works by\nresetting the `state.result.name` to an empty string before stringifying\nthe part, then recomposing all the parts back to the full string. This\ncan also include a sorting step.\n\nWe need to correct the typeSpans during this approach. We introduce a\nnew `ElementResult` that stores the resulting string and set of spans\nfor each part. Then when reconstructing, we offset each span by the\ncurrent size of `state.result.name`.\n\nThese changes are gated behind the FFlag `LuauToStringDecomposition`\n\nCloses #1591",
+          "timestamp": "2026-01-15T08:36:50-08:00",
+          "tree_id": "8f46e548d8d82706911d9fe903dcb74e7954c72a",
+          "url": "https://github.com/luau-lang/luau/commit/af9f26ebc11e13a1e17a8e51006f1a1dd84656c3"
+        },
+        "date": 1768495522707,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.673549,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.740139,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.918031,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 3.595,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-t1-codegen",
+            "value": 3.61171,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.63248,
             "unit": "1ms",
             "range": "±0%",
             "extra": "luau-compile"
