@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1768605052194,
+  "lastUpdate": 1768606975664,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "callgrind clang": [
@@ -90014,6 +90014,275 @@
           {
             "name": "voxelgen",
             "value": 47.954,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "arielweiss@roblox.com",
+            "name": "ariel",
+            "username": "aatxe"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "93c83a46d7c6c1b040e58e82ef167340a7db1aef",
+          "message": "Sync to upstream/release/705 (#2200)\n\nHello Luaunauts, we're continuing into the second release of the year at\na brisk pace! We've got a number of improvements for both native code\ngeneration and the new type solver, as well as some other assorted\nchanges, that keep us moving towards the goal of making the best\npossible scripting language!\n\n# Analysis\n\n- Refinements against a union of tables would sometimes erroneously\nrefine to a narrower type than intended. The root cause here was a bug\nin the logic that determines how to \"simplify\" types (for example\nknowing that `true | false` is the same as `boolean`).\n  ```luau\n  export type States = \"Closed\" | \"Closing\" | \"Opening\" | \"Open\"\n  export type MyType<A = any> = {\n      State: States,\n      IsOpen: boolean,\n      Open: (self: MyType<A>) -> (),\n  }\n  \n  local value = {} :: MyType\n  \n  function value:Open()\n      if self.IsOpen == true then\n      elseif self.State == \"Closing\" or self.State == \"Opening\" then\n          -- Prior, this line errored as we were erroneously refining\n          -- `self` with `{ State: \"Closing\" | \"Opening\" }` rather\n          -- than `{ read State: \"Closing\" | \"Opening\" }\n          self:Open()\n      end\n  end\n  ```\n- Adds an option in `ToString.cpp` to disable the use of synthetic\nnames, which can be used to improve the quality of hover type.\n- Fixes a bug where `table.freeze` would incorrectly error on arguments\nof `any` type (fixes #2181)\n- Subtyping mistakenly did not allow for us to covariantly check tables\nwith missing properties against table types that gave those properties\noptional types. This release should fix these issues, including fixes\n#2164.\n- Type functions have a global environment that defines all of the type\naliases present in the environment around the type function definition,\nand the API of type functions also allows you to mutate types,\nspecifically table types and function types. Though we never supported\nthe type functions _actually_ mutating the aliases present in the\nenvironment around them, the mutable API allowed for users to author\ntype functions that _appeared_ to do so, which could be confusing when\nthey later discover that their mutation did not take place. This release\nintroduces new errors for type functions that attempt to call mutable\nAPIs on types from their environment, e.g.\n    ```luau\n    type myType = {}\n    type function create_table_with_key()\nmyType:setproperty(types.singleton \"key\", types.optional(types.number))\n-- this errors now!\n        return myType\n    end\n    local my_tbl: create_table_with_key<> = {key = \"123\"}\n    ```\n- Bidirectional inference for lambdas on extern types with generic\nparameters should work more consistently.\n- #2166 fixes a bug with `findBindingAtPosition` that should enable LSP\ntools to better support finding references for local functions and their\nparameters.\n- This release also includes a broad-strokes improvement to error\nsuppression handling. The New Type Solver should now be more consistent\nabout not reporting (or re-reporting) errors involving `any` or\n`*error-type*` or directly downstream of an existing type error.\n- This release removes the experimental\n`DebugLuauStringSingletonBasedOnQuotes` flag that trialed basing\nsingleton type inference solely on the usage of different quote styles.\nWe do not think we will be proceeding with this approach at this time.\n\n# Native Code Generation\n\n- Fixes a crash in `getOffsetBase` when the passed in IrOp is not an\nIrInst.\n- Improves inlining support by passing the argument value as the\ninitializer for the temporary being allocated in cases like anonymous\nfunction arguments or referring to upvalues in a function body.\n- Fixes the function end byte offset value, along side a number of other\ninternal values that could lead to incorrect code size values.\n- Adds a more direct implementation of code generation for `vector`\nequality and inequality that leads to fewer instructions in the IR and a\nsmaller number of produced basic blocks.\n- Adds a more optimized code generation flow for situations where we're\nindexing a table with keys that have unexpected type tags.\n- Fixes a bug where NCG would sometimes mistakenly optimize away\nnecessary entry tag checks.\n- Introduces a customizable per-VM storage for use from \"execution\ncallbacks\" system, with NCG as its first consumer for extra spill\nspaces. This adds 32x 8-byte spill slots on arm64 (on top of existing\n22) and 64x 8-byte spill slots on x64 (on top of existing 12*).\n- Changes codegen for bit32 operations to use guards, rather than normal\ncontrol flow, leading to significant (~30%) performance improvements in\nsome benchmarks that heavily leverage these operations.\n- Adds a combined instruction `UINT_TO_FLOAT` to replace instances where\nwe needed to emit `UINT_TO_NUM` and `NUM_TO_FLOAT` paired up. This leads\nto some very modest performance improvements.\n\n# Runtime\n- We previously added constant string constant folding with the results\nstored in AST allocator. This release also moves interpolation\nformatting strings to AST allocator to resolve #1965.\n- #2069 adds support for using `os.clock` in Emscripten build targets,\nlike the [Luau Playground](https://play.luau.org).\n- #2149 extends the C++ Require library to support constructing aliases\nwith tags associated with them.\n- #2054 fixes a bugged comparison in `api_update_top` that would cause\nan unnecessary runtime error if the API was used in a way that should be\na noop.\n\n# Internal Contributors\nCo-authored-by: Andy Friesen <afriesen@roblox.com>\nCo-authored-by: Annie Tang <annietang@roblox.com>\nCo-authored-by: Ariel Weiss <arielweiss@roblox.com>\nCo-authored-by: Hunter Goldstein <hgoldstein@roblox.com>\nCo-authored-by: James McNellis <jmcnellis@roblox.com>\nCo-authored-by: Sora Kanosue <skanosue@roblox.com>\nCo-authored-by: Vighnesh Vijay <vvijay@roblox.com>\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com>\n\n---------\n\nCo-authored-by: Hunter Goldstein <hgoldstein@roblox.com>\nCo-authored-by: Varun Saini <61795485+vrn-sn@users.noreply.github.com>\nCo-authored-by: Alexander Youngblood <ayoungblood@roblox.com>\nCo-authored-by: Menarul Alam <malam@roblox.com>\nCo-authored-by: Aviral Goel <agoel@roblox.com>\nCo-authored-by: Vighnesh <vvijay@roblox.com>\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com>\nCo-authored-by: Andy Friesen <afriesen@roblox.com>\nCo-authored-by: Ilya Rezvov <irezvov@roblox.com>",
+          "timestamp": "2026-01-16T15:34:36-08:00",
+          "tree_id": "a6eca9ed0b265a62a75add8410bc9bd7acf34a05",
+          "url": "https://github.com/luau-lang/luau/commit/93c83a46d7c6c1b040e58e82ef167340a7db1aef"
+        },
+        "date": 1768606975642,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "base64",
+            "value": 21.417,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "chess",
+            "value": 80.312,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "life",
+            "value": 83.507,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "matrixmult",
+            "value": 23.53,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "mesh-normal-scalar",
+            "value": 30.6,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "mesh-normal-vector",
+            "value": 15.618,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "pcmmix",
+            "value": 9.19,
+            "unit": "9ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "qsort",
+            "value": 74.868,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "sha256",
+            "value": 24.316,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "ack",
+            "value": 65.093,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "binary-trees",
+            "value": 28.73,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "fannkuchen-redux",
+            "value": 11.861,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "fixpoint-fact",
+            "value": 61.401,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "heapsort",
+            "value": 20.674,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "mandel",
+            "value": 62.22,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "n-body-vec",
+            "value": 18.621,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "n-body",
+            "value": 36.511,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "qt",
+            "value": 56.091,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "queen",
+            "value": 1.887,
+            "unit": "1ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "scimark",
+            "value": 84.96,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "spectral-norm",
+            "value": 11.385,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "sieve",
+            "value": 109.319,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "3d-cube",
+            "value": 8.006,
+            "unit": "8ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "3d-morph",
+            "value": 9.652,
+            "unit": "9ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "3d-raytrace",
+            "value": 9.705,
+            "unit": "9ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "controlflow-recursive",
+            "value": 5.549,
+            "unit": "5ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "crypto-aes",
+            "value": 13.502,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "fannkuch",
+            "value": 24.224,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "math-cordic",
+            "value": 15.39,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "math-partial-sums",
+            "value": 4.701,
+            "unit": "4ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "n-body-oop",
+            "value": 54.738,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "tictactoe",
+            "value": 122.966,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "trig",
+            "value": 22.886,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "vector-math",
+            "value": 10.31,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "voxelgen",
+            "value": 47.949,
             "unit": "ms",
             "range": "±0.000%",
             "extra": "luau"
