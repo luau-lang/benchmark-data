@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1768606976318,
+  "lastUpdate": 1769193927379,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-compile": [
@@ -30961,6 +30961,100 @@
           {
             "name": "regex-O2-t1-codegen",
             "value": 11.5706,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "afriesen@roblox.com",
+            "name": "Andy Friesen",
+            "username": "andyfriesen"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "416fc1ae1f8bf017f1f75c11c50b5bf6645f2fd2",
+          "message": "Sync to upstream/release/706 (#2208)\n\nHey everyone! We've been hard at work fixing bugs and improving native\ncodegen. Enjoy!\n\n# Analysis\n\n* Rename the class tag to extern in type functions\n* Fix https://github.com/luau-lang/luau/issues/2204\n* Rework type unification in terms of subtyping.\n\nThis uses the new solver's understanding of subtyping to drive\nunification for\nsome internal callsites. This is a broad change that should result in\nmore\n    consistent inference.  For example:\n\n    ```luau\n    local function sum<T>(x: T, y: T, z: (T, T) -> T) return z(x, y) end\n    local function sumrec(f: typeof(sum))\nreturn sum(2, 3, function<X>(g: X, h: X): add<X, X> return g + h end)\n    end\n-- Prior we would claim that `b` is of type `add<X, X> | number`: not\ngood!\n-- We now correctly claim that it is of type `number` thanks to bug\nfixes\n    -- made to subtyping that did not make their way to the unifier.\n    local b = sumrec(sum)\n    ```\n\n# Native Codegen\n\n* Improve vector handling in binary operations\n* Fix missed optimization causing an assertion failure\n* Propagate loads of STORE_VECTOR components produced by UINT_TO_FLOAT\n* Constant-fold new operand of CHECK_BUFFER_LEN\n* For register load-store propagation, use the second operand only for\nLOAD_FLOAT\n* TValue store cannot be removed when it's partially over-written\n* Rework equality and ordering comparisons to fix issues and be more\ntype aware\n* Migrate Luau NCG IrInst operands representation to SmallVector\n\n# Runtime\n\n* Fix 64-bit countrz to build on 32 bit Windows.\n* Remap Luau local debug and type information after performing jump\nexpansion\n* Add support for building Luau as a shared library\n* Luau should be able to make fastcalls even if library name is obscured\nby a local polyfill\n\n# OSS Contributions\n\n* https://github.com/luau-lang/luau/pull/2163\n* https://github.com/luau-lang/luau/pull/2167\n\n# Internal Contributors\n\nCo-authored-by: Ariel Weiss <arielweiss@roblox.com>\nCo-authored-by: Hunter Goldstein <hgoldstein@roblox.com>\nCo-authored-by: Ilya Rezvov <irezvov@roblox.com>\nCo-authored-by: Varun Saini <vsaini@roblox.com>\nCo-authored-by: Vighnesh Vijay <vvijay@roblox.com>\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com>\n\n---------\n\nCo-authored-by: Hunter Goldstein <hgoldstein@roblox.com>\nCo-authored-by: Varun Saini <61795485+vrn-sn@users.noreply.github.com>\nCo-authored-by: Alexander Youngblood <ayoungblood@roblox.com>\nCo-authored-by: Menarul Alam <malam@roblox.com>\nCo-authored-by: Aviral Goel <agoel@roblox.com>\nCo-authored-by: Vighnesh <vvijay@roblox.com>\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com>\nCo-authored-by: Ariel Weiss <aaronweiss@roblox.com>\nCo-authored-by: Ilya Rezvov <irezvov@roblox.com>\nCo-authored-by: Ariel Weiss <arielweiss@roblox.com>",
+          "timestamp": "2026-01-23T10:36:19-08:00",
+          "tree_id": "d9f8f476237544aafeffc66df27bc0025ef3349a",
+          "url": "https://github.com/luau-lang/luau/commit/416fc1ae1f8bf017f1f75c11c50b5bf6645f2fd2"
+        },
+        "date": 1769193927370,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.674607,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.741463,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.921117,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 3.87073,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-t1-codegen",
+            "value": 3.88177,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.63863,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.8183,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.90449,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 12.5097,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-t1-codegen",
+            "value": 12.4719,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-compile"
