@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1769193927379,
+  "lastUpdate": 1769803297788,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-compile": [
@@ -31055,6 +31055,100 @@
           {
             "name": "regex-O2-t1-codegen",
             "value": 12.4719,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "hgoldstein@roblox.com",
+            "name": "Hunter Goldstein",
+            "username": "hgoldstein"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "544d3fff6279841c85d101755933e361adcf7fdc",
+          "message": "Sync to upstream/release/707 (#2222)\n\nHello Luaunators! This release comes with an API change for users of\n`Luau.Require` and some nice improvements for the bytecode compiler\n_and_ native codegen!\n\n# Require Library\n\nFor users of `Luau.Require`'s `RequireNavigator`:\n`getRequirerIdentifier` and `reset` have been merged into a single\n`resetToRequirer` API. This reflects existing usage, where the\nidentifier returned by `getRequirerIdentifier` was always immediately\npassed to `reset`. The API surface is simpler, and this eliminates the\nartificial bottleneck of communicating requirer state via a\n`std::string` identifier.\n\n# Runtime\n\n* Inlining at bytecode compile time now retains information about\nbuiltin symbols, so `FASTCALL`s can be emitted when appropriate, such as\nin:\n```luau\nlocal function tryWithZero(f, x)\n    return f(x, 0)\nend\n\nreturn function (n)\n    -- If we inline `tryWithZero`, we'll be able to emit a\n    -- FASTCALL opcode when compiling the now inlined \n    -- `math.max(n, 0)`\n    return tryWithZero(math.max, n)\nend\n```\n* NCG: Fixed a crash resulting from partially eliminated dead store\ninstructions: we would incidentally mark a floating point value as a\npotential pointer into the heap, which could crash during garbage\ncollection.\n* NCG: Add vectorized instruction support for `min`, `max`, `floor`,\n`ceil`, and `abs`\n* NCG: Fixed a crash when constant folding a buffer access using an\noffset outside the representable range of integers.\n* Add support for constant folding vector component access at bytecode\ncompile time.\n\n---\n\nCo-authored-by: Andy Friesen <afriesen@roblox.com>\nCo-authored-by: Sora Kanosue <skanosue@roblox.com>\nCo-authored-by: Varun Saini <vsaini@roblox.com>\nCo-authored-by: Vighnesh Vijay <vvijay@roblox.com>\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com>",
+          "timestamp": "2026-01-30T11:52:37-08:00",
+          "tree_id": "b028c7739e1e3d61fd8166e54867ba1bbb2a6954",
+          "url": "https://github.com/luau-lang/luau/commit/544d3fff6279841c85d101755933e361adcf7fdc"
+        },
+        "date": 1769803297778,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.67514,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.742292,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.926257,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 3.87861,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-t1-codegen",
+            "value": 3.88961,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.63926,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.81934,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.93445,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 12.5496,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-t1-codegen",
+            "value": 12.5116,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-compile"
