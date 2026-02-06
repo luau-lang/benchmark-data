@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1769803297628,
+  "lastUpdate": 1770416485117,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-analyze": [
@@ -23159,6 +23159,72 @@
           {
             "name": "regex-dcr",
             "value": 591.032,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "61795485+vrn-sn@users.noreply.github.com",
+            "name": "Varun Saini",
+            "username": "vrn-sn"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "54a2ea00831df4c791e6cfc896a98da75d1ae126",
+          "message": "Sync to upstream/release/708 (#2232)\n\nAnother week, another release!\n\n### Analysis\n- Defining aliases that share a name with the built in types is now\ndisallowed; this was the case in the old solver but never made its way\nto the new solver.\n- Incremental work toward removing `FFlagLuauSolverV2` from the Analysis\ncodebase.\n- Fix a bug that caused nested tables to be parsed as\n`AstTypeReference`.\n- Fix a bug related to visiting `AstExprInstantiate` nodes.\n- Recursive functions defined on tables and as globals will now more\nconsistently infer, such as in:\n```luau\nlocal coolmath = {}\nfunction coolmath.factorial(n: number)\n    if n <= 1 then\n        return 1\n    end\n    -- Prior, this being recursive might have caused strange errors or for constraint\n    -- solving to be incomplete.\n    return coolmath.factorial(n - 1) * n\nend\n```\n\n### Native CodeGen\n- Support lowering for `bit32.band`/`bor`/`bxor`/`btest` called with a\nsingle argument.\n- Add missing table data invalidations to load-store optimization.\n- Fix missing condition for new dead store optimization.\n- Implement load-store propagation for table nodes and array elements.\n\n### Miscellaneous\n- Various improvements to our lldb formatter under `tools`: better\ncompatibility with older Python versions and support for `TString` and\n`TValue`.\n\n---\n\nCo-authored-by: David Cope <dcope@roblox.com>\nCo-authored-by: Hunter Goldstein <hgoldstein@roblox.com>\nCo-authored-by: Sora Kanosue <skanosue@roblox.com>\nCo-authored-by: Varun Saini <vsaini@roblox.com>\nCo-authored-by: Vighnesh Vijay <vvijay@roblox.com>\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com>\n\n---------\n\nCo-authored-by: Hunter Goldstein <hgoldstein@roblox.com>\nCo-authored-by: Alexander Youngblood <ayoungblood@roblox.com>\nCo-authored-by: Menarul Alam <malam@roblox.com>\nCo-authored-by: Aviral Goel <agoel@roblox.com>\nCo-authored-by: Vighnesh <vvijay@roblox.com>\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com>\nCo-authored-by: Ariel Weiss <aaronweiss@roblox.com>\nCo-authored-by: Andy Friesen <afriesen@roblox.com>\nCo-authored-by: Ilya Rezvov <irezvov@roblox.com>\nCo-authored-by: Ariel Weiss <arielweiss@roblox.com>\nCo-authored-by: Sora Kanosue <skanosue@roblox.com>",
+          "timestamp": "2026-02-06T14:12:33-08:00",
+          "tree_id": "6da92f93b6ba34dba11960132948c6e6f604414c",
+          "url": "https://github.com/luau-lang/luau/commit/54a2ea00831df4c791e6cfc896a98da75d1ae126"
+        },
+        "date": 1770416485111,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 5.04183,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 6.21412,
+            "unit": "6ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 41.5721,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 8.36508,
+            "unit": "8ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 10.9238,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 590.978,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"
