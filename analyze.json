@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1770416485117,
+  "lastUpdate": 1771633301881,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-analyze": [
@@ -23225,6 +23225,72 @@
           {
             "name": "regex-dcr",
             "value": 590.978,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "vvijay@roblox.com",
+            "name": "NotoriousV.I.G",
+            "username": "Vighnesh-V"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "b968ef742741bb2b703afc3b3c53f06608c87481",
+          "message": "Sync to upstream/release/709 (#2253)\n\nWe skipped the release last week, but we're back today with some new\nadditions to the VM and Native Code Generation (and as always,\nimprovements to typechecking).\n\n## Analysis\n\n- Fixed some instances of \"unreduced table types\" like { x: number } | {\nx: number }, especially for data-like arrays (extremely large tables\nthat have the same element of a given type).\n\n```luau\n-- Prior, hovering would claim `t: {{number} | {number}}`, and now\n-- we will claim it is a `{{number}}`\nlocal t = {\n    {1, 2, 3},\n    {4, 5, 6}\n}\n```\n- Fixed a bug where user defined type function could crash if passed too\nmany arguments.\n- Enables autocomplete to use type information for function arguments to\nsuggest results when those types are variadic. For example:\n```luau\nlocal function foo(...: \"Val1\") end\nfoo(@1)\n```\nwill now suggest \"Val1\"\n\n- Partially annotated local statements with type packs on the\nright-hand-side (see example) are now correctly inferred. Prior, we\nmishandled this case in a way that caused subsequent assignments to\nassume the first element of the type pack corresponded to the first\nunannotated element:\n```luau\nlocal function foo(): (number, boolean, string)\n    return 1, true \"three\"\nend\n\n-- Prior to this fix, we inferred that `y: number` for this statement ...\nlocal x: number, y, z: string = foo()\n--  ... similarly, this would have inferred `z: number` ...\nlocal x: number, y: boolean, z = foo()\n--  ... and this would have inferred `y: number` and `z: boolean`\nlocal x: number, y, z = foo()\n```\n## VM\n- Fix a use-after-free in `table.find`.\n\n## Native Code Generation\n- Fix a bug in NCG caused by using an incorrect operand in a buffer\nlength check.\n- NCG now unmaps executable pages when functions are garbage-collected.\n- Provide a native implementation for `math.isnan`\n\n---\nCo-authored-by: Hunter Goldstein <hgoldstein@roblox.com>\nCo-authored-by: Ilya Rezvov <irezvov@roblox.com>\nCo-authored-by: Sora Kanosue <skanosue@roblox.com>\nCo-authored-by: Varun Saini <vsaini@roblox.com>\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com>\n\n---------\n\nCo-authored-by: Hunter Goldstein <hgoldstein@roblox.com>\nCo-authored-by: Varun Saini <61795485+vrn-sn@users.noreply.github.com>\nCo-authored-by: Alexander Youngblood <ayoungblood@roblox.com>\nCo-authored-by: Menarul Alam <malam@roblox.com>\nCo-authored-by: Aviral Goel <agoel@roblox.com>\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com>\nCo-authored-by: Ariel Weiss <aaronweiss@roblox.com>\nCo-authored-by: Andy Friesen <afriesen@roblox.com>\nCo-authored-by: Ilya Rezvov <irezvov@roblox.com>\nCo-authored-by: Ariel Weiss <arielweiss@roblox.com>\nCo-authored-by: Sora Kanosue <skanosue@roblox.com>\nCo-authored-by: Varun Saini <vsaini@roblox.com>",
+          "timestamp": "2026-02-20T16:12:09-08:00",
+          "tree_id": "588fd98ccbd3fc0114f1e14a68af7ef916c6d7b1",
+          "url": "https://github.com/luau-lang/luau/commit/b968ef742741bb2b703afc3b3c53f06608c87481"
+        },
+        "date": 1771633301874,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 5.04161,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 6.21391,
+            "unit": "6ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 41.2388,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 8.36572,
+            "unit": "8ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 10.9237,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 1261.49,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"
