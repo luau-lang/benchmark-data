@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1771633301881,
+  "lastUpdate": 1772117025433,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-analyze": [
@@ -23277,6 +23277,72 @@
           {
             "name": "regex-nonstrict",
             "value": 8.36572,
+            "unit": "8ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 10.9237,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 1261.49,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "85714123+jackdotink@users.noreply.github.com",
+            "name": "Jack",
+            "username": "jackdotink"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "813167ac12c38e2e018e53a6567b25c13efa6d77",
+          "message": "Pass a lua_State parameter to useratom (#2256)\n\nCloses #2083.\n\nThis PR adds a state parameter to the `useratom` callback. While this is\na breaking change, it requires very minimal updates to embedder code.\n\nThe reasons for this change are in #2083, but again, all other callbacks\nhave state, and in useratom's current form, I must use a global mutable\nstatic variable to effectively use it. Which is not ideal.",
+          "timestamp": "2026-02-26T06:34:07-08:00",
+          "tree_id": "3926b93073574ca0277a8a9001dc56acd2e87298",
+          "url": "https://github.com/luau-lang/luau/commit/813167ac12c38e2e018e53a6567b25c13efa6d77"
+        },
+        "date": 1772117025427,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 5.04167,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 6.21319,
+            "unit": "6ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 41.2388,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 8.36498,
             "unit": "8ms",
             "range": "±0%",
             "extra": "luau-analyze"
