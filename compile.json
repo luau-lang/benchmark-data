@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1772117025579,
+  "lastUpdate": 1772213001827,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-compile": [
@@ -31431,6 +31431,100 @@
           {
             "name": "regex-O2-t1-codegen",
             "value": 12.4733,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "75688451+vegorov-rbx@users.noreply.github.com",
+            "name": "vegorov-rbx",
+            "username": "vegorov-rbx"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "964580112c1b59b19c4985dcc66be79162355b12",
+          "message": "Sync to upstream/release/710 (#2269)\n\nHello! Another week with updates to type analysis and fixes in compiler\nand native code generation.\n\n### Analysis\n* Table types are treated as shape types when normalizing against an\nextern type. This allows intersections against extern types to provide\ninformation on additional properties not declared in an extern type, but\npresent for that particular value:\n```luau\nfunction take(thing: Instance & { Brushes: Instance })\n    print(thing)\n    print(thing.Brushes.Name)\nend\n```\n* Fixed another crash which could happen when auto-complete visits a\ntable with write-only properties\n\n### Require library\n* During path resolution, we now reset to the requirer's context\n_before_ `to_alias_override` is called, enabling embedders to implement\ncontext-sensitive alias overrides\n\n### Compiler\n* In a fast-call fallback sequence, `GETGLOBAL`/`GETUPVAL` will never\nuse extra registers (Fixes #2248)\n\n### Native Code Generation\n* A counter system has been added which is used by native execution to\nreport regular/fallback block execution and VM side exit statistics.\nWhen using `--codegen` together with `--counters` in Luau REPL,\n`callgrind.out` file is written containing the counter data to view in\ncallgrind/cachegrind tools.\n* Fixed an issue where `setfenv` change could have been ignored,\nexecuting fast-paths for longer than is allowed\n* Stability improvements\n\n---\n\nCo-authored-by: Andy Friesen <afriesen@roblox.com>\nCo-authored-by: Ariel Weiss <arielweiss@roblox.com>\nCo-authored-by: Sora Kanosue <skanosue@roblox.com>\nCo-authored-by: Varun Saini <vsaini@roblox.com>\nCo-authored-by: Vighnesh Vijay <vvijay@roblox.com>\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com>",
+          "timestamp": "2026-02-27T09:13:51-08:00",
+          "tree_id": "3f8c2a135a853c6c1fea6a5ed1b54d706dbf031f",
+          "url": "https://github.com/luau-lang/luau/commit/964580112c1b59b19c4985dcc66be79162355b12"
+        },
+        "date": 1772213001812,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.675758,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.742932,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.927242,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 3.87747,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-t1-codegen",
+            "value": 3.88913,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.63804,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.81827,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.93371,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 12.5455,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-t1-codegen",
+            "value": 12.5098,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-compile"

@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1772117025433,
+  "lastUpdate": 1772213001676,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-analyze": [
@@ -23357,6 +23357,72 @@
           {
             "name": "regex-dcr",
             "value": 1261.49,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "75688451+vegorov-rbx@users.noreply.github.com",
+            "name": "vegorov-rbx",
+            "username": "vegorov-rbx"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "964580112c1b59b19c4985dcc66be79162355b12",
+          "message": "Sync to upstream/release/710 (#2269)\n\nHello! Another week with updates to type analysis and fixes in compiler\nand native code generation.\n\n### Analysis\n* Table types are treated as shape types when normalizing against an\nextern type. This allows intersections against extern types to provide\ninformation on additional properties not declared in an extern type, but\npresent for that particular value:\n```luau\nfunction take(thing: Instance & { Brushes: Instance })\n    print(thing)\n    print(thing.Brushes.Name)\nend\n```\n* Fixed another crash which could happen when auto-complete visits a\ntable with write-only properties\n\n### Require library\n* During path resolution, we now reset to the requirer's context\n_before_ `to_alias_override` is called, enabling embedders to implement\ncontext-sensitive alias overrides\n\n### Compiler\n* In a fast-call fallback sequence, `GETGLOBAL`/`GETUPVAL` will never\nuse extra registers (Fixes #2248)\n\n### Native Code Generation\n* A counter system has been added which is used by native execution to\nreport regular/fallback block execution and VM side exit statistics.\nWhen using `--codegen` together with `--counters` in Luau REPL,\n`callgrind.out` file is written containing the counter data to view in\ncallgrind/cachegrind tools.\n* Fixed an issue where `setfenv` change could have been ignored,\nexecuting fast-paths for longer than is allowed\n* Stability improvements\n\n---\n\nCo-authored-by: Andy Friesen <afriesen@roblox.com>\nCo-authored-by: Ariel Weiss <arielweiss@roblox.com>\nCo-authored-by: Sora Kanosue <skanosue@roblox.com>\nCo-authored-by: Varun Saini <vsaini@roblox.com>\nCo-authored-by: Vighnesh Vijay <vvijay@roblox.com>\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com>",
+          "timestamp": "2026-02-27T09:13:51-08:00",
+          "tree_id": "3f8c2a135a853c6c1fea6a5ed1b54d706dbf031f",
+          "url": "https://github.com/luau-lang/luau/commit/964580112c1b59b19c4985dcc66be79162355b12"
+        },
+        "date": 1772213001669,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 5.04311,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 6.21436,
+            "unit": "6ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 41.2903,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 8.36223,
+            "unit": "8ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 10.9209,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 1262.05,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"
