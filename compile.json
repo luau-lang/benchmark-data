@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1772213001827,
+  "lastUpdate": 1772840802190,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-compile": [
@@ -31525,6 +31525,100 @@
           {
             "name": "regex-O2-t1-codegen",
             "value": 12.5098,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "arielweiss@roblox.com",
+            "name": "ariel",
+            "username": "aatxe"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "004d88ff2b05758947ea1d1f4919e7bb2192b880",
+          "message": "Sync to upstream/release/711 (#2280)\n\nHi there, folks! We're back with another weekly Luau release!\n\n# Language\n\n* Adds the `const` keyword for defining constant bindings that are\nstatically forbidden to be reassigned to. This implements\n[luau-lang/rfcs#166](https://github.com/luau-lang/rfcs/pull/166).\n* Adds a collection of new math constants to Luau's `math` library per\n[luau-lang/rfcs#169](https://github.com/luau-lang/rfcs/pull/169).\n\n# Analysis\n\n* Fixes a class of bugs where Luau would not retain reasonable upper or\nlower bounds on free types, resulting in types snapping to `never` or\n`unknown` despite having bounds.\n```luau\n--!strict\n-- `lines` will be inferred to be of `{ string }` now, and prior\n-- was \nlocal lines = {}\ntable.insert(lines, table.concat({}, \"\"))\nprint(table.concat(lines, \"\\n\"))\n```\n```luau\n--!strict\n-- `buttons` will be inferred to be of type `{ { a: number } }`\nlocal buttons = {}\ntable.insert(buttons, { a = 1 })\ntable.insert(buttons, { a = 2, b = true })\ntable.insert(buttons, { a = 3 })\n```\n* Disables the type error from `string.format` when called with a\ndynamically-determined format string (i.e. a non-literal string argument\nwith the type `string`) in response to user feedback about it being too\nnoisy.\n* Resolves an ICE that could occur when type checking curried generic\nfunctions. Fixes #2061!\n* Fixes false positive type errors from doing equality or inequality\nagainst `nil` when indexing from a table\n* In #2256, adds a state parameter to the `useratom` callback for\nconsistency with other callbacks.\n\n# Compiler\n- Improves the compiler's type inference for vector component access,\nnumerical for loops, function return types and singleton type\nannotations, fixing #2244 #2235 and #2255.\n\n# Native Code Generation\n\n- Fixes a bug where some operations on x86_64 would produce integers\nthat would take up more than 32-bits when a 32-bit integer is expected.\nWe resolve these issues by properly truncating to 32-bits in these\nsituations.\n- Improves dead store elimination for conditional jumps and fastcalls\narguments, improving overall native codegen performance by about 2% on\naverage in benchmarks, with some benchmarks as high as 25%.\n\n---------\n\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com>",
+          "timestamp": "2026-03-06T15:35:49-08:00",
+          "tree_id": "e4d3d1aeabaa197335bcbbb94111094777f8ad1e",
+          "url": "https://github.com/luau-lang/luau/commit/004d88ff2b05758947ea1d1f4919e7bb2192b880"
+        },
+        "date": 1772840802180,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.675831,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.742735,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.934059,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 3.94284,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-t1-codegen",
+            "value": 3.95336,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.63616,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.81769,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.94083,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 12.8804,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-t1-codegen",
+            "value": 12.8391,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-compile"
