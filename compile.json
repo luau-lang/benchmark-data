@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1772840802190,
+  "lastUpdate": 1773337091922,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-compile": [
@@ -31570,6 +31570,100 @@
           {
             "name": "map-O2",
             "value": 0.934059,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 3.94284,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-t1-codegen",
+            "value": 3.95336,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.63616,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.81769,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.94083,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 12.8804,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-t1-codegen",
+            "value": 12.8391,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "86601049+PhoenixWhitefire@users.noreply.github.com",
+            "name": "PhoenixWhitefire",
+            "username": "PhoenixWhitefire"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "ea931e085ebbc3c6c5ff74bc78ad30805d0fd870",
+          "message": "Fix being able to write to a read-only field in a compound assignment (#2290)\n\nThe following code now generates a Type Error:\n\n```luau\ntype T = {\n    read x: number\n}\n\nlocal foo: T = { x = 5 }\nfoo.x += 5\n```\n\nThe flag `LuauLValueCompoundAssignmentVisitLhs` has been added, as well\nas 1 test.\n\n---------\n\nCo-authored-by: ariel <aweiss@hey.com>",
+          "timestamp": "2026-03-12T10:27:38-07:00",
+          "tree_id": "2a31ea2f07daeffed8a2dcb0bf3105822cb0aee3",
+          "url": "https://github.com/luau-lang/luau/commit/ea931e085ebbc3c6c5ff74bc78ad30805d0fd870"
+        },
+        "date": 1773337091913,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.675831,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.742741,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.934063,
             "unit": "0ms",
             "range": "±0%",
             "extra": "luau-compile"

@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1772840802039,
+  "lastUpdate": 1773337091776,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-analyze": [
@@ -23489,6 +23489,72 @@
           {
             "name": "regex-dcr",
             "value": 2625.47,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "86601049+PhoenixWhitefire@users.noreply.github.com",
+            "name": "PhoenixWhitefire",
+            "username": "PhoenixWhitefire"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "ea931e085ebbc3c6c5ff74bc78ad30805d0fd870",
+          "message": "Fix being able to write to a read-only field in a compound assignment (#2290)\n\nThe following code now generates a Type Error:\n\n```luau\ntype T = {\n    read x: number\n}\n\nlocal foo: T = { x = 5 }\nfoo.x += 5\n```\n\nThe flag `LuauLValueCompoundAssignmentVisitLhs` has been added, as well\nas 1 test.\n\n---------\n\nCo-authored-by: ariel <aweiss@hey.com>",
+          "timestamp": "2026-03-12T10:27:38-07:00",
+          "tree_id": "2a31ea2f07daeffed8a2dcb0bf3105822cb0aee3",
+          "url": "https://github.com/luau-lang/luau/commit/ea931e085ebbc3c6c5ff74bc78ad30805d0fd870"
+        },
+        "date": 1773337091768,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 5.04825,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 6.21344,
+            "unit": "6ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 41.1866,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 8.3638,
+            "unit": "8ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 10.9293,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 2625.53,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"
