@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1773337091776,
+  "lastUpdate": 1773426425158,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-analyze": [
@@ -23555,6 +23555,72 @@
           {
             "name": "regex-dcr",
             "value": 2625.53,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "afriesen@roblox.com",
+            "name": "Andy Friesen",
+            "username": "andyfriesen"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "9e2984fd0334414a2ef62ceede0c06dab7574d55",
+          "message": "Sync to upstream/release/712 (#2296)\n\n# Analysis\n\n* Fix https://github.com/luau-lang/luau/issues/1986\n* Fix https://github.com/luau-lang/luau/issues/1890\n* Minor bugfixes and improvements\n\n# Compiler\n\n* Do not constant-fold strings that are longer than 4096 characters.\nThis helps to avoid pathalogical misoptimizations that could result in\nthe compiling bytecode growing very large.\n* fix constant placement into the CHECK_BUFFER_LEN 'double source'\nargument\n\n---------\n\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com>\nCo-authored-by: Ariel Weiss <arielweiss@roblox.com>",
+          "timestamp": "2026-03-13T11:17:45-07:00",
+          "tree_id": "9a7373f586f54d8518f848a6e27ce6b2472dc82f",
+          "url": "https://github.com/luau-lang/luau/commit/9e2984fd0334414a2ef62ceede0c06dab7574d55"
+        },
+        "date": 1773426425152,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 5.04585,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 6.20982,
+            "unit": "6ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 20.6895,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 8.36195,
+            "unit": "8ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 10.9259,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 1185.45,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"
