@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1773426424673,
+  "lastUpdate": 1774039125516,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "callgrind clang": [
@@ -92704,6 +92704,275 @@
           {
             "name": "voxelgen",
             "value": 47.953,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "hgoldstein@roblox.com",
+            "name": "Hunter Goldstein",
+            "username": "hgoldstein"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "b37af212cb60366043c93c5a4acd085ab29c8d7a",
+          "message": "Sync to upstream/release/713 (#2308)\n\nHey folks! Another week another Luau release 🙂 \n# Analysis\n\n* `InsertionOrderedMap` has been moved from the `Analysis` library to\n`Common`.\n* Subtyping has been rewritten to avoid extra allocations: there should\nbe no behavioral change from this effort, only somewhat lower memory\npressure.\n* Fixed a bug where analyzing comparing a value that is too complex to\ntype check against `nil` may cause the type checker to crash.\n* `pcall` now handles functions that return no values, for example:\n```luau\nlocal mod = require('mymodule')\n\n-- Previously, we would error claiming that we only expect one value on the left-hand-side.\n-- Now, there is no error and `result` is typed as `unknown`.\nlocal success, result = pcall(function()\n    mod.dothething()\nend)\n```\n\n# Compiler\n\n* Fixed a bug in `const` where function statements were excluded from\nconst checks. Fixes #2282\n```luau\nconst a = 42\n-- The following will now fail to compile.\nfunction a()\nend\n```\n* Table literal \"shapes\" can now encorporate constant values at bytecode\ncompile time. We store the shape of constant tables if all their keys\nare constants, which allows slightly faster insertion when building said\nliterals (we can preallocate a table in a particular shape). Now, we can\nalso store constant values, making construction a single bytecode. For\nexample:\n```luau\n-- This snippet ...\nreturn { x = 1, y = 2 }\n```\n```luau\n-- ... used to compile to bytecode like ...\nDUPTABLE R0 2\nLOADN R1 1\nSETTABLEKS R1 R0 K0 ['x']\nLOADN R1 2\nSETTABLEKS R1 R0 K1 ['y']\nRETURN R0 1\n```\n```luau\n-- ... and now compiles to something like ...\nDUPTABLE R0 4\nRETURN R0 1\n```\n\n# Runtime\n* Introduced a `@debugnoinline` attribute behind a debug flag. We do not\nactively plan to ship this but have added it to help test compiler and\nruntime optimizations.\n* Fixed a bug where setting a breakpoint in a natively compiled function\ncould crash on ARM64.\n* NCG: The data section of generated code is no longer allocated as\nexecutable, preventing a class of potential exploits.\n\n---\n\nCo-authored-by: Andy Friesen <afriesen@roblox.com>\nCo-authored-by: Ariel Weiss <arielweiss@roblox.com>\nCo-authored-by: David Cope <dcope@roblox.com>\nCo-authored-by: Hunter Goldstein <hgoldstein@roblox.com>\nCo-authored-by: Ilya Rezvov <irezvov@roblox.com>\nCo-authored-by: Tom Schollenberger <tschollenberger@roblox.com>\nCo-authored-by: Vighnesh Vijay <vvijay@roblox.com>\nCo-authored-by: Karim Mouline <kmouline@roblox.com>",
+          "timestamp": "2026-03-20T13:29:39-07:00",
+          "tree_id": "6e4d21a25e2efd28d01b5f638083044a9de7b183",
+          "url": "https://github.com/luau-lang/luau/commit/b37af212cb60366043c93c5a4acd085ab29c8d7a"
+        },
+        "date": 1774039125492,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "base64",
+            "value": 21.429,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "chess",
+            "value": 80.316,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "life",
+            "value": 83.507,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "matrixmult",
+            "value": 23.53,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "mesh-normal-scalar",
+            "value": 30.601,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "mesh-normal-vector",
+            "value": 15.618,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "pcmmix",
+            "value": 9.19,
+            "unit": "9ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "qsort",
+            "value": 74.939,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "sha256",
+            "value": 24.313,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "ack",
+            "value": 65.093,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "binary-trees",
+            "value": 28.694,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "fannkuchen-redux",
+            "value": 11.861,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "fixpoint-fact",
+            "value": 61.321,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "heapsort",
+            "value": 20.678,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "mandel",
+            "value": 62.111,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "n-body-vec",
+            "value": 18.62,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "n-body",
+            "value": 36.511,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "qt",
+            "value": 56.09,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "queen",
+            "value": 1.887,
+            "unit": "1ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "scimark",
+            "value": 84.95,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "spectral-norm",
+            "value": 11.385,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "sieve",
+            "value": 109.313,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "3d-cube",
+            "value": 8.004,
+            "unit": "8ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "3d-morph",
+            "value": 9.306,
+            "unit": "9ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "3d-raytrace",
+            "value": 9.706,
+            "unit": "9ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "controlflow-recursive",
+            "value": 5.549,
+            "unit": "5ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "crypto-aes",
+            "value": 13.428,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "fannkuch",
+            "value": 24.224,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "math-cordic",
+            "value": 15.39,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "math-partial-sums",
+            "value": 4.65,
+            "unit": "4ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "n-body-oop",
+            "value": 54.738,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "tictactoe",
+            "value": 122.97,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "trig",
+            "value": 22.886,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "vector-math",
+            "value": 10.31,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau"
+          },
+          {
+            "name": "voxelgen",
+            "value": 47.898,
             "unit": "ms",
             "range": "±0.000%",
             "extra": "luau"
