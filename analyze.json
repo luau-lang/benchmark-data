@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1774039125998,
+  "lastUpdate": 1774546842151,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-analyze": [
@@ -23680,6 +23680,72 @@
           {
             "name": "regex-strict",
             "value": 10.9163,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 1012.88,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "86601049+PhoenixWhitefire@users.noreply.github.com",
+            "name": "PhoenixWhitefire",
+            "username": "PhoenixWhitefire"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "3634cb4d9f815717292346ff4f918b19f1f53c3c",
+          "message": "Fix `type(x) == \"vector\"` always refining `x` to `never` (#2291)\n\nFixes\n\n```luau\nlocal x: unknown\n\nif type(x) == \"vector\" then -- Lint warning\n    local y = x -- `never`\nend\n```\n\nAdds flags `LuauRefinementTypeVector` and `LuauLinterVectorPrimitive`.\nModified 1 Linter test and 1 refinement test. Adds 1 refinement test.",
+          "timestamp": "2026-03-26T10:31:29-07:00",
+          "tree_id": "3078c349c94b83a248cbbf6d162da2499dc490e8",
+          "url": "https://github.com/luau-lang/luau/commit/3634cb4d9f815717292346ff4f918b19f1f53c3c"
+        },
+        "date": 1774546842144,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 5.04585,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 6.2102,
+            "unit": "6ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 21.3535,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 8.35799,
+            "unit": "8ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 10.9161,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"
