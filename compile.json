@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1774546842296,
+  "lastUpdate": 1774631802049,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-compile": [
@@ -31995,6 +31995,100 @@
           {
             "name": "regex-O2-t1-codegen",
             "value": 12.6968,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "61795485+vrn-sn@users.noreply.github.com",
+            "name": "Varun Saini",
+            "username": "vrn-sn"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "27718747a24448ea6418f424963c741f57263743",
+          "message": "Sync to upstream/release/714 (#2314)\n\nAnother week, another release! Happy spring! 🌷\n\n### Analysis\n- Remove an incorrect assertion triggered when we fail to bind a generic\npack.\n- Various miscellaneous fixes for bugs found by the fuzzer.\n\n### Runtime\n- Fix `DUPTABLE` constant packing not respecting side-effects.\n- NCG: fix removal of stores that are still needed in VM exits.\n- NCG: fix a bug that caused buffer access ranges to be computed\nincorrectly.\n- Fix #2293.\n\n### Miscellaneous\n- Various `Makefile` improvements.\n- Add lldb providers for `Proto`.\n- Add new `--dump-constants` flag to `luau-compile`.\n\n---\n\nCo-authored-by: Andy Friesen <afriesen@roblox.com>\nCo-authored-by: Ariel Weiss <arielweiss@roblox.com>\nCo-authored-by: David Cope <dcope@roblox.com>\nCo-authored-by: Hunter Goldstein <hgoldstein@roblox.com>\nCo-authored-by: Sora Kanosue <skanosue@roblox.com>\nCo-authored-by: Thomas Schollenberger <tschollenberger@roblox.com>\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com>",
+          "timestamp": "2026-03-27T10:07:26-07:00",
+          "tree_id": "0dcd8083d93bfa6563da04b8cb95dd75763b25ad",
+          "url": "https://github.com/luau-lang/luau/commit/27718747a24448ea6418f424963c741f57263743"
+        },
+        "date": 1774631802040,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.676407,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.743079,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.931866,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 3.93453,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-t1-codegen",
+            "value": 3.94591,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.64277,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.81807,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.93903,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 12.7407,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-t1-codegen",
+            "value": 12.6978,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-compile"
