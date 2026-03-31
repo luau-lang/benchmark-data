@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1774631801895,
+  "lastUpdate": 1774958272509,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-analyze": [
@@ -23819,6 +23819,72 @@
           {
             "name": "regex-dcr",
             "value": 1012.94,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "86601049+PhoenixWhitefire@users.noreply.github.com",
+            "name": "PhoenixWhitefire",
+            "username": "PhoenixWhitefire"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "b57f54d7069a8e89da07ca7a565e0ea7ccb87608",
+          "message": "Read-only/Write-only extern properties, Read-only `vector` properties (#2071)\n\nImplements the `read` and `write` property attributes for external type\ndefinitions, which the embedded `vector` type now makes use of:\n\n**Before:**\n```luau\ndeclare extern type vector with\n    x: number\n    y: number\n    z: number\nend\n```\n\n**After:**\n```luau\ndeclare extern type vector with\n    read x: number\n    read y: number\n    read z: number\nend\n```\n\nThe following code now creates type-errors in the expected places:\n\n```luau\n--!strict\nlocal function increment(v: vector)\n    v.x += 1        -- TE\n    v.x -= 1        -- TE\n    v.y *= 1        -- TE\n    v.z /= 1        -- TE\n    print(v.x)      -- No TE\n    print(v.x > 5)  -- No TE\n    v.x = 15        -- TE\nend\n\nincrement(vector.create(1, 2, 3))\n```\n\nThis PR also supports different read/write types:\n\n```luau\n-- Definition\ndeclare extern type Foo with\n    read Bar: number\n    write Bar: string\nend\n\n-- Script\nlocal f: Foo\nlocal b: number = f.Bar\nf.Bar = \"Hello, World!\"\n```\n\nAdditionally,\n* Adds two new tests for the implemented syntax\n* Adds the `LuauLValueCompoundAssignmentVisitLhs`,\n`LuauExternReadWriteAttributes` and `LuauTypeCheckerVectorReadOnly`\nflags\n\nCloses #2062",
+          "timestamp": "2026-03-31T04:49:24-07:00",
+          "tree_id": "218ab75efe2905367b5d87d6a0968af0390f1dab",
+          "url": "https://github.com/luau-lang/luau/commit/b57f54d7069a8e89da07ca7a565e0ea7ccb87608"
+        },
+        "date": 1774958272501,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 5.04557,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 6.20994,
+            "unit": "6ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 21.3324,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 8.35753,
+            "unit": "8ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 10.9157,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 1012.93,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"
