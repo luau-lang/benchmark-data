@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1775847185144,
+  "lastUpdate": 1776708153822,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-compile": [
@@ -32371,6 +32371,100 @@
           {
             "name": "regex-O2-t1-codegen",
             "value": 12.838,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "hgoldstein@roblox.com",
+            "name": "Hunter Goldstein",
+            "username": "hgoldstein"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "6f2978e7f7825d87b9a8e4b44b40a1c66d682b55",
+          "message": "Sync to upstream/release/717 (#2350)\n\nHello folks! Sorry for the late release, but it's another week and\nanother Luau release, though really more of a Luau VM release this time\naround 🙂\n\n# Runtime\n\n* Added `FASTCALL` support for `buffer.writeinteger` and\n`buffer.readinteger` (#2326)\n* NCG: Fixed a bug in which `buffer` writes did not invalidate the heap\ndata of buffers. In practice this did not occur due to this codepath\nmostly incuring a VM exit, but the bug was visible in the IR output.\n* NCG: Reworked how we track whether IR instructions return values,\nfixing a class of performance issues (increased register pressure from\ndead instructions) and potential correctness issues.\n* NCG: Avoid potentially spilling a register _onto_ the frame pointer on\nARM, which could cause unwinding crashes or other issues while\ndebugging.\n* NCG: Fixed a bug in the NCG integer implementation where optimizing a\ncomparison to an integer would cause us to jump to a nonsense position\n(the arguments given to `JUMP` were erroneous).\n* NCG: Fixed a bug where writes to `userdata` would not invalidate the\nstore cache, meaning we may incorrectly assume a read result has not\nchanged.\n* NCG: Improved how values are passed between function calls on x86,\nopening up further optimization opportunities by avoiding some register\nspills.\n\n---\n\nCo-authored-by: Ariel Weiss <arielweiss@roblox.com>\nCo-authored-by: Sora Kanosue <skanosue@roblox.com>\nCo-authored-by: Thomas Schollenberger <tschollenberger@roblox.com>\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com>\n\n---------\n\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com>\nCo-authored-by: Ariel Weiss <arielweiss@roblox.com>\nCo-authored-by: Andy Friesen <afriesen@roblox.com>\nCo-authored-by: Varun Saini <61795485+vrn-sn@users.noreply.github.com>\nCo-authored-by: Sora Kanosue <skanosue@roblox.com>\nCo-authored-by: Annie Tang <annietang@roblox.com>\nCo-authored-by: Annie Tang <98965493+annieetang@users.noreply.github.com>",
+          "timestamp": "2026-04-20T10:54:09-07:00",
+          "tree_id": "9f2237ea50d75efe13e8a319868cfef3a4fd1fcc",
+          "url": "https://github.com/luau-lang/luau/commit/6f2978e7f7825d87b9a8e4b44b40a1c66d682b55"
+        },
+        "date": 1776708153812,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.6751,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.742386,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.936612,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 4.11886,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-t1-codegen",
+            "value": 4.1224,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.64508,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.82518,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.96056,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 13.3457,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-t1-codegen",
+            "value": 12.8654,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-compile"
