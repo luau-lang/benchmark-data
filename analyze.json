@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1776708153691,
+  "lastUpdate": 1777062278857,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-analyze": [
@@ -24083,6 +24083,72 @@
           {
             "name": "regex-dcr",
             "value": 1077.59,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "irezvov@roblox.com",
+            "name": "Ilya Rezvov",
+            "username": "SPY"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "231a59c3fe6fac8ad37c2851c756eb0873239a9f",
+          "message": "Sync to upstream/release/718 (#2359)\n\nIt is new Friday and new Luau release!\n\nThis release is mostly focused on improving integer support in Luau VM:\n- NCG integer lowerings for x64 and Arm64 were added by @tommyscholly\n(HUGE!)\n- FASTCALL2K support for integers and other integer fastcall fixes\n- Test coverage for integers was improved\n\nAlso:\n- BytecodeGraph representation is introduced for coming Bytecode ->\nBytecode inliner and optimizer\n- Improved type alias resolution\n- Fix for constraints resolution of MetatableTypes in LValue position\n\nCo-authored-by: Andy Friesen\n[afriesen@roblox.com](mailto:afriesen@roblox.com)\nCo-authored-by: Ilya Rezvov\n[irezvov@roblox.com](mailto:irezvov@roblox.com)\nCo-authored-by: Thomas Schollenberger\n[tschollenberger@roblox.com](mailto:tschollenberger@roblox.com)\nCo-authored-by: Vyacheslav Egorov\n[vegorov@roblox.com](mailto:vegorov@roblox.com)\n\n---------\n\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com>\nCo-authored-by: Ariel Weiss <arielweiss@roblox.com>\nCo-authored-by: Andy Friesen <afriesen@roblox.com>\nCo-authored-by: Hunter Goldstein <hgoldstein@roblox.com>\nCo-authored-by: Varun Saini <61795485+vrn-sn@users.noreply.github.com>\nCo-authored-by: Sora Kanosue <skanosue@roblox.com>\nCo-authored-by: Annie Tang <annietang@roblox.com>\nCo-authored-by: Annie Tang <98965493+annieetang@users.noreply.github.com>",
+          "timestamp": "2026-04-24T13:15:15-07:00",
+          "tree_id": "ea77eb1f88ee8e87240887e53415e490822fe556",
+          "url": "https://github.com/luau-lang/luau/commit/231a59c3fe6fac8ad37c2851c756eb0873239a9f"
+        },
+        "date": 1777062278850,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 5.05183,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 6.22223,
+            "unit": "6ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 20.9671,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 8.41521,
+            "unit": "8ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 10.977,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 1077.25,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"
