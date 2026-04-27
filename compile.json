@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1777062279006,
+  "lastUpdate": 1777295581469,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-compile": [
@@ -32559,6 +32559,100 @@
           {
             "name": "regex-O2-t1-codegen",
             "value": 12.8959,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "49820045+9382@users.noreply.github.com",
+            "name": "Aidan",
+            "username": "9382"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "26f346ce521a05caf3eaa3f787b40d0a53eaf3a6",
+          "message": "Avoid a redundant MOVE on some string interpolation setups (#2324)\n\nThis fixes a discrepancy between string interpolation (<code>local a =\n\\`{xyz}\\`</code>) and the manually written equivilant version (`local a\n= (\"%*\"):format(xyz)`), where string interpolation would sometimes\nintroduce a `MOVE` even when it didn't need to as the target register\nwas marked as temporary\n\n<details><summary>Bytecode difference</summary>\n\nCode: <code>local f = \\`{global}\\`</code>\n\nBefore:\n```\nFunction 0 (??):\n    1: local f = `{global}`\nLOADK R1 K0 ['%*']\nGETGLOBAL R3 K1 ['global']\nNAMECALL R1 R1 K2 ['format']\nCALL R1 2 1\nMOVE R0 R1\nRETURN R0 0\n```\n\nAfter:\n```\nFunction 0 (??):\n    1: local f = `{global}`\nLOADK R0 K0 ['%*']\nGETGLOBAL R2 K1 ['global']\nNAMECALL R0 R0 K2 ['format']\nCALL R0 2 1\nRETURN R0 0\n```\n</details>\n\nThis is also technically a performance improvement, though the\ndifference is mostly unnoticeable in normal contexts (I'm seeing a 4-5%\nimprovement on a 1e7 loop which is nothing but the optimisable string\ninterp, so about as good as the case gets)\n\nI've not written a new test case as `InterpStringRegisterCleanup`\nalready covers the unoptimisable case",
+          "timestamp": "2026-04-27T06:03:39-07:00",
+          "tree_id": "432fd9eacff28be133518afb76ff10fa14171d81",
+          "url": "https://github.com/luau-lang/luau/commit/26f346ce521a05caf3eaa3f787b40d0a53eaf3a6"
+        },
+        "date": 1777295581458,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.675067,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.74229,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.934007,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 4.12853,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-t1-codegen",
+            "value": 4.13212,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.64505,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.82486,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.95758,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 13.3773,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-t1-codegen",
+            "value": 12.8963,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-compile"
