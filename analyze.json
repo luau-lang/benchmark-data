@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1777295581310,
+  "lastUpdate": 1777323559925,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-analyze": [
@@ -24208,6 +24208,72 @@
           {
             "name": "regex-strict",
             "value": 10.9746,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 1077.25,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "johnnymorganz@outlook.com",
+            "name": "JohnnyMorganz",
+            "username": "JohnnyMorganz"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "08b3df5ed468a0b7c9d3d6910adc42858a5539fe",
+          "message": "Add null-check for NavigationContext.getAlias result (#2330)\n\nThis change is gated behind FFlag `LuauRequireResolveAliasNullCheck`.\nFixes #2272.",
+          "timestamp": "2026-04-27T13:49:39-07:00",
+          "tree_id": "f365dabe6649a3bb6a4f5437b8a4696cf9cc8e9d",
+          "url": "https://github.com/luau-lang/luau/commit/08b3df5ed468a0b7c9d3d6910adc42858a5539fe"
+        },
+        "date": 1777323559917,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 5.05223,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 6.22224,
+            "unit": "6ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 20.9677,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 8.4155,
+            "unit": "8ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 10.9773,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"

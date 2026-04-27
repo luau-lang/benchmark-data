@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1777295581469,
+  "lastUpdate": 1777323560077,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-compile": [
@@ -32653,6 +32653,100 @@
           {
             "name": "regex-O2-t1-codegen",
             "value": 12.8963,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "johnnymorganz@outlook.com",
+            "name": "JohnnyMorganz",
+            "username": "JohnnyMorganz"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "08b3df5ed468a0b7c9d3d6910adc42858a5539fe",
+          "message": "Add null-check for NavigationContext.getAlias result (#2330)\n\nThis change is gated behind FFlag `LuauRequireResolveAliasNullCheck`.\nFixes #2272.",
+          "timestamp": "2026-04-27T13:49:39-07:00",
+          "tree_id": "f365dabe6649a3bb6a4f5437b8a4696cf9cc8e9d",
+          "url": "https://github.com/luau-lang/luau/commit/08b3df5ed468a0b7c9d3d6910adc42858a5539fe"
+        },
+        "date": 1777323560067,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.675135,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.742361,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.934085,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 4.12858,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-t1-codegen",
+            "value": 4.13218,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.64512,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.82493,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.95765,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 13.3773,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-t1-codegen",
+            "value": 12.8964,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-compile"
