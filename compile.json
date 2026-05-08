@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1777899363865,
+  "lastUpdate": 1778273460810,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-compile": [
@@ -32935,6 +32935,100 @@
           {
             "name": "regex-O2-t1-codegen",
             "value": 15.3801,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "arielweiss@roblox.com",
+            "name": "ariel",
+            "username": "aatxe"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "0c6cea0122242ed76528848cfe130e9820e7f122",
+          "message": "Sync to upstream/release/720 (#2383)\n\nHowdy there, folks! We've got another Luau release this week, mainly\nfocused on some pain points with type analysis!\n  \n**Note**: For folks who are using definition files for providing type\ndefinitions for the runtime environment they're working in, we also\nwanted to highlight that the `declare class` syntax is being entirely\ncleaned up finally. We added syntax for `declare extern type` many\nmonths ago, and with the [Luau classes\nRFC](https://rfcs.luau.org/syntax-classes.html) accepted, it is\nparticularly prudent that we finalize the cleanup of `declare class`. If\nyou're still on the old syntax, please update to use `declare extern\ntype Foo with ...` to avoid interruption when a future release removes\n`declare class` entirely.\n  \n  ## Language\n\n* The `const` keyword now correctly appears in autocomplete suggestions\nfrom Luau.\n\n  ## Analysis\n\n- Fixes false positive `OptionalValueAccess` errors when iterating over\na table with an optional indexer type. The VM's generalized iteration\nalready guarantees non-nil values in the loop body, and the type checker\nnow reflects that. Fixes\n[luau-lang/luau#2236](https://github.com/luau-lang/luau/issues/2236).\n  ```luau\n  --!strict\n  type TypeA = { Value: any }\n  local list = {} :: { [string]: TypeA? }\n\n  for index, a in list do\na.Value = 1 -- No longer incorrectly reported as 'TypeA?' could be nil\n  end\n  ```\n\n- Improves bidirectional type inference for unions of tables and\nfunctions. Table literals that clearly match one branch of a union are\nno longer falsely rejected:\n  ```luau\n  --!strict\n  type FnRecord = { handler: (number) -> string, label: string? }\n  type StrRecord = { handler: string, label: string? }\n  type Record = FnRecord | StrRecord\n\n-- Previously flagged as not a subtype of `Record`; now correctly\naccepted as a FnRecord\n  local r: Record = {\n      handler = function(input)\n          return tostring(input)\n      end,\n      label = \"test\",\n  }\n  ```\n\n- Fixes a crash that could occur when `typeof` is used inside the type\narguments of an instantiated method call:\n  ```luau\n  local t = {}\n  function t:f<T>() end\n  local x = 42\n  t:f<<typeof(x)>>() -- No longer crashes\n  ```\n\n- Fixes missing autocomplete suggestions for string singleton types when\nthe expected type is an intersection containing a string singleton (e.g.\n`\"Foo\" & \"Foo\"` or `keyof<typeof(tbl)> & T`).\n\n ## Compiler\n\n- Fixes a discrepancy where string interpolation would sometimes emit a\nredundant `MOVE` instruction that an equivalent `string.format` call\nwould not, when the target register was already correct. (#2324 from\n@9382, thanks!)\n  \n  ## Internal Contributors\n  \nCo-authored-by: Andy Friesen <afriesen@roblox.com>\nCo-authored-by: Annie Tang <annietang@roblox.com>\nCo-authored-by: Hunter Goldstein <hgoldstein@roblox.com>\nCo-authored-by: Thomas Schollenberger <tschollenberger@roblox.com>\nCo-authored-by: Varun Saini <vsaini@roblox.com>\nCo-authored-by: Vighnesh Vijay <vvijay@roblox.com>\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com>\n\n---------\n\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com>\nCo-authored-by: Andy Friesen <afriesen@roblox.com>\nCo-authored-by: Hunter Goldstein <hgoldstein@roblox.com>\nCo-authored-by: Varun Saini <61795485+vrn-sn@users.noreply.github.com>\nCo-authored-by: Sora Kanosue <skanosue@roblox.com>\nCo-authored-by: Annie Tang <annietang@roblox.com>\nCo-authored-by: Annie Tang <98965493+annieetang@users.noreply.github.com>\nCo-authored-by: Ilya Rezvov <irezvov@roblox.com>",
+          "timestamp": "2026-05-08T13:41:30-07:00",
+          "tree_id": "af5de8039f98fb8f30feedcffddf10713067cf8e",
+          "url": "https://github.com/luau-lang/luau/commit/0c6cea0122242ed76528848cfe130e9820e7f122"
+        },
+        "date": 1778273460800,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.676922,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.776689,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2",
+            "value": 1.15818,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 4.87248,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-t1-codegen",
+            "value": 4.87833,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.64682,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.95182,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2",
+            "value": 4.20457,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 15.867,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-t1-codegen",
+            "value": 15.3837,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-compile"
