@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1779198778409,
+  "lastUpdate": 1779214567292,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-compile": [
@@ -33189,6 +33189,100 @@
           {
             "name": "regex-O0",
             "value": 1.66078,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.94294,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.94726,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 15.2729,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-t1-codegen",
+            "value": 14.901,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "55204980+haziscool@users.noreply.github.com",
+            "name": "Haz",
+            "username": "haziscool"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "0e5d3915ba54210fa424eaf55a8ab93fc2672e49",
+          "message": "Preserve module names for overload detail errors (#2398)\n\nThe new solver's \"Available overloads\" follow-up diagnostic gets emitted\nwithout a module name, so downstream consumers see it as coming from an\nempty path which breaks paths.\n\nSee primary error looking correct but follow ups rendering as junk\nrelative paths:\n```text\nPackages/_Index/example_package/src/init.luau:1845.6-1845.85: TypeError: None of the overloads for function that accept 1 arguments are compatible.\n../../../../..:1845.6-1845.85: TypeError: Available overloads: <V>({V}, V) -> (); and <V>({V}, number, V) -> ()\n```\n\nAfter fix:\n```text\nPackages/_Index/example_package/src/init.luau:1845.6-1845.85: TypeError: None of the overloads for function that accept 1 arguments are compatible.\nPackages/_Index/example_package/src/init.luau:1845.6-1845.85: TypeError: Available overloads: <V>({V}, V) -> (); and <V>({V}, number, V) -> ()\n```\n\nCo-authored-by: haziscool <haziscool@users.noreply.github.com>",
+          "timestamp": "2026-05-19T11:05:05-07:00",
+          "tree_id": "5fc0e605af51bb43f288ef960da2193b40a614ab",
+          "url": "https://github.com/luau-lang/luau/commit/0e5d3915ba54210fa424eaf55a8ab93fc2672e49"
+        },
+        "date": 1779214567282,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.687883,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.779793,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.967544,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 4.85006,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-t1-codegen",
+            "value": 4.863,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.66077,
             "unit": "1ms",
             "range": "±0%",
             "extra": "luau-compile"
