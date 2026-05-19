@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1778875713975,
+  "lastUpdate": 1779198778256,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-analyze": [
@@ -24538,6 +24538,72 @@
           {
             "name": "regex-strict",
             "value": 876.625,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 876.629,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "bytexenon@proton.me",
+            "name": "bytexenon",
+            "username": "bytexenon"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "90ca62a1ec131c5a26f50f92c24df937849b95eb",
+          "message": "Add missing <algorithm> include in OptimizeDeadStore.cpp (#2396)",
+          "timestamp": "2026-05-19T06:42:15-07:00",
+          "tree_id": "ad2689cf67bcda74d0e3954d498f3e0de2f719a5",
+          "url": "https://github.com/luau-lang/luau/commit/90ca62a1ec131c5a26f50f92c24df937849b95eb"
+        },
+        "date": 1779198778247,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 10.5178,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 20.5527,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 20.5527,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 306.543,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 876.633,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"
