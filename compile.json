@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1779321110770,
+  "lastUpdate": 1779469461951,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-compile": [
@@ -33405,6 +33405,100 @@
           {
             "name": "regex-O2-t1-codegen",
             "value": 14.901,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "hgoldstein@roblox.com",
+            "name": "Hunter Goldstein",
+            "username": "hgoldstein"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "32d52d1b2ceef46fc25d87094a2d7f201c3ea5b8",
+          "message": "Sync to upstream/release/722 (#2411)\n\nHello! A somewhat small set of release notes for this week, but don't\nmistake it for being unexciting because ...\n\n## Yielding iterators\n\nLuau now supports yielding within iterators! This affords code patterns\nsuch as being able to iterate over the results of an IO bound operation,\ne.g.:\n```luau\n-- `net.serve` here could return a generator and the requisite initial state,\n-- and said generator can now yield to wait for IO!\nfor request in net.serve(8080) do\n    request.respondWith(\"Echo: \" .. request.body)\nend\n```\n\nNote: yielding in metamethods is *still* unsupported, including\n`__iter`. Fixes https://github.com/luau-lang/luau/issues/838.\n\n## Ast\n\n* Added concrete syntax tree support for expression groups and type\ngroups\n```luau\n-- In the CST, we will now preserve whitespace here ...\nlocal x = (1 + 2 )\n-- ... and here ...\ntype t = (number )\n```\n\n## Runtime\n* Introduced a new `CMPPROTO` bytecode instruction to be used with\njust-in-time bytecode inlining.\n* NCG: Fixed a bug where an optimization pass would cause us to treat a\nknown `nil` value as potentially garbage collected.\n\n---\n\nCo-authored-by: Andy Friesen <afriesen@roblox.com>\nCo-authored-by: Annie Tang <annietang@roblox.com>\nCo-authored-by: Hunter Goldstein <hgoldstein@roblox.com>\nCo-authored-by: Ilya Rezvov <irezvov@roblox.com>\nCo-authored-by: Sora Kanosue <skanosue@roblox.com>\nCo-authored-by: Vighnesh Vijay <vvijay@roblox.com>\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com>",
+          "timestamp": "2026-05-22T09:45:14-07:00",
+          "tree_id": "4d7c2f42b7679e72f175433efad9e52ceb97ab15",
+          "url": "https://github.com/luau-lang/luau/commit/32d52d1b2ceef46fc25d87094a2d7f201c3ea5b8"
+        },
+        "date": 1779469461941,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.690301,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.782422,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.96862,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 4.86304,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-t1-codegen",
+            "value": 4.87515,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.66259,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.94665,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.95681,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 15.3127,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-t1-codegen",
+            "value": 14.9396,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-compile"
