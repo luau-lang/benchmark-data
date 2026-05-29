@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1779469461792,
+  "lastUpdate": 1780093185074,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-analyze": [
@@ -24809,6 +24809,72 @@
           {
             "name": "regex-dcr",
             "value": 879.383,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "61795485+vrn-sn@users.noreply.github.com",
+            "name": "Varun Saini",
+            "username": "vrn-sn"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "e7500c93a7f78803baa4f14118fd95cd3a183cf0",
+          "message": "Sync to upstream/release/723 (#2419)\n\nAnother week, another release!\n\n### What's new?\n- Implement export semantics as described in\nhttps://github.com/luau-lang/rfcs/pull/179.\n\n### Analysis\n- Use sentinel `Position`s in the CST rather than `std::optional` to\nreduce memory pressure.\n\n### Runtime\n- Compiler: Improve dump output for Luau table constants (e.g. when\nusing `luau-compile`).\n- NCG: Record block exit info for all blocks.\n- NCG: Reduce spill pressure by using dead VM register store locations.\n\n---\n\nCo-authored-by: Andy Friesen <afriesen@roblox.com>\nCo-authored-by: Ariel Weiss <arielweiss@roblox.com>\nCo-authored-by: Hunter Goldstein <hgoldstein@roblox.com>\nCo-authored-by: James McNellis <jmcnellis@roblox.com>\nCo-authored-by: Sora Kanosue <skanosue@roblox.com>\nCo-authored-by: Thomas Schollenberger <tschollenberger@roblox.com>\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com>",
+          "timestamp": "2026-05-29T15:00:40-07:00",
+          "tree_id": "5a103d15f6987c7777c8e5baf811c7cae44014ff",
+          "url": "https://github.com/luau-lang/luau/commit/e7500c93a7f78803baa4f14118fd95cd3a183cf0"
+        },
+        "date": 1780093185065,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 10.5185,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 20.5491,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 20.5484,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 306.668,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 879.108,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 879.109,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"
