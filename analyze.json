@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1780093185074,
+  "lastUpdate": 1780493215628,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-analyze": [
@@ -24875,6 +24875,72 @@
           {
             "name": "regex-dcr",
             "value": 879.109,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "125769645+ActualMasterOogway@users.noreply.github.com",
+            "name": "Master Oogway",
+            "username": "ActualMasterOogway"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "8157350033e665897e63785a316cbe3b6a926cf3",
+          "message": "Fix missing `prettyPrint` overloads in header and implementation (#2209)\n\nThis PR fixes a discrepancy between `Ast/include/Luau/PrettyPrinter.h`\nand `Ast/src/PrettyPrinter.cpp`.\n\nThe header declared `std::string prettyPrint(AstStatBlock& ast);` but\nthe implementation was missing.\nThe implementation had `std::string prettyPrint(AstStatBlock& block,\nconst CstNodeMap& cstNodeMap)` but it was not declared in the header.\n\nChanges:\n- Added `std::string prettyPrint(AstStatBlock& block, const CstNodeMap&\ncstNodeMap);` to `PrettyPrinter.h`.\n- Implemented `std::string prettyPrint(AstStatBlock& block)` in\n`PrettyPrinter.cpp` (delegating to the 2-arg version).\n- Added a unit test to verify `prettyPrint(AstStatBlock&)` works\ncorrectly.\n\n---\n\nFixes #2206\n\n---------\n\nCo-authored-by: vegorov-rbx <75688451+vegorov-rbx@users.noreply.github.com>",
+          "timestamp": "2026-06-03T06:12:15-07:00",
+          "tree_id": "1e528fa9edb6966e3b32145518406d5b3b6cc05a",
+          "url": "https://github.com/luau-lang/luau/commit/8157350033e665897e63785a316cbe3b6a926cf3"
+        },
+        "date": 1780493215621,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 10.5185,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 20.5485,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 20.5484,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 306.668,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 879.109,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 879.108,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"

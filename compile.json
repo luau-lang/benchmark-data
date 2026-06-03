@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1780093185227,
+  "lastUpdate": 1780493215751,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-compile": [
@@ -33579,6 +33579,100 @@
           {
             "name": "regex-O2",
             "value": 2.94926,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 15.5089,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-t1-codegen",
+            "value": 15.1316,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "125769645+ActualMasterOogway@users.noreply.github.com",
+            "name": "Master Oogway",
+            "username": "ActualMasterOogway"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "8157350033e665897e63785a316cbe3b6a926cf3",
+          "message": "Fix missing `prettyPrint` overloads in header and implementation (#2209)\n\nThis PR fixes a discrepancy between `Ast/include/Luau/PrettyPrinter.h`\nand `Ast/src/PrettyPrinter.cpp`.\n\nThe header declared `std::string prettyPrint(AstStatBlock& ast);` but\nthe implementation was missing.\nThe implementation had `std::string prettyPrint(AstStatBlock& block,\nconst CstNodeMap& cstNodeMap)` but it was not declared in the header.\n\nChanges:\n- Added `std::string prettyPrint(AstStatBlock& block, const CstNodeMap&\ncstNodeMap);` to `PrettyPrinter.h`.\n- Implemented `std::string prettyPrint(AstStatBlock& block)` in\n`PrettyPrinter.cpp` (delegating to the 2-arg version).\n- Added a unit test to verify `prettyPrint(AstStatBlock&)` works\ncorrectly.\n\n---\n\nFixes #2206\n\n---------\n\nCo-authored-by: vegorov-rbx <75688451+vegorov-rbx@users.noreply.github.com>",
+          "timestamp": "2026-06-03T06:12:15-07:00",
+          "tree_id": "1e528fa9edb6966e3b32145518406d5b3b6cc05a",
+          "url": "https://github.com/luau-lang/luau/commit/8157350033e665897e63785a316cbe3b6a926cf3"
+        },
+        "date": 1780493215743,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.689616,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.781524,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.96686,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 4.90444,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-t1-codegen",
+            "value": 4.91666,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.66268,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.94832,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.94925,
             "unit": "2ms",
             "range": "±0%",
             "extra": "luau-compile"
