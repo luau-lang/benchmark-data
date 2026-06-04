@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1780493215628,
+  "lastUpdate": 1780594395252,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-analyze": [
@@ -24941,6 +24941,72 @@
           {
             "name": "regex-dcr",
             "value": 879.108,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "86601049+PhoenixWhitefire@users.noreply.github.com",
+            "name": "PhoenixWhitefire",
+            "username": "PhoenixWhitefire"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "87276f76eb6c86f977d6ca3c1dc88a9ad7d0896d",
+          "message": "Implement RFC `type:issubtypeof` (#2133)\n\nAdditionally, adds a new test, as well as the flag\n`LuauUdtfTypeIsSubtypeOf`\n\nhttps://rfcs.luau.org/method-type-issubtypeof.html\n\nhttps://github.com/luau-lang/rfcs/pull/101\n\n---------\n\nCo-authored-by: vegorov-rbx <75688451+vegorov-rbx@users.noreply.github.com>",
+          "timestamp": "2026-06-04T10:16:00-07:00",
+          "tree_id": "496e5a425a98ecf33478cfd2023f84acc5512c13",
+          "url": "https://github.com/luau-lang/luau/commit/87276f76eb6c86f977d6ca3c1dc88a9ad7d0896d"
+        },
+        "date": 1780594395243,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 10.5233,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 20.5534,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 20.5533,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 307.359,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 879.392,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 879.392,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"

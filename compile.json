@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1780493215751,
+  "lastUpdate": 1780594395386,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-compile": [
@@ -33666,6 +33666,100 @@
           {
             "name": "regex-O1",
             "value": 1.94832,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.94925,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 15.5089,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-t1-codegen",
+            "value": 15.1316,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "86601049+PhoenixWhitefire@users.noreply.github.com",
+            "name": "PhoenixWhitefire",
+            "username": "PhoenixWhitefire"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "87276f76eb6c86f977d6ca3c1dc88a9ad7d0896d",
+          "message": "Implement RFC `type:issubtypeof` (#2133)\n\nAdditionally, adds a new test, as well as the flag\n`LuauUdtfTypeIsSubtypeOf`\n\nhttps://rfcs.luau.org/method-type-issubtypeof.html\n\nhttps://github.com/luau-lang/rfcs/pull/101\n\n---------\n\nCo-authored-by: vegorov-rbx <75688451+vegorov-rbx@users.noreply.github.com>",
+          "timestamp": "2026-06-04T10:16:00-07:00",
+          "tree_id": "496e5a425a98ecf33478cfd2023f84acc5512c13",
+          "url": "https://github.com/luau-lang/luau/commit/87276f76eb6c86f977d6ca3c1dc88a9ad7d0896d"
+        },
+        "date": 1780594395375,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.689615,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.78151,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.966858,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 4.90444,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-t1-codegen",
+            "value": 4.91666,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.66266,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.94831,
             "unit": "1ms",
             "range": "±0%",
             "extra": "luau-compile"
