@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1780594395252,
+  "lastUpdate": 1780706661910,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-analyze": [
@@ -25007,6 +25007,72 @@
           {
             "name": "regex-dcr",
             "value": 879.392,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "skanosue@roblox.com",
+            "name": "Sora Kanosue",
+            "username": "skberkeley"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "8f33df910d790c1321a20028af8d8134fa3e0334",
+          "message": "Sync to upstream/release/724 (#2425)\n\nWake up babe, another Luau release just dropped!\n\n### Analysis\n- Introduce `ConstraintGraph`, an abstraction over the set of\nconstraints, types, and type packs in use during type inference and\ntheir dependencies.\n- Various bug fixes to user defined type functions.\n\n### Runtime\n- VM: Fix direct userdata access patching already deoptimized\ninstructions\n- Compiler: Exploit more opportunities for constant table folding.\n- Compiler: Inline table function expressions.\n- Bytecode: Implement inlining of calls in bytecode.\n\n---\n\nCo-authored-by: Andy Friesen <afriesen@roblox.com>\nCo-authored-by: Hunter Goldstein <hgoldstein@roblox.com>\nCo-authored-by: Ilya Rezvov <irezvov@roblox.com>\nCo-authored-by: James McNellis <jmcnellis@roblox.com>\nCo-authored-by: Sora Kanosue <skanosue@roblox.com>\nCo-authored-by: Thomas Schollenberger <tschollenberger@roblox.com>\nCo-authored-by: Varun Saini <vsaini@roblox.com>\nCo-authored-by: Vighnesh Vijay <vvijay@roblox.com>\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com>",
+          "timestamp": "2026-06-05T17:24:28-07:00",
+          "tree_id": "9f5d00ce189e5d16ce509067347852f106d066bf",
+          "url": "https://github.com/luau-lang/luau/commit/8f33df910d790c1321a20028af8d8134fa3e0334"
+        },
+        "date": 1780706661902,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 16.7618,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 26.7936,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 26.7943,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 341.107,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 1098.81,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 1098.81,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"
