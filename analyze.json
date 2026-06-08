@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1780706661910,
+  "lastUpdate": 1780956212147,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-analyze": [
@@ -25073,6 +25073,72 @@
           {
             "name": "regex-dcr",
             "value": 1098.81,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "skanosue@roblox.com",
+            "name": "Sora Kanosue",
+            "username": "skberkeley"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "51e08625ad7983901fd2bf8a1c7f88f26d144b8e",
+          "message": "Reflags embedded type method definitions  (#2432)\n\n#2133 introduced new embedded type method definitions for `issubtypeof`\nin a way that it implicitly exposes integers even when\n`LuauIntegerType2` isn't on. We should reflag this so that\n`LuauUdtfTypeIsSubtypeOf` and `LuauIntegerType2` are separate.",
+          "timestamp": "2026-06-08T14:44:15-07:00",
+          "tree_id": "85ccd5eb9e50c7bb304a747087375a7da531a6dd",
+          "url": "https://github.com/luau-lang/luau/commit/51e08625ad7983901fd2bf8a1c7f88f26d144b8e"
+        },
+        "date": 1780956212138,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 16.762,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 26.7945,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 26.7937,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 341.107,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 1098.81,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 1098.82,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"
