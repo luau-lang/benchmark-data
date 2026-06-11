@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1780956212291,
+  "lastUpdate": 1781139941632,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-compile": [
@@ -33962,6 +33962,100 @@
           {
             "name": "regex-O2-codegen",
             "value": 14.8392,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-t1-codegen",
+            "value": 14.5369,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "37158907+7Duser@users.noreply.github.com",
+            "name": "7Dimensional",
+            "username": "7Duser"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "d751dca88b5e7d346896d39dce32498e4f1e1fe8",
+          "message": "Fix CFG dump printing type guards backwards (#2438)\n\nCFG dump printed type guards as `x-0 typeof == \"string\"` instead of\n`typeof(x-0) == \"string\"\n\nThe rest of the dumper renders correctly\n\nCo-authored-by: dr_breen <mewheni777@gmail.com>",
+          "timestamp": "2026-06-10T17:47:30-07:00",
+          "tree_id": "7bbc3f43dfd5fbb0d752b8063725cd8182f95ffb",
+          "url": "https://github.com/luau-lang/luau/commit/d751dca88b5e7d346896d39dce32498e4f1e1fe8"
+        },
+        "date": 1781139941623,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.690941,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.777664,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.970588,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 4.8759,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-t1-codegen",
+            "value": 4.88752,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.66711,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.9149,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.91551,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 14.8393,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-compile"
