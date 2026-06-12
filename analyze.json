@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1781139941505,
+  "lastUpdate": 1781302946233,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-analyze": [
@@ -25205,6 +25205,72 @@
           {
             "name": "regex-dcr",
             "value": 1098.81,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "98965493+annieetang@users.noreply.github.com",
+            "name": "Annie Tang",
+            "username": "annieetang"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "91caa7311aa45cfe799f9e642e3c72e3ca34a64a",
+          "message": "Sync to upstream/release/725 (#2443)\n\nHi everyone! The Luau team has been flibbertigibbeting and\nrecombobulating this week to bring another release to you!\n\nCheck out what's new:\n\n### Analysis\n* Fixes an error where Luau script analysis would sometimes incorrectly\ninfer that `Library.table.unpack` returns `...unknown`\n* Writing a recursive generic type alias with the wrong number of\ngenerics now reports one more specific error rather than two.\n* Fixed a crash that could happen when normalizing an exceptionally\nlarge negated type.\n* Improved performance in constraint solving when reducing large nested\ntype functions.\n* Fixed a crash that could happen when combining `export` and `class`.\n\n### Compiler & Runtime\n* Luau C API will now auto-reserve required stack slots to reduce API\nerrors, eliminating the need for manual stack management with\n`lua_checkstack`\n* Add support for yieldable protected C calls for custom Luau libraries\nvia `luaL_pcallyieldable`\n* NCG: Remove the use of shared execution callback data for register\nspills\n* Updates the garbage collector to visit cached tagged userdata\nmetatables, preventing premature collection and making the\nlua_setuserdatametatable API less error-prone.\n* Fixed two compiler crashes related to `export`.\n\n\n-----------------\nAs always, thanks to all our contributors, and happy pride and FIFA\nworld cup!!! 🏳️‍🌈 ⚽️ 🏆\n\nCo-authored-by: Andy Friesen <afriesen@roblox.com>\nCo-authored-by: Annie Tang <annietang@roblox.com>\nCo-authored-by: Ariel Weiss <arielweiss@roblox.com>\nCo-authored-by: Hunter Goldstein <hgoldstein@roblox.com>\nCo-authored-by: Sora Kanosue <skanosue@roblox.com>\nCo-authored-by: Thomas Schollenberger <tschollenberger@roblox.com>\nCo-authored-by: Varun Saini <vsaini@roblox.com>\nCo-authored-by: Vighnesh Vijay <vvijay@roblox.com>\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com>\n\n---------\n\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com>\nCo-authored-by: Ariel Weiss <arielweiss@roblox.com>\nCo-authored-by: Andy Friesen <afriesen@roblox.com>\nCo-authored-by: Hunter Goldstein <hgoldstein@roblox.com>\nCo-authored-by: Varun Saini <61795485+vrn-sn@users.noreply.github.com>\nCo-authored-by: Sora Kanosue <skanosue@roblox.com>\nCo-authored-by: Ilya Rezvov <irezvov@roblox.com>",
+          "timestamp": "2026-06-12T15:00:58-07:00",
+          "tree_id": "6f43d9d0a216bb0d6c537963c87378f6dceddd94",
+          "url": "https://github.com/luau-lang/luau/commit/91caa7311aa45cfe799f9e642e3c72e3ca34a64a"
+        },
+        "date": 1781302946224,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 16.8236,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 26.8566,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 26.8583,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 917.464,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 1347.66,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 1346.51,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"
