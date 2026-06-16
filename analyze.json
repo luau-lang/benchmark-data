@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1781302946233,
+  "lastUpdate": 1781644561153,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-analyze": [
@@ -25271,6 +25271,72 @@
           {
             "name": "regex-dcr",
             "value": 1346.51,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "62822174+gaymeowing@users.noreply.github.com",
+            "name": "quaywinn",
+            "username": "gaymeowing"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "550e128d291c1608f09ab468e572b0d078be6ecb",
+          "message": "Make the CLI try to find the provided file name with a .luau or .lua extension before erroring (#2415)\n\nMakes the CLI try to find the provided file name with a `.luau` or\n`.lua` file extension before throwing an `Error Opening: ` error\n\nCloses #2416",
+          "timestamp": "2026-06-16T13:54:57-07:00",
+          "tree_id": "108c432b8e89fea2820355151785b388b4679d61",
+          "url": "https://github.com/luau-lang/luau/commit/550e128d291c1608f09ab468e572b0d078be6ecb"
+        },
+        "date": 1781644561143,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 16.8239,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 26.8573,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 26.8584,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 917.464,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 1347.68,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 1346.52,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"
