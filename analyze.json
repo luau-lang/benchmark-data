@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1781644561153,
+  "lastUpdate": 1781715679497,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-analyze": [
@@ -25337,6 +25337,72 @@
           {
             "name": "regex-dcr",
             "value": 1346.52,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "98965493+annieetang@users.noreply.github.com",
+            "name": "Annie Tang",
+            "username": "annieetang"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "2e54214274668ad5630a103ddcdaf034eb29f01d",
+          "message": "Add DOCTEST_CONFIG_USE_STD_HEADERS to build system to fix MSVC compiler error (#2452)\n\nFixes a new warning in `doctest.h` after GitHub actions updated the MSVC\ncompiler from v17 to v18. A patch was added during the 725 release last\nweek but this PR moves the `DOCTEST_CONFIG_USE_STD_HEADERS` define into\nCmakeLists and Makefile instead of at the top of `doctest.h`",
+          "timestamp": "2026-06-17T09:40:30-07:00",
+          "tree_id": "104010e307ff4a25ec63bce059c5856350a67039",
+          "url": "https://github.com/luau-lang/luau/commit/2e54214274668ad5630a103ddcdaf034eb29f01d"
+        },
+        "date": 1781715679487,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 16.8236,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 26.8566,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 26.8584,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 917.463,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 1347.66,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 1346.51,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"

@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1781644560981,
+  "lastUpdate": 1781715679316,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "callgrind gcc": [
@@ -99971,6 +99971,317 @@
           {
             "name": "cdx",
             "value": 679.595,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "richards",
+            "value": 1116.187,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "98965493+annieetang@users.noreply.github.com",
+            "name": "Annie Tang",
+            "username": "annieetang"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "2e54214274668ad5630a103ddcdaf034eb29f01d",
+          "message": "Add DOCTEST_CONFIG_USE_STD_HEADERS to build system to fix MSVC compiler error (#2452)\n\nFixes a new warning in `doctest.h` after GitHub actions updated the MSVC\ncompiler from v17 to v18. A patch was added during the 725 release last\nweek but this PR moves the `DOCTEST_CONFIG_USE_STD_HEADERS` define into\nCmakeLists and Makefile instead of at the top of `doctest.h`",
+          "timestamp": "2026-06-17T09:40:30-07:00",
+          "tree_id": "104010e307ff4a25ec63bce059c5856350a67039",
+          "url": "https://github.com/luau-lang/luau/commit/2e54214274668ad5630a103ddcdaf034eb29f01d"
+        },
+        "date": 1781715679291,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "base64",
+            "value": 23.155,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "chess",
+            "value": null,
+            "unit": "classes",
+            "range": "±106.938ms",
+            "extra": "0.000%"
+          },
+          {
+            "name": "chess",
+            "value": 84.136,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "life",
+            "value": 89.789,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "matrixmult",
+            "value": 24.754,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "mesh-normal-scalar",
+            "value": 32.823,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "mesh-normal-vector",
+            "value": 16.639,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "pcmmix",
+            "value": 10.39,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "qsort",
+            "value": 80.156,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "sha256",
+            "value": 26.354,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "ack",
+            "value": 68.161,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "binary-trees",
+            "value": 30.639,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "fannkuchen-redux",
+            "value": 12.914,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "fixpoint-fact",
+            "value": 63.317,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "heapsort",
+            "value": 22.342,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "mandel",
+            "value": 65.606,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "n-body-vec",
+            "value": 19.456,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "n-body",
+            "value": 38.397,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "qt",
+            "value": 62.173,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "queen",
+            "value": 1.994,
+            "unit": "1ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "scimark",
+            "value": 90.191,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "spectral-norm",
+            "value": 12.629,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "sieve",
+            "value": 116.64,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "3d-cube",
+            "value": 8.696,
+            "unit": "8ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "3d-morph",
+            "value": 10.078,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "3d-raytrace",
+            "value": 10.537,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "controlflow-recursive",
+            "value": 5.865,
+            "unit": "5ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "crypto-aes",
+            "value": 14.768,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "fannkuch",
+            "value": 26.714,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "math-cordic",
+            "value": 16.888,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "math-partial-sums",
+            "value": 5.028,
+            "unit": "5ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "n-body-oop",
+            "value": null,
+            "unit": ":",
+            "range": "±+/-",
+            "extra": "on"
+          },
+          {
+            "name": "n-body-oop",
+            "value": 57.273,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "tictactoe",
+            "value": 133.611,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "trig",
+            "value": 25.268,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "vector-math",
+            "value": 11.25,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "voxelgen",
+            "value": 53.91,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "air",
+            "value": 901.957,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "basic",
+            "value": 787.355,
+            "unit": "ms",
+            "range": "±0.000%",
+            "extra": "luau-gcc"
+          },
+          {
+            "name": "cdx",
+            "value": 679.671,
             "unit": "ms",
             "range": "±0.000%",
             "extra": "luau-gcc"

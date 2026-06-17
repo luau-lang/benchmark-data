@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1781644561308,
+  "lastUpdate": 1781715679649,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-compile": [
@@ -34230,6 +34230,100 @@
           {
             "name": "regex-O1",
             "value": 1.91524,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.91356,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 14.857,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-t1-codegen",
+            "value": 14.5529,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "98965493+annieetang@users.noreply.github.com",
+            "name": "Annie Tang",
+            "username": "annieetang"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "2e54214274668ad5630a103ddcdaf034eb29f01d",
+          "message": "Add DOCTEST_CONFIG_USE_STD_HEADERS to build system to fix MSVC compiler error (#2452)\n\nFixes a new warning in `doctest.h` after GitHub actions updated the MSVC\ncompiler from v17 to v18. A patch was added during the 725 release last\nweek but this PR moves the `DOCTEST_CONFIG_USE_STD_HEADERS` define into\nCmakeLists and Makefile instead of at the top of `doctest.h`",
+          "timestamp": "2026-06-17T09:40:30-07:00",
+          "tree_id": "104010e307ff4a25ec63bce059c5856350a67039",
+          "url": "https://github.com/luau-lang/luau/commit/2e54214274668ad5630a103ddcdaf034eb29f01d"
+        },
+        "date": 1781715679638,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.692493,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.777857,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.96255,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 4.8735,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-t1-codegen",
+            "value": 4.88495,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.66857,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.91523,
             "unit": "1ms",
             "range": "±0%",
             "extra": "luau-compile"
