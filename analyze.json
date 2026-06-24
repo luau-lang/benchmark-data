@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1781896334659,
+  "lastUpdate": 1782317966900,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-analyze": [
@@ -25469,6 +25469,72 @@
           {
             "name": "regex-dcr",
             "value": 1331.69,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "55204980+haziscool@users.noreply.github.com",
+            "name": "Haz",
+            "username": "haziscool"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "e97ea1426a8dcbae9032bba1923f5c31a605beb7",
+          "message": "Fix AutoComplete providing incomplete results (#2429)\n\nMember autocomplete misses properties for multi level metatable\ninheritance when the metatable is itself represented as a\n`MetatableType`. (ie: `Derived = setmetatable({}, { __index = Base })`)\n\nThe type checker already resolves these properties, but autocomplete\nonly looked through plain table metatables.\n\n---------\n\nCo-authored-by: haziscool <haziscool@users.noreply.github.com>",
+          "timestamp": "2026-06-24T08:58:52-07:00",
+          "tree_id": "ddfcc3f609491cceebec4a5e9fe24605661022bd",
+          "url": "https://github.com/luau-lang/luau/commit/e97ea1426a8dcbae9032bba1923f5c31a605beb7"
+        },
+        "date": 1782317966890,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 16.8235,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 26.7569,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 26.756,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 909.668,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 1335.42,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 1331.67,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"
