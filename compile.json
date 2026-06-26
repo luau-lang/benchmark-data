@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1782317967051,
+  "lastUpdate": 1782501667018,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-compile": [
@@ -34533,6 +34533,100 @@
           {
             "name": "regex-O2-t1-codegen",
             "value": 14.5511,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "irezvov@roblox.com",
+            "name": "Ilya Rezvov",
+            "username": "SPY"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "f1f121dc1f61659bdf8fafa8d4908211c9f4dda8",
+          "message": "Sync to upstream/release/727 (#2465)\n\n# Release 727 Notes\n\n## JIT Inliner \nThis release introduces JIT Bytecode-to-Bytecode inliner library. To\nactivate it `Luau::JitInliner::setup` should be called on `lua_State`.\nTo use it in conformance tests or luau CLI `--jit-inliner` flag should\nbe passed.\n\n## GC\n- fixed incorrect reporting of visited bytes for tables\n\n## CodeGen\n- DSE hints should only be provided for full tag+value kills\n\n## Typing\n- Variadic type annotations are now \"pushed\" into arguments\n```luau\nlocal foo: { read bar: (...string) -> () } = {\n    -- Prior, `foobar` would be of type `unknown`, but the clear intent is for `foobar` to be\n    -- of type `string`.\n    bar = function (foobar)\n        print(foobar)\n    end\n}\n```\n- Disallow `extern class` declaration syntax\n- When subtype testing a type like nil <: T?, don't bind the generic.\n```luau\nlocal function createElement<P>(component: (P) -> any, props: P?): any\n    return nil\nend\n\nlocal function MyComponent(props: { x: number, y: number? })\n    return nil\nend\n\n-- Prior, when inferring the instantiation of `createElement`, we'd end up\n-- collecting a bound of `nil` for `P` due to an interaction between generic\n-- inference and width subtyping, which ended up in incoherent bounds for\n-- `P`, ultimately preventing us from type checking it.\ncreateElement(MyComponent, { x = 1 })\n```l\n- Disable bidirectional function inference of return types if the\nfunction is ambiguous\n```luau\nlocal function useEffect(callback: (() -> ()) | (() -> () -> ()), deps: {any}?): ()\nend\n\n-- Both `() -> ()` and `() -> () -> ()` are valid options to push into this first lambda,\n-- but without inferring the _inner_ lambda we do not know that we need to push the\n-- second, so we opt to _not_ push the return type in at all.\nuseEffect(function()\n    return function()\n    end\nend)\n\n```\n\n## Misc\n- Makes Luau::Set pick the null tombstone by default when the key is a\npointer type\n- Make DenseHashMap/Set optionally default initializable when the key is\na pointer type\n\nCo-authored-by: Andy Friesen\n[afriesen@roblox.com](mailto:afriesen@roblox.com)\nCo-authored-by: Hunter Goldstein\n[hgoldstein@roblox.com](mailto:hgoldstein@roblox.com)\nCo-authored-by: Ilya Rezvov\n[irezvov@roblox.com](mailto:irezvov@roblox.com)\nCo-authored-by: James McNellis\n[jmcnellis@roblox.com](mailto:jmcnellis@roblox.com)\nCo-authored-by: Sora Kanosue\n[skanosue@roblox.com](mailto:skanosue@roblox.com)\nCo-authored-by: Thomas Schollenberger\n[tschollenberger@roblox.com](mailto:tschollenberger@roblox.com)\nCo-authored-by: Vighnesh Vijay\n[vvijay@roblox.com](mailto:vvijay@roblox.com)\n\n---------\n\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com>\nCo-authored-by: Ariel Weiss <arielweiss@roblox.com>\nCo-authored-by: Andy Friesen <afriesen@roblox.com>\nCo-authored-by: Hunter Goldstein <hgoldstein@roblox.com>\nCo-authored-by: Varun Saini <61795485+vrn-sn@users.noreply.github.com>\nCo-authored-by: Sora Kanosue <skanosue@roblox.com>\nCo-authored-by: Annie Tang <annietang@roblox.com>\nCo-authored-by: Annie Tang <98965493+annieetang@users.noreply.github.com>\nCo-authored-by: Vighnesh Vijay <vvijay@roblox.com>",
+          "timestamp": "2026-06-26T12:01:05-07:00",
+          "tree_id": "d68365beed6e8aa4271973e2171271ddd5a32a22",
+          "url": "https://github.com/luau-lang/luau/commit/f1f121dc1f61659bdf8fafa8d4908211c9f4dda8"
+        },
+        "date": 1782501667008,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.692175,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.77614,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.958319,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 4.87078,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-t1-codegen",
+            "value": 4.88224,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.66491,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.90563,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.88294,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 14.8282,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-t1-codegen",
+            "value": 14.5252,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-compile"
