@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1783603163602,
+  "lastUpdate": 1783608585453,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-analyze": [
@@ -25733,6 +25733,72 @@
           {
             "name": "regex-dcr",
             "value": 811.337,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "johnnymorganz@outlook.com",
+            "name": "JohnnyMorganz",
+            "username": "JohnnyMorganz"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "c53559776d3971aae9dbc0b167191369f7aec3b9",
+          "message": "Track the local binding that a prefixed type reference is linked to (#2334)\n\nWhen a type reference has a module prefix (e.g., `Types.Foo`), the\nAstTypeReference previously only stored the prefix as an `AstName`\nstring. This meant that there was no link back to the `AstLocal` that\ndefines the prefix variable, making operations like rename refactoring\nmore difficult: renaming the `Types` local would require it's own\nscope-aware mechanism to figure out the right `AstLocal`, and would not\naccount for issues such as shadowing.\n\nThis PR introduces an `AstLocal* prefixLocal` field to AstTypeReference\nthat tracks this data, mirroring how AstExprLocal links expression\nreferences back to their local definitions.\n\nWe keep the `AstName` because it is still syntactically valid to have a\nLuau file that references a prefix that does not exist (e.g.,\n`Unknown.Foo`). Given there is no AstLocal for `Unknown`, we still need\nto track the name to support type error analysis and pretty-print\nroundtripping.\n\nThis change is (partially) gated behind the FFlag\n`LuauTrackPrefixLocal`. Given the change to the AstTypeReference\nconstructor, this change is technically unflagged.\n\nCloses #1108\n\n---------\n\nCo-authored-by: vegorov-rbx <75688451+vegorov-rbx@users.noreply.github.com>",
+          "timestamp": "2026-07-09T07:29:39-07:00",
+          "tree_id": "02249257f5faea94de30cadb7f83f404a7b8ca1c",
+          "url": "https://github.com/luau-lang/luau/commit/c53559776d3971aae9dbc0b167191369f7aec3b9"
+        },
+        "date": 1783608585444,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 15.1348,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 24.4527,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 24.3771,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 417.832,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 811.414,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 811.997,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"
