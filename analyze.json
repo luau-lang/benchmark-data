@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1783024804691,
+  "lastUpdate": 1783603163602,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-analyze": [
@@ -25667,6 +25667,72 @@
           {
             "name": "regex-dcr",
             "value": 811.338,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "johnnymorganz@outlook.com",
+            "name": "JohnnyMorganz",
+            "username": "JohnnyMorganz"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "a3d2b0d9da995b828156e3778286055c14c55df8",
+          "message": "Fix `@deprecated` attribute not propagating on anonymous functions in new solver (#2332)\n\nIn ConstraintGenerator::check(AstExprFunction*), the\nGeneralizationConstraint was created without propagating the deprecated\nattribute, so the linter never reported deprecation warnings for `local\nfoo = @deprecated function() end`.\n\nThis change is gated behind FFlag\n`LuauDeprecatedAttributeOnAnonymousFunctions`\n\nFixes #2162\n\nCo-authored-by: vegorov-rbx <75688451+vegorov-rbx@users.noreply.github.com>",
+          "timestamp": "2026-07-09T05:58:40-07:00",
+          "tree_id": "04df607fef04bcffe64484fdb2f0f52bd32dda94",
+          "url": "https://github.com/luau-lang/luau/commit/a3d2b0d9da995b828156e3778286055c14c55df8"
+        },
+        "date": 1783603163594,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 15.1508,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 24.468,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 24.3843,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 417.626,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 810.617,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 811.337,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"

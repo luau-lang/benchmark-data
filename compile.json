@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1783024804850,
+  "lastUpdate": 1783603163767,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-compile": [
@@ -34679,6 +34679,100 @@
           {
             "name": "map-O2-codegen",
             "value": 4.86485,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-t1-codegen",
+            "value": 4.8763,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.66466,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.90537,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.88305,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 14.8166,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-t1-codegen",
+            "value": 14.5139,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "johnnymorganz@outlook.com",
+            "name": "JohnnyMorganz",
+            "username": "JohnnyMorganz"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "a3d2b0d9da995b828156e3778286055c14c55df8",
+          "message": "Fix `@deprecated` attribute not propagating on anonymous functions in new solver (#2332)\n\nIn ConstraintGenerator::check(AstExprFunction*), the\nGeneralizationConstraint was created without propagating the deprecated\nattribute, so the linter never reported deprecation warnings for `local\nfoo = @deprecated function() end`.\n\nThis change is gated behind FFlag\n`LuauDeprecatedAttributeOnAnonymousFunctions`\n\nFixes #2162\n\nCo-authored-by: vegorov-rbx <75688451+vegorov-rbx@users.noreply.github.com>",
+          "timestamp": "2026-07-09T05:58:40-07:00",
+          "tree_id": "04df607fef04bcffe64484fdb2f0f52bd32dda94",
+          "url": "https://github.com/luau-lang/luau/commit/a3d2b0d9da995b828156e3778286055c14c55df8"
+        },
+        "date": 1783603163756,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.691998,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.775954,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.961715,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 4.86484,
             "unit": "4ms",
             "range": "±0%",
             "extra": "luau-compile"
