@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1783688141806,
+  "lastUpdate": 1783690398261,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-compile": [
@@ -35097,6 +35097,100 @@
           {
             "name": "regex-O2-t1-codegen",
             "value": 14.5137,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "125568681+bytexenon@users.noreply.github.com",
+            "name": "bytexenon",
+            "username": "bytexenon"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "ec6b8a564db2f5b072b3bf5d9daa8480fd1005f3",
+          "message": "Parser: reject duplicated binary prefixes (#2461)\n\nThis change rejects a second `0b`/`0B` prefix in binary literals before\nhanding the remaining text to strtoull.\n\nCo-authored-by: vegorov-rbx <75688451+vegorov-rbx@users.noreply.github.com>",
+          "timestamp": "2026-07-10T06:17:56-07:00",
+          "tree_id": "2a86c1e116d436edc3b49c8490b2e51ec48be2b8",
+          "url": "https://github.com/luau-lang/luau/commit/ec6b8a564db2f5b072b3bf5d9daa8480fd1005f3"
+        },
+        "date": 1783690398253,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.692008,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.776191,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.958636,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 4.86179,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-t1-codegen",
+            "value": 4.8738,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.66483,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.90553,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.88303,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 14.8166,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-t1-codegen",
+            "value": 14.5139,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-compile"
