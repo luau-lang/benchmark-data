@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1783692892201,
+  "lastUpdate": 1783694409351,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-analyze": [
@@ -26129,6 +26129,72 @@
           {
             "name": "regex-dcr",
             "value": 812,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "86601049+PhoenixWhitefire@users.noreply.github.com",
+            "name": "PhoenixWhitefire",
+            "username": "PhoenixWhitefire"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "af6afddc651f3e8a272b1742d7f56695f9a9a278",
+          "message": "Added `__tostring` for `type` (#2525)\n\n\nCloses #1667\n\n---------\n\nCo-authored-by: vegorov-rbx <75688451+vegorov-rbx@users.noreply.github.com>",
+          "timestamp": "2026-07-10T07:21:55-07:00",
+          "tree_id": "3983e8f65cd256a9f1fd77d35388dfb4785b740a",
+          "url": "https://github.com/luau-lang/luau/commit/af6afddc651f3e8a272b1742d7f56695f9a9a278"
+        },
+        "date": 1783694409341,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 15.1347,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 24.4524,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 24.3771,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 417.832,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 811.414,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 811.998,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"
