@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1783703404124,
+  "lastUpdate": 1783712941659,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-compile": [
@@ -35567,6 +35567,100 @@
           {
             "name": "regex-O2-t1-codegen",
             "value": 14.5139,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "hgoldstein@roblox.com",
+            "name": "Hunter Goldstein",
+            "username": "hgoldstein"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "6e9b580e2e24643214caf0f4bbbb3db911ca30f3",
+          "message": "Sync to upstream/release/729 (#2537)\n\n# General\n\n* Introduced `DenseHash2`; this is based on [LLVM's recent improvements\nto their _own_ dense hash table implementation, detailed in this blog\npost](https://maskray.me/blog/2026-06-07-recent-llvm-hash-table-improvements).\nWe hope for this to entirely replace `DenseHash` as, for our workloads,\nit is as-good or better than `DenseHash`, supports erasing elements,\n_and_ does not require elements to be default constructible, meaning\nsome uses of `std::unordered_map` can now be `DenseHashMap`.\n\n# Analysis\n\n* Fixed inference of higher order generic functions when, themselves,\nused with generic functions:\n```luau\nlocal function identity<T>(t: T)\n    return t\nend\n-- Prior, `result` is of type `T?` and we error on `42` claiming its not of type `T`.\n-- Now there are no errors and `result` is of type `number?`\nlocal ok, result = pcall(identity, 42)\n```\n* Fixed a class of internal compiler errors that could occur when\nnesting type-state-ing functions:\n```luau\nlocal tbl = {}\n-- In some cases we would throw an exception like \"CG: AstExprLocal came before its declaration?\"\nsetmetatable(tbl, setmetatable(tbl, {}))\n```\n* Indexing into refinements against `any` should now preserve the\nany-ness of the original value:\n```luau\n-- Prior the first two return statements would raise a type\n-- checking error, as we'd claim they were `~nil`, dropping\n-- the `*error-type*` part.\nlocal function keyExtractor(item: any, index: number): string\n    if typeof(item) == \"table\" and item.key ~= nil then\n        return item.key\n    end\n    if typeof(item) == \"table\" and item.id ~= nil then\n        return item.id\n    end\n    return tostring(index)\nend\n```\n\n# Runtime\n* Fixed a garbage collection issue with\n`lua_registeruserdatadirectfieldget`, where depending on the GC phase,\nwe may erroneously consider an allocated dispatch table to be\nunreachable.\n* NCG: When replacing an instruction, we now more consistently attempt\nto substitute it with a precomputed value. E.g., if we replace an IR\ninstruction with one that has already been computed, we can potentially\nemit a `STORE` rather than said instruction _and_ an additional `STORE`.\n\n---------\n\nCo-authored-by: Andy Friesen <afriesen@roblox.com>\nCo-authored-by: Annie Tang <annietang@roblox.com>\nCo-authored-by: Hunter Goldstein <hgoldstein@roblox.com>\nCo-authored-by: Ilya Rezvov <irezvov@roblox.com>\nCo-authored-by: Thomas Schollenberger <tschollenberger@roblox.com>\nCo-authored-by: Varun Saini <vsaini@roblox.com>\nCo-authored-by: Vighnesh Vijay <vvijay@roblox.com>\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com>",
+          "timestamp": "2026-07-10T12:29:25-07:00",
+          "tree_id": "71721cc23decdae99135e6cabe98fb13a84088c5",
+          "url": "https://github.com/luau-lang/luau/commit/6e9b580e2e24643214caf0f4bbbb3db911ca30f3"
+        },
+        "date": 1783712941649,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.70206,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.788775,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.963792,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 4.84293,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-t1-codegen",
+            "value": 4.85896,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.67097,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.91137,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.89033,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 14.7258,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-t1-codegen",
+            "value": 14.4309,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-compile"
