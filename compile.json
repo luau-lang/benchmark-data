@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1783690398261,
+  "lastUpdate": 1783690812769,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-compile": [
@@ -35149,6 +35149,100 @@
           {
             "name": "map-O2-codegen",
             "value": 4.86179,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-t1-codegen",
+            "value": 4.8738,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.66483,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.90553,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.88303,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 14.8166,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-t1-codegen",
+            "value": 14.5139,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "86601049+PhoenixWhitefire@users.noreply.github.com",
+            "name": "PhoenixWhitefire",
+            "username": "PhoenixWhitefire"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "39b43adb9f0a045ef4cc466bb4395199db89bc55",
+          "message": "Correct `types.singleton` using `lua_typename` instead of `luaL_typename` (#2506)",
+          "timestamp": "2026-07-10T06:20:12-07:00",
+          "tree_id": "299c9ad6e26400767d466ef111a8161a3a17afeb",
+          "url": "https://github.com/luau-lang/luau/commit/39b43adb9f0a045ef4cc466bb4395199db89bc55"
+        },
+        "date": 1783690812758,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.692002,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.776176,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.958632,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 4.86178,
             "unit": "4ms",
             "range": "±0%",
             "extra": "luau-compile"
