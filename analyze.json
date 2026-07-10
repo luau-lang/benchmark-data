@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1783608585453,
+  "lastUpdate": 1783687903668,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-analyze": [
@@ -25799,6 +25799,72 @@
           {
             "name": "regex-dcr",
             "value": 811.997,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "146754550+spxnso@users.noreply.github.com",
+            "name": "Evann Borde",
+            "username": "spxnso"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "91eb53253b41021e68a3ca9cdd682ddc0c73097f",
+          "message": "fix: add missing `AstExprConstantInteger` visitor to `AstJsonEncoder` (#2442)\n\nImplements the virtual visit override for `AstExprConstantInteger`",
+          "timestamp": "2026-07-10T05:31:48-07:00",
+          "tree_id": "a4a14c87707f1ed80148d2bf9a3d26028a5fe52e",
+          "url": "https://github.com/luau-lang/luau/commit/91eb53253b41021e68a3ca9cdd682ddc0c73097f"
+        },
+        "date": 1783687903659,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 15.1351,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 24.4533,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 24.3778,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 417.832,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 811.417,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 812,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"

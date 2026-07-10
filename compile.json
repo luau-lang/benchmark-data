@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1783608585613,
+  "lastUpdate": 1783687903815,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-compile": [
@@ -34874,6 +34874,100 @@
           {
             "name": "map-O2-t1-codegen",
             "value": 4.87385,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.66469,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.90539,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.88301,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 14.8166,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-t1-codegen",
+            "value": 14.5139,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "146754550+spxnso@users.noreply.github.com",
+            "name": "Evann Borde",
+            "username": "spxnso"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "91eb53253b41021e68a3ca9cdd682ddc0c73097f",
+          "message": "fix: add missing `AstExprConstantInteger` visitor to `AstJsonEncoder` (#2442)\n\nImplements the virtual visit override for `AstExprConstantInteger`",
+          "timestamp": "2026-07-10T05:31:48-07:00",
+          "tree_id": "a4a14c87707f1ed80148d2bf9a3d26028a5fe52e",
+          "url": "https://github.com/luau-lang/luau/commit/91eb53253b41021e68a3ca9cdd682ddc0c73097f"
+        },
+        "date": 1783687903805,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.691878,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.776043,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.958687,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 4.86184,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-t1-codegen",
+            "value": 4.87386,
             "unit": "4ms",
             "range": "±0%",
             "extra": "luau-compile"
