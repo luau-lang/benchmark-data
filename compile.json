@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1784043864651,
+  "lastUpdate": 1784043918139,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-compile": [
@@ -35821,6 +35821,100 @@
           {
             "name": "regex-O0",
             "value": 1.67097,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.91137,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.89032,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 14.7258,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-t1-codegen",
+            "value": 14.4309,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "johnnymorganz@outlook.com",
+            "name": "JohnnyMorganz",
+            "username": "JohnnyMorganz"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "01c8a54ec2bf5093fa9da1fb7d9e0b6185865ab4",
+          "message": "Propagate deprecated attribute information on functions to Autocomplete entries (#2159)\n\n\n---------\n\nCo-authored-by: vegorov-rbx <75688451+vegorov-rbx@users.noreply.github.com>\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com>",
+          "timestamp": "2026-07-14T08:25:13-07:00",
+          "tree_id": "734d95638e074ce68034c393d7db74849d8fb232",
+          "url": "https://github.com/luau-lang/luau/commit/01c8a54ec2bf5093fa9da1fb7d9e0b6185865ab4"
+        },
+        "date": 1784043918127,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.702059,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.78877,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.963785,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 4.84291,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-t1-codegen",
+            "value": 4.85896,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.67098,
             "unit": "1ms",
             "range": "±0%",
             "extra": "luau-compile"
