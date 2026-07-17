@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1784316053097,
+  "lastUpdate": 1784318784839,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-analyze": [
@@ -26577,6 +26577,72 @@
           {
             "name": "regex-nonstrict",
             "value": 414.357,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 809.749,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 808.329,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "afriesen@roblox.com",
+            "name": "Andy Friesen",
+            "username": "andyfriesen"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "5bc7f4b23756f69f4669b419fa9034f117ccd6fe",
+          "message": "Clip this assert. (#2568)\n\nI misunderstood the code.  This has to go.",
+          "timestamp": "2026-07-17T12:51:15-07:00",
+          "tree_id": "4b70ced53861129b9b41a40c3f8c20d732d4e7b7",
+          "url": "https://github.com/luau-lang/luau/commit/5bc7f4b23756f69f4669b419fa9034f117ccd6fe"
+        },
+        "date": 1784318784832,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 15.1943,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 24.5206,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 24.5002,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 414.358,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"
