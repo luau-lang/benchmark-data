@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1784043917989,
+  "lastUpdate": 1784316053097,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-analyze": [
@@ -26525,6 +26525,72 @@
           {
             "name": "regex-dcr",
             "value": 811.398,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "afriesen@roblox.com",
+            "name": "Andy Friesen",
+            "username": "andyfriesen"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "e8ae48c4c08bddc49ef42d3151e8a926266de592",
+          "message": "Sync to upstream/release/730 (#2566)\n\n# Analysis\n\n* Internal refactoring in service of supporting cyclic module\ndependencies.\n* Skip error-ish types when computing properties for autocomplete.\n* Fix a regression that would cause us erroneously infer `{unknown}` for\narray-tables.\n```luau\nexport type Glob = { string }\nlocal function parseGlob(): Glob\n    -- Prior, we would incorrectly infer that lua_parts has type `{ unknown }`\n    local lua_parts = {}\n    table.insert(lua_parts, \"\")\n    table.insert(lua_parts, \"\")\n    return {\n        table.concat(lua_parts)\n    }\nend\n```\n* Fix a bug where loops could \"cancel out\" refinements that happened\nearlier in the block.\n```luau\ntype LightingChanger = { [string]: number, Instances: LightingChanger }\nlocal lightingChangers: { LightingChanger } = nil :: any\nlocal closestChanger: LightingChanger?\nif #lightingChangers == 1 then\n    closestChanger = lightingChangers[1]\nend\nif closestChanger == nil then\n    return\nend\nfor _, _ in closestChanger do\nend\n\n-- Prior, we would claim `closestChanger` was `nil`able here.\nlocal _ = closestChanger.Instances\n```\n\n# Runtime\n\n* Fix math.round on negative zero in SSE 4.1 mode.\n* Make sure to mark direct access callbacks to cover corner cases.\n\n# Native Code Generation\n\n* Sink instructions only used by multiple exit sync blocks into them.\n* Fix A64 emitBuiltin in DebugCodegenChaosA64 mode.\n* Add an option to output information about register spill and restore\nevents.\n* Fix the range of registers marked dead in multi-return builtin\nfastcalls.\n\n---------\n\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com>\nCo-authored-by: Ariel Weiss <arielweiss@roblox.com>\nCo-authored-by: Hunter Goldstein <hgoldstein@roblox.com>\nCo-authored-by: Varun Saini <61795485+vrn-sn@users.noreply.github.com>\nCo-authored-by: Sora Kanosue <skanosue@roblox.com>\nCo-authored-by: Annie Tang <annietang@roblox.com>\nCo-authored-by: Annie Tang <98965493+annieetang@users.noreply.github.com>\nCo-authored-by: Ilya Rezvov <irezvov@roblox.com>\nCo-authored-by: Vighnesh Vijay <vvijay@roblox.com>",
+          "timestamp": "2026-07-17T12:05:33-07:00",
+          "tree_id": "83caf1667b6a81cf438a4b2939b777ce36e3938a",
+          "url": "https://github.com/luau-lang/luau/commit/e8ae48c4c08bddc49ef42d3151e8a926266de592"
+        },
+        "date": 1784316053089,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 15.1943,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 24.5212,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 24.5002,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 414.357,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 809.749,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 808.329,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"
