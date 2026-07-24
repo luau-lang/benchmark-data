@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1784318784839,
+  "lastUpdate": 1784928463895,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-analyze": [
@@ -26657,6 +26657,72 @@
           {
             "name": "regex-dcr",
             "value": 808.329,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "hgoldstein@roblox.com",
+            "name": "Hunter Goldstein",
+            "username": "hgoldstein"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "f8ca77acdcb50241e3da21af663f8ef97b4b5ce4",
+          "message": "Sync to upstream/release/731 (#2584)\n\n# General\n* Added support for building the Luau VM with double-precision `vector`s\nrather than single precision. Due to the extra space requirements, these\nare heap allocated rather than entirely stack allocated.\n* _Several_ new C APIs that were previously internal have been added to\nthe offcial interface:\n- `lua_atbreakpoint` - provides code called from a debug hook to check\nif are at a breakpoint instruction, useful to resume from single step\nmode\n- `lua_allocationrate` - determines the allocation rate of the VM in\norder to pace the GC externally\n- `LUA_GCISPAUSED` for lua_gc - determine if GC is running, but in a\npaused state at the moment\n- `lua_memorydump` - dump heap state to a json file for use with Luau\ntools\n- `lua_setpointerencodekey` - setup keys for lua_encodepointer which was\nnot possible with public API despite lua_encodepointer being public\n- `lua_callhook` - official Luau way to enter the debug hook mode when\ndebugging outside of a debug hook callback\n- `lua_hascustomexecution` and `lua_incustomexecution` - determine\ninformation about a call frame related to NCG or other custom execution\nplugin\n\n# Require\n* `@self` as specified in https://github.com/luau-lang/rfcs/pull/215 is\nnow implemented :tada:\n\n# Analysis\n* Changed `Frontend` so that when the source of a module is missing, we\nclear _all_ information about the dead source module.\n* Fixed a bug around order dependent intersections of table types:\n```luau\nlocal tbl = {}\n\nfunction tbl:hmm(mode)\n    -- `self.module` ends up having multiple refinements against\n    -- ~(false?), which we were failing to correctly normalize.\n    if self.module and self.module:GetMode() == mode then\n    end\n\n    if self.module then\n        local _ = self.module:GetMode()\n        error(\"uhoh\", self.module:GetMode())\n    end\nend\n```\n* Fixed one case where we would claim a table type and an extern type\nhad an empty intersection:\n```luau\ntype BIG_FRAME = {something: Frame} & Frame\ntype context<O> = {_object: O}\nlocal big_context: context<BIG_FRAME>\nlocal function fn<O>(p: context<O>)\nend\n\n-- Prior this failed to type check as we'd claim there's a generic bound mismatch,\n-- due to an underlying uninhabited type.\nfn(big_context)\n```\n\n# Runtime\n* Introduce new APIs for integrating embedder defined objects into how\nLuau traces the heap for garbage collection.\n* `lua_unref` now unconditionally returns `LUA_NOREF`, similar to\n`lua_weakunref`.\n* Always attempt to inline immediately invoked lambdas\n```luau\nfunction test(x)\n    local a, b, c = x + 1, x + 2, x + 3\n    -- We will always attempt to inline this lambda, even though\n    -- it is normally \"too costly\" to inline.\n    local r = (function()\n        for i in 0, a do\n            for j in 0, b do\n                if i + j >= c then return 42 end\n            end\n        end\n        return 67\n    end)()\n    return r + 5\nend\n```\n* Fixed an instance where the error reported for a stack overflow on a\nsynchronous versus asynchronous path was different.\n\n---------\n\nCo-authored-by: Andy Friesen <afriesen@roblox.com>\nCo-authored-by: Annie Tang <annietang@roblox.com>\nCo-authored-by: Hunter Goldstein <hgoldstein@roblox.com>\nCo-authored-by: Thomas Schollenberger <tschollenberger@roblox.com>\nCo-authored-by: Varun Saini <vsaini@roblox.com>\nCo-authored-by: Vighnesh Vijay <vvijay@roblox.com>\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com>",
+          "timestamp": "2026-07-24T13:51:25-07:00",
+          "tree_id": "79d7345da1396fb7cf5e136f696978269dc16b2a",
+          "url": "https://github.com/luau-lang/luau/commit/f8ca77acdcb50241e3da21af663f8ef97b4b5ce4"
+        },
+        "date": 1784928463885,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 15.1879,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 24.5134,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 24.5252,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 414.421,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 810.279,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 810.332,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"
