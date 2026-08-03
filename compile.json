@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1785779243544,
+  "lastUpdate": 1785795549210,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-compile": [
@@ -36413,6 +36413,100 @@
           {
             "name": "regex-O2-t1-codegen",
             "value": 14.134,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "49820045+9382@users.noreply.github.com",
+            "name": "Aidan",
+            "username": "9382"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "9d96470bd853bb10ad1f82dee84ab7936f40b5d6",
+          "message": "Avoid redundant MOVEs within expressions in concatenation chains (#2614)\n\nThis is essentially a sequel to what #2324 did, just with a different\nexpression being optimised this time. I tried to look for whatever cases\nI could, but this was the only one that seemed reasonably worthwhile to\nactually implement (everything else was a super rare case that didn't\nfeel worthwhile to implement)\n\nSince we're always using newly allocated registers off the end of the\nstack as our space for preparing concatenation, and since we advance the\nitems in order, it's safe to use compileExprTempTop for compiling as all\nof the registers above are considered free at that point. This helps\navoid cases where a MOVE would be emitted when not required, e.g. when a\nfunction call was involved (`return \"{a=\" .. tostring(a) .. \"}\"`)\n\nAdds a test case, as the situation this optimises for is only barely\ncovered by one of the existing test cases (reverse-order concatenation)\n\n<details><summary>Example bytecode difference</summary>\n\nCode: <code>local a, b = ...; return '{a=' .. tostring(a) .. ' b=' ..\ntostring(b) .. '}'</code>\n\nDifference:\n```\nFunction 0 (??):\n   45: local a, b = ...; return '{a=' .. tostring(a) .. ' b=' .. tostring(b) .. '}'\nGETVARARGS R0 2\nLOADK R3 K0 ['{a=']\nREMARK builtin tostring/1\nFASTCALL1 63 R0 L0\nMOVE R9 R0                   | MOVE R5 R0\nGETIMPORT R8 2 [tostring]    | GETIMPORT R4 2 [tostring]\nCALL R8 1 1                  | CALL R4 1 1\nL0: MOVE R4 R8               | (Not present)\nLOADK R5 K3 [' b=']          | L0: LOADK R5 K3 [' b=']\nREMARK builtin tostring/1\nFASTCALL1 63 R1 L1\nMOVE R9 R1                   | MOVE R7 R1\nGETIMPORT R8 2 [tostring]    | GETIMPORT R6 2 [tostring]\nCALL R8 1 1                  | CALL R6 1 1\nL1: MOVE R6 R8               | (Not present)\nLOADK R7 K4 ['}']            | L1: LOADK R7 K4 ['}']\nCONCAT R2 R3 R7\nRETURN R2 1\n```\n</details>",
+          "timestamp": "2026-08-03T14:46:35-07:00",
+          "tree_id": "b38d91ab60204ff2cd6f49920f578843bff16ee8",
+          "url": "https://github.com/luau-lang/luau/commit/9d96470bd853bb10ad1f82dee84ab7936f40b5d6"
+        },
+        "date": 1785795549198,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.708718,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.798075,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.977227,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 4.83873,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-t1-codegen",
+            "value": 4.85498,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.69223,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.93018,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.914,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 14.5211,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-t1-codegen",
+            "value": 14.1366,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-compile"
