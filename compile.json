@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1785882787810,
+  "lastUpdate": 1786026387115,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-compile": [
@@ -36601,6 +36601,100 @@
           {
             "name": "regex-O2-t1-codegen",
             "value": 14.1366,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "122706326+green-real@users.noreply.github.com",
+            "name": "green",
+            "username": "green-real"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "ea604e93bb0f1ecdfd294526cee62d56c5d3318f",
+          "message": "Add integer equality fast-path for `JUMPIFEQ` codegen translation (#2571)\n\n### Summary\n\n`translateInstJumpIfEqShortcut` (the `local c = a == b` form) already\nhas an integer fast-path gated behind `LuauCodegenInteger3`, but the\nbranching form `translateInstJumpIfEq` (`if a == b then`) does not. As a\nresult `if a == b` on integers falls through to `CMP_ANY`, which does a\n`luaV_equalval` C call per comparison, while the materialize-to-boolean\nform is fast. This closes that gap so both `==` lowerings are\nconsistent.\n\n### Changes\n\nAdds a new `JUMP_CMP_INT64` IR command (branch on the result of a 64-bit\ninteger comparison), mirroring `JUMP_CMP_INT` at every site:\n\n* declaration and doc in `IrData.h`, name in `IrDump.cpp`\n* block-terminator and result-kind properties, plus constant folding in\n`IrUtils`\n* X64 and A64 lowering\n* dead-store and const-prop handling\n\nThen uses it in `translateInstJumpIfEq`: when both operands are\nexpected-or-unknown integer, check both tags are `LUA_TINTEGER`,\n`LOAD_INT64` each, and `JUMP_CMP_INT64`. Gated behind\n`LuauCodegenInteger3`. A tag mismatch falls back to the existing\n`CMP_ANY` path, so behavior is unchanged.\n\nThe integer branch sits as an `else if` after the number fast-path, so a\nboth-unknown comparison still takes the number path exactly as before.\nThe new branch only speculates on integers when at least one operand is\na known integer.\n\n### Testing\n\n* Adds an `IntegerCompare` lowering test in `IrLowering.test.cpp`\n(branch-form integer `==`) asserting the emitted IR is `CHECK_TAG\ntinteger` + `LOAD_INT64` + `JUMP_CMP_INT64`, mirroring the `Collatz`\ntest that covers the number branch form\n* All unit tests pass with `LuauCodegenInteger3` forced on, and the full\n`IrLowering` suite is green\n\n### Benchmarks\n\nNative codegen, 100M iterations, same source on both builds (the only\ndifference is `JUMP_CMP_INT64` vs `CMP_ANY`). The PR is faster in every\ncase; the multiplier depends on how much non-comparison work surrounds\nthe `==` and how predictable the branch is.\n\nPer-comparison cost, isolated by subtracting an identical\ncomparison-free loop:\n\n| Branch behavior | Baseline (`CMP_ANY`) | This PR (`JUMP_CMP_INT64`) |\nSpeedup |\n|---|---|---|---|\n| Predictable | 3.18 ns | 0.63 ns | ~5.0x |\n| 50/50 unpredictable | 5.9 ns | 3.75 ns | ~1.57x |\n\nWhole-loop numbers depend on surrounding work. A realistic loop where\ninteger math (a per-iteration xorshift) accounts for ~46% of the time,\nwith 50/50 unpredictable branches, runs ~1.24x faster end to end; the\ncomparison work within it is ~1.57x faster. A comparison-bound loop with\npredictable branches runs ~5x faster.\n\n---------\n\nCo-authored-by: vegorov-rbx <75688451+vegorov-rbx@users.noreply.github.com>",
+          "timestamp": "2026-08-06T06:57:40-07:00",
+          "tree_id": "18981bf450a1a8a2aebf40e9c8d05a7f60eafc9c",
+          "url": "https://github.com/luau-lang/luau/commit/ea604e93bb0f1ecdfd294526cee62d56c5d3318f"
+        },
+        "date": 1786026387106,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.708651,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.79803,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.973476,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 4.83599,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-t1-codegen",
+            "value": 4.85224,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.69217,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.93009,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.9117,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 14.5223,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-t1-codegen",
+            "value": 14.1375,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-compile"
