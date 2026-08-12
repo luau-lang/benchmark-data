@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1786127926666,
+  "lastUpdate": 1786548438507,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-compile": [
@@ -36834,6 +36834,100 @@
           {
             "name": "map-O2",
             "value": 0.975948,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 4.832,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-t1-codegen",
+            "value": 4.84827,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.6922,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.93008,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.91365,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 14.5047,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-t1-codegen",
+            "value": 14.1208,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "122706326+green-real@users.noreply.github.com",
+            "name": "green",
+            "username": "green-real"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "c73bb3765b5c380c0dce7f28d6895c1a84a3363f",
+          "message": "Fix negated integer literals reporting a type error (#2615)\n\nLuau's compiler folds `-1i` into a single constant representing that\nexact value, but Analysis has no matching case and reports an error on\ncode that compiles and runs at every optimization level:\n```luau\nlocal a = -4194626i\n\n-- TypeError: Operator '-' could not be applied to operand of type integer;\n--         there is no corresponding overload for __unm\n```\n\nThis PR fixes that so Analysis now recognises the negation being applied\non a literal. `ConstraintGenerator` infers `integer` directly instead of\ninstantiating `unm`, and `TypeChecker2` tests the operand against\n`integer` rather than `number`. `TypeChecker2` technically doesn't need\nto even test it at all, but it is kept for readability.\n\nNegating an integer that is not a literal is untouched. That continues\nto throw at runtime with \"attempt to perform arithmetic (unm) on\ninteger\" and Analysis reports the same error as shown above.",
+          "timestamp": "2026-08-12T07:43:10-07:00",
+          "tree_id": "546b62b4307c0c6bd9021cebfc03219cc396bc80",
+          "url": "https://github.com/luau-lang/luau/commit/c73bb3765b5c380c0dce7f28d6895c1a84a3363f"
+        },
+        "date": 1786548438491,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.708682,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.798012,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.975946,
             "unit": "0ms",
             "range": "±0%",
             "extra": "luau-compile"

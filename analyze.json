@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1786127926503,
+  "lastUpdate": 1786548438351,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-analyze": [
@@ -27145,6 +27145,72 @@
           "url": "https://github.com/luau-lang/luau/commit/ca128af4c531310d6f5c1b354df4b79fdd782ede"
         },
         "date": 1786127926494,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 15.1628,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 24.4799,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 24.4531,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 410.63,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 804.923,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 806.026,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "122706326+green-real@users.noreply.github.com",
+            "name": "green",
+            "username": "green-real"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "c73bb3765b5c380c0dce7f28d6895c1a84a3363f",
+          "message": "Fix negated integer literals reporting a type error (#2615)\n\nLuau's compiler folds `-1i` into a single constant representing that\nexact value, but Analysis has no matching case and reports an error on\ncode that compiles and runs at every optimization level:\n```luau\nlocal a = -4194626i\n\n-- TypeError: Operator '-' could not be applied to operand of type integer;\n--         there is no corresponding overload for __unm\n```\n\nThis PR fixes that so Analysis now recognises the negation being applied\non a literal. `ConstraintGenerator` infers `integer` directly instead of\ninstantiating `unm`, and `TypeChecker2` tests the operand against\n`integer` rather than `number`. `TypeChecker2` technically doesn't need\nto even test it at all, but it is kept for readability.\n\nNegating an integer that is not a literal is untouched. That continues\nto throw at runtime with \"attempt to perform arithmetic (unm) on\ninteger\" and Analysis reports the same error as shown above.",
+          "timestamp": "2026-08-12T07:43:10-07:00",
+          "tree_id": "546b62b4307c0c6bd9021cebfc03219cc396bc80",
+          "url": "https://github.com/luau-lang/luau/commit/c73bb3765b5c380c0dce7f28d6895c1a84a3363f"
+        },
+        "date": 1786548438341,
         "tool": "benchmarkluau",
         "benches": [
           {
