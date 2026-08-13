@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1786645384510,
+  "lastUpdate": 1786657931322,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-compile": [
@@ -37057,6 +37057,100 @@
           {
             "name": "regex-O2",
             "value": 2.91365,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 14.5047,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-t1-codegen",
+            "value": 14.1208,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "61795485+vrn-sn@users.noreply.github.com",
+            "name": "Varun Saini",
+            "username": "vrn-sn"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "fd83819b14e278e1265f86f55116247c5131afb4",
+          "message": "Benchmarks: pass new `--solver` flag to `luau-analyze` (#2650)\n\nIn 0.721, we introduced a new `--solver` flag to `luau-analyze` with\n`--solver=new` being the default. Because of this, all the old solver\nbenchmarks appear to have had sizable regressions in this version\n([graphs](https://perf.luau-lang.org/?analyze)), but this is actually\nbecause the solver mode was changed under the hood.\n\nThis PR hardcodes the solver mode, and I'll put a follow-up in the\n[benchmark data repository](https://github.com/luau-lang/benchmark-data)\nto delete these wrong entries (probably just setting them to 0).",
+          "timestamp": "2026-08-13T14:08:31-07:00",
+          "tree_id": "f8fbf371fb7dcf92c8fd6a7af3429358d01d83f2",
+          "url": "https://github.com/luau-lang/luau/commit/fd83819b14e278e1265f86f55116247c5131afb4"
+        },
+        "date": 1786657931310,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.70865,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.797978,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.975912,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 4.83197,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-t1-codegen",
+            "value": 4.84824,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.69216,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.93004,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.91362,
             "unit": "2ms",
             "range": "±0%",
             "extra": "luau-compile"
