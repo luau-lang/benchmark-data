@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1786657931161,
+  "lastUpdate": 1786731119344,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-analyze": [
@@ -27383,6 +27383,72 @@
           {
             "name": "regex-dcr",
             "value": 804.922,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "98965493+annieetang@users.noreply.github.com",
+            "name": "Annie Tang",
+            "username": "annieetang"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "3fc82b1071ab387531175869afc4fb528464afa4",
+          "message": "Sync to upstream/release/734 (#2662)\n\nMade a wish on a shooting star this week? 🌠 The Luau team's here to make\nthem come true with another release! 🌌\n\n### General 🌟\n* `pcall` and `xpcall` are now allowed in user-defined type functions!\nResolving https://github.com/luau-lang/luau/issues/2499 and in\naccordance to https://github.com/luau-lang/rfcs/pull/228\n\n### Analysis ⭐️\n* Improvements to quality of error messages, resolving\nhttps://github.com/luau-lang/luau/pull/2611 and\nhttps://github.com/luau-lang/luau/pull/2612\n* Fixes an issue where the new solver would not infer generalized\niteration:\n```lua\nlocal function setupRootMappingMove(rootMapping)\n    -- Prior, the new solver would infer `rootMapping.RootToDescendantCountMap`\n    -- as `unknown`, which is clearly not correct.\n    for root, childCount in rootMapping.RootToDescendantCountMap do\n           string.len(root)\n           math.abs(childCount)\n    end\nend\n```\n* Fixes a refinement bug that could cause us to report any as the result\nof indexing into a refined table that contained a blocked type:\n```lua\nconst MyClass = {\n    __index = {},\n}\n\ntype MyClass<T> = setmetatable<{ _t: T }, typeof(MyClass)>\n\ntype MyFunction<T> = (class: MyClass<T>) -> () | {\n    fn: ((class: MyClass<T>) -> ())?,\n}\n\nfunction MyClass.__index.call<T>(self: MyClass<T>, f: MyFunction<T>): ()\n    if type(f) == \"function\" then\n        f(self)\n    elseif f.fn then \n        -- Prior, we would infer this to be `any`, which is incorrect.\n        const thevalue = f.fn\n        local _ = thevalue\n        f.fn(self)\n    end\nend\n```\n* Wrap only function return types in `AstTypeGroup` for unions and\nintersections, so\n`(string) -> ((string) & (number) -> (number))` is improved to `(string)\n-> (string) & (number) -> (number)`\n* Fixes a bug in the New Type Solver that reports an incorrect error on\nthe wrong argument for function calls\n\n### Runtime ✨\n* Fix missing links in `luaC_enumheap`\n* Luau CodeGen: flow known tag info in and through fallback blocks\n\n----------------------\nCo-authored-by: Andy Friesen <afriesen@roblox.com>\nCo-authored-by: Annie Tang <annietang@roblox.com>\nCo-authored-by: Ariel Weiss <arielweiss@roblox.com>\nCo-authored-by: Hunter Goldstein <hgoldstein@roblox.com>\nCo-authored-by: Ilya Rezvov <irezvov@roblox.com>\nCo-authored-by: Phil Pizlo <fpizlo@roblox.com>\nCo-authored-by: Sora Kanosue <skanosue@roblox.com>\nCo-authored-by: Thomas Schollenberger <tschollenberger@roblox.com>\nCo-authored-by: Vighnesh Vijay <vvijay@roblox.com>\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com>\n\n---------\n\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com>\nCo-authored-by: Ariel Weiss <arielweiss@roblox.com>\nCo-authored-by: Andy Friesen <afriesen@roblox.com>\nCo-authored-by: Hunter Goldstein <hgoldstein@roblox.com>\nCo-authored-by: Varun Saini <61795485+vrn-sn@users.noreply.github.com>\nCo-authored-by: Sora Kanosue <skanosue@roblox.com>\nCo-authored-by: Ilya Rezvov <irezvov@roblox.com>\nCo-authored-by: Vighnesh Vijay <vvijay@roblox.com>",
+          "timestamp": "2026-08-14T10:45:34-07:00",
+          "tree_id": "5c9340fab3cae629bde7f762d54f9ca90ac78ea5",
+          "url": "https://github.com/luau-lang/luau/commit/3fc82b1071ab387531175869afc4fb528464afa4"
+        },
+        "date": 1786731119335,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 4.80672,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 5.93349,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 20.255,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 8.01423,
+            "unit": "8ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 10.6265,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 671.836,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"
