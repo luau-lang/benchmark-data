@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1786731119344,
+  "lastUpdate": 1786750313944,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-analyze": [
@@ -27442,6 +27442,72 @@
           {
             "name": "regex-strict",
             "value": 10.6265,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 671.836,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "afriesen@roblox.com",
+            "name": "Andy Friesen",
+            "username": "andyfriesen"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "6dafc0dd9909efe534c825d1b1184644e1f7a4e4",
+          "message": "Also run all the tests with the old solver. (#2652)\n\nThis would have caught the problem with #2615 before it was merged.",
+          "timestamp": "2026-08-14T15:48:18-07:00",
+          "tree_id": "da37fd83f5a6dafdf8fd2d7777361d1567a0b233",
+          "url": "https://github.com/luau-lang/luau/commit/6dafc0dd9909efe534c825d1b1184644e1f7a4e4"
+        },
+        "date": 1786750313935,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 4.80676,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 5.93285,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 20.2542,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 8.01357,
+            "unit": "8ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 10.6198,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"
