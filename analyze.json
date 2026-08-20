@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1786750313944,
+  "lastUpdate": 1787263673094,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-analyze": [
@@ -27515,6 +27515,72 @@
           {
             "name": "regex-dcr",
             "value": 671.836,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "122706326+green-real@users.noreply.github.com",
+            "name": "green",
+            "username": "green-real"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "b560f6981109b8f657c01580b69d9d2d7229a09a",
+          "message": "Expose the integer type to user-defined type functions (#2618)\n\n`integer` is currently missing a constructor in the type function\n`types` library, so a type function could receive and inspect an integer\ntype but never produce one.\n\nEverything else was already in place: serialization, deserialization,\ndeep copy, and the `\"integer\"` tag. This adds `createInteger` alongside\n`createNumber` and registers it.\n\nRegistration is gated on `LuauIntegerType2`, matching the gate on the\n`integer` type binding in `GlobalTypes.cpp:21`, so a type function\ncannot construct a type that is not nameable in an annotation. Note that\nthe surrounding gating is already uneven: the serde and copy paths are\nungated and only the tag lookup checks the flag. Happy to drop the gate\nif that is preferred.\n\nTests cover construction plus `is(\"integer\")`, that `integer` and\n`number` are not conflated when passed through the same type function,\nand that `types.integer` does not satisfy a `number` annotation.",
+          "timestamp": "2026-08-20T14:24:04-07:00",
+          "tree_id": "67f320420fd42620037b2171972306309597b87a",
+          "url": "https://github.com/luau-lang/luau/commit/b560f6981109b8f657c01580b69d9d2d7229a09a"
+        },
+        "date": 1787263673084,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 4.80676,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 5.93285,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 20.2543,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 8.01356,
+            "unit": "8ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 10.6198,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 671.833,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"
