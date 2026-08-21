@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1787263673272,
+  "lastUpdate": 1787331114691,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-compile": [
@@ -37433,6 +37433,100 @@
           {
             "name": "regex-O2",
             "value": 2.90228,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 15.1204,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-t1-codegen",
+            "value": 14.6254,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "122706326+green-real@users.noreply.github.com",
+            "name": "green",
+            "username": "green-real"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "b6b7810db6c6c898d074a9dbeb99350591fe7156",
+          "message": "Check argument types of calls through a __call metamethod (#2648)\n\nA `__call` metamethod receives the callee as its first argument, and\nargument checking does not account for that.\n\n```luau\nlocal t = setmetatable({}, {\n\t__call = function(self, x: number) end,\n})\n\nt(\"hello\")       -- no error\nt(\"hello\", \"hi\") -- error on \"hi\", expected number got string\nt(\"hello\", 5)    -- error on 5, expected number got number\n```\n\n`x` receives `\"hello\"`, so all three lines should point there. Now they\ndo. Code whose metamethod omits `self` still errors, but names the\ncallee instead of the first argument, since that is the value the\nparameter receives.\n\nClasses are callable tables, so constructor arguments are checked too.\nThat needed a small change to two fixtures in\n`TypeInfer.classes.test.cpp` which built `Point` without its required\nfield.",
+          "timestamp": "2026-08-21T09:09:03-07:00",
+          "tree_id": "cb54895bf3ef3729a894e9cada7c8a816fbac212",
+          "url": "https://github.com/luau-lang/luau/commit/b6b7810db6c6c898d074a9dbeb99350591fe7156"
+        },
+        "date": 1787331114679,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.709701,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.799157,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.989109,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 4.91243,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-t1-codegen",
+            "value": 4.92497,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.68098,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.91492,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.90227,
             "unit": "2ms",
             "range": "±0%",
             "extra": "luau-compile"
