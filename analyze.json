@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1787331114531,
+  "lastUpdate": 1787359311146,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-analyze": [
@@ -27647,6 +27647,72 @@
           {
             "name": "regex-dcr",
             "value": 671.848,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "vighneshv@proton.me",
+            "name": "NotoriousV.I.G",
+            "username": "Vighnesh-V"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "367f9d83cc29804a6d5938ec85b6116d34d8743b",
+          "message": "Sync to upstream/release/735 (#2691)\n\nFresh Release! Hot off the presses! Get you a fresh release of Luau\n0.735!\n\n## General\n- Autocomplete can now swap `.` property accesses for `:`.\n- Fixes a small bug parenthesis misattribution in the CST.\n- The typechecker now considers the annotation type of exported values\n\n\n### TypeChecker\n- Relabel inferred generics during stringification (you should see T, U,\nV, W ..., instead of a, b, c used as your generic variable).\n- Add a configurable heap limit to the type function runtime.\n- Fixes a bug in compound assignment type checking\n\n### Runtime\n- Changed the Luau pointer encoding implementation to use SipHash2-4 + a\nFeistel cipher\n- Added a bunch of benchmarks for the Runtime\n- Added new LOP_FASTPCALL instruction: pcall/xpcall overhead should be\naround two times lower.\n\n### Classes\n- We're hard at work in the code mines on this _extremely in development\nand experimental_ feature.\n\n---------\n\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com>\nCo-authored-by: Ariel Weiss <arielweiss@roblox.com>\nCo-authored-by: Andy Friesen <afriesen@roblox.com>\nCo-authored-by: Hunter Goldstein <hgoldstein@roblox.com>\nCo-authored-by: Varun Saini <61795485+vrn-sn@users.noreply.github.com>\nCo-authored-by: Sora Kanosue <skanosue@roblox.com>\nCo-authored-by: Annie Tang <annietang@roblox.com>\nCo-authored-by: Annie Tang <98965493+annieetang@users.noreply.github.com>\nCo-authored-by: Ilya Rezvov <irezvov@roblox.com>",
+          "timestamp": "2026-08-21T16:54:53-07:00",
+          "tree_id": "c3580317dbc485d821ee658dfae4a79e88b4fc85",
+          "url": "https://github.com/luau-lang/luau/commit/367f9d83cc29804a6d5938ec85b6116d34d8743b"
+        },
+        "date": 1787359311137,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 4.80391,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 5.93055,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 20.2558,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 7.99539,
+            "unit": "7ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 10.6031,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 672.338,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"
