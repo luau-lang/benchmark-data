@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1787359311315,
+  "lastUpdate": 1787767630741,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-compile": [
@@ -37628,6 +37628,100 @@
           {
             "name": "regex-O2-codegen",
             "value": 15.1322,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-t1-codegen",
+            "value": 14.6403,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "86601049+PhoenixWhitefire@users.noreply.github.com",
+            "name": "erin5",
+            "username": "PhoenixWhitefire"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "40d9da5a43fd5725da907d66df01c2c01762af1e",
+          "message": "Fix \"Subtyping test returned a reasoning with an invalid path\" for `T <: ~U` subtyping tests (#2612)\n\nFixes \"Subtyping test returned a reasoning with an invalid path\" for the\nfollowing:\n\n```luau\ntype function negate(ty)\n    return types.negationof(ty)\nend\n\nlocal x: negate<false?> = false\n```\n\nFrom what I can tell, this was caused by specifically,\n\n```c++\nSubtypingResult Subtyping::isCovariantWith(SubtypingEnvironment& env, const TypeId subTy, const NegationType* superNegation, NotNull<Scope> scope)\n```\n\n, appending the `Negated` type field path component for unions (and\nintersections) *after* `andAlso`/`orElse` instead of for the actual\n`isCovariantWith` check for the components.\n\nFlagged under `LuauFixSuperNegationTypePaths`. Adds 2 tests.\n\n---------\n\nCo-authored-by: ariel <aweiss@hey.com>",
+          "timestamp": "2026-08-26T10:38:48-07:00",
+          "tree_id": "2cfe2737a0179e288d7e0223513de3cb6779c2fd",
+          "url": "https://github.com/luau-lang/luau/commit/40d9da5a43fd5725da907d66df01c2c01762af1e"
+        },
+        "date": 1787767630735,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.711805,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.801201,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.992223,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 4.93162,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-t1-codegen",
+            "value": 4.94136,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.6831,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.91734,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.90911,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 15.1321,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-compile"
