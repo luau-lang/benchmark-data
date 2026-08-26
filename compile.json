@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1787767630741,
+  "lastUpdate": 1787768638784,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-compile": [
@@ -37680,6 +37680,100 @@
           {
             "name": "map-O2",
             "value": 0.992223,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 4.93162,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-t1-codegen",
+            "value": 4.94136,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.6831,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.91734,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.90911,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 15.1321,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-t1-codegen",
+            "value": 14.6403,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "3773910+Companion@users.noreply.github.com",
+            "name": "owenn",
+            "username": "Companion"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "051ca9a0027c78a980e84718a69a156fa926d690",
+          "message": "Reject unknown options in luau-analyze (#2698)\n\n## Problem\n\n`luau-analyze` silently ignores unrecognized command line options and\ncan still exit successfully.\n\nFor example a typo such as:\n\n```text\nluau-analyze --mode=Strict file.luau\n```\n\nis ignored instead of reported causing analysis to run with different\nsettings than requested. This can allow incorrectly configured CI\ncommands to appear successful.\n\n## Change\n\nReject unrecognized options with an error message display the command\nhelp and return a nonzero exit code matching the behaviour of the other\nsupported Luau CLI tools.\n\nThis also explicitly recognizes the documented `--solver=new` option. It\npreviously behaved successfully only because it was silently ignored and\nthe new solver is already the default.\n\n## Testing\n\nVerified executable behaviour for:\n\n- Unknown options in different argument positions\n- Unknown options following valid options\n- Valid source file analysis\n- Valid `--annotate`, `--mode` and solver options\n- Existing type error reporting\n- Help output\n\nThe complete unit and conformance suites pass under the default all\nflags and old solver configurations.\n\n`luau-analyze` argument parsing is not exposed through the existing\n`Luau.CLI.Test` target so the option behaviour was verified using an\nexecutable level command matrix.",
+          "timestamp": "2026-08-26T10:47:59-07:00",
+          "tree_id": "37d2d06e85be31cdde350438a0b1463b35356ed3",
+          "url": "https://github.com/luau-lang/luau/commit/051ca9a0027c78a980e84718a69a156fa926d690"
+        },
+        "date": 1787768638774,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.711805,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.801184,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.992221,
             "unit": "0ms",
             "range": "±0%",
             "extra": "luau-compile"
