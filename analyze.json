@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1787768638661,
+  "lastUpdate": 1787946202726,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-analyze": [
@@ -27845,6 +27845,72 @@
           {
             "name": "regex-dcr",
             "value": 672.469,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "irezvov@roblox.com",
+            "name": "Ilya Rezvov",
+            "username": "SPY"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "c2ec0d4e5ca50796ba174a7565298f59aa572268",
+          "message": "Sync to upstream/release/736 (#2715)\n\nNew week, new Luau!\n\nIn this episode:\n\n## Type System\n- better generalization of types for lambdas defined in table literals\n- less ICE on generics\n- check whether table indexer values are coincident when simplifying\ntables\n- fix infinite recursion into degenerate intersection type in\nautocomplete\n\n## Cyclic Modules\n- modules without return make their way in cyclic groups\n- better error messages for cyclic requires\n- fix use-after-free when a self-requiring module is checked before its\ndependents\n\n## Runtime\n- many correctness bug fixes for JIT Bytecode Inliner\n- reduced unnecessary move instructions around static function inlining\n\n## Common\n- Use the Bitset iterator to iterate through the k-v pairs in\nDenseHashMap2\n- fixed a memory leak in DenseHash2 and its erase implementation\n- more benchmarks\n\n---------\n\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com>\nCo-authored-by: Ariel Weiss <arielweiss@roblox.com>\nCo-authored-by: Andy Friesen <afriesen@roblox.com>\nCo-authored-by: Hunter Goldstein <hgoldstein@roblox.com>\nCo-authored-by: Varun Saini <61795485+vrn-sn@users.noreply.github.com>\nCo-authored-by: Sora Kanosue <skanosue@roblox.com>\nCo-authored-by: Annie Tang <annietang@roblox.com>\nCo-authored-by: Annie Tang <98965493+annieetang@users.noreply.github.com>\nCo-authored-by: Vighnesh Vijay <vvijay@roblox.com>",
+          "timestamp": "2026-08-28T11:55:25-07:00",
+          "tree_id": "c24d82a4a85b7fee8a093c9983c316f47c01ac11",
+          "url": "https://github.com/luau-lang/luau/commit/c2ec0d4e5ca50796ba174a7565298f59aa572268"
+        },
+        "date": 1787946202716,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 0.262921,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 5.88087,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 20.1287,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 0.26292,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 10.5162,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 666.815,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"
