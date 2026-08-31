@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1787946202726,
+  "lastUpdate": 1788203425430,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-analyze": [
@@ -27911,6 +27911,72 @@
           {
             "name": "regex-dcr",
             "value": 666.815,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "jqvhdrnqvj@privaterelay.appleid.com",
+            "name": "proto",
+            "username": "protousr"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "46d5dbaa17865e0c97da1f14b3e35ad7b6bfcb37",
+          "message": "luaV_equalval passes t1's metatable twice for TOBJECT __eq (#2727)\n\nThe `LUA_TOBJECT` case in `luaV_equalval` passes `t1`'s metatable as\nboth arguments to `get_compTM`, so `t2` is never looked at. The\n`LUA_TUSERDATA` case just above it uses `t1` and `t2` correctly.\n\nBecause both args are t1's metatable, `mt1 == mt2` is always true and\n`get_compTM` returns t1's `__eq` without checking t2's class. `a == b`\nbetween objects of different classes then fires a's `__eq` even when b\nhas none or a different one.\n\nSecond arg should be `objectvalue(t2)`.",
+          "timestamp": "2026-08-31T11:21:17-07:00",
+          "tree_id": "e3b0cb2b2d20c0906e63bd34422388c28b70197b",
+          "url": "https://github.com/luau-lang/luau/commit/46d5dbaa17865e0c97da1f14b3e35ad7b6bfcb37"
+        },
+        "date": 1788203425419,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 0.262919,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 5.88087,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 20.1287,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 0.262921,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 10.5162,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 666.814,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"
