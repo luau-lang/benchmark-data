@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1788203425601,
+  "lastUpdate": 1788374332117,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-compile": [
@@ -38004,6 +38004,100 @@
           {
             "name": "regex-O2-codegen",
             "value": 15.1333,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-t1-codegen",
+            "value": 14.6354,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "264514568+nnullcolumn@users.noreply.github.com",
+            "name": "nnullcolumn",
+            "username": "nnullcolumn"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "bb15c717405696bf9fc47f5566a07e2c3e467cb2",
+          "message": "Add .editorconfig (#2722)\n\nmany editors either support [.editorconfig](https://editorconfig.org/)\noutright or have plugins to add compatibility. This one is pretty\nsimple, setting charset to UTF-8, eol to LF, as well as indent_size /\nindent_style to 4 / space respectively in .cpp & .h files. There's no\n.gitignore for this, but my impression is that it would be a lot more\nacceptable than editor-specific configuration (almost the entire\neditorconfig spec is used here, and i think what i've added is pretty\nun-opinionated)",
+          "timestamp": "2026-09-02T11:03:27-07:00",
+          "tree_id": "78b2697afc2af18b7eabeabe57f3595366c0a6d2",
+          "url": "https://github.com/luau-lang/luau/commit/bb15c717405696bf9fc47f5566a07e2c3e467cb2"
+        },
+        "date": 1788374332107,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.71343,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.803127,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.995811,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 4.93207,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-t1-codegen",
+            "value": 4.94339,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.69125,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.92443,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.91022,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 15.1332,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-compile"
