@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1788374331999,
+  "lastUpdate": 1788547614874,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-analyze": [
@@ -28043,6 +28043,72 @@
           {
             "name": "regex-dcr",
             "value": 666.815,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "75688451+vegorov-rbx@users.noreply.github.com",
+            "name": "vegorov-rbx",
+            "username": "vegorov-rbx"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "62db36b09c280065d119721df58ecf41aefeeaa6",
+          "message": "Sync to upstream/release/737 (#2734)\n\nThis week we have a release with important fixes to the compiler as well\nas a bunch of typechecking improvements and a new experimental feature\nfor Luau enthusiasts to try out.\n\n### Analysis\n* Fixed type arguments not being typechecked in explicit instantiation\n(Fixes #2491)\n* Table indexers no longer allow their generics to leak into unsealed\ntables passed as arguments.\n* Fixed two source of frequent internal errors, including one related to\nthe recursion limit during type generalization\n* Require cycle length limit has been removed\n* `keyof` now produces unions in lexicographic order, making them\nconsistent across platforms\n\n### Runtime\n* Fixed handling of upvalues in `repeat..until` loops with `continue`\n* Fixed a rare issue where large jump distances were not rejected\n* Removed generation of unreachable upvalue close instructions in\nstatement blocks\n* Fixed an issue with `lua_weakref`/`lua_weakunref` API where new\nentries could occupy previous collected slots\n\n### Bytecode JiT inliner\n* Improved removal of dead code blocks\n* Fixed handling of userdata namecall instruction\n* Improved validation of the produced bytecode\n\n### Classes (experimental)\nOngoing work on [Classes\nRFC](https://github.com/luau-lang/rfcs/pull/242) prototype:\n* Constructors are now integrated into the type system\n\n(required flags:\nDebugLuauUserDefinedClasses=true,DebugLuauUserDefinedClassesRuntime=true)\n\n### If local (experimental)\nWork has started on the [if\nlocal](https://github.com/luau-lang/rfcs/pull/238) prototype:\n* `if local` statements have been implemented\n\n(required flags:\nDebugLuauIfLocalSyntax=true,DebugLuauIfLocalAnalysis=true)\n\nCo-authored-by: Annie Tang <annietang@roblox.com>\nCo-authored-by: Ariel Weiss <arielweiss@roblox.com>\nCo-authored-by: Hunter Goldstein <hgoldstein@roblox.com>\nCo-authored-by: Ilya Rezvov <irezvov@roblox.com>\nCo-authored-by: Sora Kanosue <skanosue@roblox.com>\nCo-authored-by: Thomas Schollenberger <tschollenberger@roblox.com>\nCo-authored-by: Varun Saini <vsaini@roblox.com>\nCo-authored-by: Vighnesh Vijay <vvijay@roblox.com>\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com>",
+          "timestamp": "2026-09-04T10:56:04-07:00",
+          "tree_id": "c3f8a839092f810b21f9c3b70e8f94ff6e817c31",
+          "url": "https://github.com/luau-lang/luau/commit/62db36b09c280065d119721df58ecf41aefeeaa6"
+        },
+        "date": 1788547614864,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 0.263303,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 5.88885,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 20.0507,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 0.263305,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 10.5258,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 663.396,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"
