@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1788547614874,
+  "lastUpdate": 1788547620390,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-analyze": [
@@ -28102,6 +28102,72 @@
           {
             "name": "regex-strict",
             "value": 10.5258,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 663.396,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "86601049+PhoenixWhitefire@users.noreply.github.com",
+            "name": "erin5",
+            "username": "PhoenixWhitefire"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "62dbc0b4718e87fc746b02f969c91ca2a461b4cf",
+          "message": "Fix `luaL_typename` typo in UDTF error reporting (#2675)",
+          "timestamp": "2026-09-04T10:56:50-07:00",
+          "tree_id": "807fc090f334a68b9b7c9cb76a2e7b56b14d6ec8",
+          "url": "https://github.com/luau-lang/luau/commit/62dbc0b4718e87fc746b02f969c91ca2a461b4cf"
+        },
+        "date": 1788547620379,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 0.263387,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 5.8889,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 20.0507,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 0.263389,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 10.5259,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"
