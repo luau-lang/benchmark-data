@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1788547620555,
+  "lastUpdate": 1788895641767,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-compile": [
@@ -38258,6 +38258,100 @@
           {
             "name": "map-O2-t1-codegen",
             "value": 4.9371,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.69759,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.93283,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.91928,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 15.1393,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-t1-codegen",
+            "value": 14.6405,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "3773910+Companion@users.noreply.github.com",
+            "name": "owenn",
+            "username": "Companion"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "47cda63705c25633d757bacdcb7c9c6190625cad",
+          "message": "Report input files that could not be opened in luau-analyze (#2723)\n\n## Problem\n\n`luau-analyze` silently ignores input files that cannot be opened and\ncan still exit successfully.\n\nFor example:\n\n```text\nluau-analyze nosuchfile.luau\n```\n\nproduces no output and returns an exit code of `0`. A missing file is\nalso ignored when mixed with valid inputs allowing CI commands\ncontaining stale or misspelled paths to appear successful.\n\n## Change\n\nReport explicitly requested input files that could not be opened using\nthe existing `Error opening <path>` message and return a nonzero exit\ncode matching the behaviour of the other Luau CLI tools.\n\nRequested files are checked separately because the existing\n`checkedModules` list also contains dependencies discovered through\n`require` whose reporting behaviour should remain unchanged.\n\n## Testing\n\nVerified executable behaviour for:\n\n* A missing input file\n* A missing file mixed with a valid file\n* Valid source file analysis\n* Existing type error reporting\n* Empty directory analysis\n* Files containing `require` dependencies\n* Directory scanning\n\nThe complete unit and conformance suites pass under the default all\nflags and old solver configurations.\n\n`CLI/src/Analyze.cpp` is not compiled into the existing `Luau.CLI.Test`\ntarget so the missing file behaviour was verified using an executable\nlevel command matrix.",
+          "timestamp": "2026-09-08T11:37:36-07:00",
+          "tree_id": "f214924327883df99e466a41b63f5e525677af61",
+          "url": "https://github.com/luau-lang/luau/commit/47cda63705c25633d757bacdcb7c9c6190625cad"
+        },
+        "date": 1788895641754,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.711898,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.799892,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.989829,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 4.92534,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-t1-codegen",
+            "value": 4.93711,
             "unit": "4ms",
             "range": "±0%",
             "extra": "luau-compile"
