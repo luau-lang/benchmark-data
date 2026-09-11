@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1788895641767,
+  "lastUpdate": 1789167138166,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-compile": [
@@ -38387,6 +38387,100 @@
           {
             "name": "regex-O2-t1-codegen",
             "value": 14.6405,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "afriesen@roblox.com",
+            "name": "Andy Friesen",
+            "username": "andyfriesen"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "c54f558b4d5748ab0658610b8ce0c432053e41eb",
+          "message": "Sync to upstream/release/738 (#2960)\n\nHey all!\n\nWe've got a bunch of bugfixes and some initial prototypes for upcoming\nfeatures and experiments.\n\n## Analysis\n\n* Improve type generalization by ensuring that free types are associated\nwith the enclosing function scope, not just the block scope.\n* Prototype code for an upcoming experiment: Requiring top-level\nfunctions to be annotated\n* Improve inference of read-only table indexers. Fixes\nhttps://github.com/luau-lang/luau/issues/2669\n* Expose integer types to UDTFs\nhttps://github.com/luau-lang/luau/pull/2618\n* The logic to replace generics by `unknown` was overly aggressive. This\nsimplification is only valid when the generic occurs exactly once in\nnegative position. This is now fixed.\n```luau\nlocal function get(model)\n    model:Find(\"leg\")\nend\n\n-- Previously:\n-- (t1) -> () where t1 = { read Find: (t1, string) -> (unknown, ...unknown) }\n--\n-- Now:\n-- <T...>(t1) -> () where t1 = { read Find: (t1, string) -> T... }\n```\n* Retain type function state when cloning type function instances. Fixes\nhttps://github.com/luau-lang/luau/issues/2707 and\nhttps://github.com/luau-lang/luau/issues/2273\n* The linter now properly reports deprecation warnings for deprecated\nAPIs that occur within intersection and union types.\n* Special handling for bidirectional inference of table literals that\nare passed to `setmetatable`. eg\n```luau\ntype A = setmetatable<{}, { test: DateTime? }>;\nlocal x: A = setmetatable({}, { test = nil })\n```\n\n## VM\n\n* Add initial embedder support for isolated heaps.\n* Fix `luaV_equalval` passing t1's metatable twice for TOBJECT `__eq`.\nSee https://github.com/luau-lang/luau/pull/2727\n* Improvement to the Luau SCCP pass\n* Adjust local debug and type info range after undoEmit\n* Prototype `coroutine.finally` implementation on the Luau VM side. See\nhttps://github.com/luau-lang/rfcs/pull/187\n* Add local names to the Dump_Locals output in the Luau compiler\n* Fix off-by-one bug in `BytecodeBuilder::expandJumps`\n* Unrolling of loops with a trip count of zero should be zero cost\n\n## Native Codegen\n\n* Fixed incorrect tag propagation to the entry block. This could cause\nincorrect optimization.\n\nCo-authored-by: Andy Friesen <afriesen@roblox.com>\nCo-authored-by: Annie Tang <annietang@roblox.com>\nCo-authored-by: Ariel Weiss <arielweiss@roblox.com>\nCo-authored-by: Hunter Goldstein <hgoldstein@roblox.com>\nCo-authored-by: Sora Kanosue <skanosue@roblox.com>\nCo-authored-by: Thomas Schollenberger <tschollenberger@roblox.com>\nCo-authored-by: Varun Saini <vsaini@roblox.com>\nCo-authored-by: Vighnesh Vijay <vvijay@roblox.com>\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com>\n\n---------\n\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com>\nCo-authored-by: Ariel Weiss <arielweiss@roblox.com>\nCo-authored-by: Hunter Goldstein <hgoldstein@roblox.com>\nCo-authored-by: Varun Saini <61795485+vrn-sn@users.noreply.github.com>\nCo-authored-by: Sora Kanosue <skanosue@roblox.com>\nCo-authored-by: Annie Tang <annietang@roblox.com>\nCo-authored-by: Annie Tang <98965493+annieetang@users.noreply.github.com>\nCo-authored-by: Ilya Rezvov <irezvov@roblox.com>\nCo-authored-by: Vighnesh Vijay <vvijay@roblox.com>",
+          "timestamp": "2026-09-11T15:01:44-07:00",
+          "tree_id": "1b05449710aecd6f0478747365e9d789f47701e1",
+          "url": "https://github.com/luau-lang/luau/commit/c54f558b4d5748ab0658610b8ce0c432053e41eb"
+        },
+        "date": 1789167138153,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.711844,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.8006,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.987007,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 4.92,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-t1-codegen",
+            "value": 4.93176,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.69832,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.93308,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.92177,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 15.116,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-t1-codegen",
+            "value": 14.6229,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-compile"
