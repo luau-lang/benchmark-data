@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1789322453660,
+  "lastUpdate": 1789509338302,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-analyze": [
@@ -28366,6 +28366,72 @@
           {
             "name": "regex-strict",
             "value": 10.5184,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 2281.88,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "264514568+nnullcolumn@users.noreply.github.com",
+            "name": "nnullcolumn",
+            "username": "nnullcolumn"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "7d5f73364fdbbaa984fa545071630eba73cfea98",
+          "message": "improve stringification of metatable types (#2545)\n\n- closes #2544\n- changes `{ @metatable {  }, {  } }` to `setmetatable<{  }, {  }>`\n- i updated and ran tests on NixOS 26.05 x86_64 w/ `make test`\n- although this could possibly be conflated w an unsolved built-in type\nfunction i think the mental model here should be the same\n- this (very small) change is 100% human written\n\n---------\n\nCo-authored-by: Andy Friesen <afriesen@roblox.com>",
+          "timestamp": "2026-09-15T14:14:23-07:00",
+          "tree_id": "0c20c2eeed741626336340ee4952104583b700a0",
+          "url": "https://github.com/luau-lang/luau/commit/7d5f73364fdbbaa984fa545071630eba73cfea98"
+        },
+        "date": 1789509338291,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 0.263794,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 5.88987,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 20.7789,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 0.263796,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 10.5186,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"
