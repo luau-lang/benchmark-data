@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1789760253734,
+  "lastUpdate": 1789772866468,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-analyze": [
@@ -28505,6 +28505,72 @@
           {
             "name": "regex-dcr",
             "value": 2281.88,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "afriesen@roblox.com",
+            "name": "Andy Friesen",
+            "username": "andyfriesen"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "a62362a53ddc9c629b0e29378a84abb4534d8b64",
+          "message": "Sync to upstream/release/739 (#2974)\n\nHello again!  Another week, another release.\n\nWe have a handful of nice optimizations and a new language feature to\ntry out.\n\n## Language\n\n* Experimental support for `if local` expressions:\n\n```luau\nlocal raycast_instance =\n    if local r = workspace:Raycast(Vector3.zero, Vector3.new(0, 1000, 0))\n        then r.Instance\n        else nil\n\nprint(r) -- nil: The local `r` is only available within the expression\n```\nThis is behind an experimental flag and is may likely change in the\nfuture, so for now treat it as unstable.\n\n* Improve the error that's produced when attempting to index from a type\nrefined to `table`. Fixes https://github.com/luau-lang/luau/issues/2712\n* Typecheck generics within function bodies more strictly.\n\n```luau\nlocal function call<T>(fn: (T) -> T)\n    fn(nil) -- this should not be accepted.  Fixed!\nend\ncall(function(x: number)\n    return x + 1\nend)\n```\n\n## VM\n\n* Inline Luau-to-Luau metamethod call path.\n* Improve performance of slow paths in Luau VM table get/set.\n* Fixed integer overflow after table.move causing an OOB access.\n* Add a metamethod lookup cache to frozen metatables.\n\n## Other\n\n* Fix an autocomplete bug which prevented suggestions being surfaced\ncorrectly.\n* Introduce a golden test framework for testing of Luau itself. See\n`tests/golden/analysis/README.md` for details.\n\n---------\n\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com>\nCo-authored-by: Ariel Weiss <arielweiss@roblox.com>\nCo-authored-by: Hunter Goldstein <hgoldstein@roblox.com>\nCo-authored-by: Varun Saini <61795485+vrn-sn@users.noreply.github.com>\nCo-authored-by: Sora Kanosue <skanosue@roblox.com>\nCo-authored-by: Annie Tang <annietang@roblox.com>\nCo-authored-by: Annie Tang <98965493+annieetang@users.noreply.github.com>\nCo-authored-by: Ilya Rezvov <irezvov@roblox.com>\nCo-authored-by: Vighnesh Vijay <vvijay@roblox.com>",
+          "timestamp": "2026-09-18T15:16:23-07:00",
+          "tree_id": "5b1111fb0f596c249c3ce8f23d448114fce25e31",
+          "url": "https://github.com/luau-lang/luau/commit/a62362a53ddc9c629b0e29378a84abb4534d8b64"
+        },
+        "date": 1789772866457,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 4.77591,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 5.89014,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 20.766,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 7.94392,
+            "unit": "7ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 10.5206,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 2281.75,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"
