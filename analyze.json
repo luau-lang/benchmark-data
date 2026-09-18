@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1789509338302,
+  "lastUpdate": 1789760253734,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-analyze": [
@@ -28432,6 +28432,72 @@
           {
             "name": "regex-strict",
             "value": 10.5186,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 2281.88,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "ethanstoner08@gmail.com",
+            "name": "Ethan Stoner",
+            "username": "ethanstoner"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "85160298056387f5271780a3a0e167eb26dd01c2",
+          "message": "Don't constant-fold equality of vectors that only differ in W (#2969)\n\nIn a `LUA_VECTOR_SIZE 3` build, `vector.create(1, 2, 3) ==\nvector.create(1, 2, 3, 9)` is `true` at `-O0`/`-O1` and via `rawequal`,\nbut `false` at `-O2`.\n\n**Cause:** at `-O2` both sides are folded into vector constants, and\n`constantsEqual` compares all four components. The compiler doesn't know\nthe VM's vector width, and a 3-wide VM ignores `w`.\n\n**Change:** in `foldBinary`, `==` and `~=` are no longer folded when\nboth operands are vector constants whose x/y/z are equal but whose w\ndiffers. Those comparisons now run at runtime and give the right answer\nfor either vector width. All other vector comparisons still fold the\nsame way as before. This follows the existing `w` handling for `*` and\n`/`, which also skips folding when the result could depend on the vector\nwidth.\n\n**Flag:** the change is behind `FFlag::LuauCompileNoFoldVectorEqW`,\ndefault off. With the flag off the compiler emits exactly the bytecode\nit did before.\n\n**Tests:**\n- `Compiler.test.cpp`: new `ConstantFoldVectorCompare` test, with\n`ScopedFastFlag` enabling the flag. It checks that ordinary vector\ncomparisons still fold and that comparisons differing only in `w` are\nemitted as `JUMPIFEQ`/`JUMPIFNOTEQ`.\n- `conformance/vector.luau`: added the example from the issue, with the\nexpected result depending on `vector_size`. The `Vector` conformance\ntest enables the flag next to `LuauCompileEmitVectorDouble`. This runs\nat O0/O1/O2. It failed at O2 before the fix.\n- `make config=release test` passes, and so do `--fflags=true` and the\n`-ts=Conformance` variants from CI (`-O2`, `--codegen`, `--codegen -O2`,\neach with and without `--fflags=true`). I only tested the default 3-wide\nbuild.\n\nFixes #2967\n\nGenerated with Claude Code on behalf of @ethanstoner.",
+          "timestamp": "2026-09-18T11:45:54-07:00",
+          "tree_id": "3ff8e5aaab7b33ef5737146d5bdddfa2b9698dc8",
+          "url": "https://github.com/luau-lang/luau/commit/85160298056387f5271780a3a0e167eb26dd01c2"
+        },
+        "date": 1789760253721,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 0.263725,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 5.88987,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 20.7789,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 0.263727,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 10.5184,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"
