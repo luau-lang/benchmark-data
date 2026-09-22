@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1790082745153,
+  "lastUpdate": 1790083878409,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-analyze": [
@@ -28696,6 +28696,72 @@
           {
             "name": "regex-strict",
             "value": 10.5206,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 2281.75,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "86601049+PhoenixWhitefire@users.noreply.github.com",
+            "name": "erin5",
+            "username": "PhoenixWhitefire"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "d8beb3d64edc87639cf3ccdd2865f64ff5b9c090",
+          "message": "Freeze `vector` metatable in `luaL_sandbox` if it is set (#2583)\n\nThe `vector` type can have a metatable assigned to it.\nHowever, unlike the `string` metatable, it is not frozen by `luaL_sandbox`.\n\nFlagged behind `LuauSandboxFreezesVectorMetatable`. Adds 1 test.\n\n---------\n\nCo-authored-by: vegorov-rbx <75688451+vegorov-rbx@users.noreply.github.com>\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com>",
+          "timestamp": "2026-09-22T05:39:57-07:00",
+          "tree_id": "be8cb65d02ca3f9bba51adb788a4d98eb81b3492",
+          "url": "https://github.com/luau-lang/luau/commit/d8beb3d64edc87639cf3ccdd2865f64ff5b9c090"
+        },
+        "date": 1790083878398,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 4.77589,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 5.89013,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 20.7652,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 7.94391,
+            "unit": "7ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 10.5205,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"
