@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1790085769690,
+  "lastUpdate": 1790086718998,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-analyze": [
@@ -28814,6 +28814,72 @@
           {
             "name": "map-dcr",
             "value": 20.7652,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 7.94392,
+            "unit": "7ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 10.5206,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 2281.75,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "matt.millwood@gmail.com",
+            "name": "Matt",
+            "username": "Aesthete"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "653fa9cb7a6b379651292ce1b7e4649b6e12ab02",
+          "message": "Fix missing direct includes (#2687)\n\n\nCo-authored-by: matt.millwood <matt.millwood@supercell.com>\nCo-authored-by: vegorov-rbx <75688451+vegorov-rbx@users.noreply.github.com>\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com>",
+          "timestamp": "2026-09-22T06:32:23-07:00",
+          "tree_id": "05fca9de7fa792f6fa1ebc17bde72902675df97f",
+          "url": "https://github.com/luau-lang/luau/commit/653fa9cb7a6b379651292ce1b7e4649b6e12ab02"
+        },
+        "date": 1790086718988,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 4.77589,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 5.89013,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 20.7653,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"
