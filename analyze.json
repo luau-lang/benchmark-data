@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1790188305861,
+  "lastUpdate": 1790205845013,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-analyze": [
@@ -28946,6 +28946,72 @@
           {
             "name": "map-dcr",
             "value": 20.7652,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 7.94392,
+            "unit": "7ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 10.5206,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 2281.75,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "86601049+PhoenixWhitefire@users.noreply.github.com",
+            "name": "erin5",
+            "username": "PhoenixWhitefire"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "f75d985b33c114caa9717715499c3ed2f5e2ef15",
+          "message": "Fix `index<T, any>` and `rawget<T, any>` not resulting in `any` (#2697)\n\nFlagged behind `LuauIndexImplAnyIndexerResultsInAny`. Adds 1 test.\n\nFixes #2695",
+          "timestamp": "2026-09-23T15:32:58-07:00",
+          "tree_id": "5194f3ef22a3eb703f60b74249d04876ee088790",
+          "url": "https://github.com/luau-lang/luau/commit/f75d985b33c114caa9717715499c3ed2f5e2ef15"
+        },
+        "date": 1790205845002,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 4.77592,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 5.89093,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 20.7653,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"
