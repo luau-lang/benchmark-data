@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1790208199365,
+  "lastUpdate": 1790275288867,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-compile": [
@@ -39609,6 +39609,100 @@
           {
             "name": "regex-O2-t1-codegen",
             "value": 14.6246,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "80554644+gemtool@users.noreply.github.com",
+            "name": "Gemtool",
+            "username": "gemtool"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "d42c8d5d3885d775b6c102a1cac188a5e0fc1b42",
+          "message": "Optimize string.split (#2981)\n\n`string.split` called `memcmp` at every byte offset and inserted results\nwith `lua_pushinteger` + `lua_settable` into an empty table. This\nchange:\n- uses `memchr` for single-character separators, counting the pieces\nfirst so the result table is allocated at its final size\n- for multi-character separators, compares the first and last characters\ninline and only calls `memcmp` when both match, so no position does more\nwork than before\n- presizes the result for the empty separator, and uses `lua_rawseti`\nthroughout\n\nOutput is unchanged: a differential fuzz of 20k random inputs, including\nembedded NULs and overlapping separators, matches the old implementation\nexactly. It also removes a pointer computation before the start of the\nbuffer when the separator is longer than the string.\n\n| `bench/micro_tests/test_string_split.lua` | before | after | speedup |\n|---|---|---|---|\n| short csv | 67.9 ms | 37.5 ms | 1.81x |\n| long lines | 37.0 ms | 16.7 ms | 2.22x |\n| long lines, 2-char separator | 36.9 ms | 17.3 ms | 2.13x |\n| empty separator | 21.2 ms | 12.6 ms | 1.68x |\n| separator prefix repeats | 25.8 ms | 7.8 ms | 3.31x |\n| separator prefix and suffix repeat (worst case) | 25.8 ms | 25.8 ms |\n1.00x |\n\nThe last row is a deliberately adversarial input where both inline\nchecks pass at every position; it performs the same `memcmp` as before\nand runs at parity.\n\nAdded conformance tests for edge cases (embedded NULs, overlapping\nseparators, separator longer than the input).",
+          "timestamp": "2026-09-24T10:50:40-07:00",
+          "tree_id": "830055dbe1d61b085cec818950fd60b4a550aca8",
+          "url": "https://github.com/luau-lang/luau/commit/d42c8d5d3885d775b6c102a1cac188a5e0fc1b42"
+        },
+        "date": 1790275288855,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.712114,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.800859,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.991215,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 4.92423,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-t1-codegen",
+            "value": 4.93616,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.69861,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.93343,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.92292,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 15.1172,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-t1-codegen",
+            "value": 14.6244,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-compile"
