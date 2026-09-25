@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1790343329670,
+  "lastUpdate": 1790363777740,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-compile": [
@@ -39797,6 +39797,100 @@
           {
             "name": "regex-O2-t1-codegen",
             "value": 14.6245,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "hgoldstein@roblox.com",
+            "name": "Hunter Goldstein",
+            "username": "hgoldstein"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "c0e346edd89066b44dca174c9f54ce84c746a540",
+          "message": "Sync to upstream/release/740 (#2990)\n\n# Language\n\n* Introducing an experimental feature to make tables \"exact\" by default.\nSee https://github.com/luau-lang/rfcs/pull/11 for full details, but the\ngist is to differentiate between tables that may have extraneous fields\nand tables that do not. We believe that this behavior better aligns with\nuser expectations, and allows us to make the type system more\npredictable.\n```luau\n-- This table may have extra fields\ntype Inexact = { x: number, y: number, ... }\n-- This table _does not_ have extra fields\ntype Exact = { x: number, y: number }\n\nlocal _: Inexact = { x = 3, y = 4, foo = \"spooky\" } -- OK!\nlocal _: Exact = { x = 3, y = 4, foo = \"spooky\" } -- Not OK!\n```\n* `if local` is still experimental but is moving closer to a full\nrelease.\n\n# Analysis\n* Removed `Luau::Set`, now entirely subsumed by the new `DenseHashSet`\nimplementation.\n* Fixed an internal error that could occur when processing exceptionally\nlarge types (\"Internal recursion counter limit exceeded in\nReferenceCountInitializer\").\n* Fixed a bug in function normalization that meant we'd use argument\ntypes as return types:\n```luau\nfunction g(x : (() -> string | number) & (() -> number | boolean))\n    local z : () -> () = x -- This should not be allowed\nend\n```\n\n# Runtime\n* Fixed an issue where OOMing during table re-hashing or freezing could\nleave the underlying table in an unexpected state.\n* When dumping bytecode, upvalues are now prefixed with `U`\n* Fixed `integer.idiv(x, y)` not being floored in some configurations,\nresulting in differing behavior across the interpreter, NCG backends,\nand constant folding.\n\n---\n\nCo-authored-by: Andreas Haeberlen <andreas.haeberlen@roblox.com>\nCo-authored-by: Andy Friesen <afriesen@roblox.com>\nCo-authored-by: Annie Tang <98965493+annieetang@users.noreply.github.com>\nCo-authored-by: Ariel Weiss <arielweiss@roblox.com>\nCo-authored-by: Ilya Rezvov <irezvov@roblox.com>\nCo-authored-by: Sora Kanosue <skanosue@roblox.com>\nCo-authored-by: Thomas Schollenberger <tschollenberger@roblox.com>\nCo-authored-by: Varun Saini <61795485+vrn-sn@users.noreply.github.com>\nCo-authored-by: Vighnesh Vijay <vvijay@roblox.com>\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com>",
+          "timestamp": "2026-09-25T11:25:15-07:00",
+          "tree_id": "b2379f34efd0b3563e54009329276e08499b7887",
+          "url": "https://github.com/luau-lang/luau/commit/c0e346edd89066b44dca174c9f54ce84c746a540"
+        },
+        "date": 1790363777725,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.712622,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.801777,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.991233,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 4.92155,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-t1-codegen",
+            "value": 4.93356,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.70036,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.93687,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.92868,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 15.1167,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-t1-codegen",
+            "value": 14.6242,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-compile"
