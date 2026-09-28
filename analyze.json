@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1790363777570,
+  "lastUpdate": 1790639361823,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-analyze": [
@@ -29297,6 +29297,72 @@
           {
             "name": "regex-dcr",
             "value": 2261.68,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "45090858+Pyseph@users.noreply.github.com",
+            "name": "Pyseph",
+            "username": "Pyseph"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "0e6da1a3a4bb1e28a1988290f399b08607a8be41",
+          "message": "Skip subtyping reasoning that is never read (#2992)\n\n`SubtypingResult` prepends a `TypePath` component to its reasoning at\nevery level of a subtyping test, including on results that turn out to\nbe subtypes. That reasoning, however is never read -- every caller which\nexplains a failure checks `isSubtype` first. Likewise, `T <: A | B`\nmerges each failing option's reasoning into its result and then clears\nit before returning.\n\nUnder the `LuauSubtypingSkipUnreadReasoning` fflag, it now skips both:\n- `withSubComponent`, `withSuperComponent`, `withSubPath` and\n`withSuperPath` return early on a successful result, and\n`isContravariantWith`/`isInvariantWith` no longer attach a variance\nmarker to one\n- the union loop clears each failing option's reasoning instead of\nmerging it\n\nThe reasoning of a failing result, and so every error message, is\nunchanged; `Luau.UnitTest` passes with default flags and with\n`--fflags=true`. `successful_subtyping_has_no_reasoning` covers the new\ninvariant: a successful `number <: ~string` used to come back carrying a\n`Negated` path.\n\nOn a 12.7k-module Roblox codebase (new solver, all flags on), a CPU\nprofile of a full check puts 23% of samples in `TypePath` vector copies,\n`SubtypingReasoning` sets and `Path::operator==`. Measured through a\nlanguage server pinned to 0.733 with the same change applied,\ninterleaved runs, median:\n\n| | flag off | flag on | |\n|---|---|---|---|\n| full check, 12.7k modules, 16 threads: CPU | 446 s | 398 s | -11% |\n| full check, 12.7k modules, 16 threads: wall | 37.3 s | 33.0 s | -11% |\n| two cold ~2.5k-module require closures, 1 thread: CPU | 25.5 s | 23.3\ns | -9% |",
+          "timestamp": "2026-09-28T15:58:20-07:00",
+          "tree_id": "381da790804a9e2efd67e1adfbe05a56aaa26ccc",
+          "url": "https://github.com/luau-lang/luau/commit/0e6da1a3a4bb1e28a1988290f399b08607a8be41"
+        },
+        "date": 1790639361813,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 4.77862,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 5.89195,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 19.2865,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 7.94475,
+            "unit": "7ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 10.5185,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 2166.9,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"
