@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1790639361823,
+  "lastUpdate": 1790697064853,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-analyze": [
@@ -29363,6 +29363,72 @@
           {
             "name": "regex-dcr",
             "value": 2166.9,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "45090858+Pyseph@users.noreply.github.com",
+            "name": "Pyseph",
+            "username": "Pyseph"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "b18032e8926f4d1b539c1e9374fc4e20d4b12207",
+          "message": "Skip two type traversals whose results are unused (#3006)\n\nTwo traversals in the new solver do work whose result is often never\nread:\n\n- `InternalTypeFunctionFinder` runs `TypeFunctionFinder` over every\nfunction on the declaration stack when it is constructed, but only reads\nthe result for a type function instance with a generic argument. It now\nscans the first time it meets one.\n- `ConstraintGraph::shiftReferences` walks the target to collect the\ntypes that may be mutated, but only uses them to copy the source's\ndependencies onto. When the source has no dependencies, it now only\nclears the source's reverse dependencies.\n\nBoth are behind `LuauSkipUnusedTypeTraversals`. Results are unchanged,\nexcept that the skipped walks can no longer hit\n`LuauVisitRecursionLimit` when their result isn't needed.\n`Luau.UnitTest` passes with default flags, with the flag on, and with\n`--fflags=true`.\n\nOn a 12.7k-module Roblox codebase (new solver, all flags on), with the\nsame change applied to 0.733, a CPU profile of a full check shows\n`checkForInternalTypeFunction` going from 2.2% to 0.75% of\n`Frontend::check` samples and `shiftReferences` from 3.5% to 2.5%, about\n2.5% of check CPU in total.",
+          "timestamp": "2026-09-29T07:59:45-07:00",
+          "tree_id": "416138afcd5ac80ca2c7ac55c43f2e754311a238",
+          "url": "https://github.com/luau-lang/luau/commit/b18032e8926f4d1b539c1e9374fc4e20d4b12207"
+        },
+        "date": 1790697064842,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 4.77868,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 5.89202,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 18.8704,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 7.94492,
+            "unit": "7ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 10.5187,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 2153.07,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"

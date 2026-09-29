@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1790639361990,
+  "lastUpdate": 1790697065025,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-compile": [
@@ -39964,6 +39964,100 @@
           {
             "name": "regex-O1",
             "value": 1.93688,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.92869,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 15.1167,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-t1-codegen",
+            "value": 14.6242,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "45090858+Pyseph@users.noreply.github.com",
+            "name": "Pyseph",
+            "username": "Pyseph"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "b18032e8926f4d1b539c1e9374fc4e20d4b12207",
+          "message": "Skip two type traversals whose results are unused (#3006)\n\nTwo traversals in the new solver do work whose result is often never\nread:\n\n- `InternalTypeFunctionFinder` runs `TypeFunctionFinder` over every\nfunction on the declaration stack when it is constructed, but only reads\nthe result for a type function instance with a generic argument. It now\nscans the first time it meets one.\n- `ConstraintGraph::shiftReferences` walks the target to collect the\ntypes that may be mutated, but only uses them to copy the source's\ndependencies onto. When the source has no dependencies, it now only\nclears the source's reverse dependencies.\n\nBoth are behind `LuauSkipUnusedTypeTraversals`. Results are unchanged,\nexcept that the skipped walks can no longer hit\n`LuauVisitRecursionLimit` when their result isn't needed.\n`Luau.UnitTest` passes with default flags, with the flag on, and with\n`--fflags=true`.\n\nOn a 12.7k-module Roblox codebase (new solver, all flags on), with the\nsame change applied to 0.733, a CPU profile of a full check shows\n`checkForInternalTypeFunction` going from 2.2% to 0.75% of\n`Frontend::check` samples and `shiftReferences` from 3.5% to 2.5%, about\n2.5% of check CPU in total.",
+          "timestamp": "2026-09-29T07:59:45-07:00",
+          "tree_id": "416138afcd5ac80ca2c7ac55c43f2e754311a238",
+          "url": "https://github.com/luau-lang/luau/commit/b18032e8926f4d1b539c1e9374fc4e20d4b12207"
+        },
+        "date": 1790697065012,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.712608,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.801774,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.991235,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 4.92155,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-t1-codegen",
+            "value": 4.93356,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.70036,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.93687,
             "unit": "1ms",
             "range": "±0%",
             "extra": "luau-compile"
