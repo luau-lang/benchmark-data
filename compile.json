@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1790697065025,
+  "lastUpdate": 1790898568684,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-compile": [
@@ -40079,6 +40079,100 @@
           {
             "name": "regex-O2-t1-codegen",
             "value": 14.6242,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "80554644+gemtool@users.noreply.github.com",
+            "name": "Gemtool",
+            "username": "gemtool"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "a25a37b54bb393d8e1d7db80852cf9842a43dbaa",
+          "message": "Fix GC allocation rate underflow when the heap shrinks between cycles (#2996)\n\nThe GC measures heap growth since the end of the last incremental cycle\nas `atomicstarttotalsizebytes - endtotalsizebytes` (and `totalbytes -\nendtotalsizebytes` in `luaC_allocationrate`). Both operands are\n`size_t`, so when the heap is smaller than it was at the end of the last\ncycle, the subtraction wraps around. This can happen in two ways:\n- a full collection (`lua_gc(L, LUA_GCCOLLECT, 0)`) frees memory but\ndoesn't update the incremental cycle statistics\n- thread stacks are shrunk during marking, for example after a coroutine\nthat recursed deeply returns\n\n| | before | after |\n|---|---|---|\n| `lua_allocationrate()` after a full collection |\n`-9223372036854775808` | `0` |\n| heap growth seen by the pacer after a coroutine stack shrink (646KB ->\n348KB) | `18446744073709253349` bytes | `0` bytes |\n| allocation rate used by the pacer after a full collection | `1.08e21`\nbytes/s | `0` bytes/s |\n\nThe double to int64 conversions of these values are undefined behavior\n(reported by UBSan in `luaC_allocationrate` and `getheaptrigger`).\n\nThis change treats a heap that shrank as zero growth. When the heap\ngrew, the results are unchanged. The fix is behind\n`DFFlag::LuauGcHeapShrinkFix` and the flag-off paths keep the original\nexpressions.\n\nResetting the cycle statistics in `luaC_fullgc` would only cover the\nfirst case, so the growth is clamped instead.\n\nAdded `ApiAllocationRateAfterFullGC`, which fails without the fix\n(`lua_allocationrate` returns `-9223372036854775808`).",
+          "timestamp": "2026-10-01T15:59:07-07:00",
+          "tree_id": "d8e9c669f76df35d86869ddf4899a8a8b34df5db",
+          "url": "https://github.com/luau-lang/luau/commit/a25a37b54bb393d8e1d7db80852cf9842a43dbaa"
+        },
+        "date": 1790898568671,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.712655,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.801807,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2",
+            "value": 0.993563,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 4.9239,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-t1-codegen",
+            "value": 4.93589,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.7004,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O1",
+            "value": 1.93688,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2",
+            "value": 2.92847,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 15.1165,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-t1-codegen",
+            "value": 14.6239,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-compile"
