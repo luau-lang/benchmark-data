@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1790975266238,
+  "lastUpdate": 1790976506546,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-analyze": [
@@ -29554,6 +29554,72 @@
           {
             "name": "regex-strict",
             "value": 10.5176,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 2153.08,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "45090858+Pyseph@users.noreply.github.com",
+            "name": "Pyseph",
+            "username": "Pyseph"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "421cc8158a752c8933a3d73555fd79df631a90b6",
+          "message": "Hash TypeId, TypePackId, void* and Constraint* by address (#3007)\n\nMSVC's `std::hash<T*>` runs FNV-1a over every byte of the pointer, which\nDenseHash doesn't need: its Fibonacci hashing already mixes the bits.\n\n- `TypeId` and `TypePackId` specialize `std::hash` to return the\naddress, as libstdc++'s `std::hash<T*>` already does.\n- `std::hash<void*>` can't be specialized, so DenseHash hashes `void*`\nkeys by address itself.\n- `HashBlockedConstraintId` hashes `Constraint*` by address too.\n`ConstraintGraph`'s maps are by far the busiest DenseHash tables in the\nsecond benchmark below.\n\nHash values don't change with libstdc++. `Luau.UnitTest` and\n`Luau.Conformance` pass on MSVC (x64, Win32), GCC and Clang, with\ndefault flags and `--fflags=true`.\n\n`luau-analyze --solver=new --fflags=true -j1` on Windows (MSVC 19.42,\nRelease), median CPU time of 9 interleaved runs pinned to one core:\n\n| | master | this PR |\n|---|---|---|\n| vide-style `create` repro (20 modules × 100 calls) | 10.61 s | 9.81 s\n(−7.5%) |\n| `tests/conformance` + `bench/` (215 files) | 8.45 s | 7.22 s (−14.6%)\n|\n\nCo-authored-by: NotoriousV.I.G <vighneshv@proton.me>",
+          "timestamp": "2026-10-02T13:37:16-07:00",
+          "tree_id": "8f8a0c23e83f3d17f04f352d40a9f599dff54f77",
+          "url": "https://github.com/luau-lang/luau/commit/421cc8158a752c8933a3d73555fd79df631a90b6"
+        },
+        "date": 1790976506535,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 4.77838,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 5.89103,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 18.8725,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 7.94389,
+            "unit": "7ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 10.5177,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"
