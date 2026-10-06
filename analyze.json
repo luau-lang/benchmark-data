@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1791312192914,
+  "lastUpdate": 1791316247673,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-analyze": [
@@ -29825,6 +29825,72 @@
           {
             "name": "regex-dcr",
             "value": 2138.74,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "3773910+Companion@users.noreply.github.com",
+            "name": "owenn",
+            "username": "Companion"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "126062f4b6df5ebb52c887db7cea3ab0211865bb",
+          "message": "Fix grouped error calls in control flow analysis (#2694)\n\n## Problem\n\nCalls to the builtin `error` and `assert(false)` are recognized as\nterminating statements during control flow analysis. However, wrapping\nthe callee in parentheses causes that behaviour to be lost:\n\n```luau\nlocal function fails(): never\n    (error)(\"message\")\nend\n```\n\nThis incorrectly produces `FunctionExitsWithoutReturning` and prevents\nthe unreachable code linter from recognizing subsequent statements as\nunreachable.\n\n## Change\n\nUnwrap grouping expressions around callees before classifying builtin\n`error` and `assert(false)` calls.\n\nThe old and new analysis paths have separate error call classification\nhelpers, so both are updated consistently. The change is gated by\n`LuauDoesCallErrorUnwrapsGroups`.\n\n## Testing\n\nAdded regression coverage for:\n\n- Ungrouped, grouped and multiply-grouped `error` calls\n- Grouped `assert(false)` calls\n- Shadowed local `error` and `assert` functions\n- Unreachable-code linting following a grouped `error` call\n- Old and new solver configurations\n\nThe complete unit and conformance suites pass under the default and all\nflags configurations.\n\nFixes #2674",
+          "timestamp": "2026-10-06T12:19:16-07:00",
+          "tree_id": "360d5667ae145952e5a9d51e7b2075a607e61c40",
+          "url": "https://github.com/luau-lang/luau/commit/126062f4b6df5ebb52c887db7cea3ab0211865bb"
+        },
+        "date": 1791316247665,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 4.77772,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 5.88581,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 18.8465,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 7.96442,
+            "unit": "7ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 10.5466,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 2138.75,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"
