@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1791309115102,
+  "lastUpdate": 1791312193093,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-compile": [
@@ -40549,6 +40549,100 @@
           {
             "name": "regex-O2-t1-codegen",
             "value": 14.7811,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "80554644+gemtool@users.noreply.github.com",
+            "name": "Gemtool",
+            "username": "gemtool"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "380aac8b3c7fce335e6d84a02e265e7228469d13",
+          "message": "Optimize string.gsub for patterns without special characters (#2988)\n\n`string.gsub` runs the pattern matcher at every position, even when the\npattern has no special characters and can only match its own text. This\nadds a fast path for that case (non-anchored, non-empty patterns without\nspecial characters; `)` is excluded as it is still an error in a\npattern):\n- occurrences are found directly (`memchr` for single characters,\nfirst/last character checks before `memcmp` otherwise), and the text\nbetween matches is copied at once\n- replacement strings without `%` escapes are appended directly; other\nreplacements go through `add_value` as before\n\nThe change is behind `DFFlag::LuauOptimizeStringGsub` and the flag-off\nbranch is the original loop verbatim. Output is unchanged: a\ndifferential fuzz of 40k random calls (including error cases,\nreplacement limits and string/table/function replacements) matches the\noriginal implementation exactly.\n\n| `bench/micro_tests/test_string_gsub.lua` | before | after | speedup |\n|---|---|---|---|\n| remove spaces | 97.1 ms | 23.2 ms | 4.2x |\n| replace newlines | 69.5 ms | 6.9 ms | 10.1x |\n| replace word | 87.0 ms | 12.6 ms | 6.9x |\n| no match | 86.3 ms | 9.1 ms | 9.4x |\n| function replacement | 98.8 ms | 24.3 ms | 4.1x |\n| short string | 147.0 ms | 72.6 ms | 2.0x |\n| every character matches | 126.5 ms | 56.7 ms | 2.2x |\n| separator prefix repeats | 102.5 ms | 10.6 ms | 9.7x |\n\nPatterns with special characters take the original path and are\nunaffected. Added conformance tests for patterns without special\ncharacters.",
+          "timestamp": "2026-10-06T10:51:15-07:00",
+          "tree_id": "a2315a067f531bd7418aefaa1b3569cdeef37e47",
+          "url": "https://github.com/luau-lang/luau/commit/380aac8b3c7fce335e6d84a02e265e7228469d13"
+        },
+        "date": 1791312193079,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.722693,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.827185,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2",
+            "value": 1.02425,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 4.96274,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-t1-codegen",
+            "value": 4.97119,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.73362,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O1",
+            "value": 2.0789,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2",
+            "value": 3.07352,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 15.2756,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-t1-codegen",
+            "value": 14.7812,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-compile"
