@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1791322850750,
+  "lastUpdate": 1791408342745,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-compile": [
@@ -40824,6 +40824,100 @@
           {
             "name": "regex-O2-codegen",
             "value": 15.2756,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-t1-codegen",
+            "value": 14.7812,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "55204980+haziscool@users.noreply.github.com",
+            "name": "Haz",
+            "username": "haziscool"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "74f768309c380d40601b28c4c4cdda27da415cef",
+          "message": "Fix ~nil refinements of blocked types never simplifying (#3027)\n\nWhen `refine<T, ~nil>` reduces while `T` is still blocked, it returns `T\n& ~nil`. Once `T` is solved this is never simplified, so `~= nil`\nrefinements can leave types like `(string?) & ~nil` behind:\n```luau\nlocal M = {}\nfunction M.id<T>(v: T): T\n\treturn v\nend\n\nlocal s = M.id({} :: { w: string? })\nlocal w = if true then s.w else nil\nlocal function f(x: string?) end\nif w ~= nil then\n\tf(w)\nend\n```\n```\nTypeError: Expected this to be 'string?', but got '(string?) & ~nil'\n```\n\nRegressed with `LuauDontBlockRefinementUnconditionally`. The `~nil` case\nnow waits on blocked types and unsolved type functions (e.g. `a or b`)\nin the target instead of returning the unsimplified intersection.\n\nThe error itself is `(string?) & ~nil <: string?` failing while\n`LuauRefactorStringSemanticSubtyping` is off.\n\n---------\n\nCo-authored-by: haziscool <haziscool@users.noreply.github.com>",
+          "timestamp": "2026-10-07T13:53:13-07:00",
+          "tree_id": "85f541a3766ff7ac9fe25b5c317218855c2d87d9",
+          "url": "https://github.com/luau-lang/luau/commit/74f768309c380d40601b28c4c4cdda27da415cef"
+        },
+        "date": 1791408342738,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.722703,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.827199,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2",
+            "value": 1.02426,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 4.96274,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-t1-codegen",
+            "value": 4.9712,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.73363,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O1",
+            "value": 2.0789,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2",
+            "value": 3.07351,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 15.2757,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-compile"
