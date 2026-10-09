@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1791408342658,
+  "lastUpdate": 1791582881814,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-analyze": [
@@ -30023,6 +30023,72 @@
           {
             "name": "regex-dcr",
             "value": 2138.75,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "skanosue@roblox.com",
+            "name": "Sora Kanosue",
+            "username": "skberkeley"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "1e8f40d2e36c7f8c80aba9daf1c45c640a87f1c2",
+          "message": "Sync to upstream/release/742 (#3038)\n\nDing, dong, 🚪 🔔 , what's that, another Luau release???\n\n### Analysis\n- Stop sharing internal error reporters between threads to avoid data\nraces. Fixes #3020.\n- Implement MLStruct-style unifier rewrite rules. Fixes #3001, #3002.\n- Cache the absence of type functions for all types involved in\n`InstanceCollector`.\n- Improve scope handling for strict mode type checker. Fixes #2991.\n- Implement autocomplete for function statements.\n- Fix bug in fragment autocomplete and union discriminant\nrecommendation.\n- More end-to-end golden tests.\n\n### Compiler / NCG\n- Mark table as mutable for constant propagation if metamethods are\ninvolved.\n- Correctly remap `CALLFB` slot instruction targets in `expandJumps`.\n- Fix LuauCompileMoveElision when current argument target still needs\nevaluation.\n- Fix fuzzer crash where `CALLFB` Protos were stale.\n- NCG: Continue applying possible optimizations when `ConstPropState`\nhits a limit.\n- NCG: Fix bug in Proto counter logic.\n- NCG: Do not mark lazy restore locations as materialized under a\nconditional spill block.\n- NCG: Exit sync anti-clobber restores have to be delayed until after\nthe state synchronization is complete.\n- NCG: Do not let buffer offset scale go down to zero.\n- NCG: In exit sync, restore registers in rematerializable locations\nthat can be clobbered.\n\n### Runtime / C API\n- Stop gating `coroutine.finally` behind a debug flag.\n- Allow the Luau finalizer function to only be called once.\n- Resume protected calls started by error continuations in Luau.\n- Support cancellation in `lua_pushfinalizerfunction` and fix\ncoroutine.close issues.\n\n---\n\nCo-authored-by: Alexander Youngblood <ayoungblood@roblox.com>\nCo-authored-by: Ariel Weiss <arielweiss@roblox.com>\nCo-authored-by: Hunter Goldstein <hgoldstein@roblox.com>\nCo-authored-by: Ilya Rezvov <irezvov@roblox.com>\nCo-authored-by: Thomas Schollenberger <tschollenberger@roblox.com>\nCo-authored-by: Varun Saini <vsaini@roblox.com>\nCo-authored-by: Vighnesh Vijay <vvijay@roblox.com>\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com>",
+          "timestamp": "2026-10-09T14:15:24-07:00",
+          "tree_id": "ffdfc5b43a6c45fef5b40004ab6ca4becdf4e3ee",
+          "url": "https://github.com/luau-lang/luau/commit/1e8f40d2e36c7f8c80aba9daf1c45c640a87f1c2"
+        },
+        "date": 1791582881803,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 4.77966,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 5.89254,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 18.3848,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 7.9536,
+            "unit": "7ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 10.5289,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 2276.12,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"
