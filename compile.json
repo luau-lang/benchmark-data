@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1791582881945,
+  "lastUpdate": 1791594357384,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-compile": [
@@ -40998,6 +40998,100 @@
           {
             "name": "regex-O1",
             "value": 2.08722,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2",
+            "value": 3.08281,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 15.3069,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-t1-codegen",
+            "value": 14.8113,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "skanosue@roblox.com",
+            "name": "Sora Kanosue",
+            "username": "skberkeley"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "8387cfb461b38ce09e37c1e4c2811538ef1bf5cb",
+          "message": "Fix assertion in IrAssemblyTest for Windows (#3040)\n\nMost recent release introduced a test failure on Windows. The fix\noverwrites r13 offsets similar to what already happens for r15.",
+          "timestamp": "2026-10-09T17:15:18-07:00",
+          "tree_id": "3b0e987040d02988055da9413e8ce22482aa02b2",
+          "url": "https://github.com/luau-lang/luau/commit/8387cfb461b38ce09e37c1e4c2811538ef1bf5cb"
+        },
+        "date": 1791594357371,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.723904,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.828568,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2",
+            "value": 1.02552,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 4.97149,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-t1-codegen",
+            "value": 4.97991,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.73297,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O1",
+            "value": 2.08723,
             "unit": "2ms",
             "range": "±0%",
             "extra": "luau-compile"

@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1791582881814,
+  "lastUpdate": 1791594357225,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-analyze": [
@@ -30082,6 +30082,72 @@
           {
             "name": "regex-strict",
             "value": 10.5289,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 2276.12,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "skanosue@roblox.com",
+            "name": "Sora Kanosue",
+            "username": "skberkeley"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "8387cfb461b38ce09e37c1e4c2811538ef1bf5cb",
+          "message": "Fix assertion in IrAssemblyTest for Windows (#3040)\n\nMost recent release introduced a test failure on Windows. The fix\noverwrites r13 offsets similar to what already happens for r15.",
+          "timestamp": "2026-10-09T17:15:18-07:00",
+          "tree_id": "3b0e987040d02988055da9413e8ce22482aa02b2",
+          "url": "https://github.com/luau-lang/luau/commit/8387cfb461b38ce09e37c1e4c2811538ef1bf5cb"
+        },
+        "date": 1791594357211,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 4.77955,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 5.89325,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 18.3846,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 7.95361,
+            "unit": "7ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 10.5288,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"
