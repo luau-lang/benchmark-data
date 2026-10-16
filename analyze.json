@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1791594357225,
+  "lastUpdate": 1792186391492,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-analyze": [
@@ -30155,6 +30155,72 @@
           {
             "name": "regex-dcr",
             "value": 2276.12,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "98965493+annieetang@users.noreply.github.com",
+            "name": "Annie Tang",
+            "username": "annieetang"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "9d7748a4f324213a18cb8283fa2a77c330225fa0",
+          "message": "Sync to upstream/release/743 (#3054)\n\nHappy spooky season! Leaves are falling 🍂 and so are bugs. The Luau team\nis raking them up with another release! 🍁\n\n### General 🎃\n* `table.find` is faster, especially on small arrays and when the value\nyou're looking for has no `__eq` metamethod\n\n### Analysis 🍁\n* Clearer error messages when a read-only or write-only table is passed\nto a parameter that expects a read-write property.\n\nThis mostly comes up with frozen tables:\n```lua\nlocal function setX(t: { x: number })\n      t.x = 5\nend\n\nlocal frozen = table.freeze({ x = 1 })\n-- Before: \"Expected this to be '{ x: number }', but got '{ x: number }'\"\n-- After: the error says `x` is a read-only property, but the parameter needs read-write setX(frozen)\n```\n\n### Compiler 🌰\n* Locals no longer count toward the 200-local limit after their last\nuse, even within the same block. Some code that used to fail with \"out\nof local registers\" now compiles:\n\n```lua\nlocal a, b, c = ...\nlocal d = a * b + c\n\nlocal e = ... -- if a/b/c are no longer used below, 'e' can take their slot\n```\n\n* At debug level 2, constant locals are no longer kept as extra locals\nand upvalues.\n* Fixes type-only cyclic modules with a conditional early return being\nhandled incorrectly\n\n---------------\n\nMany thanks to our contributors! \n\nCo-authored-by: Andy Friesen <afriesen@roblox.com>\nCo-authored-by: Annie Tang <annietang@roblox.com>\nCo-authored-by: Ariel Weiss <arielweiss@roblox.com>\nCo-authored-by: Hunter Goldstein <hgoldstein@roblox.com>\nCo-authored-by: Ilya Rezvov <irezvov@roblox.com>\nCo-authored-by: Sora Kanosue <skanosue@roblox.com>\nCo-authored-by: Thomas Schollenberger <tschollenberger@roblox.com>\nCo-authored-by: Varun Saini <vsaini@roblox.com>\nCo-authored-by: Vighnesh Vijay <vvijay@roblox.com>\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com>\n\n---------\n\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com>\nCo-authored-by: Ariel Weiss <arielweiss@roblox.com>\nCo-authored-by: Andy Friesen <afriesen@roblox.com>\nCo-authored-by: Hunter Goldstein <hgoldstein@roblox.com>\nCo-authored-by: Varun Saini <61795485+vrn-sn@users.noreply.github.com>\nCo-authored-by: Sora Kanosue <skanosue@roblox.com>\nCo-authored-by: Ilya Rezvov <irezvov@roblox.com>\nCo-authored-by: Vighnesh Vijay <vvijay@roblox.com>\nCo-authored-by: Andreas Haeberlen <andreas.haeberlen@roblox.com>\nCo-authored-by: Thomas Schollenberger <tschollenberger@roblox.com>",
+          "timestamp": "2026-10-16T13:41:27-07:00",
+          "tree_id": "f2d2b8f1f30a935dabdc772d3aecc5f9c8f56844",
+          "url": "https://github.com/luau-lang/luau/commit/9d7748a4f324213a18cb8283fa2a77c330225fa0"
+        },
+        "date": 1792186391478,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 4.78327,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 5.89881,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 18.3958,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 7.95539,
+            "unit": "7ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 10.5397,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 2276.77,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"
