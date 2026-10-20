@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1792186391492,
+  "lastUpdate": 1792532744689,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-analyze": [
@@ -30221,6 +30221,72 @@
           {
             "name": "regex-dcr",
             "value": 2276.77,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "matimatech@proton.me",
+            "name": "Iqbal F",
+            "username": "protheeuz"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "6d36d483cb88973276af611198169f76f3ce05b0",
+          "message": "Implement FASTCALL for `table.create` and `table.clear` (#2365)\n\n\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com>\nCo-authored-by: vegorov-rbx <75688451+vegorov-rbx@users.noreply.github.com>",
+          "timestamp": "2026-10-20T13:55:20-07:00",
+          "tree_id": "9901506fb88cf96bb7899838072c625be3e7c1e2",
+          "url": "https://github.com/luau-lang/luau/commit/6d36d483cb88973276af611198169f76f3ce05b0"
+        },
+        "date": 1792532744678,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 4.78329,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 5.89808,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 18.3958,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 7.95539,
+            "unit": "7ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 10.5331,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 2276.75,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"
