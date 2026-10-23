@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1792532744689,
+  "lastUpdate": 1792791662266,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-analyze": [
@@ -30287,6 +30287,72 @@
           {
             "name": "regex-dcr",
             "value": 2276.75,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "vvijay@roblox.com",
+            "name": "NotoriousV.I.G",
+            "username": "Vighnesh-V"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "32c28089305f488f901aaf1dbf3fd1cb65fa3d11",
+          "message": "Sync to upstream/release/744 (#3071)\n\n# Boo! 🦇 🎃 \n\nIn the lead up to next weeks spooky season, we've fixed a few bugs that\nhave been lurking deep in the bowels of the runtime.\n\n## Runtime Changes\n- Fix a bug in DSE(Dead Store Elimination) caused by not invalidating\ntags when the corresponding load was overwritten\n- Fix an Arm64 crash caused by functions w/ more than 256 constants\noverflowing the arm64 immediate size.\n- Support Intel Mac libunwind (we just assume you're using libc++)\n- INVOKE_FASTPCALL should be registered as being able to invalidate\nSafeEnv\n- Fix a crash found by our fuzzer due to slot allocations.\n- Handful of correctness fixes to Luau integer and bit32 operations -\nthis affects bit32.lrotate, integer.lrotate, integer.extract/replace.\n- Fix a bug caused by silently casting a uint8_t to an int8_t in the\ncompiler.\n- Fixes a bug in FORGLOOP register reservation.\n\n## Type System Changes\n- Width subtyping should not inject `nil` as a type for a stand-in\nproperty. Fixes #2625, #2644.\n- Fix type pack handling in call tail argument position in nonstrict\n\n## Prototype/Experimental projects\n- Added runtime support for private class fields\n\n---\nCo-authored-by: Andy Friesen <afriesen@roblox.com>\nCo-authored-by: Ariel Weiss <arielweiss@roblox.com>\nCo-authored-by: David Cope <dcope@roblox.com>\nCo-authored-by: Hunter Goldstein <hgoldstein@roblox.com>\nCo-authored-by: Ilya Rezvov <irezvov@roblox.com>\nCo-authored-by: Sora Kanosue <skanosue@roblox.com>\nCo-authored-by: Thomas Schollenberger <tschollenberger@roblox.com>\nCo-authored-by: Varun Saini <vsaini@roblox.com>\nCo-authored-by: Vighnesh Vijay <vvijay@roblox.com>\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com",
+          "timestamp": "2026-10-23T14:02:05-07:00",
+          "tree_id": "6b5b610c51270d1f2c571dd4114246495d8a19fc",
+          "url": "https://github.com/luau-lang/luau/commit/32c28089305f488f901aaf1dbf3fd1cb65fa3d11"
+        },
+        "date": 1792791662257,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 4.78344,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 5.89822,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 18.308,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 7.95597,
+            "unit": "7ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 10.5337,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 2275.99,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"
