@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1793649479078,
+  "lastUpdate": 1794001537760,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-analyze": [
@@ -30485,6 +30485,72 @@
           {
             "name": "regex-dcr",
             "value": 2261.47,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "75688451+vegorov-rbx@users.noreply.github.com",
+            "name": "vegorov-rbx",
+            "username": "vegorov-rbx"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "91acc8decfca5281fab4a8db46c894268fc70aac",
+          "message": "Sync to upstream/release/746 (#3105)\n\nA new release for Luau is ready and brings in the `while local`\nstatement form support and a tag guided runtime native recompilation,\namong other smaller fixes and improvements!\n\n`while local` allows you to create a binding right inside the `while`\nstatement condition:\n```luau\nwhile local x = fetch() do\n    ...\nend\n```\n\n### Analysis\n* Fixed a case of equality constraint producing unnecessary type cycles\n* Added auto-complete suggestions for `local` and `const` after `if`,\n`elseif` and `while`\n* Globals that are read and never assigned no longer leak a blocked type\n* Globals used inside type functions no longer have effect on type\ninference outside them and report a typechecking error\n\n### Runtime\n* Added hash salting for interning string table when\n`lua_setpointerencodekey` is called to avoid crafted string sets from\nslowing down string operations\n* Fixed a crash that could happen in `luau_load` if embedder exposes GC\ncontrols to Luau code\n* Functions calling `require` directly are no longer considered for\nruntime inlining because that can change require path resolution\n\n### Native Code Generation\n* Runtime recompilation now gathers information on tags and userdata\ntypes to specialize the code in arithmetic, field access and namecalls\n* Inlining of memory operands into instructions on x64 is now performed\nonly if there are no conflicting writes\n\n### Classes (experimental)\nOngoing work on [Classes\nRFC](https://github.com/luau-lang/rfcs/pull/242) prototype:\n\n* Fixed a crash when class was extending a different class with the same\nname, it now correctly refers to the outer class instead of the one\nbeing defined\n* An error is now reported when a class inherits a constructor instead\nof defining its own\n\n(required flags:\nDebugLuauUserDefinedClasses=true,DebugLuauUserDefinedClassesRuntime=true)\n\nCo-authored-by: Annie Tang <annietang@roblox.com>\nCo-authored-by: Hunter Goldstein <hgoldstein@roblox.com>\nCo-authored-by: Ilya Rezvov <irezvov@roblox.com>\nCo-authored-by: Sora Kanosue <skanosue@roblox.com>\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com>",
+          "timestamp": "2026-11-06T12:55:41-08:00",
+          "tree_id": "ada0df45af42068a250b7796c6f4b05fd6960d94",
+          "url": "https://github.com/luau-lang/luau/commit/91acc8decfca5281fab4a8db46c894268fc70aac"
+        },
+        "date": 1794001537750,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 4.78227,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 5.89716,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 17.068,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 7.94728,
+            "unit": "7ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 10.5251,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 1576.83,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"
