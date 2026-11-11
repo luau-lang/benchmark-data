@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1794074152433,
+  "lastUpdate": 1794360590039,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-analyze": [
@@ -30610,6 +30610,72 @@
           {
             "name": "regex-strict",
             "value": 10.5251,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 1576.83,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "61795485+vrn-sn@users.noreply.github.com",
+            "name": "Varun Saini",
+            "username": "vrn-sn"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "f46d879e28302a430029304f7f6a162aed66f103",
+          "message": "Fix CI builds: remove all U+200E characters from Confusables.cpp and recursive calls in `std::any_of` (#3114)\n\nThis is causing CI builds to fail. The problematic characters only show\nup in comments anyway, so the simplest solution is just removing them.\n\nProof of correctness:\n```bash\n> diff -s <(git show HEAD:Ast/src/Confusables.cpp | sed $'s/\\xE2\\x80\\x8E//g') Ast/src/Confusables.cpp\nFiles /dev/fd/11 and Ast/src/Confusables.cpp are identical\n```\n\nThe `std::any_of` change addresses another failure that we're seeing in\nCI, and this one should be superseded by an incoming change soon.",
+          "timestamp": "2026-11-10T16:39:36-08:00",
+          "tree_id": "2432c996fc9fa73680b5e2cfe172d36114fe3746",
+          "url": "https://github.com/luau-lang/luau/commit/f46d879e28302a430029304f7f6a162aed66f103"
+        },
+        "date": 1794360590028,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 4.78228,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 5.89717,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 17.0679,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 7.94728,
+            "unit": "7ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 10.525,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"
