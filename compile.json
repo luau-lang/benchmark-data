@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1794360590211,
+  "lastUpdate": 1794606531896,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-compile": [
@@ -41865,6 +41865,100 @@
           {
             "name": "regex-O2-t1-codegen",
             "value": 15.0762,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "afriesen@roblox.com",
+            "name": "Andy Friesen",
+            "username": "andyfriesen"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "c87565b8b0db5d5d5bfd2b8b00ad6573e5d06d9f",
+          "message": "Sync to upstream/release/747 (#3128)\n\n✈️ !!!\n\n## Analysis\n\n* Avoid stack overflow in degenerate unions and intersection types\n* Fix a bug where analysis would permit iteration over non-iterable\ntypes in certain circumstances:\n\n```luau\nlocal function foo(t: boolean | number | vector | {})\n    -- This used to be erroneously permitted\n    for i, v in t do\n    end\nend\n```\n\n* Fix an ICE in certain scenarios involving global function definitions\nwithin type functions\n* Fix an issue where error suppression was too eager to fire.  eg\n\n```luau\n-- The error here used to be improperly suppressed.\nlocal _: { read [number]: \"hello\" } = ... :: { read [any]: string }\n```\n\n## Runtime\n\n* Add `luau_loadlazy`: This function is the same as `luau_load`, but\nonly the main function is built. Other functions are lazy stubs that are\nloaded on their first use.\n* Do not use removed collapsed phis in BytecodeGraphParser\n* Fix https://github.com/luau-lang/luau/issues/3082\n* Implement `buffer.readvector*f32` and `buffer.writevector*f32` per\nhttps://github.com/luau-lang/rfcs/pull/198\n* Clip all in-progress integer code. See\nhttps://github.com/luau-lang/rfcs/pull/269 for details\n\n## Native Codegen\n\n* Add support accelerated direct userdata access\n* Add support for frozen metatable cache access\n* Improved runtime rebuild error handling and a loop trip fix\n* Exit sync restore for expected tags\n* Runtime rebuild log and result callbacks\n* Lower thresholds before promotion to native code\n* Add a runtime rebuild log and result callbacks to better track VM\npromotion.\n* Fix register array overflow in LOP_FASTCALL bytecode analysis\n* Perform store forwarding for split stores as well\n\n## Classes (experimental)\n\n* Report an error if a class's base constructor isn't called before a\nread or write to `self` in its constructor\n* Add support for nested and `local` classes\n\nCo-authored-by: Andy Friesen <afriesen@roblox.com>\nCo-authored-by: Hunter Goldstein <hgoldstein@roblox.com>\nCo-authored-by: Ilya Rezvov <irezvov@roblox.com>\nCo-authored-by: Sora Kanosue <skanosue@roblox.com>\nCo-authored-by: Thomas Schollenberger <tschollenberger@roblox.com>\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com>\n\n---------\n\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com>\nCo-authored-by: Ariel Weiss <arielweiss@roblox.com>\nCo-authored-by: Hunter Goldstein <hgoldstein@roblox.com>\nCo-authored-by: Varun Saini <61795485+vrn-sn@users.noreply.github.com>\nCo-authored-by: Sora Kanosue <skanosue@roblox.com>\nCo-authored-by: Annie Tang <annietang@roblox.com>\nCo-authored-by: Annie Tang <98965493+annieetang@users.noreply.github.com>\nCo-authored-by: Ilya Rezvov <irezvov@roblox.com>\nCo-authored-by: Vighnesh Vijay <vvijay@roblox.com>\nCo-authored-by: Andreas Haeberlen <andreas.haeberlen@roblox.com>\nCo-authored-by: Thomas Schollenberger <tschollenberger@roblox.com>",
+          "timestamp": "2026-11-13T14:01:47-07:00",
+          "tree_id": "92ae80ea8dc632567bcb4233231f5eae3075084d",
+          "url": "https://github.com/luau-lang/luau/commit/c87565b8b0db5d5d5bfd2b8b00ad6573e5d06d9f"
+        },
+        "date": 1794606531881,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.721735,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.823416,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2",
+            "value": 1.01296,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 5.05215,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-t1-codegen",
+            "value": 5.061,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.72511,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O1",
+            "value": 2.07142,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2",
+            "value": 3.04332,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 15.531,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-t1-codegen",
+            "value": 15.0389,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-compile"
