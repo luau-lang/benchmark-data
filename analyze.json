@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1794606531753,
+  "lastUpdate": 1795218974858,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-analyze": [
@@ -30749,6 +30749,72 @@
           {
             "name": "regex-dcr",
             "value": 1607.9,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "hgoldstein@roblox.com",
+            "name": "Hunter Goldstein",
+            "username": "hgoldstein"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "3d91c9d5c280c95bfc4be63aac46012cf861d394",
+          "message": "Sync to upstream/release/748 (#3149)\n\n# General\n\nWe've refactored how embedded builtin definitions work for the type\nsolver: instead of writing a bunch of declaration strings, instead we\nhave some nice little builder methods. Apologies to anyone who has\noutstanding PRs that add or remove embedded builtin definitions, but\nthis should make flagging changes _wayyyyyy_ easier in this part of the\ncodebase.\n\n\n# Analysis\n\n* `LuauDecomposeIntersectionOfFreeType` has been reverted. Fixes #3083\nand #3117, but re-opens #3001 and #3002.\n* Fix a class of issues where referencing expression globals in type\nfunctions would be permitted, despite type functions having isolated and\nsandboxed environments.\n```luau\ntype function foobar()\n    X = 42\nend\n\nprint(X) -- this would sometimes infer `X: number`, even though this is impossible.\n```\n\n# Runtime\n\n* Fixed a bug where inlined functions might clobber captured values:\n```luau\nlocal function test()\n    local f\n    f = function() f = nil end\n    f = (function() return f() end)() -- We need to make sure we get the correct `f` here.\n    return f\nend\n```\n* In NCG, allow loads of immutable data (like constants) to be moved\nfrom block-to-block when safe.\n\n\n# Tooling\n\n* Golden tests now use TOML to store their outputs instead of individual\nfiles.\n\n---\n\nCo-authored-by: Andy Friesen <afriesen@roblox.com>\nCo-authored-by: Annie Tang <annietang@roblox.com>\nCo-authored-by: Hunter Goldstein <hgoldstein@roblox.com>\nCo-authored-by: Ilya Rezvov <irezvov@roblox.com>\nCo-authored-by: Sora Kanosue <skanosue@roblox.com>\nCo-authored-by: Thomas Schollenberger <tschollenberger@roblox.com>\nCo-authored-by: Varun Saini <vsaini@roblox.com>\nCo-authored-by: Vighnesh Vijay <vvijay@roblox.com>\nCo-authored-by: Vyacheslav Egorov <vegorov@roblox.com>",
+          "timestamp": "2026-11-20T15:03:57-08:00",
+          "tree_id": "f2997e76239a854fc7cd9192bb9f9076667fa0fe",
+          "url": "https://github.com/luau-lang/luau/commit/3d91c9d5c280c95bfc4be63aac46012cf861d394"
+        },
+        "date": 1795218974846,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-nonstrict",
+            "value": 4.78197,
+            "unit": "4ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-strict",
+            "value": 5.8903,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "map-dcr",
+            "value": 17.046,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-nonstrict",
+            "value": 7.95845,
+            "unit": "7ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-strict",
+            "value": 10.5366,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-analyze"
+          },
+          {
+            "name": "regex-dcr",
+            "value": 1438.72,
             "unit": "ms",
             "range": "±0%",
             "extra": "luau-analyze"
