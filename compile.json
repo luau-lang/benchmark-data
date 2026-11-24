@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1795218975035,
+  "lastUpdate": 1795480064104,
   "repoUrl": "https://github.com/luau-lang/luau",
   "entries": {
     "luau-compile": [
@@ -42039,6 +42039,100 @@
           {
             "name": "regex-O2",
             "value": 3.04141,
+            "unit": "3ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-codegen",
+            "value": 15.5732,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2-t1-codegen",
+            "value": 15.0804,
+            "unit": "ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "lucasindisguise@gmail.com",
+            "name": "lucask",
+            "username": "lucaskiforishin"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "97b2f4bf9cd935bed666f3e643a3b749b4d22f38",
+          "message": "Fix class type forward references (#3151)\n\nI've been using Luau's classes very frequently lately, and a recent\nchange (sometime when function-like declaration semantics were being\nadopted for classes) has caused class types to not be available before\ntheir declarations. This created a huge number of warnings in my\nexisting code, so I thought I'd investigate. The issue seems to be that\nclass types aren't being predeclared in the type checker's initial\ndeclaration pass, unlike regular type aliases.\n\nThis change predeclares class types so they can be referenced throughout\ntheir scope (as per\n[luau-lang/rfcs#242](https://github.com/luau-lang/rfcs/pull/242)) and\nalso introduces two regression tests covering forward references to\nclass types and superclass shadowing.",
+          "timestamp": "2026-11-23T15:43:42-08:00",
+          "tree_id": "c8d527c414f9520c5188ef5dc588f20c9d03d37f",
+          "url": "https://github.com/luau-lang/luau/commit/97b2f4bf9cd935bed666f3e643a3b749b4d22f38"
+        },
+        "date": 1795480064090,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "map-O0",
+            "value": 0.720842,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O1",
+            "value": 0.822612,
+            "unit": "0ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2",
+            "value": 1.01198,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-codegen",
+            "value": 5.06654,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "map-O2-t1-codegen",
+            "value": 5.07531,
+            "unit": "5ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O0",
+            "value": 1.72234,
+            "unit": "1ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O1",
+            "value": 2.06863,
+            "unit": "2ms",
+            "range": "±0%",
+            "extra": "luau-compile"
+          },
+          {
+            "name": "regex-O2",
+            "value": 3.0414,
             "unit": "3ms",
             "range": "±0%",
             "extra": "luau-compile"
